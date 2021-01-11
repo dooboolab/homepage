@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "stretch",
+          "backgroundColor": "#FFFFFF",
+          "flexBasis": 0,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "justifyContent": "flex-start",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 60,
+            "paddingBottom": 0,
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 0,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 24,
+            },
+          ]
+        }
+      >
+        dooboolab
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+        ]
+      }
+    >
+      Main
+    </Text>
+  </View>
+</View>
+`;

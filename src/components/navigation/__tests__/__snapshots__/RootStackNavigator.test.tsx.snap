@@ -20,112 +20,6 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
     }
   >
     <View
-      pointerEvents="box-none"
-      style={
-        Object {
-          "zIndex": 1,
-        }
-      }
-    >
-      <View
-        accessibilityElementsHidden={false}
-        importantForAccessibility="auto"
-        onLayout={[Function]}
-        pointerEvents="box-none"
-        style={null}
-      >
-        <View
-          pointerEvents="box-none"
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "opacity": 1,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "zIndex": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "#323739",
-                "borderBottomColor": undefined,
-                "flex": 1,
-                "shadowColor": undefined,
-                "shadowOffset": Object {
-                  "height": 0.5,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.85,
-                "shadowRadius": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          pointerEvents="box-none"
-          style={
-            Object {
-              "height": 64,
-              "maxHeight": undefined,
-              "minHeight": undefined,
-              "opacity": undefined,
-              "transform": undefined,
-            }
-          }
-        >
-          <View
-            pointerEvents="none"
-            style={
-              Object {
-                "height": 20,
-              }
-            }
-          />
-          <View
-            pointerEvents="box-none"
-            style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "justifyContent": "center",
-              }
-            }
-          >
-            <View
-              pointerEvents="box-none"
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "opacity": 1,
-                }
-              }
-            >
-              <Text
-                accessibilityRole="header"
-                aria-level="1"
-                numberOfLines={1}
-                onLayout={[Function]}
-                style={
-                  Object {
-                    "color": "white",
-                    "fontSize": 17,
-                    "fontWeight": "600",
-                  }
-                }
-              >
-                Intro
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
       onLayout={[Function]}
       style={
         Object {
@@ -212,6 +106,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
             style={
               Object {
                 "flex": 1,
+                "marginTop": 0,
               }
             }
           >
@@ -238,7 +133,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                 pointerEvents="none"
                 style={
                   Object {
-                    "backgroundColor": "#323739",
+                    "backgroundColor": "#2C2C2C",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -263,7 +158,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                     },
                     Array [
                       Object {
-                        "backgroundColor": "#323739",
+                        "backgroundColor": "#2C2C2C",
                       },
                       undefined,
                     ],
@@ -298,8 +193,9 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                         style={
                           Array [
                             Object {
-                              "alignItems": "center",
+                              "alignItems": "flex-start",
                               "alignSelf": "stretch",
+                              "backgroundColor": "#2C2C2C",
                               "flexBasis": 0,
                               "flexDirection": "column",
                               "flexGrow": 1,
@@ -309,204 +205,45 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                           ]
                         }
                       >
-                        <Text
+                        <View
                           style={
                             Array [
                               Object {
-                                "color": "white",
-                                "fontSize": 18,
-                                "lineHeight": 27,
-                              },
-                              Object {
-                                "marginTop": 100,
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "height": 60,
+                                "paddingBottom": 0,
+                                "paddingLeft": 24,
+                                "paddingRight": 24,
+                                "paddingTop": 0,
+                                "width": "100%",
                               },
                             ]
                           }
                         >
-                          
-                        </Text>
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "fontSize": 24,
+                                },
+                              ]
+                            }
+                          >
+                            dooboolab
+                          </Text>
+                        </View>
                         <Text
                           style={
                             Array [
                               Object {
-                                "color": "white",
-                                "fontSize": 18,
-                                "lineHeight": 27,
+                                "color": "#D3D8E8",
                               },
                             ]
                           }
                         >
-                          
+                          Main
                         </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "color": "white",
-                                "fontSize": 18,
-                                "lineHeight": 27,
-                              },
-                            ]
-                          }
-                        >
-                          
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "alignSelf": "center",
-                              "bottom": 40,
-                              "flexDirection": "column",
-                              "position": "absolute",
-                              "width": "85%",
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-login"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Image
-                              source={
-                                Object {
-                                  "canInstrument": true,
-                                  "createTransformer": [Function],
-                                  "getCacheKey": [Function],
-                                  "process": [Function],
-                                }
-                              }
-                              style={
-                                Array [
-                                  Object {
-                                    "height": 24,
-                                    "left": 16,
-                                    "position": "absolute",
-                                    "width": 24,
-                                  },
-                                ]
-                              }
-                            />
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Login
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "marginTop": 8,
-                            }
-                          }
-                        />
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-navigate"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Navigate
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "marginTop": 8,
-                            }
-                          }
-                        />
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-theme"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Change Theme
-                            </Text>
-                          </View>
-                        </View>
                       </View>
                     </View>
                   </View>
@@ -517,6 +254,19 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
         </View>
       </View>
     </View>
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "height": 64,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "zIndex": 1,
+        }
+      }
+    />
   </RNCSafeAreaProvider>
 </View>
 `;
@@ -541,112 +291,6 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
     }
   >
     <View
-      pointerEvents="box-none"
-      style={
-        Object {
-          "zIndex": 1,
-        }
-      }
-    >
-      <View
-        accessibilityElementsHidden={false}
-        importantForAccessibility="auto"
-        onLayout={[Function]}
-        pointerEvents="box-none"
-        style={null}
-      >
-        <View
-          pointerEvents="box-none"
-          style={
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "opacity": 1,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "zIndex": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "backgroundColor": "white",
-                "borderBottomColor": undefined,
-                "flex": 1,
-                "shadowColor": undefined,
-                "shadowOffset": Object {
-                  "height": 0.5,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.85,
-                "shadowRadius": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          pointerEvents="box-none"
-          style={
-            Object {
-              "height": 64,
-              "maxHeight": undefined,
-              "minHeight": undefined,
-              "opacity": undefined,
-              "transform": undefined,
-            }
-          }
-        >
-          <View
-            pointerEvents="none"
-            style={
-              Object {
-                "height": 20,
-              }
-            }
-          />
-          <View
-            pointerEvents="box-none"
-            style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "flexDirection": "row",
-                "justifyContent": "center",
-              }
-            }
-          >
-            <View
-              pointerEvents="box-none"
-              style={
-                Object {
-                  "marginHorizontal": 16,
-                  "opacity": 1,
-                }
-              }
-            >
-              <Text
-                accessibilityRole="header"
-                aria-level="1"
-                numberOfLines={1}
-                onLayout={[Function]}
-                style={
-                  Object {
-                    "color": "black",
-                    "fontSize": 17,
-                    "fontWeight": "600",
-                  }
-                }
-              >
-                Intro
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
       onLayout={[Function]}
       style={
         Object {
@@ -733,6 +377,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
             style={
               Object {
                 "flex": 1,
+                "marginTop": 0,
               }
             }
           >
@@ -759,7 +404,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                 pointerEvents="none"
                 style={
                   Object {
-                    "backgroundColor": "white",
+                    "backgroundColor": "#FFFFFF",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -784,7 +429,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                     },
                     Array [
                       Object {
-                        "backgroundColor": "white",
+                        "backgroundColor": "#FFFFFF",
                       },
                       undefined,
                     ],
@@ -819,8 +464,9 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                         style={
                           Array [
                             Object {
-                              "alignItems": "center",
+                              "alignItems": "flex-start",
                               "alignSelf": "stretch",
+                              "backgroundColor": "#FFFFFF",
                               "flexBasis": 0,
                               "flexDirection": "column",
                               "flexGrow": 1,
@@ -830,204 +476,45 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                           ]
                         }
                       >
-                        <Text
+                        <View
                           style={
                             Array [
                               Object {
-                                "color": "black",
-                                "fontSize": 18,
-                                "lineHeight": 27,
-                              },
-                              Object {
-                                "marginTop": 100,
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "height": 60,
+                                "paddingBottom": 0,
+                                "paddingLeft": 24,
+                                "paddingRight": 24,
+                                "paddingTop": 0,
+                                "width": "100%",
                               },
                             ]
                           }
                         >
-                          
-                        </Text>
+                          <Text
+                            style={
+                              Array [
+                                Object {
+                                  "fontSize": 24,
+                                },
+                              ]
+                            }
+                          >
+                            dooboolab
+                          </Text>
+                        </View>
                         <Text
                           style={
                             Array [
                               Object {
-                                "color": "black",
-                                "fontSize": 18,
-                                "lineHeight": 27,
+                                "color": "#000000",
                               },
                             ]
                           }
                         >
-                          
+                          Main
                         </Text>
-                        <Text
-                          style={
-                            Array [
-                              Object {
-                                "color": "black",
-                                "fontSize": 18,
-                                "lineHeight": 27,
-                              },
-                            ]
-                          }
-                        >
-                          
-                        </Text>
-                      </View>
-                      <View
-                        style={
-                          Array [
-                            Object {
-                              "alignSelf": "center",
-                              "bottom": 40,
-                              "flexDirection": "column",
-                              "position": "absolute",
-                              "width": "85%",
-                            },
-                          ]
-                        }
-                      >
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-login"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Image
-                              source={
-                                Object {
-                                  "canInstrument": true,
-                                  "createTransformer": [Function],
-                                  "getCacheKey": [Function],
-                                  "process": [Function],
-                                }
-                              }
-                              style={
-                                Array [
-                                  Object {
-                                    "height": 24,
-                                    "left": 16,
-                                    "position": "absolute",
-                                    "width": 24,
-                                  },
-                                ]
-                              }
-                            />
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Login
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "marginTop": 8,
-                            }
-                          }
-                        />
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-navigate"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Navigate
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "marginTop": 8,
-                            }
-                          }
-                        />
-                        <View
-                          activeOpacity={0.5}
-                          onPress={[Function]}
-                          testID="btn-theme"
-                        >
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "center",
-                                  "backgroundColor": "#069ccd",
-                                  "borderColor": "#069ccd",
-                                  "borderRadius": 4,
-                                  "borderWidth": 2,
-                                  "height": 52,
-                                  "justifyContent": "center",
-                                  "width": 320,
-                                },
-                              ]
-                            }
-                          >
-                            <Text
-                              style={
-                                Array [
-                                  Object {
-                                    "color": "white",
-                                    "fontSize": 14,
-                                  },
-                                ]
-                              }
-                            >
-                              Change Theme
-                            </Text>
-                          </View>
-                        </View>
                       </View>
                     </View>
                   </View>
@@ -1038,6 +525,19 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
         </View>
       </View>
     </View>
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "height": 64,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "zIndex": 1,
+        }
+      }
+    />
   </RNCSafeAreaProvider>
 </View>
 `;

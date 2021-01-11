@@ -5,15 +5,13 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 
-import Intro from '../screen/Intro';
+import Main from '../screen/Main';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import Temp from '../screen/Temp';
 import {useThemeContext} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {
-  Intro: undefined;
-  Temp: {param: string};
+  Main: undefined;
 };
 
 export type RootStackNavigationProps<
@@ -39,16 +37,9 @@ function RootNavigator(): React.ReactElement {
         dark: true,
       }}>
       <Stack.Navigator
-        initialRouteName="Intro"
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: theme.background,
-          },
-          headerTitleStyle: {color: theme.fontColor},
-          headerTintColor: theme.tintColor,
-        }}>
-        <Stack.Screen name="Intro" component={Intro} />
-        <Stack.Screen name="Temp" component={Temp} />
+        initialRouteName="Main"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Main" component={Main} />
       </Stack.Navigator>
     </NavigationContainer>
   );
