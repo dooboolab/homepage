@@ -1,28 +1,32 @@
+import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../utils/Icons';
 import React, {FC} from 'react';
+import {ThemeType, useThemeContext} from '../../providers/ThemeProvider';
 
 import styled from 'styled-components/native';
 
 const Container = styled.View`
   width: 100%;
-  height: 60px;
   padding: 0 24px;
 
   flex-direction: row;
   align-items: center;
 `;
 
-const Title = styled.Text`
-  font-size: 24px;
+const Logo = styled.Image`
+  width: 180px;
+  height: 66.54px;
 `;
 
-type Props = {
-  title?: string;
-};
+const Header: FC = () => {
+  const {themeType} = useThemeContext();
 
-const Header: FC<Props> = ({title}) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      <Logo
+        source={
+          themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
+        }
+      />
     </Container>
   );
 };

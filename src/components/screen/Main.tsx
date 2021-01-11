@@ -26,7 +26,7 @@ type Props = {
 const Page: FC<Props> = () => {
   return (
     <Container>
-      <Header title="dooboolab" />
+      <Header />
       <StyledText>Main</StyledText>
     </Container>
   );
