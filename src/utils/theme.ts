@@ -1,5 +1,3 @@
-import type {DefaultTheme} from 'styled-components/native';
-
 export enum ThemeType {
   LIGHT = 'LIGHT',
   DARK = 'DARK',
@@ -38,24 +36,4 @@ export const dark = {
 export const theme = {
   light,
   dark,
-};
-
-export interface ThemeParam {
-  light: Partial<Theme>;
-  dark: Partial<Theme>;
-}
-
-export const createTheme = (
-  type: ThemeType,
-  themes: ThemeParam = {
-    light,
-    dark,
-  },
-): Partial<DefaultTheme> => {
-  switch (type) {
-    case ThemeType.LIGHT:
-      return {...theme.light, ...themes.light};
-    case ThemeType.DARK:
-      return {...theme.dark, ...themes.dark};
-  }
 };

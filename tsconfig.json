@@ -34,10 +34,7 @@
     "strictBindCallApply": true,
     "noImplicitThis": true,
     "strictPropertyInitialization": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "alwaysStrict": true
   },
   "include": [
     "src/**/*.ts",

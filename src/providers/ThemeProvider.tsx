@@ -2,16 +2,11 @@ import {
   DefaultTheme,
   ThemeProvider as OriginalThemeProvider,
 } from 'styled-components/native';
-import React, {useState} from 'react';
-import {
-  ThemeParam,
-  ThemeType,
-  createTheme,
-  dark as darkTheme,
-  light as lightTheme,
-} from '../utils/theme';
+import React, {ReactElement, useState} from 'react';
+import {ThemeType, dark, light} from '../utils/theme';
 
 import createCtx from '../utils/createCtx';
+import {useMediaQuery} from 'react-responsive';
 
 interface Context {
   themeType: ThemeType;
@@ -24,17 +19,18 @@ const [useCtx, Provider] = createCtx<Context>();
 export const defaultThemeType: ThemeType = ThemeType.LIGHT;
 
 interface Props {
-  children?: React.ReactElement;
-  // Using initial ThemeType is essential while testing apps with consistent ThemeType
+  children?: ReactElement;
   initialThemeType?: ThemeType;
-  customTheme?: ThemeParam;
 }
 
 function ThemeProvider({
   children,
   initialThemeType = defaultThemeType,
-  customTheme,
-}: Props): React.ReactElement {
+}: Props): ReactElement {
+  const isMobile = useMediaQuery({maxWidth: 767});
+  const isTablet = useMediaQuery({minWidth: 767, maxWidth: 992});
+  const isDesktop = useMediaQuery({minWidth: 992});
+
   const [themeType, setThemeType] = useState(initialThemeType);
 
   const changeThemeType = (): void => {
@@ -44,29 +40,24 @@ function ThemeProvider({
     setThemeType(newThemeType);
   };
 
-  let theme: DefaultTheme;
+  let theme: DefaultTheme = themeType === ThemeType.DARK ? dark : light;
 
-  if (customTheme)
-    theme = createTheme(themeType, {
-      light: {
-        ...lightTheme,
-        ...customTheme.light,
-      },
-      dark: {
-        ...darkTheme,
-        ...customTheme.dark,
-      },
-    }) as DefaultTheme;
-  else theme = createTheme(themeType, {light: {}, dark: {}}) as DefaultTheme;
+  const media = {
+    isMobile,
+    isTablet,
+    isDesktop,
+  };
 
   return (
     <Provider
       value={{
         themeType,
         changeThemeType,
-        theme: theme,
+        theme,
       }}>
-      <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
+      <OriginalThemeProvider theme={{...theme, ...media}}>
+        {children}
+      </OriginalThemeProvider>
     </Provider>
   );
 }

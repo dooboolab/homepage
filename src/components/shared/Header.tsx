@@ -3,19 +3,17 @@ import React, {FC} from 'react';
 import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import {useMedia} from '../../providers/MediaProvider';
-
-const Container = styled.View<{isTablet: boolean}>`
+const Container = styled.View`
   width: 100%;
   padding: 0 24px;
 
   flex-direction: row;
   align-items: center;
 
-  ${({isTablet}) =>
-    isTablet &&
+  ${({theme: {isDesktop}}) =>
+    isDesktop &&
     css`
-      padding: 0 60px;
+      padding: 0 100px;
     `}
 `;
 
@@ -26,10 +24,9 @@ const Logo = styled.Image`
 
 const Header: FC = () => {
   const {themeType} = useTheme();
-  const {isTablet} = useMedia();
 
   return (
-    <Container isTablet={isTablet}>
+    <Container>
       <Logo
         source={
           themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK

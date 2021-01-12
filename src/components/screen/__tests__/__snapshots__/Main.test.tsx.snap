@@ -27,7 +27,6 @@ exports[`Render renders without crashing 1`] = `
     }
   >
     <View
-      isTablet={false}
       style={
         Array [
           Object {
