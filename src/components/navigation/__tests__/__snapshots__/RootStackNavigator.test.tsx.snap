@@ -206,12 +206,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                         }
                       >
                         <View
+                          isTablet={false}
                           style={
                             Array [
                               Object {
                                 "alignItems": "center",
                                 "flexDirection": "row",
-                                "height": 60,
                                 "paddingBottom": 0,
                                 "paddingLeft": 24,
                                 "paddingRight": 24,
@@ -221,17 +221,24 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             ]
                           }
                         >
-                          <Text
+                          <Image
+                            source={
+                              Object {
+                                "canInstrument": true,
+                                "createTransformer": [Function],
+                                "getCacheKey": [Function],
+                                "process": [Function],
+                              }
+                            }
                             style={
                               Array [
                                 Object {
-                                  "fontSize": 24,
+                                  "height": 66.54,
+                                  "width": 180,
                                 },
                               ]
                             }
-                          >
-                            dooboolab
-                          </Text>
+                          />
                         </View>
                         <Text
                           style={
@@ -477,12 +484,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                         }
                       >
                         <View
+                          isTablet={false}
                           style={
                             Array [
                               Object {
                                 "alignItems": "center",
                                 "flexDirection": "row",
-                                "height": 60,
                                 "paddingBottom": 0,
                                 "paddingLeft": 24,
                                 "paddingRight": 24,
@@ -492,17 +499,24 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             ]
                           }
                         >
-                          <Text
+                          <Image
+                            source={
+                              Object {
+                                "canInstrument": true,
+                                "createTransformer": [Function],
+                                "getCacheKey": [Function],
+                                "process": [Function],
+                              }
+                            }
                             style={
                               Array [
                                 Object {
-                                  "fontSize": 24,
+                                  "height": 66.54,
+                                  "width": 180,
                                 },
                               ]
                             }
-                          >
-                            dooboolab
-                          </Text>
+                          />
                         </View>
                         <Text
                           style={

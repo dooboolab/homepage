@@ -1,6 +1,7 @@
 import {ThemeType, dark, light} from '../utils/theme';
 
 import {AppProvider} from './AppProvider';
+import {MediaProvider} from './MediaProvider';
 import React from 'react';
 import {ThemeProvider} from './ThemeProvider';
 
@@ -15,11 +16,13 @@ const RootProvider = ({
   children,
 }: Props): React.ReactElement => {
   return (
-    <ThemeProvider
-      initialThemeType={initialThemeType}
-      customTheme={{light, dark}}>
-      <AppProvider>{children}</AppProvider>
-    </ThemeProvider>
+    <MediaProvider>
+      <ThemeProvider
+        initialThemeType={initialThemeType}
+        customTheme={{light, dark}}>
+        <AppProvider>{children}</AppProvider>
+      </ThemeProvider>
+    </MediaProvider>
   );
 };
 

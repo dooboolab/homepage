@@ -71,4 +71,4 @@ function ThemeProvider({
   );
 }
 
-export {useCtx as useThemeContext, ThemeProvider, ThemeType};
+export {useCtx as useTheme, ThemeProvider, ThemeType};

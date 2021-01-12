@@ -8,7 +8,7 @@ import {
 import Main from '../screen/Main';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {useThemeContext} from '../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {
   Main: undefined;
@@ -21,7 +21,7 @@ export type RootStackNavigationProps<
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator(): React.ReactElement {
-  const {theme} = useThemeContext();
+  const {theme} = useTheme();
 
   return (
     <NavigationContainer
