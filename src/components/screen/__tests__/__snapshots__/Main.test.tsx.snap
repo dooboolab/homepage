@@ -97,6 +97,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
+                  "color": "#000000",
                   "fontSize": 18,
                   "fontWeight": "500",
                   "paddingBottom": 20,
@@ -136,6 +137,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
+                  "color": "#000000",
                   "fontSize": 18,
                   "fontWeight": "500",
                   "paddingBottom": 20,
@@ -175,6 +177,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
+                  "color": "#000000",
                   "fontSize": 18,
                   "fontWeight": "500",
                   "paddingBottom": 20,

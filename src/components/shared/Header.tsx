@@ -51,6 +51,7 @@ const LinkText = styled.Text`
   font-size: 18px;
   font-weight: 500;
   padding: 20px;
+  color: ${({theme}) => theme.text};
 `;
 
 const SwitchWrapper = styled.View`
@@ -100,7 +101,7 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
 };
 
 const Header: FC = () => {
-  const {theme, themeType} = useTheme();
+  const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
   return (
@@ -118,7 +119,10 @@ const Header: FC = () => {
       <SwitchWrapper>
         <ToggleSwitch
           isOn={switchOn}
-          onToggle={(val: boolean) => setSwitchOn(val)}
+          onToggle={(val: boolean) => {
+            setSwitchOn(val);
+            changeThemeType();
+          }}
           onColor={theme.text}
         />
       </SwitchWrapper>
