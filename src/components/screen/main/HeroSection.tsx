@@ -10,7 +10,7 @@ import {useTheme} from '../../../providers/ThemeProvider';
 fbt;
 
 const Container = styled.View`
-  height: 380px;
+  min-height: 380px;
   align-self: stretch;
   margin-top: 10px;
 
@@ -33,6 +33,7 @@ const BackgroundImage = styled.ImageBackground`
     isDesktop &&
     css`
       align-items: flex-start;
+      padding: 0 80px;
     `}
 `;
 
@@ -48,7 +49,7 @@ const Title = styled.Text`
     isDesktop &&
     css`
       font-size: 42px;
-      max-width: 50%;
+      max-width: 53%;
       text-align: flex-start;
     `}
 `;

@@ -28,7 +28,7 @@ const Container = styled.View`
 const Logo = styled.Image`
   width: 124px;
   height: 52px;
-  margin: 8px 0;
+  margin: 12px 0;
   align-self: center;
 
   ${({theme: {isDesktop}}) =>
@@ -43,6 +43,7 @@ const Logo = styled.Image`
 const LinkWrapper = styled.View`
   flex-direction: row;
   align-items: center;
+  margin: 4px 0;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
@@ -65,13 +66,7 @@ const LinkText = styled.Text`
 const SwitchWrapper = styled.View`
   position: absolute;
   right: 20px;
-  top: 20px;
-
-  ${({theme: {isDesktop}}) =>
-    isDesktop &&
-    css`
-      top: 20px;
-    `}
+  top: 25px;
 `;
 
 type LinkProps = {
@@ -88,7 +83,7 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
     <Hoverable>
       {(isHovered) => (
         <LinkTouch
-          style={{marginRight: 20}}
+          style={{marginHorizontal: 10}}
           activeOpacity={0.7}
           onPress={() => {
             navigation.navigate('');
