@@ -1,9 +1,9 @@
-import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../utils/Icons';
+import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
 import React, {FC, ReactElement, useState} from 'react';
-import {ThemeType, useTheme} from '../../providers/ThemeProvider';
+import {ThemeType, useTheme} from '../../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import Hoverable from '../../utils/Hoverable';
+import Hoverable from '../../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 

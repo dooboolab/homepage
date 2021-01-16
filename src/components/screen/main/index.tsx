@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 
-import Header from '../../shared/Header';
+import Header from './Header';
 import HeroSection from './HeroSection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import styled from 'styled-components/native';
 import {withScreen} from '../../../utils/wrapper';
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};

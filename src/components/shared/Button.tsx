@@ -1,100 +1,139 @@
-import {ActivityIndicator, TouchableOpacity} from 'react-native';
-import type {
-  ImageSourcePropType,
-  ImageStyle,
-  TextStyle,
+import {
+  ActivityIndicator,
+  LayoutRectangle,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextProps,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
   ViewStyle,
 } from 'react-native';
+import React, {useRef, useState} from 'react';
 
-import React from 'react';
-import styled from 'styled-components/native';
+import {useHover} from 'react-native-web-hooks';
 
-const StyledButton = styled.View`
-  background-color: ${({theme}): string => theme.paper};
-  align-self: center;
-  border-radius: 4px;
-  border-width: 2px;
-  width: 320px;
-  height: 52px;
-  border-color: ${({theme}): string => theme.paper};
+const defaultStyles = StyleSheet.create({
+  container: {
+    alignSelf: 'stretch',
+    paddingLeft: 16,
+    paddingRight: 16,
+    borderRadius: 6,
 
-  align-items: center;
-  justify-content: center;
-`;
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    paddingVertical: 12,
+    fontSize: 14,
+    color: '#069ccd',
+  },
+  disabledButton: {
+    backgroundColor: '#cccccc',
+    borderColor: 'rgb(200, 200, 200)',
+  },
+  disabledText: {
+    color: '#969696',
+  },
+  hovered: {
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.24,
+    shadowRadius: 16,
+    elevation: 10,
+  },
+});
 
-const StyledButtonDisabled = styled(StyledButton)`
-  background-color: ${({theme}): string => theme.paper};
-  border-color: rgb(200, 200, 200);
-`;
-
-const StyledText = styled.Text`
-  font-size: 14px;
-  color: ${({theme}): string => theme.link};
-`;
-
-const StyledTextDisabled = styled(StyledText)`
-  color: ${({theme}): string => theme.disabled};
-`;
-
-const StyledImage = styled.Image`
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  left: 16px;
-`;
+type StylesType = Partial<StyleSheet.NamedStyles<typeof defaultStyles>>;
 
 interface Props {
   testID?: string;
-  isLoading?: boolean;
-  isDisabled?: boolean;
-  onClick?: () => void;
-  style?: ViewStyle;
-  disabledStyle?: ViewStyle;
-  textStyle?: TextStyle;
-  imgLeftSrc?: ImageSourcePropType;
-  imgLeftStyle?: ImageStyle;
   indicatorColor?: string;
+  loading?: boolean;
+  disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
+  styles?: StylesType;
+  leftElement?: React.ReactElement;
+  rightElement?: React.ReactElement;
   activeOpacity?: number;
   text?: string;
+  onPress?: () => void;
+  touchableOpacityProps?: Partial<TouchableOpacityProps>;
+  textProps?: Partial<TextProps>;
 }
 
-function Button(props: Props): React.ReactElement {
-  if (props.isDisabled)
-    return (
-      <StyledButtonDisabled style={props.disabledStyle}>
-        <StyledTextDisabled style={props.textStyle}>
-          {props.text}
-        </StyledTextDisabled>
-      </StyledButtonDisabled>
-    );
-
-  if (props.isLoading)
-    return (
-      <StyledButton style={props.style}>
-        <ActivityIndicator size="small" color={props.indicatorColor} />
-      </StyledButton>
-    );
+function Button({
+  testID,
+  disabled,
+  loading,
+  style,
+  styles,
+  indicatorColor = '#ffffff',
+  leftElement,
+  rightElement,
+  activeOpacity = 0.7,
+  text,
+  onPress,
+  touchableOpacityProps,
+  textProps,
+}: Props): React.ReactElement {
+  const ref = useRef<TouchableOpacity>(null);
+  const isHovered = useHover(ref);
+  const [layout, setLayout] = useState<LayoutRectangle>();
 
   return (
     <TouchableOpacity
-      testID={props.testID}
-      activeOpacity={props.activeOpacity}
-      onPress={props.onClick}>
-      <StyledButton style={props.style}>
-        {props.imgLeftSrc ? (
-          <StyledImage style={props.imgLeftStyle} source={props.imgLeftSrc} />
-        ) : null}
-        <StyledText style={props.textStyle}>{props.text}</StyledText>
-      </StyledButton>
+      testID={testID}
+      ref={ref}
+      activeOpacity={activeOpacity}
+      onPress={onPress}
+      delayPressIn={50}
+      disabled={disabled}
+      style={style}
+      {...touchableOpacityProps}>
+      {loading ? (
+        <View
+          style={[
+            defaultStyles.container,
+            styles?.container,
+            {
+              width: layout?.width,
+              height: layout?.height,
+            },
+            isHovered && !disabled && [defaultStyles.hovered, styles?.hovered],
+            disabled && [defaultStyles.disabledButton, styles?.disabledButton],
+          ]}>
+          <ActivityIndicator size="small" color={indicatorColor} />
+        </View>
+      ) : (
+        <View
+          style={[
+            defaultStyles.container,
+            styles?.container,
+            isHovered && !disabled && [defaultStyles.hovered, styles?.hovered],
+            disabled && [defaultStyles.disabledButton, styles?.disabledButton],
+          ]}
+          onLayout={(e) => setLayout(e.nativeEvent.layout)}>
+          {leftElement}
+          <Text
+            style={[
+              defaultStyles.text,
+              styles?.text,
+              disabled && [defaultStyles.disabledText, styles?.disabledText],
+            ]}
+            {...textProps}>
+            {text}
+          </Text>
+          {rightElement}
+        </View>
+      )}
     </TouchableOpacity>
   );
 }
-
-Button.defaultProps = {
-  isLoading: false,
-  isDisabled: false,
-  indicatorColor: 'white',
-  activeOpacity: 0.5,
-};
 
 export default Button;
