@@ -26,9 +26,18 @@ const Container = styled.View`
 `;
 
 const Logo = styled.Image`
-  width: 180px;
-  height: 66.54px;
-  margin-top: 8px;
+  width: 124px;
+  height: 52px;
+  margin: 8px 0;
+  align-self: center;
+
+  ${({theme: {isDesktop}}) =>
+    isDesktop &&
+    css`
+      width: 112px;
+      height: 48px;
+      align-self: stretch;
+    `}
 `;
 
 const LinkWrapper = styled.View`
@@ -49,8 +58,7 @@ const LinkTouch = styled.TouchableOpacity`
 
 const LinkText = styled.Text`
   font-size: 18px;
-  font-weight: 500;
-  padding: 20px;
+  padding: 0 28px;
   color: ${({theme}) => theme.text};
 `;
 
@@ -62,7 +70,7 @@ const SwitchWrapper = styled.View`
   ${({theme: {isDesktop}}) =>
     isDesktop &&
     css`
-      top: 24px;
+      top: 20px;
     `}
 `;
 
@@ -123,7 +131,7 @@ const Header: FC = () => {
             setSwitchOn(val);
             changeThemeType();
           }}
-          onColor={theme.text}
+          onColor={theme.textContrast}
         />
       </SwitchWrapper>
     </Container>

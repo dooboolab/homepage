@@ -47,7 +47,7 @@ function ThemeProvider({children, initialThemeType}: Props): ReactElement {
     setThemeType(newThemeType);
   };
 
-  let theme: DefaultTheme = themeType === ThemeType.DARK ? dark : light;
+  const defaultTheme = themeType === ThemeType.DARK ? dark : light;
 
   const media = {
     isMobile,
@@ -55,16 +55,16 @@ function ThemeProvider({children, initialThemeType}: Props): ReactElement {
     isDesktop,
   };
 
+  const theme: DefaultTheme = {...defaultTheme, ...media};
+
   return (
     <Provider
       value={{
         themeType,
         changeThemeType,
-        theme,
+        theme: defaultTheme,
       }}>
-      <OriginalThemeProvider theme={{...theme, ...media}}>
-        {children}
-      </OriginalThemeProvider>
+      <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
   );
 }

@@ -17,6 +17,7 @@ export const light = {
   titleText: '#000000',
   subText: '#404040',
   text: '#000000',
+  textContrast: '#D3D8E8',
   disabled: colors.mediumGray,
 };
 
@@ -30,6 +31,7 @@ export const dark = {
   titleText: '#8A96DC',
   subText: '#D3D8E8',
   text: '#D3D8E8',
+  textContrast: '#000000',
   disabled: colors.mediumGray,
 };
 
