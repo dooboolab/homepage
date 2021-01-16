@@ -9,7 +9,9 @@ export const createTestElement = (
   child: ReactElement,
   themeType?: ThemeType,
 ): ReactElement => (
-  <RootProvider initialThemeType={themeType}>{child}</RootProvider>
+  <RootProvider initialThemeType={themeType || ThemeType.LIGHT}>
+    {child}
+  </RootProvider>
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

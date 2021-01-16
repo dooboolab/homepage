@@ -1,3 +1,4 @@
+import {Appearance, Platform} from 'react-native';
 import {
   DefaultTheme,
   ThemeProvider as OriginalThemeProvider,
@@ -16,22 +17,28 @@ interface Context {
 
 const [useCtx, Provider] = createCtx<Context>();
 
-export const defaultThemeType: ThemeType = ThemeType.LIGHT;
-
 interface Props {
   children?: ReactElement;
   initialThemeType?: ThemeType;
 }
 
-function ThemeProvider({
-  children,
-  initialThemeType = defaultThemeType,
-}: Props): ReactElement {
+function ThemeProvider({children, initialThemeType}: Props): ReactElement {
   const isMobile = useMediaQuery({maxWidth: 767});
   const isTablet = useMediaQuery({minWidth: 767, maxWidth: 992});
   const isDesktop = useMediaQuery({minWidth: 992});
 
-  const [themeType, setThemeType] = useState(initialThemeType);
+  const colorScheme = Appearance.getColorScheme();
+
+  const isDarkMode = Platform.select({
+    // web: window.matchMedia('(prefers-color-scheme: dark)').matches,
+    default: colorScheme === 'dark',
+  });
+
+  const defaultThemeType = isDarkMode ? ThemeType.DARK : ThemeType.LIGHT;
+
+  const [themeType, setThemeType] = useState(
+    initialThemeType || defaultThemeType,
+  );
 
   const changeThemeType = (): void => {
     const newThemeType =
