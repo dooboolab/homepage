@@ -5,7 +5,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 
-import Main from '../screen/Main';
+import Main from '../screen/main';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {useTheme} from '../../providers/ThemeProvider';
@@ -28,10 +28,10 @@ function RootNavigator(): React.ReactElement {
       theme={{
         colors: {
           background: theme.background,
-          border: theme.border,
-          card: theme.itemBackground,
-          primary: theme.primary,
-          notification: theme.tintColor,
+          border: theme.disabled,
+          card: theme.paper,
+          primary: theme.link,
+          notification: theme.disabled,
           text: theme.text,
         },
         dark: true,

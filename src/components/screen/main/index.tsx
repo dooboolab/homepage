@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 
-import Header from '../shared/Header';
-import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
+import Header from '../../shared/Header';
+import HeroSection from './HeroSection';
+import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import styled from 'styled-components/native';
-import {withScreen} from '../../utils/wrapper';
+import {withScreen} from '../../../utils/wrapper';
 
 const Container = styled.View`
   flex: 1;
@@ -15,10 +16,6 @@ const Container = styled.View`
   justify-content: flex-start;
 `;
 
-const StyledText = styled.Text`
-  color: ${({theme}): string => theme.text};
-`;
-
 type Props = {
   navigation: RootStackNavigationProps<'Main'>;
 };
@@ -27,7 +24,7 @@ const Page: FC<Props> = () => {
   return (
     <Container>
       <Header />
-      <StyledText>Main</StyledText>
+      <HeroSection />
     </Container>
   );
 };
