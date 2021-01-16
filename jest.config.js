@@ -39,7 +39,7 @@ module.exports = {
   testPathIgnorePatterns: ['\\.snap$', '<rootDir>/node_modules/'],
   /* eslint-disable */
   transformIgnorePatterns: [
-    'node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@dooboo-ui)',
+    'node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@dooboo-ui|toggle-switch-react-native)',
   ],
   /* eslint-enable */
   haste: {

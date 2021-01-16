@@ -210,7 +210,9 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexDirection": "column",
+                                "flexWrap": "wrap",
+                                "justifyContent": "center",
                                 "paddingBottom": 0,
                                 "paddingLeft": 24,
                                 "paddingRight": 24,
@@ -233,11 +235,182 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               Array [
                                 Object {
                                   "height": 66.54,
+                                  "marginTop": 8,
                                   "width": 180,
                                 },
                               ]
                             }
                           />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Story
+                              </Text>
+                            </View>
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Work
+                              </Text>
+                            </View>
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Contact
+                              </Text>
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "position": "absolute",
+                                  "right": 20,
+                                  "top": 20,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <View
+                                activeOpacity={0.8}
+                                onPress={[Function]}
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "#D3D8E8",
+                                      "borderRadius": 20,
+                                      "justifyContent": "center",
+                                      "padding": 12,
+                                      "width": 46,
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "alignItems": "center",
+                                      "backgroundColor": "white",
+                                      "borderRadius": 9,
+                                      "elevation": 1.5,
+                                      "height": 18,
+                                      "justifyContent": "center",
+                                      "left": 0,
+                                      "margin": 4,
+                                      "position": "absolute",
+                                      "shadowColor": "#000",
+                                      "shadowOffset": Object {
+                                        "height": 2,
+                                        "width": 0,
+                                      },
+                                      "shadowOpacity": 0.2,
+                                      "shadowRadius": 2.5,
+                                      "transform": Array [
+                                        Object {
+                                          "translateX": 0,
+                                        },
+                                      ],
+                                      "width": 18,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
                         </View>
                         <Text
                           style={
@@ -487,7 +660,9 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "flexDirection": "row",
+                                "flexDirection": "column",
+                                "flexWrap": "wrap",
+                                "justifyContent": "center",
                                 "paddingBottom": 0,
                                 "paddingLeft": 24,
                                 "paddingRight": 24,
@@ -510,11 +685,182 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               Array [
                                 Object {
                                   "height": 66.54,
+                                  "marginTop": 8,
                                   "width": 180,
                                 },
                               ]
                             }
                           />
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Story
+                              </Text>
+                            </View>
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Work
+                              </Text>
+                            </View>
+                            <View
+                              onPress={[Function]}
+                              style={
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginRight": 20,
+                                  },
+                                ]
+                              }
+                            >
+                              <Text
+                                style={
+                                  Array [
+                                    Object {
+                                      "fontSize": 18,
+                                      "fontWeight": "500",
+                                      "paddingBottom": 20,
+                                      "paddingLeft": 20,
+                                      "paddingRight": 20,
+                                      "paddingTop": 20,
+                                    },
+                                  ]
+                                }
+                              >
+                                Contact
+                              </Text>
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Array [
+                                Object {
+                                  "position": "absolute",
+                                  "right": 20,
+                                  "top": 20,
+                                },
+                              ]
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "alignItems": "center",
+                                  "flexDirection": "row",
+                                }
+                              }
+                            >
+                              <View
+                                activeOpacity={0.8}
+                                onPress={[Function]}
+                                style={
+                                  Array [
+                                    Object {
+                                      "backgroundColor": "#ecf0f1",
+                                      "borderRadius": 20,
+                                      "justifyContent": "center",
+                                      "padding": 12,
+                                      "width": 46,
+                                    },
+                                    Object {},
+                                  ]
+                                }
+                              >
+                                <View
+                                  style={
+                                    Object {
+                                      "alignItems": "center",
+                                      "backgroundColor": "white",
+                                      "borderRadius": 9,
+                                      "elevation": 1.5,
+                                      "height": 18,
+                                      "justifyContent": "center",
+                                      "left": 0,
+                                      "margin": 4,
+                                      "position": "absolute",
+                                      "shadowColor": "#000",
+                                      "shadowOffset": Object {
+                                        "height": 2,
+                                        "width": 0,
+                                      },
+                                      "shadowOpacity": 0.2,
+                                      "shadowRadius": 2.5,
+                                      "transform": Array [
+                                        Object {
+                                          "translateX": 0,
+                                        },
+                                      ],
+                                      "width": 18,
+                                    }
+                                  }
+                                />
+                              </View>
+                            </View>
+                          </View>
                         </View>
                         <Text
                           style={

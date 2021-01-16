@@ -10,6 +10,16 @@ let props: any;
 let component: ReactElement;
 let testingLib: RenderAPI;
 
+jest.mock('@react-navigation/native', () => {
+  return {
+    useNavigation: (): Record<string, unknown> => {
+      return {
+        navigate: jest.fn(),
+      };
+    },
+  };
+});
+
 describe('Render', () => {
   beforeEach(() => {
     props = createTestProps();

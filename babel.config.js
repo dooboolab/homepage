@@ -13,6 +13,7 @@ module.exports = {
   ],
   plugins: [
     'babel-plugin-fbt-runtime',
+    '@babel/plugin-syntax-class-properties',
     [
       'babel-plugin-fbt',
       {

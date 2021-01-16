@@ -1,6 +1,9 @@
 module.exports = {
   babel: {
-    presets: ['@babel/preset-typescript'],
+    presets: [
+      'module:metro-react-native-babel-preset',
+      '@babel/preset-typescript',
+    ],
     plugins: [
       [
         'babel-plugin-fbt',
@@ -9,6 +12,7 @@ module.exports = {
           extraOptions: {__self: true},
         },
       ],
+      '@babel/plugin-syntax-class-properties',
       'babel-plugin-fbt-runtime',
     ],
   },
