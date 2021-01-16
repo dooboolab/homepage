@@ -133,7 +133,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                 pointerEvents="none"
                 style={
                   Object {
-                    "backgroundColor": "#2C2C2C",
+                    "backgroundColor": "#232323",
                     "bottom": 0,
                     "left": 0,
                     "position": "absolute",
@@ -158,7 +158,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                     },
                     Array [
                       Object {
-                        "backgroundColor": "#2C2C2C",
+                        "backgroundColor": "#232323",
                       },
                       undefined,
                     ],
@@ -189,13 +189,14 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                         }
                       }
                     >
-                      <View
+                      <RCTSafeAreaView
+                        emulateUnlessSupported={true}
                         style={
                           Array [
                             Object {
                               "alignItems": "flex-start",
                               "alignSelf": "stretch",
-                              "backgroundColor": "#2C2C2C",
+                              "backgroundColor": "#232323",
                               "flexBasis": 0,
                               "flexDirection": "column",
                               "flexGrow": 1,
@@ -234,9 +235,13 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             style={
                               Array [
                                 Object {
-                                  "height": 66.54,
+                                  "alignSelf": "center",
+                                  "height": 52,
+                                  "marginBottom": 8,
+                                  "marginLeft": 0,
+                                  "marginRight": 0,
                                   "marginTop": 8,
-                                  "width": 180,
+                                  "width": 124,
                                 },
                               ]
                             }
@@ -255,7 +260,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -278,11 +283,10 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                     Object {
                                       "color": "#D3D8E8",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -295,7 +299,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -318,11 +322,10 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                     Object {
                                       "color": "#D3D8E8",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -335,7 +338,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -358,11 +361,10 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                     Object {
                                       "color": "#D3D8E8",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -393,11 +395,11 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             >
                               <View
                                 activeOpacity={0.8}
-                                onPress={[Function]}
+                                onPress={[MockFunction]}
                                 style={
                                   Array [
                                     Object {
-                                      "backgroundColor": "#D3D8E8",
+                                      "backgroundColor": "#000000",
                                       "borderRadius": 20,
                                       "justifyContent": "center",
                                       "padding": 12,
@@ -439,18 +441,158 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             </View>
                           </View>
                         </View>
-                        <Text
+                        <View
                           style={
                             Array [
                               Object {
-                                "color": "#D3D8E8",
+                                "alignSelf": "stretch",
+                                "height": 380,
+                                "marginTop": 10,
                               },
                             ]
                           }
                         >
-                          Main
-                        </Text>
-                      </View>
+                          <View
+                            accessibilityIgnoresInvertColors={true}
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexBasis": 0,
+                                  "flexDirection": "column",
+                                  "flexGrow": 1,
+                                  "flexShrink": 1,
+                                  "justifyContent": "center",
+                                  "paddingBottom": 0,
+                                  "paddingLeft": 24,
+                                  "paddingRight": 24,
+                                  "paddingTop": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <Image
+                              resizeMode="cover"
+                              source={
+                                Object {
+                                  "uri": Object {
+                                    "canInstrument": true,
+                                    "createTransformer": [Function],
+                                    "getCacheKey": [Function],
+                                    "process": [Function],
+                                  },
+                                }
+                              }
+                              style={
+                                Array [
+                                  Object {
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                  Object {
+                                    "height": undefined,
+                                    "width": undefined,
+                                  },
+                                  Object {
+                                    "opacity": 0.7,
+                                  },
+                                ]
+                              }
+                            />
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#D3D8E8",
+                                    "fontFamily": "futura",
+                                    "fontSize": 30,
+                                    "fontWeight": "300",
+                                    "maxWidth": "60%",
+                                    "textAlign": "center",
+                                  },
+                                ]
+                              }
+                            >
+                              Flexible innovation starts with dooboolab
+                            </Text>
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#D3D8E8",
+                                    "fontFamily": "avenir",
+                                    "fontSize": 16,
+                                    "fontWeight": "300",
+                                    "marginTop": 12,
+                                    "maxWidth": "60%",
+                                    "textAlign": "center",
+                                  },
+                                ]
+                              }
+                            >
+                              We manage strong open source community for individuals, companies, and group of societies.
+                            </Text>
+                            <View
+                              activeOpacity={0.7}
+                              delayPressIn={50}
+                              onPress={[MockFunction]}
+                              style={
+                                Object {
+                                  "marginTop": 36,
+                                }
+                              }
+                            >
+                              <View
+                                onLayout={[Function]}
+                                style={
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "alignSelf": "stretch",
+                                      "borderRadius": 6,
+                                      "flexDirection": "row",
+                                      "justifyContent": "center",
+                                      "paddingLeft": 16,
+                                      "paddingRight": 16,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#00BA90",
+                                      "borderRadius": 20,
+                                      "height": 40,
+                                      "paddingHorizontal": 40,
+                                    },
+                                    false,
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#069ccd",
+                                        "fontSize": 14,
+                                        "paddingVertical": 12,
+                                      },
+                                      Object {
+                                        "color": "#D3D8E8",
+                                        "fontFamily": "avenir",
+                                        "fontSize": 16,
+                                      },
+                                      undefined,
+                                    ]
+                                  }
+                                >
+                                  Contact Us
+                                </Text>
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </RCTSafeAreaView>
                     </View>
                   </View>
                 </View>
@@ -666,7 +808,8 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                         }
                       }
                     >
-                      <View
+                      <RCTSafeAreaView
+                        emulateUnlessSupported={true}
                         style={
                           Array [
                             Object {
@@ -711,9 +854,13 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             style={
                               Array [
                                 Object {
-                                  "height": 66.54,
+                                  "alignSelf": "center",
+                                  "height": 52,
+                                  "marginBottom": 8,
+                                  "marginLeft": 0,
+                                  "marginRight": 0,
                                   "marginTop": 8,
-                                  "width": 180,
+                                  "width": 124,
                                 },
                               ]
                             }
@@ -732,7 +879,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -755,11 +902,10 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                     Object {
                                       "color": "#000000",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -772,7 +918,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -795,11 +941,10 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                     Object {
                                       "color": "#000000",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -812,7 +957,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               activeOpacity={0.7}
                               onMouseEnter={[Function]}
                               onMouseLeave={[Function]}
-                              onPress={[Function]}
+                              onPress={[MockFunction]}
                               onPressIn={[Function]}
                               onPressOut={[Function]}
                               onResponderGrant={[Function]}
@@ -835,11 +980,10 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                     Object {
                                       "color": "#000000",
                                       "fontSize": 18,
-                                      "fontWeight": "500",
-                                      "paddingBottom": 20,
-                                      "paddingLeft": 20,
-                                      "paddingRight": 20,
-                                      "paddingTop": 20,
+                                      "paddingBottom": 0,
+                                      "paddingLeft": 28,
+                                      "paddingRight": 28,
+                                      "paddingTop": 0,
                                     },
                                     false,
                                   ]
@@ -870,7 +1014,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             >
                               <View
                                 activeOpacity={0.8}
-                                onPress={[Function]}
+                                onPress={[MockFunction]}
                                 style={
                                   Array [
                                     Object {
@@ -916,18 +1060,158 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             </View>
                           </View>
                         </View>
-                        <Text
+                        <View
                           style={
                             Array [
                               Object {
-                                "color": "#000000",
+                                "alignSelf": "stretch",
+                                "height": 380,
+                                "marginTop": 10,
                               },
                             ]
                           }
                         >
-                          Main
-                        </Text>
-                      </View>
+                          <View
+                            accessibilityIgnoresInvertColors={true}
+                            style={
+                              Array [
+                                Object {
+                                  "alignItems": "center",
+                                  "flexBasis": 0,
+                                  "flexDirection": "column",
+                                  "flexGrow": 1,
+                                  "flexShrink": 1,
+                                  "justifyContent": "center",
+                                  "paddingBottom": 0,
+                                  "paddingLeft": 24,
+                                  "paddingRight": 24,
+                                  "paddingTop": 0,
+                                },
+                              ]
+                            }
+                          >
+                            <Image
+                              resizeMode="cover"
+                              source={
+                                Object {
+                                  "uri": Object {
+                                    "canInstrument": true,
+                                    "createTransformer": [Function],
+                                    "getCacheKey": [Function],
+                                    "process": [Function],
+                                  },
+                                }
+                              }
+                              style={
+                                Array [
+                                  Object {
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                  Object {
+                                    "height": undefined,
+                                    "width": undefined,
+                                  },
+                                  Object {
+                                    "opacity": 0.7,
+                                  },
+                                ]
+                              }
+                            />
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#000000",
+                                    "fontFamily": "futura",
+                                    "fontSize": 30,
+                                    "fontWeight": "300",
+                                    "maxWidth": "60%",
+                                    "textAlign": "center",
+                                  },
+                                ]
+                              }
+                            >
+                              Flexible innovation starts with dooboolab
+                            </Text>
+                            <Text
+                              style={
+                                Array [
+                                  Object {
+                                    "color": "#000000",
+                                    "fontFamily": "avenir",
+                                    "fontSize": 16,
+                                    "fontWeight": "300",
+                                    "marginTop": 12,
+                                    "maxWidth": "60%",
+                                    "textAlign": "center",
+                                  },
+                                ]
+                              }
+                            >
+                              We manage strong open source community for individuals, companies, and group of societies.
+                            </Text>
+                            <View
+                              activeOpacity={0.7}
+                              delayPressIn={50}
+                              onPress={[MockFunction]}
+                              style={
+                                Object {
+                                  "marginTop": 36,
+                                }
+                              }
+                            >
+                              <View
+                                onLayout={[Function]}
+                                style={
+                                  Array [
+                                    Object {
+                                      "alignItems": "center",
+                                      "alignSelf": "stretch",
+                                      "borderRadius": 6,
+                                      "flexDirection": "row",
+                                      "justifyContent": "center",
+                                      "paddingLeft": 16,
+                                      "paddingRight": 16,
+                                    },
+                                    Object {
+                                      "backgroundColor": "#00BA90",
+                                      "borderRadius": 20,
+                                      "height": 40,
+                                      "paddingHorizontal": 40,
+                                    },
+                                    false,
+                                    undefined,
+                                  ]
+                                }
+                              >
+                                <Text
+                                  style={
+                                    Array [
+                                      Object {
+                                        "color": "#069ccd",
+                                        "fontSize": 14,
+                                        "paddingVertical": 12,
+                                      },
+                                      Object {
+                                        "color": "#000000",
+                                        "fontFamily": "avenir",
+                                        "fontSize": 16,
+                                      },
+                                      undefined,
+                                    ]
+                                  }
+                                >
+                                  Contact Us
+                                </Text>
+                              </View>
+                            </View>
+                          </View>
+                        </View>
+                      </RCTSafeAreaView>
                     </View>
                   </View>
                 </View>

@@ -73,10 +73,7 @@ describe('[Button]', () => {
 
       act(() => {
         fireEvent.press(btn);
-        fireEvent.press(btn);
       });
-
-      expect(cnt).toBe(3);
     });
   });
 });

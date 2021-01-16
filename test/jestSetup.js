@@ -15,7 +15,11 @@ jest.mock(
     const {View} = require('react-native');
 
     const MockTouchable = (props): ReactElement => {
-      return <View {...props} />;
+      const moreProps = {
+        onPress: jest.fn(),
+      };
+
+      return <View {...props} {...moreProps} />;
     };
 
     MockTouchable.displayName = 'TouchableOpacity';
