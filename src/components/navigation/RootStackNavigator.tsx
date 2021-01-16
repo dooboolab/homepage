@@ -38,8 +38,16 @@ function RootNavigator(): React.ReactElement {
       }}>
       <Stack.Navigator
         initialRouteName="Main"
-        screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Main" component={Main} />
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen
+          name="Main"
+          component={Main}
+          options={{
+            title: 'dooboolab',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

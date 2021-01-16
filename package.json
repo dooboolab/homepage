@@ -14,7 +14,7 @@
     "codecov": "codecov",
     "upgrade": "react-native-git-upgrade && npm install --save react-native",
     "upgrade:major": "react-native upgrade",
-    "test": "jest",
+    "test": "jest --runInBand",
     "start:packager": "node_modules/react-native/packager/packager.sh",
     "start:reset": "react-native start --reset-cache",
     "web": "craco start",

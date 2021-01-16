@@ -3,6 +3,7 @@ import React, {FC, ReactElement, useState} from 'react';
 import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
+import Hoverable from '../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -41,7 +42,7 @@ const LinkWrapper = styled.View`
     `}
 `;
 
-const Link = styled.TouchableOpacity`
+const LinkTouch = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
 `;
@@ -64,26 +65,43 @@ const SwitchWrapper = styled.View`
     `}
 `;
 
-const Header: FC = () => {
+type LinkProps = {
+  url: string;
+  text: string;
+  selected?: boolean;
+};
+
+const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
   const navigation = useNavigation();
+  const {theme} = useTheme();
+
+  return (
+    <Hoverable>
+      {(isHovered) => (
+        <LinkTouch
+          style={{marginRight: 20}}
+          activeOpacity={0.7}
+          onPress={() => {
+            navigation.navigate('');
+          }}>
+          <LinkText
+            style={
+              isHovered && {
+                color: theme.heading,
+                textDecorationLine: 'underline',
+              }
+            }>
+            {text}
+          </LinkText>
+        </LinkTouch>
+      )}
+    </Hoverable>
+  );
+};
+
+const Header: FC = () => {
   const {theme, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
-
-  const renderLink = (
-    url: string,
-    text: string,
-    selected?: boolean,
-  ): ReactElement => {
-    return (
-      <Link
-        style={{marginRight: 20}}
-        onPress={() => {
-          navigation.navigate('');
-        }}>
-        <LinkText>{text}</LinkText>
-      </Link>
-    );
-  };
 
   return (
     <Container>
@@ -93,9 +111,9 @@ const Header: FC = () => {
         }
       />
       <LinkWrapper>
-        {renderLink('', 'Story')}
-        {renderLink('', 'Work')}
-        {renderLink('', 'Contact')}
+        <Link text="Story" url="" />
+        <Link text="Work" url="" />
+        <Link text="Contact" url="" />
       </LinkWrapper>
       <SwitchWrapper>
         <ToggleSwitch

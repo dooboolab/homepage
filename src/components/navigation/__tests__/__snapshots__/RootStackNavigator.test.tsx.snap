@@ -252,7 +252,14 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             }
                           >
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -276,6 +283,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
@@ -283,7 +291,14 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               </Text>
                             </View>
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -307,6 +322,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
@@ -314,7 +330,14 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                               </Text>
                             </View>
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -338,6 +361,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
@@ -702,7 +726,14 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             }
                           >
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -726,6 +757,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
@@ -733,7 +765,14 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               </Text>
                             </View>
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -757,6 +796,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
@@ -764,7 +804,14 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                               </Text>
                             </View>
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
                               onPress={[Function]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
                                 Array [
                                   Object {
@@ -788,6 +835,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       "paddingRight": 20,
                                       "paddingTop": 20,
                                     },
+                                    false,
                                   ]
                                 }
                               >
