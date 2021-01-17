@@ -1,7 +1,7 @@
+import Header, {EmptyHeader} from './Header';
 import React, {FC} from 'react';
 
 import CommunitySection from './CommunitySection';
-import Header from './Header';
 import HeroSection from './HeroSection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import StorySection from './StorySection';
@@ -26,11 +26,12 @@ type Props = {
 const Page: FC<Props> = () => {
   return (
     <Container>
-      <Header />
+      <EmptyHeader />
       <HeroSection />
       <StorySection />
       <CommunitySection />
       <WorkSection />
+      <Header />
     </Container>
   );
 };

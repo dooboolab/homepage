@@ -13,12 +13,6 @@ const Container = styled.View`
   min-height: 380px;
   align-self: stretch;
   margin-top: 10px;
-
-  ${({theme: {isDesktop}}) =>
-    isDesktop &&
-    css`
-      margin: 0;
-    `}
 `;
 
 const BackgroundImage = styled.ImageBackground`

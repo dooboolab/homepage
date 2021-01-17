@@ -8,8 +8,10 @@ import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const Container = styled.View`
+  position: fixed;
   width: 100%;
   padding: 0 24px;
+  background-color: ${({theme}) => theme.background};
 
   flex-direction: column;
   align-items: center;
@@ -109,6 +111,39 @@ const Header: FC = () => {
 
   return (
     <Container>
+      <Logo
+        source={
+          themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
+        }
+      />
+      <LinkWrapper>
+        <Link text="Story" url="" />
+        <Link text="Work" url="" />
+        <Link text="Contact" url="" />
+      </LinkWrapper>
+      <SwitchWrapper>
+        <ToggleSwitch
+          isOn={switchOn}
+          onToggle={(val: boolean) => {
+            setSwitchOn(val);
+            changeThemeType();
+          }}
+          onColor={theme.textContrast}
+        />
+      </SwitchWrapper>
+    </Container>
+  );
+};
+
+export const EmptyHeader: FC = () => {
+  const {theme, changeThemeType, themeType} = useTheme();
+  const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
+
+  return (
+    <Container
+      style={{
+        position: 'relative',
+      }}>
       <Logo
         source={
           themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
