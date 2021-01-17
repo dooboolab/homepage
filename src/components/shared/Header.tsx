@@ -6,7 +6,11 @@ import styled, {css} from 'styled-components/native';
 import Hoverable from '../../utils/Hoverable';
 import {ScrollView} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native';
+import {fbt} from 'fbt';
 import {useNavigation} from '@react-navigation/native';
+
+//eslint-disable-next-line
+fbt;
 
 const Container = styled.View`
   width: 100%;
@@ -125,7 +129,7 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
             onPress={() =>
               hideMenus
                 ? navigation.navigate('Home')
-                : scrollRef?.current?.scrollTo(0)
+                : scrollRef?.current?.scrollTo({y: 0})
             }>
             <Logo
               style={
@@ -150,21 +154,21 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
         {!hideMenus && (
           <>
             <Link
-              text="Story"
+              text={fbt('Story', 'story')}
               onPress={() => {
-                scrollRef?.current?.scrollTo(400);
+                scrollRef?.current?.scrollTo({y: 400});
               }}
             />
             <Link
-              text="Work"
+              text={fbt('Work', 'work')}
               onPress={() => {
-                scrollRef?.current?.scrollTo(1720);
+                scrollRef?.current?.scrollTo({y: 1720});
               }}
             />
             <Link
-              text="Contact"
+              text={fbt('Contact', 'contact')}
               onPress={() => {
-                scrollRef?.current?.scrollTo(2420);
+                scrollRef?.current?.scrollTo({y: 2420});
               }}
             />
           </>

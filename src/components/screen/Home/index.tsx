@@ -36,7 +36,7 @@ const Page: FC<Props> = () => {
       <ScrollView ref={scrollRef}>
         <HeroSection
           onPressContactUs={() => {
-            scrollRef?.current?.scrollTo(2440);
+            scrollRef?.current?.scrollTo({y: 2440});
           }}
         />
         <StorySection />

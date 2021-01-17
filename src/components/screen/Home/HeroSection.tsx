@@ -75,7 +75,7 @@ const HeroSection: FC<Props> = ({onPressContactUs}) => {
   return (
     <Container>
       <BackgroundImage
-        source={{uri: IMG_SYMBOL}}
+        source={IMG_SYMBOL}
         resizeMode="cover"
         imageStyle={{
           opacity: 0.7,

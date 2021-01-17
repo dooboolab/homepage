@@ -14,7 +14,7 @@ import {withScreen} from '../../utils/wrapper';
 // eslint-disable-next-line
 fbt;
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};
@@ -140,7 +140,7 @@ const VisionAndMission: FC<Props> = () => {
       <ScrollView>
         <ImageWrapper>
           <BackgroundImage
-            source={{uri: IMG_SYMBOL}}
+            source={IMG_SYMBOL}
             resizeMode="cover"
             imageStyle={{
               opacity: 0.7,

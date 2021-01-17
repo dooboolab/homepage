@@ -30,6 +30,7 @@ export const light = {
   textContrast: '#D3D8E8',
   disabled: colors.mediumGray,
   border: '#EDEDED',
+  placeholder: '#999999',
 };
 
 export type Theme = typeof light;
@@ -47,6 +48,7 @@ export const dark = {
   textContrast: '#000000',
   disabled: colors.mediumGray,
   border: '#333333',
+  placeholder: '#444444',
 };
 
 export const theme = {

@@ -1,5 +1,15 @@
 /// <reference path="globals.d.ts" />
 
+declare module '@env' {
+  export const apiKey: string;
+  export const appId: string;
+  export const authDomain: string;
+  export const databaseURL: string;
+  export const messagingSenderId: string;
+  export const projectId: string;
+  export const storageBucket: string;
+}
+
 declare module 'fbt' {
   export const GenderConst: FBT.GenderConst;
   export const IntlVariations: FBT.IntlVariations;
@@ -8,14 +18,14 @@ declare module 'fbt' {
   // These exports (Fbt*) isn't real! It is only syntax abstraction
   // https://github.com/facebookincubator/fbt/blob/8607c1f2798ef18c6142a2cf1c5a9351c6d7df69/transform/babel-plugin-fbt/FbtUtil.js#L28-L40
   export const FbtEnum: React.FC<{
-    'enum-range': Array<string> | { [enumKey: string]: string };
+    'enum-range': Array<string> | {[enumKey: string]: string};
     value: string;
   }>;
   export const FbtParam: React.FC<
-    FBT.ParamOptions & { name: string; children: React.ReactNode }
+    FBT.ParamOptions & {name: string; children: React.ReactNode}
   >;
   export const FbtPlural: React.FC<
-    FBT.PluralOptions & { count: number; children: string }
+    FBT.PluralOptions & {count: number; children: string}
   >;
   export const FbtPronoun: React.FC<
     FBT.PronounOptions & {
@@ -50,7 +60,7 @@ declare module 'fbt' {
       options?: FBT.PluralOptions,
     ): FBT.FbtResult;
     enum<
-      Range extends { [enumKey: string]: string },
+      Range extends {[enumKey: string]: string},
       RangeKeys extends keyof Range
     >(
       enumKey: RangeKeys,
@@ -64,7 +74,10 @@ declare module 'fbt' {
     ): FBT.FbtResult;
   }
 
-  export const init: (options: { translations: FBT.Translations, hooks: { getViewerContext: () => any} }) => void;
+  export const init: (options: {
+    translations: FBT.Translations;
+    hooks: {getViewerContext: () => any};
+  }) => void;
 
   export const fbt: Fbt;
 }

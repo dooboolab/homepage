@@ -497,12 +497,10 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                   resizeMode="cover"
                                   source={
                                     Object {
-                                      "uri": Object {
-                                        "canInstrument": true,
-                                        "createTransformer": [Function],
-                                        "getCacheKey": [Function],
-                                        "process": [Function],
-                                      },
+                                      "canInstrument": true,
+                                      "createTransformer": [Function],
+                                      "getCacheKey": [Function],
+                                      "process": [Function],
                                     }
                                   }
                                   style={
@@ -911,10 +909,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                               "paddingRight": 16,
                                             },
                                             Object {
+                                              "alignItems": "center",
                                               "borderColor": "#00BA90",
                                               "borderRadius": 12,
                                               "borderWidth": 2,
-                                              "height": 24,
+                                              "height": 26,
+                                              "justifyContent": "center",
                                               "paddingHorizontal": 20,
                                             },
                                             false,
@@ -931,9 +931,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
+                                                "alignSelf": "center",
                                                 "color": "#00BA90",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 10,
+                                                "paddingVertical": 0,
+                                                "textAlign": "center",
                                               },
                                               undefined,
                                             ]
@@ -1028,10 +1031,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                               "paddingRight": 16,
                                             },
                                             Object {
+                                              "alignItems": "center",
                                               "borderColor": "#00BA90",
                                               "borderRadius": 12,
                                               "borderWidth": 2,
-                                              "height": 24,
+                                              "height": 26,
+                                              "justifyContent": "center",
                                               "paddingHorizontal": 20,
                                             },
                                             false,
@@ -1048,9 +1053,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
+                                                "alignSelf": "center",
                                                 "color": "#00BA90",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 10,
+                                                "paddingVertical": 0,
+                                                "textAlign": "center",
                                               },
                                               undefined,
                                             ]
@@ -1283,10 +1291,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                             "paddingRight": 16,
                                           },
                                           Object {
+                                            "alignItems": "center",
                                             "borderColor": "#00BA90",
                                             "borderRadius": 12,
                                             "borderWidth": 2,
-                                            "height": 24,
+                                            "height": 26,
+                                            "justifyContent": "center",
                                             "paddingHorizontal": 20,
                                           },
                                           false,
@@ -1303,9 +1313,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                               "paddingVertical": 12,
                                             },
                                             Object {
+                                              "alignSelf": "center",
                                               "color": "#00BA90",
                                               "fontFamily": "avenir",
                                               "fontSize": 10,
+                                              "paddingVertical": 0,
+                                              "textAlign": "center",
                                             },
                                             undefined,
                                           ]
@@ -1402,10 +1415,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                             "paddingRight": 16,
                                           },
                                           Object {
+                                            "alignItems": "center",
                                             "borderColor": "#00BA90",
                                             "borderRadius": 12,
                                             "borderWidth": 2,
-                                            "height": 24,
+                                            "height": 26,
+                                            "justifyContent": "center",
                                             "paddingHorizontal": 20,
                                           },
                                           false,
@@ -1422,9 +1437,12 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                               "paddingVertical": 12,
                                             },
                                             Object {
+                                              "alignSelf": "center",
                                               "color": "#00BA90",
                                               "fontFamily": "avenir",
                                               "fontSize": 10,
+                                              "paddingVertical": 0,
+                                              "textAlign": "center",
                                             },
                                             undefined,
                                           ]
@@ -1471,12 +1489,10 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                   resizeMode="cover"
                                   source={
                                     Object {
-                                      "uri": Object {
-                                        "canInstrument": true,
-                                        "createTransformer": [Function],
-                                        "getCacheKey": [Function],
-                                        "process": [Function],
-                                      },
+                                      "canInstrument": true,
+                                      "createTransformer": [Function],
+                                      "getCacheKey": [Function],
+                                      "process": [Function],
                                     }
                                   }
                                   style={
@@ -1544,15 +1560,8 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                     <TextInput
                                       allowFontScaling={true}
                                       onChangeText={[Function]}
-                                      placeholder={
-                                        <FbtComponent
-                                          content={
-                                            Array [
-                                              "Please write your name",
-                                            ]
-                                          }
-                                        />
-                                      }
+                                      placeholder="Please write your name"
+                                      placeholderTextColor="#444444"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -1580,6 +1589,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       allowFontScaling={true}
                                       onChangeText={[Function]}
                                       placeholder="email@email.com"
+                                      placeholderTextColor="#444444"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -1608,15 +1618,8 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       multiline={true}
                                       numberOfLines={10}
                                       onChangeText={[Function]}
-                                      placeholder={
-                                        <FbtComponent
-                                          content={
-                                            Array [
-                                              "Please tell us your stories",
-                                            ]
-                                          }
-                                        />
-                                      }
+                                      placeholder="Please tell us your stories"
+                                      placeholderTextColor="#444444"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -1683,7 +1686,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
-                                                "color": "#000000",
+                                                "color": "#D3D8E8",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 16,
                                               },
@@ -1745,7 +1748,11 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                       "textAlign": "center",
                                     },
                                     Object {
-                                      "lineHeight": 60,
+                                      "alignItems": "center",
+                                      "flexDirection": "row",
+                                      "justifyContent": "center",
+                                      "marginVertical": 12,
+                                      "textAlign": "center",
                                     },
                                   ]
                                 }
@@ -2498,12 +2505,10 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                   resizeMode="cover"
                                   source={
                                     Object {
-                                      "uri": Object {
-                                        "canInstrument": true,
-                                        "createTransformer": [Function],
-                                        "getCacheKey": [Function],
-                                        "process": [Function],
-                                      },
+                                      "canInstrument": true,
+                                      "createTransformer": [Function],
+                                      "getCacheKey": [Function],
+                                      "process": [Function],
                                     }
                                   }
                                   style={
@@ -2912,10 +2917,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                               "paddingRight": 16,
                                             },
                                             Object {
+                                              "alignItems": "center",
                                               "borderColor": "#00BA90",
                                               "borderRadius": 12,
                                               "borderWidth": 2,
-                                              "height": 24,
+                                              "height": 26,
+                                              "justifyContent": "center",
                                               "paddingHorizontal": 20,
                                             },
                                             false,
@@ -2932,9 +2939,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
+                                                "alignSelf": "center",
                                                 "color": "#00BA90",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 10,
+                                                "paddingVertical": 0,
+                                                "textAlign": "center",
                                               },
                                               undefined,
                                             ]
@@ -3029,10 +3039,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                               "paddingRight": 16,
                                             },
                                             Object {
+                                              "alignItems": "center",
                                               "borderColor": "#00BA90",
                                               "borderRadius": 12,
                                               "borderWidth": 2,
-                                              "height": 24,
+                                              "height": 26,
+                                              "justifyContent": "center",
                                               "paddingHorizontal": 20,
                                             },
                                             false,
@@ -3049,9 +3061,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
+                                                "alignSelf": "center",
                                                 "color": "#00BA90",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 10,
+                                                "paddingVertical": 0,
+                                                "textAlign": "center",
                                               },
                                               undefined,
                                             ]
@@ -3284,10 +3299,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                             "paddingRight": 16,
                                           },
                                           Object {
+                                            "alignItems": "center",
                                             "borderColor": "#00BA90",
                                             "borderRadius": 12,
                                             "borderWidth": 2,
-                                            "height": 24,
+                                            "height": 26,
+                                            "justifyContent": "center",
                                             "paddingHorizontal": 20,
                                           },
                                           false,
@@ -3304,9 +3321,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                               "paddingVertical": 12,
                                             },
                                             Object {
+                                              "alignSelf": "center",
                                               "color": "#00BA90",
                                               "fontFamily": "avenir",
                                               "fontSize": 10,
+                                              "paddingVertical": 0,
+                                              "textAlign": "center",
                                             },
                                             undefined,
                                           ]
@@ -3403,10 +3423,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                             "paddingRight": 16,
                                           },
                                           Object {
+                                            "alignItems": "center",
                                             "borderColor": "#00BA90",
                                             "borderRadius": 12,
                                             "borderWidth": 2,
-                                            "height": 24,
+                                            "height": 26,
+                                            "justifyContent": "center",
                                             "paddingHorizontal": 20,
                                           },
                                           false,
@@ -3423,9 +3445,12 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                               "paddingVertical": 12,
                                             },
                                             Object {
+                                              "alignSelf": "center",
                                               "color": "#00BA90",
                                               "fontFamily": "avenir",
                                               "fontSize": 10,
+                                              "paddingVertical": 0,
+                                              "textAlign": "center",
                                             },
                                             undefined,
                                           ]
@@ -3472,12 +3497,10 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                   resizeMode="cover"
                                   source={
                                     Object {
-                                      "uri": Object {
-                                        "canInstrument": true,
-                                        "createTransformer": [Function],
-                                        "getCacheKey": [Function],
-                                        "process": [Function],
-                                      },
+                                      "canInstrument": true,
+                                      "createTransformer": [Function],
+                                      "getCacheKey": [Function],
+                                      "process": [Function],
                                     }
                                   }
                                   style={
@@ -3545,15 +3568,8 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                     <TextInput
                                       allowFontScaling={true}
                                       onChangeText={[Function]}
-                                      placeholder={
-                                        <FbtComponent
-                                          content={
-                                            Array [
-                                              "Please write your name",
-                                            ]
-                                          }
-                                        />
-                                      }
+                                      placeholder="Please write your name"
+                                      placeholderTextColor="#999999"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -3581,6 +3597,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       allowFontScaling={true}
                                       onChangeText={[Function]}
                                       placeholder="email@email.com"
+                                      placeholderTextColor="#999999"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -3609,15 +3626,8 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       multiline={true}
                                       numberOfLines={10}
                                       onChangeText={[Function]}
-                                      placeholder={
-                                        <FbtComponent
-                                          content={
-                                            Array [
-                                              "Please tell us your stories",
-                                            ]
-                                          }
-                                        />
-                                      }
+                                      placeholder="Please tell us your stories"
+                                      placeholderTextColor="#999999"
                                       rejectResponderTermination={true}
                                       style={
                                         Array [
@@ -3684,7 +3694,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
-                                                "color": "#D3D8E8",
+                                                "color": "#000000",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 16,
                                               },
@@ -3746,7 +3756,11 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                       "textAlign": "center",
                                     },
                                     Object {
-                                      "lineHeight": 60,
+                                      "alignItems": "center",
+                                      "flexDirection": "row",
+                                      "justifyContent": "center",
+                                      "marginVertical": 12,
+                                      "textAlign": "center",
                                     },
                                   ]
                                 }

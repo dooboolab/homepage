@@ -1,10 +1,13 @@
+import {Alert, Platform} from 'react-native';
 import React, {FC, useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Button from '../../shared/Button';
 import {IMG_LABTOP} from '../../../utils/Icons';
 import {fbt} from 'fbt';
+import firebase from 'firebase/app';
 import {useTheme} from '../../../providers/ThemeProvider';
+import {validateEmail} from '../../../utils/functions';
 
 // eslint-disable-next-line
 fbt;
@@ -88,7 +91,7 @@ const Input = styled.TextInput`
   margin-bottom: 12px;
   padding: 16px 18px;
   border-radius: 10px;
-  color: ${({theme}) => theme.text};
+  color: ${({theme}) => theme.accent};
   background-color: ${({theme}) => theme.textContrast};
   opacity: 0.6;
   color: ${({theme}) => theme.text};
@@ -100,14 +103,66 @@ type Props = {};
 
 const ContactSection: FC<Props> = () => {
   const {theme, colors} = useTheme();
+  const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [story, setStory] = useState<string>('');
 
+  const sendContact = async (): Promise<void> => {
+    if (!name || !email || !story) return;
+
+    if (!validateEmail(email))
+      return Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(
+          fbt('Email is not a valid email address', 'email not valid'),
+        ),
+        default: Alert.alert(
+          fbt('Error', 'error'),
+          fbt('Email is not a valid email address', 'email not valid'),
+        ),
+      });
+
+    const db = firebase.firestore();
+
+    try {
+      setLoading(true);
+
+      await db
+        .collection('contacts')
+        .add({email, name, message: story, createdAt: new Date()});
+
+      Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(
+          fbt(
+            'Thanks for sharing your story 🤩. We will get back to you soon!',
+            'thanks to story',
+          ),
+        ),
+        default: Alert.alert(
+          fbt('Success', 'success'),
+          fbt(
+            'Thanks for sharing your story 🤩. We will get back to you soon!',
+            'thanks to story',
+          ),
+        ),
+      });
+
+      setEmail('');
+      setName('');
+      setStory('');
+    } catch (err) {
+      Alert.alert(fbt('Error', 'error'), err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Container>
       <BackgroundImage
-        source={{uri: IMG_LABTOP}}
+        source={IMG_LABTOP}
         resizeMode="cover"
         imageStyle={{
           opacity: 0.65,
@@ -119,12 +174,17 @@ const ContactSection: FC<Props> = () => {
           <Form>
             <Input
               value={name}
-              placeholder={fbt('Please write your name', 'name placeholder')}
+              placeholder={fbt(
+                'Please write your name',
+                'name placeholder',
+              ).toString()}
+              placeholderTextColor={theme.placeholder}
               onChangeText={(text) => setName(text)}
             />
             <Input
               value={email}
               placeholder="email@email.com"
+              placeholderTextColor={theme.placeholder}
               onChangeText={(text) => setEmail(text)}
             />
             <Input
@@ -134,11 +194,13 @@ const ContactSection: FC<Props> = () => {
               placeholder={fbt(
                 'Please tell us your stories',
                 'story placeholder',
-              )}
+              ).toString()}
+              placeholderTextColor={theme.placeholder}
               onChangeText={(text) => setStory(text)}
             />
             <Button
-              onPress={() => {}}
+              loading={loading}
+              onPress={sendContact}
               activeOpacity={0.7}
               style={{
                 marginTop: 36,
@@ -151,7 +213,7 @@ const ContactSection: FC<Props> = () => {
                   height: 44,
                 },
                 text: {
-                  color: theme.textContrast,
+                  color: theme.text,
                   fontFamily: 'avenir',
                   fontSize: 16,
                 },

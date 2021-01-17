@@ -47,7 +47,11 @@ exports[`Interaction should simulate onClick 1`] = `
           "textAlign": "center",
         },
         Object {
-          "lineHeight": 60,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 12,
+          "textAlign": "center",
         },
       ]
     }
@@ -143,7 +147,11 @@ exports[`Rendering renders without crashing 1`] = `
           "textAlign": "center",
         },
         Object {
-          "lineHeight": 60,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 12,
+          "textAlign": "center",
         },
       ]
     }

@@ -1,7 +1,21 @@
+import 'firebase/firestore';
+
+import Base64 from 'Base64';
 import React from 'react';
 import RootNavigator from './components/navigation/RootStackNavigator';
 import RootProvider from './providers';
+import firebase from 'firebase/app';
+import {firebaseConfig} from './config';
 import {initFbt} from './utils/fbt';
+
+!firebase.apps.length
+  ? firebase.initializeApp(firebaseConfig).firestore()
+  : firebase.app().firestore();
+
+// @ts-ignore
+global.btoa = Base64.btoa;
+// @ts-ignore
+global.atob = Base64.atob;
 
 initFbt();
 

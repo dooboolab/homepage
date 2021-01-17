@@ -12,6 +12,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    ['module:react-native-dotenv'],
     'babel-plugin-fbt-runtime',
     '@babel/plugin-syntax-class-properties',
     [
