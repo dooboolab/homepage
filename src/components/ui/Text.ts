@@ -32,7 +32,7 @@ export const SubTitle = styled.Text`
 
 export const Description = styled.Text`
   font-size: 18px;
-  line-height: 165%;
+  line-height: 30px;
   text-align: center;
   max-width: 60%;
   color: ${({theme}): string => theme.text};
