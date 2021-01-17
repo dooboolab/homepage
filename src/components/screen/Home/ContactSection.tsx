@@ -1,10 +1,13 @@
+import {Alert, Platform} from 'react-native';
 import React, {FC, useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Button from '../../shared/Button';
 import {IMG_LABTOP} from '../../../utils/Icons';
 import {fbt} from 'fbt';
+import firebase from 'firebase/app';
 import {useTheme} from '../../../providers/ThemeProvider';
+import {validateEmail} from '../../../utils/functions';
 
 // eslint-disable-next-line
 fbt;
@@ -100,9 +103,61 @@ type Props = {};
 
 const ContactSection: FC<Props> = () => {
   const {theme, colors} = useTheme();
+  const [loading, setLoading] = useState<boolean>(false);
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [story, setStory] = useState<string>('');
+
+  const sendContact = async (): Promise<void> => {
+    if (!name || !email || !story) return;
+
+    if (!validateEmail(email))
+      return Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(
+          fbt('Email is not a valid email address', 'email not valid'),
+        ),
+        default: Alert.alert(
+          fbt('Error', 'error'),
+          fbt('Email is not a valid email address', 'email not valid'),
+        ),
+      });
+
+    const db = firebase.firestore();
+
+    try {
+      setLoading(true);
+
+      await db
+        .collection('contacts')
+        .add({email, name, message: story, createdAt: new Date()});
+
+      Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(
+          fbt(
+            'Thanks for sharing your story 🤩. We will get back to you soon!',
+            'thanks to story',
+          ),
+        ),
+        default: Alert.alert(
+          fbt('Success', 'success'),
+          fbt(
+            'Thanks for sharing your story 🤩. We will get back to you soon!',
+            'thanks to story',
+          ),
+        ),
+      });
+
+      setEmail('');
+      setName('');
+      setStory('');
+    } catch (err) {
+      Alert.alert(fbt('Error', 'error'), err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container>
@@ -138,7 +193,8 @@ const ContactSection: FC<Props> = () => {
               onChangeText={(text) => setStory(text)}
             />
             <Button
-              onPress={() => {}}
+              loading={loading}
+              onPress={sendContact}
               activeOpacity={0.7}
               style={{
                 marginTop: 36,
