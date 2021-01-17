@@ -18,13 +18,13 @@ jobs:
       - name: Build craco
         run: yarn build
         env:
-          apiKey: ${{ secrets.apiKey }}
-          authDomain: ${{ secrets.authDomain }}
-          databaseURL: ${{ secrets.databaseURL }}
-          projectId: ${{ secrets.projectId }}
-          storageBucket: ${{ secrets.storageBucket }}
-          messagingSenderId: ${{ secrets.messagingSenderId }}
-          appId: ${{ secrets.appId }}
+          apiKey: ${{ secrets.APIKEY }}
+          authDomain: ${{ secrets.AUTHDOMAIN }}
+          databaseURL: ${{ secrets.DATABASEURL }}
+          projectId: ${{ secrets.PROJECTID }}
+          storageBucket: ${{ secrets.STORAGEBUCKET }}
+          messagingSenderId: ${{ secrets.MESSAGINGSENDERID }}
+          appId: ${{ secrets.APPID }}
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
