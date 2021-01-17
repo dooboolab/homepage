@@ -213,7 +213,7 @@ const ContactSection: FC<Props> = () => {
                   height: 44,
                 },
                 text: {
-                  color: theme.textContrast,
+                  color: theme.text,
                   fontFamily: 'avenir',
                   fontSize: 16,
                 },
