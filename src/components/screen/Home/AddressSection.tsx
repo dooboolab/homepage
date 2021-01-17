@@ -2,9 +2,10 @@ import React, {FC} from 'react';
 
 import {Description} from '../../ui/Text';
 import Hoverable from '../../../utils/Hoverable';
-import {Linking} from 'react-native';
+import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
+import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../../../providers/ThemeProvider';
 
 // eslint-disable-next-line
@@ -59,6 +60,7 @@ type Props = {};
 const AddressSection: FC<Props> = () => {
   const {theme} = useTheme();
   const year = new Date().getFullYear();
+  const navigation = useNavigation<RootStackNavigationProps<'Home'>>();
 
   return (
     <Container>
@@ -86,7 +88,7 @@ const AddressSection: FC<Props> = () => {
             <LinkTouch
               style={{marginHorizontal: 10}}
               activeOpacity={0.7}
-              onPress={() => {}}>
+              onPress={() => navigation.navigate('VisionAndMission')}>
               <LinkText
                 style={[
                   isHovered && {
@@ -104,7 +106,7 @@ const AddressSection: FC<Props> = () => {
             <LinkTouch
               style={{marginHorizontal: 10, marginTop: 4}}
               activeOpacity={0.7}
-              onPress={() => {}}>
+              onPress={() => navigation.navigate('CodeOfConduct')}>
               <LinkText
                 style={[
                   isHovered && {

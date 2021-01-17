@@ -5,14 +5,18 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 
+import CodeOfConduct from '../screen/CodeOfConduct';
 import Home from '../screen/Home';
 import {NavigationContainer} from '@react-navigation/native';
+import {Platform} from 'react-native';
 import React from 'react';
+import VisionAndMission from '../screen/VisionAndMission';
 import {useTheme} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {
   Home: undefined;
   VisionAndMission: undefined;
+  CodeOfConduct: undefined;
 };
 
 export type RootStackNavigationProps<
@@ -24,8 +28,16 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator(): React.ReactElement {
   const {theme} = useTheme();
 
+  const linking = {
+    prefixes: ['https://dooboolab.com', 'dooboolab://'],
+    enabled: true,
+  };
+
   return (
     <NavigationContainer
+      linking={Platform.select({
+        web: linking,
+      })}
       theme={{
         colors: {
           background: theme.background,
@@ -49,6 +61,8 @@ function RootNavigator(): React.ReactElement {
             title: 'dooboolab',
           }}
         />
+        <Stack.Screen name="VisionAndMission" component={VisionAndMission} />
+        <Stack.Screen name="CodeOfConduct" component={CodeOfConduct} />
       </Stack.Navigator>
     </NavigationContainer>
   );
