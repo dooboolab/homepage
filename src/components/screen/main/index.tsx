@@ -5,6 +5,7 @@ import CommunitySection from './CommunitySection';
 import ContactSection from './ContactSection';
 import HeroSection from './HeroSection';
 import {Platform} from 'react-native';
+import PoweredBySection from './PoweredBySection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import StorySection from './StorySection';
 import WorkSection from './WorkSection';
@@ -34,6 +35,7 @@ const Page: FC<Props> = () => {
       <CommunitySection />
       <WorkSection />
       <ContactSection />
+      <PoweredBySection />
       {Platform.OS === 'web' && <FixedHeader />}
     </Container>
   );
