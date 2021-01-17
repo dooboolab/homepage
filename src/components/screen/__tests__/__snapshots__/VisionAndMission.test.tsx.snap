@@ -165,7 +165,13 @@ exports[`Interaction should simulate onClick 1`] = `
         </View>
       </View>
     </View>
-    <RCTScrollView>
+    <RCTScrollView
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
       <View>
         <View
           style={
@@ -1149,7 +1155,13 @@ exports[`Rendering renders without crashing 1`] = `
         </View>
       </View>
     </View>
-    <RCTScrollView>
+    <RCTScrollView
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
       <View>
         <View
           style={

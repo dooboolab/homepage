@@ -33,7 +33,7 @@ const Page: FC<Props> = () => {
   return (
     <Container>
       <Header scrollRef={scrollRef} />
-      <ScrollView ref={scrollRef}>
+      <ScrollView ref={scrollRef} style={{width: '100%'}}>
         <HeroSection
           onPressContactUs={() => {
             scrollRef?.current?.scrollTo({y: 2440});

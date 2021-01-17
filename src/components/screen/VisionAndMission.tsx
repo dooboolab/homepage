@@ -137,7 +137,7 @@ const VisionAndMission: FC<Props> = () => {
   return (
     <Container>
       <Header hideMenus />
-      <ScrollView>
+      <ScrollView style={{width: '100%'}}>
         <ImageWrapper>
           <BackgroundImage
             source={IMG_SYMBOL}

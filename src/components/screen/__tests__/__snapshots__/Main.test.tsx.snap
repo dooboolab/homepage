@@ -283,7 +283,13 @@ exports[`Render renders without crashing 1`] = `
         </View>
       </View>
     </View>
-    <RCTScrollView>
+    <RCTScrollView
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
       <View>
         <View
           style={
