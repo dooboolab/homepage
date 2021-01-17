@@ -65,9 +65,11 @@ const Description = styled.Text`
     `}
 `;
 
-type Props = {};
+type Props = {
+  onPressContactUs?: () => void;
+};
 
-const HeroSection: FC<Props> = () => {
+const HeroSection: FC<Props> = ({onPressContactUs}) => {
   const {theme, colors} = useTheme();
 
   return (
@@ -88,6 +90,7 @@ const HeroSection: FC<Props> = () => {
           </fbt>
         </Description>
         <Button
+          onPress={onPressContactUs}
           activeOpacity={0.7}
           style={{
             marginTop: 36,

@@ -34,7 +34,11 @@ const Page: FC<Props> = () => {
     <Container>
       <Header scrollRef={scrollRef} />
       <ScrollView ref={scrollRef}>
-        <HeroSection />
+        <HeroSection
+          onPressContactUs={() => {
+            scrollRef?.current?.scrollTo(2440);
+          }}
+        />
         <StorySection />
         <CommunitySection />
         <WorkSection />
