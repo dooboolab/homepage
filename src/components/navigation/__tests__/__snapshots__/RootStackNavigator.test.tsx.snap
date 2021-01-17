@@ -1686,7 +1686,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
-                                                "color": "#000000",
+                                                "color": "#D3D8E8",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 16,
                                               },
@@ -3694,7 +3694,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                                 "paddingVertical": 12,
                                               },
                                               Object {
-                                                "color": "#D3D8E8",
+                                                "color": "#000000",
                                                 "fontFamily": "avenir",
                                                 "fontSize": 16,
                                               },

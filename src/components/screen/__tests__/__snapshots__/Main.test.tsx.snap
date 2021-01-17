@@ -1507,7 +1507,7 @@ exports[`Render renders without crashing 1`] = `
                             "paddingVertical": 12,
                           },
                           Object {
-                            "color": "#D3D8E8",
+                            "color": "#000000",
                             "fontFamily": "avenir",
                             "fontSize": 16,
                           },
