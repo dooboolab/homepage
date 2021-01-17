@@ -1,10 +1,10 @@
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../utils/Icons';
-import React, {FC, ReactElement, useState} from 'react';
+import React, {FC, ReactElement, RefObject, useState} from 'react';
 import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../shared/Button';
 import Hoverable from '../../utils/Hoverable';
+import {ScrollView} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -78,13 +78,11 @@ const SwitchWrapper = styled.View`
 `;
 
 type LinkProps = {
-  url: string;
+  onPress?: () => void;
   text: string;
-  selected?: boolean;
 };
 
-const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
-  const navigation = useNavigation();
+const Link: FC<LinkProps> = ({onPress, text}): ReactElement => {
   const {theme} = useTheme();
 
   return (
@@ -93,9 +91,7 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
         <LinkTouch
           style={{marginHorizontal: 10}}
           activeOpacity={0.7}
-          onPress={() => {
-            navigation.navigate('');
-          }}>
+          onPress={onPress}>
           <LinkText
             style={
               isHovered && {
@@ -111,18 +107,26 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
   );
 };
 
-export const FixedHeader: FC = () => {
+type Props = {
+  scrollRef?: RefObject<ScrollView>;
+  hideMenus?: boolean;
+};
+
+const Header: FC<Props> = ({scrollRef, hideMenus}) => {
   const navigation = useNavigation();
   const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
   return (
-    <Container
-      // @ts-ignore
-      style={{position: 'fixed'}}>
+    <Container>
       <Hoverable>
         {(isHovered) => (
-          <LogoTouch onPress={() => navigation.navigate('Home')}>
+          <LogoTouch
+            onPress={() =>
+              hideMenus
+                ? navigation.navigate('Home')
+                : scrollRef?.current?.scrollTo(0)
+            }>
             <Logo
               style={
                 isHovered && {
@@ -143,39 +147,28 @@ export const FixedHeader: FC = () => {
         )}
       </Hoverable>
       <LinkWrapper>
-        <Link text="Story" url="" />
-        <Link text="Work" url="" />
-        <Link text="Contact" url="" />
-      </LinkWrapper>
-      <SwitchWrapper>
-        <ToggleSwitch
-          isOn={switchOn}
-          onToggle={(val: boolean) => {
-            setSwitchOn(val);
-            changeThemeType();
-          }}
-          onColor={theme.textContrast}
-        />
-      </SwitchWrapper>
-    </Container>
-  );
-};
-
-const Header: FC = () => {
-  const {theme, changeThemeType, themeType} = useTheme();
-  const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
-
-  return (
-    <Container>
-      <Logo
-        source={
-          themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
-        }
-      />
-      <LinkWrapper>
-        <Link text="Story" url="" />
-        <Link text="Work" url="" />
-        <Link text="Contact" url="" />
+        {!hideMenus && (
+          <>
+            <Link
+              text="Story"
+              onPress={() => {
+                scrollRef?.current?.scrollTo(400);
+              }}
+            />
+            <Link
+              text="Work"
+              onPress={() => {
+                scrollRef?.current?.scrollTo(1720);
+              }}
+            />
+            <Link
+              text="Contact"
+              onPress={() => {
+                scrollRef?.current?.scrollTo(2420);
+              }}
+            />
+          </>
+        )}
       </LinkWrapper>
       <SwitchWrapper>
         <ToggleSwitch

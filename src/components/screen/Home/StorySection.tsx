@@ -3,7 +3,9 @@ import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Button from '../../shared/Button';
+import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import {fbt} from 'fbt';
+import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../../../providers/ThemeProvider';
 
 // eslint-disable-next-line
@@ -29,6 +31,7 @@ type Props = {};
 
 const StorySection: FC<Props> = () => {
   const {theme, colors} = useTheme();
+  const navigation = useNavigation<RootStackNavigationProps<'CodeOfConduct'>>();
 
   return (
     <Container>
@@ -64,6 +67,7 @@ const StorySection: FC<Props> = () => {
             fontSize: theme.isDesktop ? 18 : 14,
           },
         }}
+        onPress={() => navigation.navigate('VisionAndMission')}
         text={fbt('view more >', 'view more')}
       />
     </Container>

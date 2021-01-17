@@ -1,13 +1,13 @@
-import Header, {FixedHeader} from '../../shared/Header';
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 
 import CommunitySection from './CommunitySection';
 import ContactSection from './ContactSection';
 import Footer from '../../shared/Footer';
+import Header from '../../shared/Header';
 import HeroSection from './HeroSection';
-import {Platform} from 'react-native';
 import PoweredBySection from './PoweredBySection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
+import {ScrollView} from 'react-native';
 import StorySection from './StorySection';
 import WorkSection from './WorkSection';
 import styled from 'styled-components/native';
@@ -28,17 +28,20 @@ type Props = {
 };
 
 const Page: FC<Props> = () => {
+  const scrollRef = useRef<ScrollView>(null);
+
   return (
     <Container>
-      <Header />
-      <HeroSection />
-      <StorySection />
-      <CommunitySection />
-      <WorkSection />
-      <ContactSection />
-      <PoweredBySection />
-      <Footer />
-      {Platform.OS === 'web' && <FixedHeader />}
+      <Header scrollRef={scrollRef} />
+      <ScrollView ref={scrollRef}>
+        <HeroSection />
+        <StorySection />
+        <CommunitySection />
+        <WorkSection />
+        <ContactSection />
+        <PoweredBySection />
+        <Footer />
+      </ScrollView>
     </Container>
   );
 };

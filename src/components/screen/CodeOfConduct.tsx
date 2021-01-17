@@ -1,9 +1,9 @@
 import {Description, SubTitle} from '../ui/Text';
-import Header, {FixedHeader} from '../shared/Header';
-import {Platform, Text} from 'react-native';
 import React, {FC} from 'react';
+import {ScrollView, Text} from 'react-native';
 
 import Footer from '../shared/Footer';
+import Header from '../shared/Header';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
 import {View} from 'react-native';
@@ -15,7 +15,7 @@ import {withScreen} from '../../utils/wrapper';
 // eslint-disable-next-line
 fbt;
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};
@@ -158,76 +158,77 @@ type Props = {
 const CodeOfConduct: FC<Props> = () => {
   return (
     <Container>
-      <Header />
-      <ImageWrapper>
-        <BackgroundImage
-          source={{uri: IMG_SYMBOL}}
-          resizeMode="cover"
-          imageStyle={{
-            opacity: 0.7,
-          }}>
-          <SubTitle
-            style={{
-              marginTop: 200,
-              fontSize: 32,
+      <Header hideMenus />
+      <ScrollView>
+        <ImageWrapper>
+          <BackgroundImage
+            source={{uri: IMG_SYMBOL}}
+            resizeMode="cover"
+            imageStyle={{
+              opacity: 0.7,
             }}>
-            <fbt desc="code of conduct">Code of Conduct</fbt>
-          </SubTitle>
-        </BackgroundImage>
-      </ImageWrapper>
-      <Section />
-      <MissionWrapper>
-        <Mission
-          title={fbt(
-            'We expect all contributors to avoid bad behaviors affected by bad culture',
-            'code of conduct 1',
-          )}
-          texts={[
-            fbt(
-              'Discrimination. Equal treatment regardless of race, gender, age or sexual orientation',
-              'code 1-1',
-            ),
-            fbt("Pointing out on other's appearance.", 'code 1-2'),
-            fbt("Insulting one's parents or family members.", 'code 1-3'),
-            fbt(
-              // eslint-disable-next-line max-len
-              "Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.",
-              'code 1-4',
-            ),
-            fbt(
-              'Violence and agressive attitudes. We want all people to feel safe in our community.',
-              'code 1-5',
-            ),
-            fbt('Belittling others.', 'code 1-6'),
-            fbt('Copyright infringement.', 'code 1-7'),
-          ]}
-        />
-        <Mission
-          title={fbt(
-            'We hope to contribute in creating a better world',
-            'code of conduct 2',
-          )}
-          texts={[
-            fbt('Respect people', 'code 2-1'),
-            fbt('Don’t be afraid to speak up.', 'code 2-2'),
-            fbt(
-              'Help people rather than blaming. Anyone can make mistakes..',
-              'code 2-3',
-            ),
-            fbt(
-              'Grow with the community and take advantage of it.',
-              'code 2-4',
-            ),
-            fbt('Try to be rational rather than emotional.', 'code 2-5'),
-            fbt(
-              'Improve communication skills, which is a challenge for everyone.',
-              'code 2-6',
-            ),
-          ]}
-        />
-      </MissionWrapper>
-      {Platform.OS === 'web' && <FixedHeader />}
-      <Footer />
+            <SubTitle
+              style={{
+                marginTop: 200,
+                fontSize: 32,
+              }}>
+              <fbt desc="code of conduct">Code of Conduct</fbt>
+            </SubTitle>
+          </BackgroundImage>
+        </ImageWrapper>
+        <Section />
+        <MissionWrapper>
+          <Mission
+            title={fbt(
+              'We expect all contributors to avoid bad behaviors affected by the bad culture',
+              'code of conduct 1',
+            )}
+            texts={[
+              fbt(
+                'Discrimination. Equal treatment regardless of race, gender, age or sexual orientation',
+                'code 1-1',
+              ),
+              fbt("Pointing out on other's appearance.", 'code 1-2'),
+              fbt("Insulting one's parents or family members.", 'code 1-3'),
+              fbt(
+                // eslint-disable-next-line max-len
+                "Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.",
+                'code 1-4',
+              ),
+              fbt(
+                'Violence and agressive attitudes. We want all people to feel safe in our community.',
+                'code 1-5',
+              ),
+              fbt('Belittling others.', 'code 1-6'),
+              fbt('Copyright infringement.', 'code 1-7'),
+            ]}
+          />
+          <Mission
+            title={fbt(
+              'We hope to contribute in creating a better world',
+              'code of conduct 2',
+            )}
+            texts={[
+              fbt('Respect people', 'code 2-1'),
+              fbt('Don’t be afraid to speak up.', 'code 2-2'),
+              fbt(
+                'Help people rather than blaming. Anyone can make mistakes..',
+                'code 2-3',
+              ),
+              fbt(
+                'Grow with the community and take advantage of it.',
+                'code 2-4',
+              ),
+              fbt('Try to be rational rather than emotional.', 'code 2-5'),
+              fbt(
+                'Improve communication skills, which is a challenge for everyone.',
+                'code 2-6',
+              ),
+            ]}
+          />
+        </MissionWrapper>
+        <Footer />
+      </ScrollView>
     </Container>
   );
 };

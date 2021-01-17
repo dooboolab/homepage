@@ -1,12 +1,11 @@
 import {Description, SubTitle} from '../ui/Text';
-import Header, {FixedHeader} from '../shared/Header';
-import {Platform, Text} from 'react-native';
 import React, {FC} from 'react';
+import {ScrollView, Text, View} from 'react-native';
 
 import Footer from '../shared/Footer';
+import Header from '../shared/Header';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
-import {View} from 'react-native';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useTheme} from '../../providers/ThemeProvider';
@@ -137,80 +136,81 @@ type Props = {
 const VisionAndMission: FC<Props> = () => {
   return (
     <Container>
-      <Header />
-      <ImageWrapper>
-        <BackgroundImage
-          source={{uri: IMG_SYMBOL}}
-          resizeMode="cover"
-          imageStyle={{
-            opacity: 0.7,
-          }}>
-          <SubTitle
-            style={{
-              marginTop: 200,
-              fontSize: 32,
+      <Header hideMenus />
+      <ScrollView>
+        <ImageWrapper>
+          <BackgroundImage
+            source={{uri: IMG_SYMBOL}}
+            resizeMode="cover"
+            imageStyle={{
+              opacity: 0.7,
             }}>
-            <fbt desc="vision and mission">Vision & Mission</fbt>
-          </SubTitle>
-        </BackgroundImage>
-      </ImageWrapper>
-      <Section />
-      <MissionWrapper>
-        <Mission
-          title="01"
-          text={fbt(
-            'We wish to get connected with great people who meet our vision, which is making a better society.',
-            'mission 1',
-          )}
-        />
-        <Mission
-          title="02"
-          text={fbt(
-            // eslint-disable-next-line max-len
-            'When faced with limitations in pursing innovation, feel free to contact us. However, please adhere with our Code of Conduct below.',
-            'mission 2',
-          )}
-        />
-        <Mission
-          title="03"
-          text={fbt(
-            // eslint-disable-next-line max-len
-            'Our goal is to make a just society. Though this may be nearly impossible to fully achieve, we will communicate with others, share our experience and spread ideas to achieve this goal. We are willing to embrace change as we meet with other’s experience and stories.',
-            'mission 3',
-          )}
-        />
-        <Mission
-          title="04"
-          text={fbt(
-            // eslint-disable-next-line max-len
-            'We wish to grow together with multiple stakeholders working in various fields.',
-            'mission 4',
-          )}
-        />
-        <Mission
-          title="05"
-          text={fbt(
-            'We wish to bring justice. Therefore, we will participate in public work as much as possible.',
-            'mission 5',
-          )}
-        />
-        <Mission
-          title="06"
-          text={fbt(
-            'We want to become a strong open source community for individuals, companies, and group of societies.',
-            'mission 6',
-          )}
-        />
-        <Mission
-          title="07"
-          text={fbt(
-            'Finally, our mission is to contribute in making a reasonable society.',
-            'mission 7',
-          )}
-        />
-      </MissionWrapper>
-      {Platform.OS === 'web' && <FixedHeader />}
-      <Footer />
+            <SubTitle
+              style={{
+                marginTop: 200,
+                fontSize: 32,
+              }}>
+              <fbt desc="vision and mission">Vision & Mission</fbt>
+            </SubTitle>
+          </BackgroundImage>
+        </ImageWrapper>
+        <Section />
+        <MissionWrapper>
+          <Mission
+            title="01"
+            text={fbt(
+              'We wish to get connected with great people who meet our vision, which is making a better society.',
+              'mission 1',
+            )}
+          />
+          <Mission
+            title="02"
+            text={fbt(
+              // eslint-disable-next-line max-len
+              'When faced with limitations in pursing innovation, feel free to contact us. However, please adhere with our Code of Conduct below.',
+              'mission 2',
+            )}
+          />
+          <Mission
+            title="03"
+            text={fbt(
+              // eslint-disable-next-line max-len
+              'Our goal is to make a just society. Though this may be nearly impossible to fully achieve, we will communicate with others, share our experience and spread ideas to achieve this goal. We are willing to embrace change as we meet with other’s experience and stories.',
+              'mission 3',
+            )}
+          />
+          <Mission
+            title="04"
+            text={fbt(
+              // eslint-disable-next-line max-len
+              'We wish to grow together with multiple stakeholders working in various fields.',
+              'mission 4',
+            )}
+          />
+          <Mission
+            title="05"
+            text={fbt(
+              'We wish to bring justice. Therefore, we will participate in public work as much as possible.',
+              'mission 5',
+            )}
+          />
+          <Mission
+            title="06"
+            text={fbt(
+              'We want to become a strong open source community for individuals, companies, and group of societies.',
+              'mission 6',
+            )}
+          />
+          <Mission
+            title="07"
+            text={fbt(
+              'Finally, our mission is to contribute in making a reasonable society.',
+              'mission 7',
+            )}
+          />
+        </MissionWrapper>
+        <Footer />
+      </ScrollView>
     </Container>
   );
 };
