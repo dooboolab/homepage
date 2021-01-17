@@ -24,7 +24,7 @@ const Container = styled.SafeAreaView`
 `;
 
 type Props = {
-  navigation: RootStackNavigationProps<'Main'>;
+  navigation: RootStackNavigationProps<'Home'>;
 };
 
 const Page: FC<Props> = () => {

@@ -5,13 +5,14 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 
-import Main from '../screen/main';
+import Home from '../screen/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {useTheme} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {
-  Main: undefined;
+  Home: undefined;
+  VisionAndMission: undefined;
 };
 
 export type RootStackNavigationProps<
@@ -37,13 +38,13 @@ function RootNavigator(): React.ReactElement {
         dark: true,
       }}>
       <Stack.Navigator
-        initialRouteName="Main"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen
-          name="Main"
-          component={Main}
+          name="Home"
+          component={Home}
           options={{
             title: 'dooboolab',
           }}
