@@ -16,12 +16,12 @@ export const Title = styled.Text`
 `;
 
 export const SubTitle = styled.Text`
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
   max-width: 60%;
   color: ${({theme}): string => theme.text};
-  font-family: futura;
-  font-weight: 700;
+  font-family: avenir;
+  font-weight: 800;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&

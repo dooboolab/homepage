@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 
+import CommunitySection from './CommunitySection';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
@@ -27,6 +28,7 @@ const Page: FC<Props> = () => {
       <Header />
       <HeroSection />
       <StorySection />
+      <CommunitySection />
     </Container>
   );
 };

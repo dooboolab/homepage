@@ -10,7 +10,6 @@ import {useTheme} from '../../../providers/ThemeProvider';
 fbt;
 
 const Container = styled.View`
-  min-height: 448px;
   align-self: stretch;
   padding: 80px 0;
   background-color: ${({theme}): string => theme.background};
@@ -48,7 +47,7 @@ const StorySection: FC<Props> = () => {
           marginTop: 68,
           color: theme.primary,
         }}>
-        <fbt desc="vision and mission">Vision & mission</fbt>
+        <fbt desc="vision and mission">Vision & Mission</fbt>
       </SubTitle>
       <Description style={{marginTop: 40}}>
         <fbt desc="story desc">

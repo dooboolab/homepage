@@ -35,7 +35,7 @@ export type Theme = typeof light;
 
 export const dark = {
   background: '#232323',
-  paper: '#EAEBF4',
+  paper: '#2C2C2C',
   primary: '#8A96DC',
   accent: '#8A96DC',
   link: '#E0E0E0',
