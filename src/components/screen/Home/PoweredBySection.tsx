@@ -46,7 +46,12 @@ const PoweredBySection: FC<Props> = () => {
       </SubTitle>
       <Description
         style={{
-          lineHeight: 60,
+          marginVertical: 12,
+          textAlign: 'center',
+
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}>
         <fbt desc="everyone">Everyone in</fbt>
         <Hoverable>

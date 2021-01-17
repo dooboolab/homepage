@@ -10,7 +10,8 @@ exports[`Interaction should simulate onClick 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -199,12 +200,10 @@ exports[`Interaction should simulate onClick 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "uri": Object {
-                    "canInstrument": true,
-                    "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
-                  },
+                  "canInstrument": true,
+                  "createTransformer": [Function],
+                  "getCacheKey": [Function],
+                  "process": [Function],
                 }
               }
               style={
@@ -981,7 +980,7 @@ exports[`Interaction should simulate onClick 1`] = `
         </View>
       </View>
     </RCTScrollView>
-  </View>
+  </RCTSafeAreaView>
 </View>
 `;
 
@@ -995,7 +994,8 @@ exports[`Rendering renders without crashing 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -1184,12 +1184,10 @@ exports[`Rendering renders without crashing 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "uri": Object {
-                    "canInstrument": true,
-                    "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
-                  },
+                  "canInstrument": true,
+                  "createTransformer": [Function],
+                  "getCacheKey": [Function],
+                  "process": [Function],
                 }
               }
               style={
@@ -1966,6 +1964,6 @@ exports[`Rendering renders without crashing 1`] = `
         </View>
       </View>
     </RCTScrollView>
-  </View>
+  </RCTSafeAreaView>
 </View>
 `;

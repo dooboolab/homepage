@@ -82,12 +82,18 @@ const CommunitySection: FC<Props> = () => {
             borderWidth: 2,
             paddingHorizontal: 20,
             borderRadius: 12,
-            height: 24,
+            height: 26,
+
+            justifyContent: 'center',
+            alignItems: 'center',
           },
           text: {
+            paddingVertical: 0,
             color: colors.success,
             fontFamily: 'avenir',
             fontSize: 10,
+            textAlign: 'center',
+            alignSelf: 'center',
           },
           hovered: {
             backgroundColor: colors.darkGray,

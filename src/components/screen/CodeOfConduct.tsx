@@ -48,14 +48,14 @@ const MissionWrapper = styled.View`
 `;
 
 const Section: FC = () => {
-  const {theme} = useTheme();
+  const {theme, media} = useTheme();
 
   return (
     <View
       style={{
         backgroundColor: theme.paper,
         paddingVertical: 40,
-        paddingHorizontal: 140,
+        paddingHorizontal: media.isDesktop ? 140 : 80,
       }}>
       <Text
         style={{
@@ -87,7 +87,7 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
   return (
     <View
       style={{
-        paddingHorizontal: 80,
+        paddingHorizontal: media.isDesktop ? 80 : 40,
         marginTop: 40,
 
         flexDirection: 'column',
@@ -106,7 +106,7 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
       <View
         style={[
           {
-            paddingHorizontal: 60,
+            paddingHorizontal: media.isDesktop ? 60 : 32,
             paddingVertical: 24,
             marginVertical: 24,
             borderRadius: 10,
@@ -139,7 +139,7 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
                 style={{
                   textAlign: 'left',
                   fontSize: 16,
-                  maxWidth: '100%',
+                  maxWidth: media.isMobile ? '95%' : '100%',
                 }}>
                 {text}
               </Description>
@@ -162,7 +162,7 @@ const CodeOfConduct: FC<Props> = () => {
       <ScrollView>
         <ImageWrapper>
           <BackgroundImage
-            source={{uri: IMG_SYMBOL}}
+            source={IMG_SYMBOL}
             resizeMode="cover"
             imageStyle={{
               opacity: 0.7,

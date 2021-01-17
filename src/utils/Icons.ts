@@ -1,3 +1,4 @@
+import {ImageSourcePropType} from 'react-native';
 import doobooUi from '../assets/icons/dooboo-ui.png';
 import doobooUiDark from '../assets/icons/dooboo-ui-dark.png';
 import dooboolab from '../assets/icons/dooboolab.png';
@@ -12,17 +13,17 @@ import reactNativeSeoul from '../assets/images/react-native-seoul.png';
 import symbol from '../assets/images/symbol.jpg';
 import wecount from '../assets/icons/wecount.png';
 
-export const IC_DOOBOO_UI = doobooUi;
-export const IC_DOOBOO_UI_DARK = doobooUiDark;
-export const IC_DOOBOOLAB = dooboolab;
-export const IC_DOOBOOLAB_DARK = dooboolabDark;
-export const IC_HACKATALK = hackatalk;
-export const IC_HACKATALK_DARK = hackatalkDark;
-export const IC_FACEBOOK = facebook;
-export const IC_GOOGLE = google;
-export const IC_WECOUNT = wecount;
+export const IC_DOOBOO_UI = doobooUi as ImageSourcePropType;
+export const IC_DOOBOO_UI_DARK = doobooUiDark as ImageSourcePropType;
+export const IC_DOOBOOLAB = dooboolab as ImageSourcePropType;
+export const IC_DOOBOOLAB_DARK = dooboolabDark as ImageSourcePropType;
+export const IC_HACKATALK = hackatalk as ImageSourcePropType;
+export const IC_HACKATALK_DARK = hackatalkDark as ImageSourcePropType;
+export const IC_FACEBOOK = facebook as ImageSourcePropType;
+export const IC_GOOGLE = google as ImageSourcePropType;
+export const IC_WECOUNT = wecount as ImageSourcePropType;
 
-export const IMG_SYMBOL = symbol;
-export const IMG_RN_SEOUL = reactNativeSeoul;
-export const IMG_LABTOP = labtop;
-export const IMG_GRAPHQL_SEOUL = graphqlSeoul;
+export const IMG_SYMBOL = symbol as ImageSourcePropType;
+export const IMG_RN_SEOUL = reactNativeSeoul as ImageSourcePropType;
+export const IMG_LABTOP = labtop as ImageSourcePropType;
+export const IMG_GRAPHQL_SEOUL = graphqlSeoul as ImageSourcePropType;

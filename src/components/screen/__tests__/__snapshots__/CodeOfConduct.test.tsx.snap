@@ -200,12 +200,10 @@ exports[`Interaction should simulate onClick 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "uri": Object {
-                    "canInstrument": true,
-                    "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
-                  },
+                  "canInstrument": true,
+                  "createTransformer": [Function],
+                  "getCacheKey": [Function],
+                  "process": [Function],
                 }
               }
               style={
@@ -253,7 +251,7 @@ exports[`Interaction should simulate onClick 1`] = `
           style={
             Object {
               "backgroundColor": "#EAEBF4",
-              "paddingHorizontal": 140,
+              "paddingHorizontal": 80,
               "paddingVertical": 40,
             }
           }
@@ -295,7 +293,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "flexDirection": "column",
                 "justifyContent": "center",
                 "marginTop": 40,
-                "paddingHorizontal": 80,
+                "paddingHorizontal": 40,
               }
             }
           >
@@ -333,7 +331,7 @@ exports[`Interaction should simulate onClick 1`] = `
                     "flexDirection": "column",
                     "justifyContent": "center",
                     "marginVertical": 24,
-                    "paddingHorizontal": 60,
+                    "paddingHorizontal": 32,
                     "paddingVertical": 24,
                   },
                   false,
@@ -644,7 +642,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "flexDirection": "column",
                 "justifyContent": "center",
                 "marginTop": 40,
-                "paddingHorizontal": 80,
+                "paddingHorizontal": 40,
               }
             }
           >
@@ -682,7 +680,7 @@ exports[`Interaction should simulate onClick 1`] = `
                     "flexDirection": "column",
                     "justifyContent": "center",
                     "marginVertical": 24,
-                    "paddingHorizontal": 60,
+                    "paddingHorizontal": 32,
                     "paddingVertical": 24,
                   },
                   false,
@@ -1331,12 +1329,10 @@ exports[`Rendering renders without crashing 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "uri": Object {
-                    "canInstrument": true,
-                    "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
-                  },
+                  "canInstrument": true,
+                  "createTransformer": [Function],
+                  "getCacheKey": [Function],
+                  "process": [Function],
                 }
               }
               style={
@@ -1384,7 +1380,7 @@ exports[`Rendering renders without crashing 1`] = `
           style={
             Object {
               "backgroundColor": "#EAEBF4",
-              "paddingHorizontal": 140,
+              "paddingHorizontal": 80,
               "paddingVertical": 40,
             }
           }
@@ -1426,7 +1422,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "flexDirection": "column",
                 "justifyContent": "center",
                 "marginTop": 40,
-                "paddingHorizontal": 80,
+                "paddingHorizontal": 40,
               }
             }
           >
@@ -1464,7 +1460,7 @@ exports[`Rendering renders without crashing 1`] = `
                     "flexDirection": "column",
                     "justifyContent": "center",
                     "marginVertical": 24,
-                    "paddingHorizontal": 60,
+                    "paddingHorizontal": 32,
                     "paddingVertical": 24,
                   },
                   false,
@@ -1775,7 +1771,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "flexDirection": "column",
                 "justifyContent": "center",
                 "marginTop": 40,
-                "paddingHorizontal": 80,
+                "paddingHorizontal": 40,
               }
             }
           >
@@ -1813,7 +1809,7 @@ exports[`Rendering renders without crashing 1`] = `
                     "flexDirection": "column",
                     "justifyContent": "center",
                     "marginVertical": 24,
-                    "paddingHorizontal": 60,
+                    "paddingHorizontal": 32,
                     "paddingVertical": 24,
                   },
                   false,
