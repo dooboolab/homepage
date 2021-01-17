@@ -5,6 +5,7 @@ import Header from './Header';
 import HeroSection from './HeroSection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import StorySection from './StorySection';
+import WorkSection from './WorkSection';
 import styled from 'styled-components/native';
 import {withScreen} from '../../../utils/wrapper';
 
@@ -29,6 +30,7 @@ const Page: FC<Props> = () => {
       <HeroSection />
       <StorySection />
       <CommunitySection />
+      <WorkSection />
     </Container>
   );
 };

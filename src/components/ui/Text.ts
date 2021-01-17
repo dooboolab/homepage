@@ -45,3 +45,20 @@ export const Description = styled.Text`
       font-size: 20px;
     `}
 `;
+
+export const SubDescription = styled.Text`
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  max-width: 70%;
+  color: ${({theme}): string => theme.text};
+  font-family: avenir;
+  font-weight: 300;
+
+  ${({theme: {isDesktop}}) =>
+    isDesktop &&
+    css`
+      font-size: 14px;
+      line-height: 20px;
+    `}
+`;

@@ -61,7 +61,7 @@ const CommunityBackground = styled.ImageBackground`
 
 type Props = {};
 
-const StorySection: FC<Props> = () => {
+const CommunitySection: FC<Props> = () => {
   const {theme, colors} = useTheme();
 
   const renderViewMoreButton = (
@@ -131,4 +131,4 @@ const StorySection: FC<Props> = () => {
   );
 };
 
-export default StorySection;
+export default CommunitySection;
