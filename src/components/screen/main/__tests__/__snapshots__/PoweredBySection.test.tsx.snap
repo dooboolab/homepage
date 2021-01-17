@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interaction should simulate onClick 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#EAEBF4",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "minHeight": 200,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 24,
+          "fontWeight": "800",
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Powered by
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 18,
+          "fontWeight": "300",
+          "lineHeight": 30,
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+        Object {
+          "lineHeight": 60,
+        },
+      ]
+    }
+  >
+    Everyone in
+    <View
+      activeOpacity={0.7}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onPress={[MockFunction]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onResponderGrant={[Function]}
+      onResponderRelease={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginHorizontal": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontSize": 18,
+            },
+            false,
+            Object {
+              "color": "#393D7A",
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        OpenCollectives
+      </Text>
+    </View>
+  </Text>
+</View>
+`;
+
+exports[`Rendering renders without crashing 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#EAEBF4",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "minHeight": 200,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 24,
+          "fontWeight": "800",
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Powered by
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 18,
+          "fontWeight": "300",
+          "lineHeight": 30,
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+        Object {
+          "lineHeight": 60,
+        },
+      ]
+    }
+  >
+    Everyone in
+    <View
+      activeOpacity={0.7}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onPress={[MockFunction]}
+      onPressIn={[Function]}
+      onPressOut={[Function]}
+      onResponderGrant={[Function]}
+      onResponderRelease={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          },
+          Object {
+            "marginHorizontal": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontSize": 18,
+            },
+            false,
+            Object {
+              "color": "#393D7A",
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        OpenCollectives
+      </Text>
+    </View>
+  </Text>
+</View>
+`;

@@ -44,12 +44,13 @@ const Logo = styled.Image`
 const LinkWrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  margin: 4px 0;
+  margin-bottom: 14px;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
     css`
       margin-right: 48px;
+      margin-bottom: 0px;
     `}
 `;
 
@@ -117,10 +118,7 @@ export const FixedHeader: FC = () => {
           themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
         }
       />
-      <LinkWrapper
-        style={{
-          marginBottom: 12,
-        }}>
+      <LinkWrapper>
         <Link text="Story" url="" />
         <Link text="Work" url="" />
         <Link text="Contact" url="" />

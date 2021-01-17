@@ -253,10 +253,7 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                                 Object {
                                   "alignItems": "center",
                                   "flexDirection": "row",
-                                  "marginBottom": 4,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 4,
+                                  "marginBottom": 14,
                                 },
                               ]
                             }
@@ -451,7 +448,6 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             Array [
                               Object {
                                 "alignSelf": "stretch",
-                                "marginTop": 10,
                                 "minHeight": 380,
                               },
                             ]
@@ -1687,246 +1683,90 @@ exports[`[Stack] navigator should renders [Dark] mode 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#232323",
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#2C2C2C",
                                 "flexDirection": "column",
-                                "flexWrap": "wrap",
                                 "justifyContent": "center",
-                                "paddingBottom": 0,
-                                "paddingLeft": 24,
-                                "paddingRight": 24,
-                                "paddingTop": 0,
-                                "width": "100%",
-                              },
-                              Object {
-                                "position": "fixed",
+                                "minHeight": 200,
                               },
                             ]
                           }
                         >
-                          <Image
-                            source={
-                              Object {
-                                "canInstrument": true,
-                                "createTransformer": [Function],
-                                "getCacheKey": [Function],
-                                "process": [Function],
-                              }
-                            }
+                          <Text
                             style={
                               Array [
                                 Object {
-                                  "alignSelf": "center",
-                                  "height": 52,
-                                  "marginBottom": 12,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 12,
-                                  "width": 124,
-                                },
-                              ]
-                            }
-                          />
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "flexDirection": "row",
-                                  "marginBottom": 4,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 4,
-                                },
-                                Object {
-                                  "marginBottom": 12,
+                                  "color": "#D3D8E8",
+                                  "fontFamily": "avenir",
+                                  "fontSize": 24,
+                                  "fontWeight": "800",
+                                  "maxWidth": "60%",
+                                  "textAlign": "center",
                                 },
                               ]
                             }
                           >
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#D3D8E8",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Story
-                              </Text>
-                            </View>
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#D3D8E8",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Work
-                              </Text>
-                            </View>
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#D3D8E8",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Contact
-                              </Text>
-                            </View>
-                          </View>
-                          <View
+                            Powered by
+                          </Text>
+                          <Text
                             style={
                               Array [
                                 Object {
-                                  "position": "absolute",
-                                  "right": 20,
-                                  "top": 25,
+                                  "color": "#D3D8E8",
+                                  "fontFamily": "avenir",
+                                  "fontSize": 18,
+                                  "fontWeight": "300",
+                                  "lineHeight": 30,
+                                  "maxWidth": "60%",
+                                  "textAlign": "center",
+                                },
+                                Object {
+                                  "lineHeight": 60,
                                 },
                               ]
                             }
                           >
+                            Everyone in
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onPress={[MockFunction]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
-                                Object {
-                                  "alignItems": "center",
-                                  "flexDirection": "row",
-                                }
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginHorizontal": 10,
+                                  },
+                                ]
                               }
                             >
-                              <View
-                                activeOpacity={0.8}
-                                onPress={[MockFunction]}
+                              <Text
                                 style={
                                   Array [
                                     Object {
-                                      "backgroundColor": "#000000",
-                                      "borderRadius": 20,
-                                      "justifyContent": "center",
-                                      "padding": 12,
-                                      "width": 46,
+                                      "color": "#D3D8E8",
+                                      "fontSize": 18,
                                     },
-                                    Object {},
+                                    false,
+                                    Object {
+                                      "color": "#8A96DC",
+                                      "fontWeight": "bold",
+                                    },
                                   ]
                                 }
                               >
-                                <View
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "backgroundColor": "white",
-                                      "borderRadius": 9,
-                                      "elevation": 1.5,
-                                      "height": 18,
-                                      "justifyContent": "center",
-                                      "left": 0,
-                                      "margin": 4,
-                                      "position": "absolute",
-                                      "shadowColor": "#000",
-                                      "shadowOffset": Object {
-                                        "height": 2,
-                                        "width": 0,
-                                      },
-                                      "shadowOpacity": 0.2,
-                                      "shadowRadius": 2.5,
-                                      "transform": Array [
-                                        Object {
-                                          "translateX": 0,
-                                        },
-                                      ],
-                                      "width": 18,
-                                    }
-                                  }
-                                />
-                              </View>
+                                OpenCollectives
+                              </Text>
                             </View>
-                          </View>
+                          </Text>
                         </View>
                       </RCTSafeAreaView>
                     </View>
@@ -2208,10 +2048,7 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                                 Object {
                                   "alignItems": "center",
                                   "flexDirection": "row",
-                                  "marginBottom": 4,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 4,
+                                  "marginBottom": 14,
                                 },
                               ]
                             }
@@ -2406,7 +2243,6 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             Array [
                               Object {
                                 "alignSelf": "stretch",
-                                "marginTop": 10,
                                 "minHeight": 380,
                               },
                             ]
@@ -3642,246 +3478,90 @@ exports[`[Stack] navigator should renders without crashing 1`] = `
                             Array [
                               Object {
                                 "alignItems": "center",
-                                "backgroundColor": "#FFFFFF",
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#EAEBF4",
                                 "flexDirection": "column",
-                                "flexWrap": "wrap",
                                 "justifyContent": "center",
-                                "paddingBottom": 0,
-                                "paddingLeft": 24,
-                                "paddingRight": 24,
-                                "paddingTop": 0,
-                                "width": "100%",
-                              },
-                              Object {
-                                "position": "fixed",
+                                "minHeight": 200,
                               },
                             ]
                           }
                         >
-                          <Image
-                            source={
-                              Object {
-                                "canInstrument": true,
-                                "createTransformer": [Function],
-                                "getCacheKey": [Function],
-                                "process": [Function],
-                              }
-                            }
+                          <Text
                             style={
                               Array [
                                 Object {
-                                  "alignSelf": "center",
-                                  "height": 52,
-                                  "marginBottom": 12,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 12,
-                                  "width": 124,
-                                },
-                              ]
-                            }
-                          />
-                          <View
-                            style={
-                              Array [
-                                Object {
-                                  "alignItems": "center",
-                                  "flexDirection": "row",
-                                  "marginBottom": 4,
-                                  "marginLeft": 0,
-                                  "marginRight": 0,
-                                  "marginTop": 4,
-                                },
-                                Object {
-                                  "marginBottom": 12,
+                                  "color": "#000000",
+                                  "fontFamily": "avenir",
+                                  "fontSize": 24,
+                                  "fontWeight": "800",
+                                  "maxWidth": "60%",
+                                  "textAlign": "center",
                                 },
                               ]
                             }
                           >
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#000000",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Story
-                              </Text>
-                            </View>
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#000000",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Work
-                              </Text>
-                            </View>
-                            <View
-                              activeOpacity={0.7}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              onPress={[MockFunction]}
-                              onPressIn={[Function]}
-                              onPressOut={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderRelease={[Function]}
-                              style={
-                                Array [
-                                  Object {
-                                    "alignItems": "center",
-                                    "justifyContent": "center",
-                                  },
-                                  Object {
-                                    "marginHorizontal": 10,
-                                  },
-                                ]
-                              }
-                            >
-                              <Text
-                                style={
-                                  Array [
-                                    Object {
-                                      "color": "#000000",
-                                      "fontSize": 18,
-                                      "paddingBottom": 0,
-                                      "paddingLeft": 28,
-                                      "paddingRight": 28,
-                                      "paddingTop": 0,
-                                    },
-                                    false,
-                                  ]
-                                }
-                              >
-                                Contact
-                              </Text>
-                            </View>
-                          </View>
-                          <View
+                            Powered by
+                          </Text>
+                          <Text
                             style={
                               Array [
                                 Object {
-                                  "position": "absolute",
-                                  "right": 20,
-                                  "top": 25,
+                                  "color": "#000000",
+                                  "fontFamily": "avenir",
+                                  "fontSize": 18,
+                                  "fontWeight": "300",
+                                  "lineHeight": 30,
+                                  "maxWidth": "60%",
+                                  "textAlign": "center",
+                                },
+                                Object {
+                                  "lineHeight": 60,
                                 },
                               ]
                             }
                           >
+                            Everyone in
                             <View
+                              activeOpacity={0.7}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onPress={[MockFunction]}
+                              onPressIn={[Function]}
+                              onPressOut={[Function]}
+                              onResponderGrant={[Function]}
+                              onResponderRelease={[Function]}
                               style={
-                                Object {
-                                  "alignItems": "center",
-                                  "flexDirection": "row",
-                                }
+                                Array [
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  },
+                                  Object {
+                                    "marginHorizontal": 10,
+                                  },
+                                ]
                               }
                             >
-                              <View
-                                activeOpacity={0.8}
-                                onPress={[MockFunction]}
+                              <Text
                                 style={
                                   Array [
                                     Object {
-                                      "backgroundColor": "#ecf0f1",
-                                      "borderRadius": 20,
-                                      "justifyContent": "center",
-                                      "padding": 12,
-                                      "width": 46,
+                                      "color": "#000000",
+                                      "fontSize": 18,
                                     },
-                                    Object {},
+                                    false,
+                                    Object {
+                                      "color": "#393D7A",
+                                      "fontWeight": "bold",
+                                    },
                                   ]
                                 }
                               >
-                                <View
-                                  style={
-                                    Object {
-                                      "alignItems": "center",
-                                      "backgroundColor": "white",
-                                      "borderRadius": 9,
-                                      "elevation": 1.5,
-                                      "height": 18,
-                                      "justifyContent": "center",
-                                      "left": 0,
-                                      "margin": 4,
-                                      "position": "absolute",
-                                      "shadowColor": "#000",
-                                      "shadowOffset": Object {
-                                        "height": 2,
-                                        "width": 0,
-                                      },
-                                      "shadowOpacity": 0.2,
-                                      "shadowRadius": 2.5,
-                                      "transform": Array [
-                                        Object {
-                                          "translateX": 0,
-                                        },
-                                      ],
-                                      "width": 18,
-                                    }
-                                  }
-                                />
-                              </View>
+                                OpenCollectives
+                              </Text>
                             </View>
-                          </View>
+                          </Text>
                         </View>
                       </RCTSafeAreaView>
                     </View>
