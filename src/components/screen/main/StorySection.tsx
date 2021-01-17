@@ -1,3 +1,4 @@
+import {Description, SubTitle, Title} from '../../ui/Text';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
@@ -25,53 +26,6 @@ const Container = styled.View`
     `}
 `;
 
-const Title = styled.Text`
-  font-size: 26px;
-  text-align: center;
-  max-width: 60%;
-  color: ${({theme}): string => theme.text};
-  font-family: futura;
-  font-weight: 700;
-
-  ${({theme: {isDesktop}}) =>
-    isDesktop &&
-    css`
-      font-size: 40px;
-    `}
-`;
-
-const SubTitle = styled.Text`
-  font-size: 20px;
-  text-align: center;
-  max-width: 60%;
-  color: ${({theme}): string => theme.text};
-  font-family: futura;
-  font-weight: 700;
-
-  ${({theme: {isDesktop}}) =>
-    isDesktop &&
-    css`
-      font-size: 28px;
-    `}
-`;
-
-const Description = styled.Text`
-  margin-top: 40px;
-  font-size: 18px;
-  line-height: 165%;
-  text-align: center;
-  max-width: 60%;
-  color: ${({theme}): string => theme.text};
-  font-family: avenir;
-  font-weight: 300;
-
-  ${({theme: {isDesktop}}) =>
-    isDesktop &&
-    css`
-      font-size: 20px;
-    `}
-`;
-
 type Props = {};
 
 const StorySection: FC<Props> = () => {
@@ -82,7 +36,7 @@ const StorySection: FC<Props> = () => {
       <Title>
         <fbt desc="story">Story</fbt>
       </Title>
-      <Description>
+      <Description style={{marginTop: 40}}>
         <fbt desc="story desc">
           We aim to find the IT services that the world needs. The goal is to
           consistently find and commercialize ideas that have the potential to
@@ -96,7 +50,7 @@ const StorySection: FC<Props> = () => {
         }}>
         <fbt desc="vision and mission">Vision & mission</fbt>
       </SubTitle>
-      <Description>
+      <Description style={{marginTop: 40}}>
         <fbt desc="story desc">
           dooboolab wishes to help out those who are in trouble of making better
           society. We are a group of experts who contribute to various platforms
@@ -108,7 +62,7 @@ const StorySection: FC<Props> = () => {
         styles={{
           text: {
             color: colors.success,
-            fontSize: 14,
+            fontSize: theme.isDesktop ? 18 : 14,
           },
         }}
         text={fbt('view more >', 'view more')}
