@@ -73,7 +73,7 @@ type ProjectProps = {
 };
 
 const Project: FC<ProjectProps> = ({image, description, onViewMore}) => {
-  const {colors} = useTheme();
+  const {colors, theme} = useTheme();
 
   const renderViewMoreButton = (
     text: string,
@@ -97,7 +97,7 @@ const Project: FC<ProjectProps> = ({image, description, onViewMore}) => {
             fontSize: 10,
           },
           hovered: {
-            backgroundColor: colors.darkGray,
+            backgroundColor: theme.background,
           },
         }}
         text={text}
