@@ -1,9 +1,10 @@
-import Header, {EmptyHeader} from './Header';
+import Header, {FixedHeader} from './Header';
 import React, {FC} from 'react';
 
 import CommunitySection from './CommunitySection';
 import ContactSection from './ContactSection';
 import HeroSection from './HeroSection';
+import {Platform} from 'react-native';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
 import StorySection from './StorySection';
 import WorkSection from './WorkSection';
@@ -27,13 +28,13 @@ type Props = {
 const Page: FC<Props> = () => {
   return (
     <Container>
-      <EmptyHeader />
+      <Header />
       <HeroSection />
       <StorySection />
       <CommunitySection />
       <WorkSection />
       <ContactSection />
-      <Header />
+      {Platform.OS === 'web' && <FixedHeader />}
     </Container>
   );
 };

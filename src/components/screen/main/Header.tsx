@@ -8,7 +8,6 @@ import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const Container = styled.View`
-  position: fixed;
   width: 100%;
   padding: 0 24px;
   background-color: ${({theme}) => theme.background};
@@ -105,18 +104,23 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
   );
 };
 
-const Header: FC = () => {
+export const FixedHeader: FC = () => {
   const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
   return (
-    <Container>
+    <Container
+      // @ts-ignore
+      style={{position: 'fixed'}}>
       <Logo
         source={
           themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
         }
       />
-      <LinkWrapper>
+      <LinkWrapper
+        style={{
+          marginBottom: 12,
+        }}>
         <Link text="Story" url="" />
         <Link text="Work" url="" />
         <Link text="Contact" url="" />
@@ -135,15 +139,12 @@ const Header: FC = () => {
   );
 };
 
-export const EmptyHeader: FC = () => {
+const Header: FC = () => {
   const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
   return (
-    <Container
-      style={{
-        position: 'relative',
-      }}>
+    <Container>
       <Logo
         source={
           themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
