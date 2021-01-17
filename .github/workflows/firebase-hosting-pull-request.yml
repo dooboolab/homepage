@@ -8,7 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: yarn build
+
+      - name: Install packages
+        run: yarn
+
+      - name: Build craco
+        run: yarn build
+        env:
+          apiKey: ${{ secrets.apiKey }}
+          authDomain: ${{ secrets.authDomain }}
+          databaseURL: ${{ secrets.databaseURL }}
+          projectId: ${{ secrets.projectId }}
+          storageBucket: ${{ secrets.storageBucket }}
+          messagingSenderId: ${{ secrets.messagingSenderId }}
+          appId: ${{ secrets.appId }}
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
