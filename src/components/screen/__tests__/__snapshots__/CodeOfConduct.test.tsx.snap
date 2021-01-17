@@ -10,7 +10,8 @@ exports[`Interaction should simulate onClick 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -44,29 +45,48 @@ exports[`Interaction should simulate onClick 1`] = `
         ]
       }
     >
-      <Image
-        source={
-          Object {
-            "canInstrument": true,
-            "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
-          }
-        }
+      <View
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onPress={[MockFunction]}
+        onPressIn={[Function]}
+        onPressOut={[Function]}
+        onResponderGrant={[Function]}
+        onResponderRelease={[Function]}
         style={
           Array [
             Object {
-              "alignSelf": "center",
-              "height": 52,
-              "marginBottom": 12,
-              "marginLeft": 0,
-              "marginRight": 0,
-              "marginTop": 12,
-              "width": 124,
+              "alignItems": "center",
+              "justifyContent": "center",
             },
           ]
         }
-      />
+      >
+        <Image
+          source={
+            Object {
+              "canInstrument": true,
+              "createTransformer": [Function],
+              "getCacheKey": [Function],
+              "process": [Function],
+            }
+          }
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "height": 52,
+                "marginBottom": 12,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 12,
+                "width": 124,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
       <View
         style={
           Array [
@@ -77,125 +97,7 @@ exports[`Interaction should simulate onClick 1`] = `
             },
           ]
         }
-      >
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Story
-          </Text>
-        </View>
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Work
-          </Text>
-        </View>
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Contact
-          </Text>
-        </View>
-      </View>
+      />
       <View
         style={
           Array [
@@ -263,965 +165,969 @@ exports[`Interaction should simulate onClick 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignSelf": "stretch",
-            "minHeight": 300,
-          },
-        ]
-      }
-    >
-      <View
-        accessibilityIgnoresInvertColors={true}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-              "paddingBottom": 0,
-              "paddingLeft": 24,
-              "paddingRight": 24,
-              "paddingTop": 0,
-            },
-          ]
-        }
-      >
-        <Image
-          resizeMode="cover"
-          source={
-            Object {
-              "uri": Object {
-                "canInstrument": true,
-                "createTransformer": [Function],
-                "getCacheKey": [Function],
-                "process": [Function],
-              },
-            }
-          }
-          style={
-            Array [
-              Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              Object {
-                "height": undefined,
-                "width": undefined,
-              },
-              Object {
-                "opacity": 0.7,
-              },
-            ]
-          }
-        />
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 32,
-                "marginTop": 200,
-              },
-            ]
-          }
-        >
-          Code of Conduct
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#EAEBF4",
-          "paddingHorizontal": 140,
-          "paddingVertical": 40,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "#000000",
-            "fontFamily": "avenir",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-            "textAlign": "center",
-          }
-        }
-      >
-        We expect dooboolab's contributors to act professionally and respectfully. All contributors should have their own self-observation ability so that our environment can grow wisely.
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "paddingBottom": 20,
-            "paddingLeft": 0,
-            "paddingRight": 0,
-            "paddingTop": 20,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "marginTop": 40,
-            "paddingHorizontal": 80,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#393D7A",
-                "fontSize": 20,
-                "marginBottom": 20,
-                "marginTop": 24,
-              },
-            ]
-          }
-        >
-          We expect all contributors to avoid bad behaviors affected by bad culture
-        </Text>
+    <RCTScrollView>
+      <View>
         <View
           style={
             Array [
               Object {
-                "alignItems": "flex-start",
-                "alignSelf": "center",
-                "borderColor": "#EDEDED",
-                "borderRadius": 10,
-                "borderWidth": 2,
-                "flexDirection": "column",
-                "justifyContent": "center",
-                "marginVertical": 24,
-                "paddingHorizontal": 60,
-                "paddingVertical": 24,
+                "alignSelf": "stretch",
+                "minHeight": 300,
               },
-              false,
-              false,
             ]
           }
         >
           <View
+            accessibilityIgnoresInvertColors={true}
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                  "paddingBottom": 0,
+                  "paddingLeft": 24,
+                  "paddingRight": 24,
+                  "paddingTop": 0,
+                },
+              ]
             }
           >
-            <Text
-              style={
+            <Image
+              resizeMode="cover"
+              source={
                 Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
+                  "uri": Object {
+                    "canInstrument": true,
+                    "createTransformer": [Function],
+                    "getCacheKey": [Function],
+                    "process": [Function],
+                  },
                 }
               }
-            >
-              •
-               
-            </Text>
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "opacity": 0.7,
+                  },
+                ]
+              }
+            />
             <Text
               style={
                 Array [
                   Object {
                     "color": "#000000",
                     "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
+                    "fontSize": 24,
+                    "fontWeight": "800",
                     "maxWidth": "60%",
                     "textAlign": "center",
                   },
                   Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
+                    "fontSize": 32,
+                    "marginTop": 200,
                   },
                 ]
               }
             >
-              Discrimination. Equal treatment regardless of race, gender, age or sexual orientation
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Pointing out on other's appearance.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Insulting one's parents or family members.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Violence and agressive attitudes. We want all people to feel safe in our community.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Belittling others.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Copyright infringement.
+              Code of Conduct
             </Text>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "marginTop": 40,
-            "paddingHorizontal": 80,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#393D7A",
-                "fontSize": 20,
-                "marginBottom": 20,
-                "marginTop": 24,
-              },
-            ]
-          }
-        >
-          We hope to contribute in creating a better world
-        </Text>
         <View
           style={
-            Array [
-              Object {
-                "alignItems": "flex-start",
-                "alignSelf": "center",
-                "borderColor": "#EDEDED",
-                "borderRadius": 10,
-                "borderWidth": 2,
-                "flexDirection": "column",
-                "justifyContent": "center",
-                "marginVertical": 24,
-                "paddingHorizontal": 60,
-                "paddingVertical": 24,
-              },
-              false,
-              false,
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Respect people
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Don’t be afraid to speak up.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Help people rather than blaming. Anyone can make mistakes..
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Grow with the community and take advantage of it.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Try to be rational rather than emotional.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Improve communication skills, which is a challenge for everyone.
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
-            "flexDirection": "row",
-            "justifyContent": "space-around",
-            "minHeight": 110,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
             Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 18,
-                "fontWeight": "300",
-                "lineHeight": 30,
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 14,
-              },
-            ]
-          }
-        >
-          Address
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 18,
-                "fontWeight": "300",
-                "lineHeight": 30,
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 12,
-                "lineHeight": 18,
-                "marginTop": 4,
-              },
-            ]
-          }
-        >
-          203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
-        </Text>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-              "paddingBottom": 4,
-              "paddingLeft": 0,
-              "paddingRight": 0,
-              "paddingTop": 4,
-            },
-          ]
-        }
-      >
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
+              "backgroundColor": "#EAEBF4",
+              "paddingHorizontal": 140,
+              "paddingVertical": 40,
+            }
           }
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "#B446BF",
-                  "fontSize": 12,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "color": "#000000",
+                "fontFamily": "avenir",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
             }
           >
-            Vision & Mission
+            We expect dooboolab's contributors to act professionally and respectfully. All contributors should have their own self-observation ability so that our environment can grow wisely.
           </Text>
         </View>
         <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
           style={
             Array [
               Object {
                 "alignItems": "center",
+                "flexDirection": "column",
                 "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-                "marginTop": 4,
+                "paddingBottom": 20,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 20,
               },
             ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "color": "#B446BF",
-                  "fontSize": 12,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "marginTop": 40,
+                "paddingHorizontal": 80,
+              }
             }
           >
-            Code of conduct
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#393D7A",
+                    "fontSize": 20,
+                    "marginBottom": 20,
+                    "marginTop": 24,
+                  },
+                ]
+              }
+            >
+              We expect all contributors to avoid bad behaviors affected by the bad culture
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "alignSelf": "center",
+                    "borderColor": "#EDEDED",
+                    "borderRadius": 10,
+                    "borderWidth": 2,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                    "marginVertical": 24,
+                    "paddingHorizontal": 60,
+                    "paddingVertical": 24,
+                  },
+                  false,
+                  false,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Discrimination. Equal treatment regardless of race, gender, age or sexual orientation
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Pointing out on other's appearance.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Insulting one's parents or family members.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Violence and agressive attitudes. We want all people to feel safe in our community.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Belittling others.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Copyright infringement.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "marginTop": 40,
+                "paddingHorizontal": 80,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#393D7A",
+                    "fontSize": 20,
+                    "marginBottom": 20,
+                    "marginTop": 24,
+                  },
+                ]
+              }
+            >
+              We hope to contribute in creating a better world
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "alignSelf": "center",
+                    "borderColor": "#EDEDED",
+                    "borderRadius": 10,
+                    "borderWidth": 2,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                    "marginVertical": 24,
+                    "paddingHorizontal": 60,
+                    "paddingVertical": 24,
+                  },
+                  false,
+                  false,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Respect people
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Don’t be afraid to speak up.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Help people rather than blaming. Anyone can make mistakes..
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Grow with the community and take advantage of it.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Try to be rational rather than emotional.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Improve communication skills, which is a challenge for everyone.
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
-        <Text
+        <View
           style={
             Array [
               Object {
-                "color": "#000000",
-                "fontSize": 10,
-                "marginTop": 10,
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#FFFFFF",
+                "flexDirection": "row",
+                "justifyContent": "space-around",
+                "minHeight": 110,
               },
             ]
           }
         >
-          ©2017-
-          2021
-           
-          dooboolab, All Rights Reserved
-        </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 18,
+                    "fontWeight": "300",
+                    "lineHeight": 30,
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 14,
+                  },
+                ]
+              }
+            >
+              Address
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 18,
+                    "fontWeight": "300",
+                    "lineHeight": 30,
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 12,
+                    "lineHeight": 18,
+                    "marginTop": 4,
+                  },
+                ]
+              }
+            >
+              203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                  "paddingBottom": 4,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 4,
+                },
+              ]
+            }
+          >
+            <View
+              activeOpacity={0.7}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onPress={[MockFunction]}
+              onPressIn={[Function]}
+              onPressOut={[Function]}
+              onResponderGrant={[Function]}
+              onResponderRelease={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "marginHorizontal": 10,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#B446BF",
+                      "fontSize": 12,
+                      "textDecorationLine": "underline",
+                    },
+                    false,
+                  ]
+                }
+              >
+                Vision & Mission
+              </Text>
+            </View>
+            <View
+              activeOpacity={0.7}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onPress={[MockFunction]}
+              onPressIn={[Function]}
+              onPressOut={[Function]}
+              onResponderGrant={[Function]}
+              onResponderRelease={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "marginHorizontal": 10,
+                    "marginTop": 4,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#B446BF",
+                      "fontSize": 12,
+                      "textDecorationLine": "underline",
+                    },
+                    false,
+                  ]
+                }
+              >
+                Code of conduct
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 10,
+                    "marginTop": 10,
+                  },
+                ]
+              }
+            >
+              ©2017-
+              2021
+               
+              dooboolab, All Rights Reserved
+            </Text>
+          </View>
+        </View>
       </View>
-    </View>
-  </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
 </View>
 `;
 
@@ -1235,7 +1141,8 @@ exports[`Rendering renders without crashing 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -1269,29 +1176,48 @@ exports[`Rendering renders without crashing 1`] = `
         ]
       }
     >
-      <Image
-        source={
-          Object {
-            "canInstrument": true,
-            "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
-          }
-        }
+      <View
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onPress={[MockFunction]}
+        onPressIn={[Function]}
+        onPressOut={[Function]}
+        onResponderGrant={[Function]}
+        onResponderRelease={[Function]}
         style={
           Array [
             Object {
-              "alignSelf": "center",
-              "height": 52,
-              "marginBottom": 12,
-              "marginLeft": 0,
-              "marginRight": 0,
-              "marginTop": 12,
-              "width": 124,
+              "alignItems": "center",
+              "justifyContent": "center",
             },
           ]
         }
-      />
+      >
+        <Image
+          source={
+            Object {
+              "canInstrument": true,
+              "createTransformer": [Function],
+              "getCacheKey": [Function],
+              "process": [Function],
+            }
+          }
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "height": 52,
+                "marginBottom": 12,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 12,
+                "width": 124,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
       <View
         style={
           Array [
@@ -1302,125 +1228,7 @@ exports[`Rendering renders without crashing 1`] = `
             },
           ]
         }
-      >
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Story
-          </Text>
-        </View>
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Work
-          </Text>
-        </View>
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "paddingBottom": 0,
-                  "paddingLeft": 28,
-                  "paddingRight": 28,
-                  "paddingTop": 0,
-                },
-                false,
-              ]
-            }
-          >
-            Contact
-          </Text>
-        </View>
-      </View>
+      />
       <View
         style={
           Array [
@@ -1488,964 +1296,968 @@ exports[`Rendering renders without crashing 1`] = `
         </View>
       </View>
     </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignSelf": "stretch",
-            "minHeight": 300,
-          },
-        ]
-      }
-    >
-      <View
-        accessibilityIgnoresInvertColors={true}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-              "paddingBottom": 0,
-              "paddingLeft": 24,
-              "paddingRight": 24,
-              "paddingTop": 0,
-            },
-          ]
-        }
-      >
-        <Image
-          resizeMode="cover"
-          source={
-            Object {
-              "uri": Object {
-                "canInstrument": true,
-                "createTransformer": [Function],
-                "getCacheKey": [Function],
-                "process": [Function],
-              },
-            }
-          }
-          style={
-            Array [
-              Object {
-                "bottom": 0,
-                "left": 0,
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-              },
-              Object {
-                "height": undefined,
-                "width": undefined,
-              },
-              Object {
-                "opacity": 0.7,
-              },
-            ]
-          }
-        />
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 32,
-                "marginTop": 200,
-              },
-            ]
-          }
-        >
-          Code of Conduct
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#EAEBF4",
-          "paddingHorizontal": 140,
-          "paddingVertical": 40,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "#000000",
-            "fontFamily": "avenir",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-            "textAlign": "center",
-          }
-        }
-      >
-        We expect dooboolab's contributors to act professionally and respectfully. All contributors should have their own self-observation ability so that our environment can grow wisely.
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "paddingBottom": 20,
-            "paddingLeft": 0,
-            "paddingRight": 0,
-            "paddingTop": 20,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "marginTop": 40,
-            "paddingHorizontal": 80,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#393D7A",
-                "fontSize": 20,
-                "marginBottom": 20,
-                "marginTop": 24,
-              },
-            ]
-          }
-        >
-          We expect all contributors to avoid bad behaviors affected by bad culture
-        </Text>
+    <RCTScrollView>
+      <View>
         <View
           style={
             Array [
               Object {
-                "alignItems": "flex-start",
-                "alignSelf": "center",
-                "borderColor": "#EDEDED",
-                "borderRadius": 10,
-                "borderWidth": 2,
-                "flexDirection": "column",
-                "justifyContent": "center",
-                "marginVertical": 24,
-                "paddingHorizontal": 60,
-                "paddingVertical": 24,
+                "alignSelf": "stretch",
+                "minHeight": 300,
               },
-              false,
-              false,
             ]
           }
         >
           <View
+            accessibilityIgnoresInvertColors={true}
             style={
-              Object {
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                  "paddingBottom": 0,
+                  "paddingLeft": 24,
+                  "paddingRight": 24,
+                  "paddingTop": 0,
+                },
+              ]
             }
           >
-            <Text
-              style={
+            <Image
+              resizeMode="cover"
+              source={
                 Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
+                  "uri": Object {
+                    "canInstrument": true,
+                    "createTransformer": [Function],
+                    "getCacheKey": [Function],
+                    "process": [Function],
+                  },
                 }
               }
-            >
-              •
-               
-            </Text>
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "opacity": 0.7,
+                  },
+                ]
+              }
+            />
             <Text
               style={
                 Array [
                   Object {
                     "color": "#000000",
                     "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
+                    "fontSize": 24,
+                    "fontWeight": "800",
                     "maxWidth": "60%",
                     "textAlign": "center",
                   },
                   Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
+                    "fontSize": 32,
+                    "marginTop": 200,
                   },
                 ]
               }
             >
-              Discrimination. Equal treatment regardless of race, gender, age or sexual orientation
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Pointing out on other's appearance.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Insulting one's parents or family members.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Violence and agressive attitudes. We want all people to feel safe in our community.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Belittling others.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Copyright infringement.
+              Code of Conduct
             </Text>
           </View>
         </View>
-      </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "marginTop": 40,
-            "paddingHorizontal": 80,
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 24,
-                "fontWeight": "800",
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "color": "#393D7A",
-                "fontSize": 20,
-                "marginBottom": 20,
-                "marginTop": 24,
-              },
-            ]
-          }
-        >
-          We hope to contribute in creating a better world
-        </Text>
         <View
           style={
-            Array [
-              Object {
-                "alignItems": "flex-start",
-                "alignSelf": "center",
-                "borderColor": "#EDEDED",
-                "borderRadius": 10,
-                "borderWidth": 2,
-                "flexDirection": "column",
-                "justifyContent": "center",
-                "marginVertical": 24,
-                "paddingHorizontal": 60,
-                "paddingVertical": 24,
-              },
-              false,
-              false,
-            ]
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Respect people
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Don’t be afraid to speak up.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Help people rather than blaming. Anyone can make mistakes..
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Grow with the community and take advantage of it.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Try to be rational rather than emotional.
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#000000",
-                  "fontSize": 18,
-                  "marginTop": 3,
-                }
-              }
-            >
-              •
-               
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 18,
-                    "fontWeight": "300",
-                    "lineHeight": 30,
-                    "maxWidth": "60%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontSize": 16,
-                    "maxWidth": "100%",
-                    "textAlign": "left",
-                  },
-                ]
-              }
-            >
-              Improve communication skills, which is a challenge for everyone.
-            </Text>
-          </View>
-        </View>
-      </View>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
-            "flexDirection": "row",
-            "justifyContent": "space-around",
-            "minHeight": 110,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
             Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 18,
-                "fontWeight": "300",
-                "lineHeight": 30,
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 14,
-              },
-            ]
-          }
-        >
-          Address
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 18,
-                "fontWeight": "300",
-                "lineHeight": 30,
-                "maxWidth": "60%",
-                "textAlign": "center",
-              },
-              Object {
-                "fontSize": 12,
-                "lineHeight": 18,
-                "marginTop": 4,
-              },
-            ]
-          }
-        >
-          203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
-        </Text>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexBasis": 0,
-              "flexDirection": "column",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-              "paddingBottom": 4,
-              "paddingLeft": 0,
-              "paddingRight": 0,
-              "paddingTop": 4,
-            },
-          ]
-        }
-      >
-        <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-              },
-            ]
+              "backgroundColor": "#EAEBF4",
+              "paddingHorizontal": 140,
+              "paddingVertical": 40,
+            }
           }
         >
           <Text
             style={
-              Array [
-                Object {
-                  "color": "#B446BF",
-                  "fontSize": 12,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "color": "#000000",
+                "fontFamily": "avenir",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "lineHeight": 24,
+                "textAlign": "center",
+              }
             }
           >
-            Vision & Mission
+            We expect dooboolab's contributors to act professionally and respectfully. All contributors should have their own self-observation ability so that our environment can grow wisely.
           </Text>
         </View>
         <View
-          activeOpacity={0.7}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onPress={[MockFunction]}
-          onPressIn={[Function]}
-          onPressOut={[Function]}
-          onResponderGrant={[Function]}
-          onResponderRelease={[Function]}
           style={
             Array [
               Object {
                 "alignItems": "center",
+                "flexDirection": "column",
                 "justifyContent": "center",
-              },
-              Object {
-                "marginHorizontal": 10,
-                "marginTop": 4,
+                "paddingBottom": 20,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 20,
               },
             ]
           }
         >
-          <Text
+          <View
             style={
-              Array [
-                Object {
-                  "color": "#B446BF",
-                  "fontSize": 12,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "alignItems": "center",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "marginTop": 40,
+                "paddingHorizontal": 80,
+              }
             }
           >
-            Code of conduct
-          </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#393D7A",
+                    "fontSize": 20,
+                    "marginBottom": 20,
+                    "marginTop": 24,
+                  },
+                ]
+              }
+            >
+              We expect all contributors to avoid bad behaviors affected by the bad culture
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "alignSelf": "center",
+                    "borderColor": "#EDEDED",
+                    "borderRadius": 10,
+                    "borderWidth": 2,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                    "marginVertical": 24,
+                    "paddingHorizontal": 60,
+                    "paddingVertical": 24,
+                  },
+                  false,
+                  false,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Discrimination. Equal treatment regardless of race, gender, age or sexual orientation
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Pointing out on other's appearance.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Insulting one's parents or family members.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Any kind of negative office or workplace politics speaking on other's opinion rather than your own. Wrongfully judging and denoucing others.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Violence and agressive attitudes. We want all people to feel safe in our community.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Belittling others.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Copyright infringement.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "marginTop": 40,
+                "paddingHorizontal": 80,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 24,
+                    "fontWeight": "800",
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "color": "#393D7A",
+                    "fontSize": 20,
+                    "marginBottom": 20,
+                    "marginTop": 24,
+                  },
+                ]
+              }
+            >
+              We hope to contribute in creating a better world
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "alignSelf": "center",
+                    "borderColor": "#EDEDED",
+                    "borderRadius": 10,
+                    "borderWidth": 2,
+                    "flexDirection": "column",
+                    "justifyContent": "center",
+                    "marginVertical": 24,
+                    "paddingHorizontal": 60,
+                    "paddingVertical": 24,
+                  },
+                  false,
+                  false,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Respect people
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Don’t be afraid to speak up.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Help people rather than blaming. Anyone can make mistakes..
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Grow with the community and take advantage of it.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Try to be rational rather than emotional.
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000000",
+                      "fontSize": 18,
+                      "marginTop": 3,
+                    }
+                  }
+                >
+                  •
+                   
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "avenir",
+                        "fontSize": 18,
+                        "fontWeight": "300",
+                        "lineHeight": 30,
+                        "maxWidth": "60%",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "fontSize": 16,
+                        "maxWidth": "100%",
+                        "textAlign": "left",
+                      },
+                    ]
+                  }
+                >
+                  Improve communication skills, which is a challenge for everyone.
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
-        <Text
+        <View
           style={
             Array [
               Object {
-                "color": "#000000",
-                "fontSize": 10,
-                "marginTop": 10,
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "backgroundColor": "#FFFFFF",
+                "flexDirection": "row",
+                "justifyContent": "space-around",
+                "minHeight": 110,
               },
             ]
           }
         >
-          ©2017-
-          2021
-           
-          dooboolab, All Rights Reserved
-        </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 18,
+                    "fontWeight": "300",
+                    "lineHeight": 30,
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 14,
+                  },
+                ]
+              }
+            >
+              Address
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "avenir",
+                    "fontSize": 18,
+                    "fontWeight": "300",
+                    "lineHeight": 30,
+                    "maxWidth": "60%",
+                    "textAlign": "center",
+                  },
+                  Object {
+                    "fontSize": 12,
+                    "lineHeight": 18,
+                    "marginTop": 4,
+                  },
+                ]
+              }
+            >
+              203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "column",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                  "paddingBottom": 4,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 4,
+                },
+              ]
+            }
+          >
+            <View
+              activeOpacity={0.7}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onPress={[MockFunction]}
+              onPressIn={[Function]}
+              onPressOut={[Function]}
+              onResponderGrant={[Function]}
+              onResponderRelease={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "marginHorizontal": 10,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#B446BF",
+                      "fontSize": 12,
+                      "textDecorationLine": "underline",
+                    },
+                    false,
+                  ]
+                }
+              >
+                Vision & Mission
+              </Text>
+            </View>
+            <View
+              activeOpacity={0.7}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onPress={[MockFunction]}
+              onPressIn={[Function]}
+              onPressOut={[Function]}
+              onResponderGrant={[Function]}
+              onResponderRelease={[Function]}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "marginHorizontal": 10,
+                    "marginTop": 4,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#B446BF",
+                      "fontSize": 12,
+                      "textDecorationLine": "underline",
+                    },
+                    false,
+                  ]
+                }
+              >
+                Code of conduct
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 10,
+                    "marginTop": 10,
+                  },
+                ]
+              }
+            >
+              ©2017-
+              2021
+               
+              dooboolab, All Rights Reserved
+            </Text>
+          </View>
+        </View>
       </View>
-    </View>
-  </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
 </View>
 `;
