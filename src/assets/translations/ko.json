@@ -1,42 +1,552 @@
 {
   "fb-locale": "ko_KR",
   "translations": {
-    "8187f7a32af24a016622027a1aaf7c49": {
+    "0e1797ceb5cf9dcf6ff5b94851e5bd62": {
       "tokens": [],
       "types": [],
       "translations": [
         {
-          "translation": "로그인",
+          "translation": "우리는 두부랩의 컨트리뷰터가 전문적이고 정중하게 행동하기를 기대합니다. 모든 컨트리뷰터들은 공동의 환경이 현명하게 성장할 수 있도록 자기객관화 능력을 지녀야 합니다.",
           "variations": {}
         }
       ]
     },
-    "579290b3f62f0fd93162fd1c69667b80": {
+    "f2c443f49f7e133f022277e4019b2c5f": {
       "tokens": [],
       "types": [],
       "translations": [
         {
-          "translation": "화면 전환",
+          "translation": "행동강령",
           "variations": {}
         }
       ]
     },
-    "266e827836b82d38073d828285fd7b08": {
+    "f13ee66e50d9b6e866d22fdee4346807": {
       "tokens": [],
       "types": [],
       "translations": [
         {
-          "translation": "테마 변경",
+          "translation": "모든 컨트리뷰터들이 잘못된 문화로부터 상속된 나쁜 행동들을 반복하지 않기를 기대합니다.",
           "variations": {}
         }
       ]
     },
-    "d045dda0e2a4f8df14e676e3adbcf94d": {
+    "a4a2de0599af8e84582e6a42242db0ee": {
       "tokens": [],
       "types": [],
       "translations": [
         {
-          "translation": "뒤로가기",
+          "translation": "차별하는 행위 - 인종, 성별, 종교, 나이에 상관없이 모두가 동등함",
+          "variations": {}
+        }
+      ]
+    },
+    "55e9aa0345c5f4dc1c062e37c76ff4b9": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "타인의 외모 지적",
+          "variations": {}
+        }
+      ]
+    },
+    "7054b9fda2659fa0dd2e1a63039b93b8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "부모나 가족을 모욕하는 행위",
+          "variations": {}
+        }
+      ]
+    },
+    "c5dfdbf8fd40bbd13f89bc9e152ce89b": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "불필요한 정치질 - 남의 의견을 대신 이야기하기 혹은 악의적으로 헐뜯기",
+          "variations": {}
+        }
+      ]
+    },
+    "e2c8340640f98203eeeec2550e580236": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "폭력 혹은 공격적인 언행 - 저희 주변의 모든 사람이 안전하다고 느껴야 합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "180e5f58845ae59e3f6c9e360ecb9798": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "상대를 조롱하거나 비웃는 행위",
+          "variations": {}
+        }
+      ]
+    },
+    "4bb714156e7336137a4bf8d65a65a06d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "저작권을 위반하고 창작물을 함부로 쓰는 행위 - 참고 문헌을 쓰는 것을 잊지 마십시오.",
+          "variations": {}
+        }
+      ]
+    },
+    "077e2ae579bd01049d1ffc5a768d6264": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "더 나은 세상을 만드는 데 기여하고 싶습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "e111cd332aa7648ce007307429a06204": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "존중하기",
+          "variations": {}
+        }
+      ]
+    },
+    "ecebdb8dd5092a475a6a652c422a7c90": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "눈치보지 않기",
+          "variations": {}
+        }
+      ]
+    },
+    "18049e61bd1e21393cc0fbeac0e5c44a": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "지적질보다는 도움주기",
+          "variations": {}
+        }
+      ]
+    },
+    "7eb58b185b1220218213944f501fe3d4": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "커뮤니티와 함께 배우고 성장하기",
+          "variations": {}
+        }
+      ]
+    },
+    "f1238d66cd1d77dd96ffb1615fdbd258": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "감정적으로 행동하지 않기",
+          "variations": {}
+        }
+      ]
+    },
+    "3fb5ab486991494abf7b3d04938e96ca": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "커뮤니케이션 능력을 키우기 위해 스스로 노력하기",
+          "variations": {}
+        }
+      ]
+    },
+    "ee2f9b5dbb978e580105af2366cf62ea": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "커뮤니티",
+          "variations": {}
+        }
+      ]
+    },
+    "27329a3474b3e184e575abf7e7dc42b4": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "회사 외부의 훌륭한 사람들과 협력하기 위해 추진하고 있는 커뮤니티들 목록입니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "f2fb2f3a04b7504f2c0caf06c8716c7f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "더보기",
+          "variations": {}
+        }
+      ]
+    },
+    "048beb41aa04d75864bb446f4018689b": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "올바른 이메일주소가 아닙니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "b14eee3e85c85f9e94a7fd15db8c645c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "오류",
+          "variations": {}
+        }
+      ]
+    },
+    "3bbca98677464fb87752ed36ce259e1d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "이야기를 공유해주셔서 감사합니다 🤩. 빠른시일 내에 회신드리겠습니다!",
+          "variations": {}
+        }
+      ]
+    },
+    "81cea9b7ced8133435a1d162906b0daf": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "성공",
+          "variations": {}
+        }
+      ]
+    },
+    "932b1cfcfef1310941ec46a42f402a35": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "다음은 누구신가요? 편하게 이야기를 들려주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "2f6ca4b8549700dd31d1256c2d7eb79f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "이름을 입력해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "a2929f83032e39b5695aa9328cd17b67": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "여러분의 이야기를 들려주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "68c4ed2df948c495eec3a9a76e439505": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "보내기",
+          "variations": {}
+        }
+      ]
+    },
+    "4d0a7b61e4904db118753af346a8f97f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "유연한 혁신 두부랩에서 시작합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "682a6b4a02d2e07e8943962ee5fddd5f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리는 개인, 회사 및 사회 단체를 위한 강력한 오픈소스 커뮤니티를 운영합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "d275b23f10dd1a21a9e9359b979681c8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "연락하기",
+          "variations": {}
+        }
+      ]
+    },
+    "684861366d5b5b8232ff644d8c55498f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "힘이 되주시는 분들",
+          "variations": {}
+        }
+      ]
+    },
+    "17efcc27c0d21d557de838559f2a8249": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "여기에서 계세요 👉",
+          "variations": {}
+        }
+      ]
+    },
+    "1be139db9576e888e946d5126dea4b52": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "스토리",
+          "variations": {}
+        }
+      ]
+    },
+    "417bab976752c5ab8c670f5c3fd72767": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리는 세상이 필요로 하는 IT서비스를 발굴하는데 그 목적이 있습니다. 시장을 바꿀 잠재력을 가진 아이디어들을 지속적으로 찾아 상용화하는 것이 목표입니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "a042d5726e6101952cbc2e8769933662": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비전 & 미션",
+          "variations": {}
+        }
+      ]
+    },
+    "47b84029883d801e1e6a4f89e1d79555": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "두부랩은 더 나은 사회를 만드는 데 어려움을 겪고있는 사람들을 돕기를 희망합니다. 우리는 다양한 플랫폼과 오픈소스 프로젝트에 기여하여 가치를 창출하기 위해 공개적으로 일하는 전문가 그룹입니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "b8b093a5c4b8ecf3a652797ad06f1791": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "더보기 >",
+          "variations": {}
+        }
+      ]
+    },
+    "201552d09d188795c569b44b1f0ccd21": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "업무",
+          "variations": {}
+        }
+      ]
+    },
+    "9e83f07ad74778bb2ac776f7076211cd": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리가 현재하고 있는 업무들입니다. 우리는 전 세계의 더 위대한 사람들과 함께하고 싶습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "bc8b791a0248e3057437d66e9668ef71": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "리액트네이티브로 제작한 범용 UI 프레임워크입니다. iOS, android 그리고 web에서 동작합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "f1d43917b1ff1bd7db65f702e7868e2f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Expo로 제작 된 오픈 소스 채팅 앱입니다. 전세계 많은 개발자들과 개발 스택을 공유하기 위해 제작되었습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "87d989548f23a77cc6ec80f542eaacf7": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "두부랩은 더 나은 사회를 만드는데 어려움을 겪는 분들을 돕고자 합니다. 두부랩은 공공의 이익을 위해 다양한 플랫폼에 기여하고 오픈소스 프로젝트를 진행하는 전문가 집단입니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "885bac76b6caea20807391ea6747776f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "더 나은 사회를 만들고자 하는 우리들의 비전에 충족하는 훌륭한 사람들과 만날 수 있기를 간절히 원합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "5da6e3059d76f38d191daf5d641fbc14": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "주변에서 어떤 이로운 일을 하고자 하는 데 어려움을 겪으시고 계신다면 편하게 연락을 주시면 감사하겠습니다. 아래 행동강령만 유의해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "71480d6a70ab2ccb00ec2eb7ba24a5a2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "합리적인 사회를 만드는 것을 목표로 삼고 있습니다. 비록 어렵겠지만, 많은 사람과 소통하고 경험을 공유하며 많은 이들에게 좋은 영향을 끼치고자 합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "25f70ac742342c321600a614d2fea238": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "다양한 분야에서 일하는 여러 이해 관계자와 함께 성장하고자 합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "9b06c6ed6a9a234bb500c28dbd5ae2d6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "목표를 이루기 위해 최대한 공개적인 업무를 발굴하고 참여하고자 합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "66e22adb6a121da7085ee59a3019ef6f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "개인, 기업 및 사회 그룹을 위한 강력한 오픈소스 커뮤니티가 되고 싶습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "5c3bedab63cdb7ea0478a06839dec5c6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "마지막으로, 우리의 사명은 합당한 사회를 만드는 데 기여하는 것입니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "48a432714eafb9beffc607abb632852f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "주소",
+          "variations": {}
+        }
+      ]
+    },
+    "e737eae042e2cf2f941bd3ca1647bf0d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "서울시 강남구 선릉로 93길 40 203호",
+          "variations": {}
+        }
+      ]
+    },
+    "d8813ce3bd9918175dee6080462d90ac": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "행동강령",
+          "variations": {}
+        }
+      ]
+    },
+    "b1dd48eae0611f59d3efd26e39910a6f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "dooboolab, 판권 소유",
+          "variations": {}
+        }
+      ]
+    },
+    "bc345408a8924908084bed5a59c451ca": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "연락",
           "variations": {}
         }
       ]
