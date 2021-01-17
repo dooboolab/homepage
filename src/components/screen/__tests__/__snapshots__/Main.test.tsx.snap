@@ -1508,7 +1508,7 @@ exports[`Render renders without crashing 1`] = `
             "backgroundColor": "#EAEBF4",
             "flexDirection": "column",
             "justifyContent": "center",
-            "minHeight": 200,
+            "minHeight": 160,
           },
         ]
       }
@@ -1523,6 +1523,9 @@ exports[`Render renders without crashing 1`] = `
               "fontWeight": "800",
               "maxWidth": "60%",
               "textAlign": "center",
+            },
+            Object {
+              "marginTop": 8,
             },
           ]
         }
@@ -1575,11 +1578,11 @@ exports[`Render renders without crashing 1`] = `
                 Object {
                   "color": "#000000",
                   "fontSize": 18,
+                  "textDecorationLine": "underline",
                 },
                 false,
                 Object {
-                  "color": "#393D7A",
-                  "fontWeight": "bold",
+                  "color": "#B446BF",
                 },
               ]
             }
@@ -1588,6 +1591,186 @@ exports[`Render renders without crashing 1`] = `
           </Text>
         </View>
       </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "minHeight": 110,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "column",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "avenir",
+                "fontSize": 18,
+                "fontWeight": "300",
+                "lineHeight": 30,
+                "maxWidth": "60%",
+                "textAlign": "center",
+              },
+              Object {
+                "fontSize": 14,
+              },
+            ]
+          }
+        >
+          Address
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "avenir",
+                "fontSize": 18,
+                "fontWeight": "300",
+                "lineHeight": 30,
+                "maxWidth": "60%",
+                "textAlign": "center",
+              },
+              Object {
+                "fontSize": 12,
+                "lineHeight": 18,
+                "marginTop": 4,
+              },
+            ]
+          }
+        >
+          203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "column",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "center",
+              "paddingBottom": 4,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "paddingTop": 4,
+            },
+          ]
+        }
+      >
+        <View
+          activeOpacity={0.7}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onPress={[MockFunction]}
+          onPressIn={[Function]}
+          onPressOut={[Function]}
+          onResponderGrant={[Function]}
+          onResponderRelease={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {
+                "marginHorizontal": 10,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#B446BF",
+                  "fontSize": 12,
+                  "textDecorationLine": "underline",
+                },
+                false,
+              ]
+            }
+          >
+            Vision & Mission
+          </Text>
+        </View>
+        <View
+          activeOpacity={0.7}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onPress={[MockFunction]}
+          onPressIn={[Function]}
+          onPressOut={[Function]}
+          onResponderGrant={[Function]}
+          onResponderRelease={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {
+                "marginHorizontal": 10,
+                "marginTop": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#B446BF",
+                  "fontSize": 12,
+                  "textDecorationLine": "underline",
+                },
+                false,
+              ]
+            }
+          >
+            Code of conduct
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontSize": 10,
+                "marginTop": 10,
+              },
+            ]
+          }
+        >
+          ©2017-
+          2021
+           
+          dooboolab, All Rights Reserved
+        </Text>
+      </View>
     </View>
   </RCTSafeAreaView>
 </View>

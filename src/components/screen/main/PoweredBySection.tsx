@@ -1,17 +1,17 @@
 import {Description, SubTitle} from '../../ui/Text';
 import React, {FC} from 'react';
-import {ThemeType, useTheme} from '../../../providers/ThemeProvider';
 
 import Hoverable from '../../../utils/Hoverable';
 import {Linking} from 'react-native';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
+import {useTheme} from '../../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;
 
 const Container = styled.View`
-  min-height: 200px;
+  min-height: 160px;
   align-self: stretch;
   background-color: ${({theme}) => theme.paper};
 
@@ -28,6 +28,7 @@ const LinkTouch = styled.TouchableOpacity`
 const LinkText = styled.Text`
   font-size: 18px;
   color: ${({theme}) => theme.text};
+  text-decoration-line: underline;
 `;
 
 type Props = {};
@@ -37,14 +38,17 @@ const PoweredBySection: FC<Props> = () => {
 
   return (
     <Container>
-      <SubTitle>
+      <SubTitle
+        style={{
+          marginTop: 8,
+        }}>
         <fbt desc="powered by">Powered by</fbt>
       </SubTitle>
       <Description
         style={{
           lineHeight: 60,
         }}>
-        <fbt desc="everyone in">Everyone in</fbt>
+        <fbt desc="everyone">Everyone in</fbt>
         <Hoverable>
           {(isHovered) => (
             <LinkTouch
@@ -61,7 +65,9 @@ const PoweredBySection: FC<Props> = () => {
                     color: theme.heading,
                     textDecorationLine: 'underline',
                   },
-                  {color: theme.primary, fontWeight: 'bold'},
+                  {
+                    color: theme.accent,
+                  },
                 ]}>
                 OpenCollectives
               </LinkText>

@@ -1,6 +1,7 @@
 import Header, {FixedHeader} from './Header';
 import React, {FC} from 'react';
 
+import AddressSection from './AddressSection';
 import CommunitySection from './CommunitySection';
 import ContactSection from './ContactSection';
 import HeroSection from './HeroSection';
@@ -36,6 +37,7 @@ const Page: FC<Props> = () => {
       <WorkSection />
       <ContactSection />
       <PoweredBySection />
+      <AddressSection />
       {Platform.OS === 'web' && <FixedHeader />}
     </Container>
   );

@@ -10,7 +10,7 @@ exports[`Interaction should simulate onClick 1`] = `
         "backgroundColor": "#EAEBF4",
         "flexDirection": "column",
         "justifyContent": "center",
-        "minHeight": 200,
+        "minHeight": 160,
       },
     ]
   }
@@ -25,6 +25,9 @@ exports[`Interaction should simulate onClick 1`] = `
           "fontWeight": "800",
           "maxWidth": "60%",
           "textAlign": "center",
+        },
+        Object {
+          "marginTop": 8,
         },
       ]
     }
@@ -77,11 +80,11 @@ exports[`Interaction should simulate onClick 1`] = `
             Object {
               "color": "#000000",
               "fontSize": 18,
+              "textDecorationLine": "underline",
             },
             false,
             Object {
-              "color": "#393D7A",
-              "fontWeight": "bold",
+              "color": "#B446BF",
             },
           ]
         }
@@ -103,7 +106,7 @@ exports[`Rendering renders without crashing 1`] = `
         "backgroundColor": "#EAEBF4",
         "flexDirection": "column",
         "justifyContent": "center",
-        "minHeight": 200,
+        "minHeight": 160,
       },
     ]
   }
@@ -118,6 +121,9 @@ exports[`Rendering renders without crashing 1`] = `
           "fontWeight": "800",
           "maxWidth": "60%",
           "textAlign": "center",
+        },
+        Object {
+          "marginTop": 8,
         },
       ]
     }
@@ -170,11 +176,11 @@ exports[`Rendering renders without crashing 1`] = `
             Object {
               "color": "#000000",
               "fontSize": 18,
+              "textDecorationLine": "underline",
             },
             false,
             Object {
-              "color": "#393D7A",
-              "fontWeight": "bold",
+              "color": "#B446BF",
             },
           ]
         }
