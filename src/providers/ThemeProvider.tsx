@@ -11,6 +11,11 @@ import {useMediaQuery} from 'react-responsive';
 
 interface Context {
   themeType: ThemeType;
+  media: {
+    isDesktop: boolean;
+    isTablet: boolean;
+    isMobile: boolean;
+  };
   theme: DefaultTheme;
   changeThemeType: () => void;
   colors: Colors;
@@ -61,6 +66,7 @@ function ThemeProvider({children, initialThemeType}: Props): ReactElement {
   return (
     <Provider
       value={{
+        media,
         themeType,
         changeThemeType,
         theme: defaultTheme,

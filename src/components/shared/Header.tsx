@@ -1,9 +1,10 @@
-import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
+import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../utils/Icons';
 import React, {FC, ReactElement, useState} from 'react';
-import {ThemeType, useTheme} from '../../../providers/ThemeProvider';
+import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import Hoverable from '../../../utils/Hoverable';
+import Button from '../shared/Button';
+import Hoverable from '../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {useNavigation} from '@react-navigation/native';
 
@@ -24,6 +25,11 @@ const Container = styled.View`
       align-items: center;
       justify-content: space-between;
     `}
+`;
+
+const LogoTouch = styled.TouchableOpacity`
+  align-items: center;
+  justify-content: center;
 `;
 
 const Logo = styled.Image`
@@ -106,6 +112,7 @@ const Link: FC<LinkProps> = ({url, text, selected}): ReactElement => {
 };
 
 export const FixedHeader: FC = () => {
+  const navigation = useNavigation();
   const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
@@ -113,11 +120,28 @@ export const FixedHeader: FC = () => {
     <Container
       // @ts-ignore
       style={{position: 'fixed'}}>
-      <Logo
-        source={
-          themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
-        }
-      />
+      <Hoverable>
+        {(isHovered) => (
+          <LogoTouch onPress={() => navigation.navigate('Home')}>
+            <Logo
+              style={
+                isHovered && {
+                  shadowColor: theme.primary,
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.24,
+                  shadowRadius: 16,
+                }
+              }
+              source={
+                themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
+              }
+            />
+          </LogoTouch>
+        )}
+      </Hoverable>
       <LinkWrapper>
         <Link text="Story" url="" />
         <Link text="Work" url="" />

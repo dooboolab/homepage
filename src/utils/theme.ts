@@ -29,6 +29,7 @@ export const light = {
   text: '#000000',
   textContrast: '#D3D8E8',
   disabled: colors.mediumGray,
+  border: '#EDEDED',
 };
 
 export type Theme = typeof light;
@@ -45,6 +46,7 @@ export const dark = {
   text: '#D3D8E8',
   textContrast: '#000000',
   disabled: colors.mediumGray,
+  border: '#333333',
 };
 
 export const theme = {

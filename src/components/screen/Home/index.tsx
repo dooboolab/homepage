@@ -1,9 +1,9 @@
-import Header, {FixedHeader} from './Header';
+import Header, {FixedHeader} from '../../shared/Header';
 import React, {FC} from 'react';
 
-import AddressSection from './AddressSection';
 import CommunitySection from './CommunitySection';
 import ContactSection from './ContactSection';
+import Footer from '../../shared/Footer';
 import HeroSection from './HeroSection';
 import {Platform} from 'react-native';
 import PoweredBySection from './PoweredBySection';
@@ -37,7 +37,7 @@ const Page: FC<Props> = () => {
       <WorkSection />
       <ContactSection />
       <PoweredBySection />
-      <AddressSection />
+      <Footer />
       {Platform.OS === 'web' && <FixedHeader />}
     </Container>
   );

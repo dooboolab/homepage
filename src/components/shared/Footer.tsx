@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 
-import {Description} from '../../ui/Text';
-import Hoverable from '../../../utils/Hoverable';
-import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
+import {Description} from '../ui/Text';
+import Hoverable from '../../utils/Hoverable';
+import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;
@@ -57,7 +57,7 @@ const CopyrightText = styled.Text`
 
 type Props = {};
 
-const AddressSection: FC<Props> = () => {
+const Footer: FC<Props> = () => {
   const {theme} = useTheme();
   const year = new Date().getFullYear();
   const navigation = useNavigation<RootStackNavigationProps<'Home'>>();
@@ -128,4 +128,4 @@ const AddressSection: FC<Props> = () => {
   );
 };
 
-export default AddressSection;
+export default Footer;
