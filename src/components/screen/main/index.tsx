@@ -3,6 +3,7 @@ import React, {FC} from 'react';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
+import StorySection from './StorySection';
 import styled from 'styled-components/native';
 import {withScreen} from '../../../utils/wrapper';
 
@@ -25,6 +26,7 @@ const Page: FC<Props> = () => {
     <Container>
       <Header />
       <HeroSection />
+      <StorySection />
     </Container>
   );
 };

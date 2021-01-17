@@ -43,7 +43,7 @@ const Title = styled.Text`
   max-width: 60%;
   color: ${({theme}): string => theme.text};
   font-family: futura;
-  font-weight: 300;
+  font-weight: 500;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
@@ -67,7 +67,7 @@ const Description = styled.Text`
     isDesktop &&
     css`
       font-size: 20px;
-      max-width: 50%;
+      max-width: 53%;
       text-align: flex-start;
     `}
 `;

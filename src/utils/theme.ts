@@ -20,6 +20,8 @@ export const colors: Colors = {
 export const light = {
   background: '#FFFFFF',
   paper: '#EAEBF4',
+  primary: '#393D7A',
+  accent: '#B446BF',
   link: '#393D7A',
   heading: '#393D7A',
   titleText: '#000000',
@@ -34,6 +36,8 @@ export type Theme = typeof light;
 export const dark = {
   background: '#232323',
   paper: '#EAEBF4',
+  primary: '#8A96DC',
+  accent: '#8A96DC',
   link: '#E0E0E0',
   heading: '#FFFFFF',
   titleText: '#8A96DC',
