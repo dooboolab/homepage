@@ -1,17 +1,17 @@
 import React, {FC, useRef} from 'react';
 
-import CommunitySection from './CommunitySection';
-import ContactSection from './ContactSection';
-import Footer from '../../shared/Footer';
-import Header from '../../shared/Header';
-import HeroSection from './HeroSection';
-import PoweredBySection from './PoweredBySection';
-import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
+import CommunitySection from './Home/CommunitySection';
+import ContactSection from './Home/ContactSection';
+import Footer from '../shared/Footer';
+import Header from '../shared/Header';
+import HeroSection from './Home/HeroSection';
+import PoweredBySection from './Home/PoweredBySection';
+import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
 import {ScrollView} from 'react-native';
-import StorySection from './StorySection';
-import WorkSection from './WorkSection';
+import StorySection from './Home/StorySection';
+import WorkSection from './Home/WorkSection';
 import styled from 'styled-components/native';
-import {withScreen} from '../../../utils/wrapper';
+import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.SafeAreaView`
   flex: 1;
