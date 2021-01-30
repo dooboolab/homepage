@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../../shared/Button';
+import {Button} from 'dooboo-ui';
+// import Button from '../../shared/Button';
 import {IMG_SYMBOL} from '../../../utils/Icons';
 import {fbt} from 'fbt';
 import {useTheme} from '../../../providers/ThemeProvider';
