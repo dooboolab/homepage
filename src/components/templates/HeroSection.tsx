@@ -113,30 +113,6 @@ const HeroSection: FC<Props> = ({onPressContactUs}) => {
           }}
           text={fbt('Contact Us', 'contact us')}
         />
-        <Button
-          onPress={onPressContactUs}
-          activeOpacity={0.7}
-          style={{
-            marginTop: 36,
-          }}
-          styles={{
-            container: {
-              backgroundColor: colors.success,
-              paddingHorizontal: 40,
-              borderRadius: 20,
-              height: 40,
-            },
-            text: {
-              color: theme.text,
-              fontFamily: 'avenir',
-              fontSize: 16,
-            },
-            hovered: {
-              backgroundColor: colors.darkGray,
-            },
-          }}
-          text={fbt('Contact Us', 'contact us')}
-        />
       </BackgroundImage>
     </Container>
   );
