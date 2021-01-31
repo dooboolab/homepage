@@ -1,15 +1,15 @@
 import React, {FC, useRef} from 'react';
 
-import CommunitySection from './Home/CommunitySection';
-import ContactSection from './Home/ContactSection';
-import Footer from '../shared/Footer';
-import Header from '../shared/Header';
-import HeroSection from './Home/HeroSection';
-import PoweredBySection from './Home/PoweredBySection';
-import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
+import CommunitySection from '../UI/organisms/CommunitySection';
+import ContactSection from '../UI/organisms/ContactSection';
+import Footer from '../UI/molecules/Footer';
+import Header from '../UI/molecules/Header';
+import HeroSection from '../UI/organisms/HeroSection';
+import PoweredBySection from '../UI/organisms/PoweredBySection';
+import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native';
-import StorySection from './Home/StorySection';
-import WorkSection from './Home/WorkSection';
+import StorySection from '../UI/organisms/StorySection';
+import WorkSection from '../UI/organisms/WorkSection';
 import styled from 'styled-components/native';
 import {withScreen} from '../../utils/wrapper';
 

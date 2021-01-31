@@ -5,12 +5,12 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 
-import CodeOfConduct from '../screen/CodeOfConduct';
-import Home from '../screen/Home';
+import CodeOfConduct from '../pages/CodeOfConduct';
+import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import React from 'react';
-import VisionAndMission from '../screen/VisionAndMission';
+import VisionAndMission from '../pages/VisionAndMission';
 import {useTheme} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {

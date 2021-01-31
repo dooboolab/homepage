@@ -1,11 +1,11 @@
-import {Description, SubTitle} from '../ui/Text';
+import {Description, SubTitle} from '../UI/atoms/Typography';
 import React, {FC} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
-import Footer from '../shared/Footer';
-import Header from '../shared/Header';
+import Footer from '../UI/molecules/Footer';
+import Header from '../UI/molecules/Header';
 import {IMG_SYMBOL} from '../../utils/Icons';
-import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
+import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useTheme} from '../../providers/ThemeProvider';

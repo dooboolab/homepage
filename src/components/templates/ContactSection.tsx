@@ -2,12 +2,12 @@ import {Alert, Platform} from 'react-native';
 import React, {FC, useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../../shared/Button';
-import {IMG_LABTOP} from '../../../utils/Icons';
+import Button from '../UI/atoms/Button';
+import {IMG_LABTOP} from '../../utils/Icons';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
-import {useTheme} from '../../../providers/ThemeProvider';
-import {validateEmail} from '../../../utils/functions';
+import {useTheme} from '../../providers/ThemeProvider';
+import {validateEmail} from '../../utils/functions';
 
 // eslint-disable-next-line
 fbt;

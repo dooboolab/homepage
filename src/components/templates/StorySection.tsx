@@ -1,12 +1,12 @@
-import {Description, SubTitle, Title} from '../../ui/Text';
+import {Description, SubTitle, Title} from '../UI/atoms/Typography';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../../shared/Button';
-import {RootStackNavigationProps} from '../../navigation/RootStackNavigator';
+import Button from '../UI/atoms/Button';
+import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

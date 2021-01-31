@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
 
-import {Description} from '../ui/Text';
-import Hoverable from '../../utils/Hoverable';
-import {RootStackNavigationProps} from '../navigation/RootStackNavigator';
+import {Description} from '../atoms/Typography';
+import Hoverable from '../../../utils/Hoverable';
+import {RootStackNavigationProps} from '../../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../providers/ThemeProvider';
+import {useTheme} from '../../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

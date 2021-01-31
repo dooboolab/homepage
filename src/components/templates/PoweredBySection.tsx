@@ -1,11 +1,11 @@
-import {Description, SubTitle} from '../../ui/Text';
+import {Description, SubTitle} from '../UI/atoms/Typography';
 import React, {FC} from 'react';
 
-import Hoverable from '../../../utils/Hoverable';
+import Hoverable from '../../utils/Hoverable';
 import {Linking} from 'react-native';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
-import {useTheme} from '../../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

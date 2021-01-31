@@ -1,12 +1,12 @@
-import {Description, SubTitle} from '../../ui/Text';
-import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../../utils/Icons';
+import {Description, SubTitle} from '../UI/atoms/Typography';
+import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../../shared/Button';
+import Button from '../UI/atoms/Button';
 import {Linking} from 'react-native';
 import {fbt} from 'fbt';
-import {useTheme} from '../../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

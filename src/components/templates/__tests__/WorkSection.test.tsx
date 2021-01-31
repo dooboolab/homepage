@@ -3,12 +3,9 @@ import 'react-native';
 import * as React from 'react';
 
 import {RenderAPI, render} from '@testing-library/react-native';
-import {
-  createTestElement,
-  createTestProps,
-} from '../../../../../test/testUtils';
+import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
-import Shared from '../ContactSection';
+import Shared from '../organisms/WorkSection';
 
 let props: any;
 let component: React.ReactElement;

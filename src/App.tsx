@@ -2,7 +2,7 @@ import 'firebase/firestore';
 
 import Base64 from 'Base64';
 import React from 'react';
-import RootNavigator from './components/navigation/RootStackNavigator';
+import RootNavigator from './components/navigations/RootStackNavigator';
 import RootProvider from './providers';
 import firebase from 'firebase/app';
 import {firebaseConfig} from './config';

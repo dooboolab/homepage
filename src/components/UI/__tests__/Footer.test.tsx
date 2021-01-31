@@ -1,22 +1,30 @@
 import 'react-native';
 
-import React, {ReactElement} from 'react';
-import {RenderAPI, render} from '@testing-library/react-native';
-import {
-  createTestElement,
-  createTestProps,
-} from '../../../../../test/testUtils';
+import * as React from 'react';
 
-import Screen from '../HeroSection';
+import {RenderAPI, render} from '@testing-library/react-native';
+import {createTestElement, createTestProps} from '../../../../test/testUtils';
+
+import Shared from '../molecules/Footer';
 
 let props: any;
-let component: ReactElement;
+let component: React.ReactElement;
 let testingLib: RenderAPI;
+
+jest.mock('@react-navigation/native', () => {
+  return {
+    useNavigation: (): Record<string, unknown> => {
+      return {
+        navigate: jest.fn(),
+      };
+    },
+  };
+});
 
 describe('Rendering', () => {
   beforeEach(() => {
     props = createTestProps();
-    component = createTestElement(<Screen {...props} />);
+    component = createTestElement(<Shared {...props} />);
     testingLib = render(component);
   });
 
@@ -30,8 +38,6 @@ describe('Rendering', () => {
 
 describe('Interaction', () => {
   beforeEach(() => {
-    props = createTestProps();
-    component = createTestElement(<Screen {...props} />);
     testingLib = render(component);
   });
 
@@ -39,7 +45,6 @@ describe('Interaction', () => {
     expect(testingLib.toJSON()).toMatchSnapshot();
     // const btn = testingLib.queryByTestId('btn');
     // act(() => {
-    //   fireEvent.press(btn);
     //   fireEvent.press(btn);
     // });
     // expect(cnt).toBe(3);

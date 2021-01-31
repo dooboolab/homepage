@@ -1,17 +1,17 @@
-import {Description, SubDescription, Title} from '../../ui/Text';
+import {Description, SubDescription, Title} from '../UI/atoms/Typography';
 import {
   IC_DOOBOO_UI,
   IC_DOOBOO_UI_DARK,
   IC_HACKATALK,
   IC_HACKATALK_DARK,
   IC_WECOUNT,
-} from '../../../utils/Icons';
+} from '../../utils/Icons';
 import {Linking, View} from 'react-native';
 import React, {FC, ReactElement} from 'react';
-import {ThemeType, useTheme} from '../../../providers/ThemeProvider';
+import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../../shared/Button';
+import Button from '../UI/atoms/Button';
 import {fbt} from 'fbt';
 
 // eslint-disable-next-line

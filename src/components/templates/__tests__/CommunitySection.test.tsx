@@ -5,21 +5,11 @@ import * as React from 'react';
 import {RenderAPI, render} from '@testing-library/react-native';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
-import Shared from '../Footer';
+import Shared from '../organisms/CommunitySection';
 
 let props: any;
 let component: React.ReactElement;
 let testingLib: RenderAPI;
-
-jest.mock('@react-navigation/native', () => {
-  return {
-    useNavigation: (): Record<string, unknown> => {
-      return {
-        navigate: jest.fn(),
-      };
-    },
-  };
-});
 
 describe('Rendering', () => {
   beforeEach(() => {
