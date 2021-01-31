@@ -14,7 +14,7 @@ const RootProvider = ({
   children,
 }: Props): React.ReactElement => {
   return (
-    <ThemeProvider initialThemeType={initialThemeType}>
+    <ThemeProvider>
       <AppProvider>{children}</AppProvider>
     </ThemeProvider>
   );
