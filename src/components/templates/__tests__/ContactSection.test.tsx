@@ -5,7 +5,7 @@ import * as React from 'react';
 import {RenderAPI, render} from '@testing-library/react-native';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
-import Shared from '../organisms/ContactSection';
+import Shared from '../ContactSection';
 
 let props: any;
 let component: React.ReactElement;
