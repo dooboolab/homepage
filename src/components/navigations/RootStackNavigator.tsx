@@ -10,6 +10,7 @@ import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import React from 'react';
+import Sponsor from '../pages/Sponsor';
 import VisionAndMission from '../pages/VisionAndMission';
 import {useTheme} from '../../providers/ThemeProvider';
 
@@ -17,6 +18,7 @@ export type RootStackParamList = {
   Home: undefined;
   VisionAndMission: undefined;
   CodeOfConduct: undefined;
+  Sponsor: undefined;
 };
 
 export type RootStackNavigationProps<
@@ -63,6 +65,7 @@ function RootNavigator(): React.ReactElement {
         />
         <Stack.Screen name="VisionAndMission" component={VisionAndMission} />
         <Stack.Screen name="CodeOfConduct" component={CodeOfConduct} />
+        <Stack.Screen name="Sponsor" component={Sponsor} />
       </Stack.Navigator>
     </NavigationContainer>
   );
