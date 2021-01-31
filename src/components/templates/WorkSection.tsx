@@ -11,7 +11,7 @@ import React, {FC, ReactElement} from 'react';
 import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../UI/atoms/Button';
+import {Button} from 'dooboo-ui';
 import {fbt} from 'fbt';
 
 // eslint-disable-next-line

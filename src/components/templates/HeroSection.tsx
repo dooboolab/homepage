@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import {Button} from 'dooboo-ui';
-// import Button from '../../shared/Button';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {fbt} from 'fbt';
 import {useTheme} from '../../providers/ThemeProvider';
@@ -90,6 +89,30 @@ const HeroSection: FC<Props> = ({onPressContactUs}) => {
             and group of societies.
           </fbt>
         </Description>
+        <Button
+          onPress={onPressContactUs}
+          activeOpacity={0.7}
+          style={{
+            marginTop: 36,
+          }}
+          styles={{
+            container: {
+              backgroundColor: colors.success,
+              paddingHorizontal: 40,
+              borderRadius: 20,
+              height: 40,
+            },
+            text: {
+              color: theme.text,
+              fontFamily: 'avenir',
+              fontSize: 16,
+            },
+            hovered: {
+              backgroundColor: colors.darkGray,
+            },
+          }}
+          text={fbt('Contact Us', 'contact us')}
+        />
         <Button
           onPress={onPressContactUs}
           activeOpacity={0.7}

@@ -3,7 +3,7 @@ import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Button from '../UI/atoms/Button';
+import {Button} from 'dooboo-ui';
 import {Linking} from 'react-native';
 import {fbt} from 'fbt';
 import {useTheme} from '../../providers/ThemeProvider';

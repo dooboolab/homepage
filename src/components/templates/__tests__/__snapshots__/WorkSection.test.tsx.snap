@@ -1,0 +1,773 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interaction should simulate onClick 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingBottom": 80,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 80,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "futura",
+          "fontSize": 26,
+          "fontWeight": "700",
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Work
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 18,
+          "fontWeight": "300",
+          "lineHeight": 30,
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+        Object {
+          "marginTop": 40,
+        },
+      ]
+    }
+  >
+    Below are what we are currently working on. We wish to get together with many other great people around the world.
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "marginTop": 40,
+          "minHeight": 360,
+          "width": "80%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+            Object {
+              "height": 40,
+              "width": 40,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Comming Soon!
+      </Text>
+      <View />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Universal react-native UI frameworks that work on iOS, android and web.
+      </Text>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "alignSelf": "center",
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              },
+              Object {
+                "alignItems": "center",
+                "borderColor": "#00BA90",
+                "borderRadius": 12,
+                "borderWidth": 2,
+                "height": 26,
+                "justifyContent": "center",
+                "paddingHorizontal": 20,
+              },
+              false,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                  "paddingVertical": 12,
+                },
+                Object {
+                  "alignSelf": "center",
+                  "color": "#00BA90",
+                  "fontFamily": "avenir",
+                  "fontSize": 10,
+                  "paddingVertical": 0,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            View more
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        It is an open source chat app built with Expo. It has been developed to share the development stack with many developers around the world.
+      </Text>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "alignSelf": "center",
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              },
+              Object {
+                "alignItems": "center",
+                "borderColor": "#00BA90",
+                "borderRadius": 12,
+                "borderWidth": 2,
+                "height": 26,
+                "justifyContent": "center",
+                "paddingHorizontal": 20,
+              },
+              false,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                  "paddingVertical": 12,
+                },
+                Object {
+                  "alignSelf": "center",
+                  "color": "#00BA90",
+                  "fontFamily": "avenir",
+                  "fontSize": 10,
+                  "paddingVertical": 0,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            View more
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Rendering renders without crashing 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingBottom": 80,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 80,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "futura",
+          "fontSize": 26,
+          "fontWeight": "700",
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Work
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "avenir",
+          "fontSize": 18,
+          "fontWeight": "300",
+          "lineHeight": 30,
+          "maxWidth": "60%",
+          "textAlign": "center",
+        },
+        Object {
+          "marginTop": 40,
+        },
+      ]
+    }
+  >
+    Below are what we are currently working on. We wish to get together with many other great people around the world.
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "marginTop": 40,
+          "minHeight": 360,
+          "width": "80%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+            Object {
+              "height": 40,
+              "width": 40,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Comming Soon!
+      </Text>
+      <View />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Universal react-native UI frameworks that work on iOS, android and web.
+      </Text>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "alignSelf": "center",
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              },
+              Object {
+                "alignItems": "center",
+                "borderColor": "#00BA90",
+                "borderRadius": 12,
+                "borderWidth": 2,
+                "height": 26,
+                "justifyContent": "center",
+                "paddingHorizontal": 20,
+              },
+              false,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                  "paddingVertical": 12,
+                },
+                Object {
+                  "alignSelf": "center",
+                  "color": "#00BA90",
+                  "fontFamily": "avenir",
+                  "fontSize": 10,
+                  "paddingVertical": 0,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            View more
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#EAEBF4",
+            "borderRadius": 20,
+            "flexBasis": 0,
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "marginLeft": 20,
+            "marginRight": 20,
+            "marginTop": 10,
+            "minHeight": 200,
+            "paddingBottom": 28,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 28,
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "canInstrument": true,
+            "createTransformer": [Function],
+            "getCacheKey": [Function],
+            "process": [Function],
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 120,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "avenir",
+              "fontSize": 12,
+              "fontWeight": "300",
+              "lineHeight": 16,
+              "maxWidth": "70%",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        It is an open source chat app built with Expo. It has been developed to share the development stack with many developers around the world.
+      </Text>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "alignSelf": "center",
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": 16,
+                "paddingRight": 16,
+              },
+              Object {
+                "alignItems": "center",
+                "borderColor": "#00BA90",
+                "borderRadius": 12,
+                "borderWidth": 2,
+                "height": 26,
+                "justifyContent": "center",
+                "paddingHorizontal": 20,
+              },
+              false,
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                  "paddingVertical": 12,
+                },
+                Object {
+                  "alignSelf": "center",
+                  "color": "#00BA90",
+                  "fontFamily": "avenir",
+                  "fontSize": 10,
+                  "paddingVertical": 0,
+                  "textAlign": "center",
+                },
+                undefined,
+              ]
+            }
+          >
+            View more
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
