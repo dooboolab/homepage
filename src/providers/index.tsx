@@ -9,10 +9,7 @@ interface Props {
 }
 
 // Add providers here
-const RootProvider = ({
-  initialThemeType,
-  children,
-}: Props): React.ReactElement => {
+const RootProvider = ({children}: Props): React.ReactElement => {
   return (
     <ThemeProvider>
       <AppProvider>{children}</AppProvider>
