@@ -119,7 +119,8 @@ const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
             }}
             text={fbt('Contact us', 'contact us')}
           />
-          <Button
+          {/* TODO */}
+          {/* <Button
             onPress={onPressSponsor}
             activeOpacity={0.7}
             style={{
@@ -143,7 +144,7 @@ const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
               },
             }}
             text={fbt('Sponsor us', 'sponsor us')}
-          />
+          /> */}
         </View>
       </BackgroundImage>
     </Container>
