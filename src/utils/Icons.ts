@@ -1,4 +1,6 @@
 import {ImageSourcePropType} from 'react-native';
+import coffee from '../assets/icons/coffee.png';
+import doobooIAP from '../assets/icons/dooboo-iap.png';
 import doobooUi from '../assets/icons/dooboo-ui.png';
 import doobooUiDark from '../assets/icons/dooboo-ui-dark.png';
 import dooboolab from '../assets/icons/dooboolab.png';
@@ -9,6 +11,7 @@ import graphqlSeoul from '../assets/images/graphql-seoul.png';
 import hackatalk from '../assets/icons/hackatalk.png';
 import hackatalkDark from '../assets/icons/hackatalk-dark.png';
 import labtop from '../assets/images/labtop.jpg';
+import logo from '../assets/icons/logo.png';
 import reactNativeSeoul from '../assets/images/react-native-seoul.png';
 import symbol from '../assets/images/symbol.jpg';
 import wecount from '../assets/icons/wecount.png';
@@ -22,6 +25,9 @@ export const IC_HACKATALK_DARK = hackatalkDark as ImageSourcePropType;
 export const IC_FACEBOOK = facebook as ImageSourcePropType;
 export const IC_GOOGLE = google as ImageSourcePropType;
 export const IC_WECOUNT = wecount as ImageSourcePropType;
+export const IC_COFFEE = coffee as ImageSourcePropType;
+export const IC_DOOBOO_IAP = doobooIAP as ImageSourcePropType;
+export const IC_LOGO = logo as ImageSourcePropType;
 
 export const IMG_SYMBOL = symbol as ImageSourcePropType;
 export const IMG_RN_SEOUL = reactNativeSeoul as ImageSourcePropType;

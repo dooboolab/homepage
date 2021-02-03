@@ -93,58 +93,122 @@ exports[`Interaction should simulate onClick 1`] = `
       We manage strong open source community for individuals, companies, and group of societies.
     </Text>
     <View
-      activeOpacity={0.7}
-      delayPressIn={50}
-      onPress={[MockFunction]}
       style={
         Object {
-          "marginTop": 36,
+          "flexDirection": "row",
         }
       }
     >
       <View
-        onLayout={[Function]}
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "alignSelf": "stretch",
-              "borderRadius": 6,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "paddingLeft": 16,
-              "paddingRight": 16,
-            },
-            Object {
-              "backgroundColor": "#00BA90",
-              "borderRadius": 20,
-              "height": 40,
-              "paddingHorizontal": 40,
-            },
-            false,
-            undefined,
-          ]
+          Object {
+            "marginTop": 36,
+          }
         }
       >
-        <Text
+        <View
+          onLayout={[Function]}
           style={
             Array [
               Object {
-                "color": "#069ccd",
-                "fontSize": 14,
-                "paddingVertical": 12,
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+                "paddingVertical": 8,
               },
               Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 16,
+                "backgroundColor": "#00BA90",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
               },
+              false,
               undefined,
             ]
           }
+          testID="button-view"
         >
-          Contact Us
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                },
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            Contact us
+          </Text>
+        </View>
+      </View>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "marginLeft": 12,
+            "marginTop": 36,
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+                "paddingVertical": 8,
+              },
+              Object {
+                "backgroundColor": "#393D7A",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
+              },
+              false,
+              undefined,
+            ]
+          }
+          testID="button-view"
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                },
+                Object {
+                  "color": "#D3D8E8",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            Sponsor us
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -244,58 +308,122 @@ exports[`Rendering renders without crashing 1`] = `
       We manage strong open source community for individuals, companies, and group of societies.
     </Text>
     <View
-      activeOpacity={0.7}
-      delayPressIn={50}
-      onPress={[MockFunction]}
       style={
         Object {
-          "marginTop": 36,
+          "flexDirection": "row",
         }
       }
     >
       <View
-        onLayout={[Function]}
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "alignSelf": "stretch",
-              "borderRadius": 6,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "paddingLeft": 16,
-              "paddingRight": 16,
-            },
-            Object {
-              "backgroundColor": "#00BA90",
-              "borderRadius": 20,
-              "height": 40,
-              "paddingHorizontal": 40,
-            },
-            false,
-            undefined,
-          ]
+          Object {
+            "marginTop": 36,
+          }
         }
       >
-        <Text
+        <View
+          onLayout={[Function]}
           style={
             Array [
               Object {
-                "color": "#069ccd",
-                "fontSize": 14,
-                "paddingVertical": 12,
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+                "paddingVertical": 8,
               },
               Object {
-                "color": "#000000",
-                "fontFamily": "avenir",
-                "fontSize": 16,
+                "backgroundColor": "#00BA90",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
               },
+              false,
               undefined,
             ]
           }
+          testID="button-view"
         >
-          Contact Us
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                },
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            Contact us
+          </Text>
+        </View>
+      </View>
+      <View
+        activeOpacity={0.7}
+        delayPressIn={50}
+        onPress={[MockFunction]}
+        style={
+          Object {
+            "marginLeft": 12,
+            "marginTop": 36,
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "stretch",
+                "borderRadius": 6,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+                "paddingVertical": 8,
+              },
+              Object {
+                "backgroundColor": "#393D7A",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
+              },
+              false,
+              undefined,
+            ]
+          }
+          testID="button-view"
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#069ccd",
+                  "fontSize": 14,
+                },
+                Object {
+                  "color": "#D3D8E8",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            Sponsor us
+          </Text>
+        </View>
       </View>
     </View>
   </View>

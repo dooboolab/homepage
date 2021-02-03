@@ -1,4 +1,4 @@
-import {Description, SubTitle, Title} from '../UI/atoms/Typography';
+import {Description, SubTitle, Title} from '../UI/Typography';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 

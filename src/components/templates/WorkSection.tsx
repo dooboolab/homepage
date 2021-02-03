@@ -1,4 +1,4 @@
-import {Description, SubDescription, Title} from '../UI/atoms/Typography';
+import {Description, SubDescription, Title} from '../UI/Typography';
 import {
   IC_DOOBOO_UI,
   IC_DOOBOO_UI_DARK,

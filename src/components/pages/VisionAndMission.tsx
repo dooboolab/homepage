@@ -1,4 +1,4 @@
-import {Description, SubTitle} from '../UI/atoms/Typography';
+import {Description, SubTitle} from '../UI/Typography';
 import React, {FC} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 

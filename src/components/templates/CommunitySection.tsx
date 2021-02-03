@@ -1,4 +1,4 @@
-import {Description, SubTitle} from '../UI/atoms/Typography';
+import {Description, SubTitle} from '../UI/Typography';
 import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';

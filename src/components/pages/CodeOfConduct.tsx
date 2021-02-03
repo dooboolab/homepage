@@ -1,4 +1,4 @@
-import {Description, SubTitle} from '../UI/atoms/Typography';
+import {Description, SubTitle} from '../UI/Typography';
 import React, {FC} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
@@ -120,9 +120,10 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
           media.isTablet && {width: 660},
           media.isDesktop && {width: 800},
         ]}>
-        {texts.map((text) => {
+        {texts.map((text, i) => {
           return (
             <View
+              key={i}
               style={{
                 flexDirection: 'row',
               }}>
