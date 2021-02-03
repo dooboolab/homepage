@@ -11,6 +11,7 @@ import {ScrollView} from 'react-native';
 import StorySection from '../templates/StorySection';
 import WorkSection from '../templates/WorkSection';
 import styled from 'styled-components/native';
+import {useNavigation} from '@react-navigation/native';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.SafeAreaView`
@@ -29,6 +30,7 @@ type Props = {
 
 const Page: FC<Props> = () => {
   const scrollRef = useRef<ScrollView>(null);
+  const navigation = useNavigation();
 
   return (
     <Container>
@@ -38,6 +40,7 @@ const Page: FC<Props> = () => {
           onPressContactUs={() => {
             scrollRef?.current?.scrollTo({y: 2440});
           }}
+          onPressSponsor={() => navigation.navigate('Sponsor')}
         />
         <StorySection />
         <CommunitySection />

@@ -209,8 +209,8 @@ exports[`Interaction should simulate onClick 1`] = `
                   "borderRadius": 6,
                   "flexDirection": "row",
                   "justifyContent": "center",
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
+                  "paddingHorizontal": 12,
+                  "paddingVertical": 8,
                 },
                 Object {
                   "backgroundColor": "#00BA90",
@@ -222,6 +222,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 undefined,
               ]
             }
+            testID="button-view"
           >
             <Text
               style={
@@ -229,7 +230,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   Object {
                     "color": "#069ccd",
                     "fontSize": 14,
-                    "paddingVertical": 12,
                   },
                   Object {
                     "color": "#000000",
@@ -459,8 +459,8 @@ exports[`Rendering renders without crashing 1`] = `
                   "borderRadius": 6,
                   "flexDirection": "row",
                   "justifyContent": "center",
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
+                  "paddingHorizontal": 12,
+                  "paddingVertical": 8,
                 },
                 Object {
                   "backgroundColor": "#00BA90",
@@ -472,6 +472,7 @@ exports[`Rendering renders without crashing 1`] = `
                 undefined,
               ]
             }
+            testID="button-view"
           >
             <Text
               style={
@@ -479,7 +480,6 @@ exports[`Rendering renders without crashing 1`] = `
                   Object {
                     "color": "#069ccd",
                     "fontSize": 14,
-                    "paddingVertical": 12,
                   },
                   Object {
                     "color": "#000000",

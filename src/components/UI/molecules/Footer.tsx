@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Description} from '../atoms/Typography';
+import {Description} from '../Typography';
 import Hoverable from '../../../utils/Hoverable';
 import {RootStackNavigationProps} from '../../navigations/RootStackNavigator';
 import {fbt} from 'fbt';

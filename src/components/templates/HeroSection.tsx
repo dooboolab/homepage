@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components/native';
 
 import {Button} from 'dooboo-ui';
 import {IMG_SYMBOL} from '../../utils/Icons';
+import {View} from 'react-native';
 import {fbt} from 'fbt';
 import {useTheme} from '../../providers/ThemeProvider';
 
@@ -67,9 +68,10 @@ const Description = styled.Text`
 
 type Props = {
   onPressContactUs?: () => void;
+  onPressSponsor?: () => void;
 };
 
-const HeroSection: FC<Props> = ({onPressContactUs}) => {
+const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
   const {theme, colors} = useTheme();
 
   return (
@@ -89,30 +91,61 @@ const HeroSection: FC<Props> = ({onPressContactUs}) => {
             and group of societies.
           </fbt>
         </Description>
-        <Button
-          onPress={onPressContactUs}
-          activeOpacity={0.7}
+        <View
           style={{
-            marginTop: 36,
-          }}
-          styles={{
-            container: {
-              backgroundColor: colors.success,
-              paddingHorizontal: 40,
-              borderRadius: 20,
-              height: 40,
-            },
-            text: {
-              color: theme.text,
-              fontFamily: 'avenir',
-              fontSize: 16,
-            },
-            hovered: {
-              backgroundColor: colors.darkGray,
-            },
-          }}
-          text={fbt('Contact Us', 'contact us')}
-        />
+            flexDirection: 'row',
+          }}>
+          <Button
+            onPress={onPressContactUs}
+            activeOpacity={0.7}
+            style={{
+              marginTop: 36,
+            }}
+            styles={{
+              container: {
+                backgroundColor: colors.success,
+                paddingHorizontal: 40,
+                borderRadius: 20,
+                height: 40,
+              },
+              text: {
+                color: theme.text,
+                fontFamily: 'avenir',
+                fontSize: 16,
+              },
+              hovered: {
+                backgroundColor: colors.darkGray,
+              },
+            }}
+            text={fbt('Contact us', 'contact us')}
+          />
+          {/* TODO */}
+          {/* <Button
+            onPress={onPressSponsor}
+            activeOpacity={0.7}
+            style={{
+              marginTop: 36,
+              marginLeft: 12,
+            }}
+            styles={{
+              container: {
+                backgroundColor: theme.primary,
+                paddingHorizontal: 40,
+                borderRadius: 20,
+                height: 40,
+              },
+              text: {
+                color: theme.textContrast,
+                fontFamily: 'avenir',
+                fontSize: 16,
+              },
+              hovered: {
+                backgroundColor: colors.darkGray,
+              },
+            }}
+            text={fbt('Sponsor us', 'sponsor us')}
+          /> */}
+        </View>
       </BackgroundImage>
     </Container>
   );

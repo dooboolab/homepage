@@ -17,14 +17,15 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
           "borderRadius": 6,
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": 16,
-          "paddingRight": 16,
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
         },
         undefined,
         false,
         undefined,
       ]
     }
+    testID="button-view"
   >
     <Text
       style={
@@ -32,7 +33,6 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
           Object {
             "color": "#069ccd",
             "fontSize": 14,
-            "paddingVertical": 12,
           },
           undefined,
           undefined,
@@ -60,14 +60,15 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
           "borderRadius": 6,
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": 16,
-          "paddingRight": 16,
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
         },
         undefined,
         false,
         undefined,
       ]
     }
+    testID="button-view"
   >
     <Text
       style={
@@ -75,7 +76,6 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
           Object {
             "color": "#069ccd",
             "fontSize": 14,
-            "paddingVertical": 12,
           },
           undefined,
           undefined,
@@ -103,14 +103,15 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
           "borderRadius": 6,
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": 16,
-          "paddingRight": 16,
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
         },
         undefined,
         false,
         undefined,
       ]
     }
+    testID="button-view"
   >
     <Text
       style={
@@ -118,7 +119,6 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
           Object {
             "color": "#069ccd",
             "fontSize": 14,
-            "paddingVertical": 12,
           },
           undefined,
           undefined,
@@ -146,14 +146,15 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
           "borderRadius": 6,
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": 16,
-          "paddingRight": 16,
+          "paddingHorizontal": 12,
+          "paddingVertical": 8,
         },
         undefined,
         false,
         undefined,
       ]
     }
+    testID="button-view"
   >
     <Text
       style={
@@ -161,7 +162,6 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
           Object {
             "color": "#069ccd",
             "fontSize": 14,
-            "paddingVertical": 12,
           },
           undefined,
           undefined,

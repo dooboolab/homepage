@@ -1,3 +1,6 @@
+import 'react-native-gesture-handler/jestSetup';
+
+import {createStackNavigator} from '@react-navigation/stack';
 // import {GlobalWithFetchMock} from 'jest-fetch-mock';
 import {initFbt} from '../src/utils/fbt';
 /**
@@ -7,11 +10,27 @@ import {initFbt} from '../src/utils/fbt';
  */
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = require('react-native-reanimated/mock');
+
+  // The mock for `call` immediately calls the callback which is incorrect
+  // So we override it with a no-op
+  Reanimated.default.call = () => {};
+
+  return Reanimated;
+});
+
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
-jest.mock('react-native-reanimated', () =>
-  require('react-native-reanimated/mock'),
-);
+jest.mock('@react-navigation/native', () => {
+  return {
+    useNavigation: (): Record<string, unknown> => ({
+      navigate: jest.fn(),
+    }),
+  };
+});
 
 // const customGlobal: any = global;
 

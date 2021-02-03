@@ -383,58 +383,66 @@ exports[`Render renders without crashing 1`] = `
               We manage strong open source community for individuals, companies, and group of societies.
             </Text>
             <View
-              activeOpacity={0.7}
-              delayPressIn={50}
-              onPress={[MockFunction]}
               style={
                 Object {
-                  "marginTop": 36,
+                  "flexDirection": "row",
                 }
               }
             >
               <View
-                onLayout={[Function]}
+                activeOpacity={0.7}
+                delayPressIn={50}
+                onPress={[MockFunction]}
                 style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "stretch",
-                      "borderRadius": 6,
-                      "flexDirection": "row",
-                      "justifyContent": "center",
-                      "paddingLeft": 16,
-                      "paddingRight": 16,
-                    },
-                    Object {
-                      "backgroundColor": "#00BA90",
-                      "borderRadius": 20,
-                      "height": 40,
-                      "paddingHorizontal": 40,
-                    },
-                    false,
-                    undefined,
-                  ]
+                  Object {
+                    "marginTop": 36,
+                  }
                 }
               >
-                <Text
+                <View
+                  onLayout={[Function]}
                   style={
                     Array [
                       Object {
-                        "color": "#069ccd",
-                        "fontSize": 14,
-                        "paddingVertical": 12,
+                        "alignItems": "center",
+                        "alignSelf": "stretch",
+                        "borderRadius": 6,
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                        "paddingHorizontal": 12,
+                        "paddingVertical": 8,
                       },
                       Object {
-                        "color": "#000000",
-                        "fontFamily": "avenir",
-                        "fontSize": 16,
+                        "backgroundColor": "#00BA90",
+                        "borderRadius": 20,
+                        "height": 40,
+                        "paddingHorizontal": 40,
                       },
+                      false,
                       undefined,
                     ]
                   }
+                  testID="button-view"
                 >
-                  Contact Us
-                </Text>
+                  <Text
+                    style={
+                      Array [
+                        Object {
+                          "color": "#069ccd",
+                          "fontSize": 14,
+                        },
+                        Object {
+                          "color": "#000000",
+                          "fontFamily": "avenir",
+                          "fontSize": 16,
+                        },
+                        undefined,
+                      ]
+                    }
+                  >
+                    Contact us
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -552,14 +560,15 @@ exports[`Render renders without crashing 1`] = `
                     "borderRadius": 6,
                     "flexDirection": "row",
                     "justifyContent": "center",
-                    "paddingLeft": 16,
-                    "paddingRight": 16,
+                    "paddingHorizontal": 12,
+                    "paddingVertical": 8,
                   },
                   undefined,
                   false,
                   undefined,
                 ]
               }
+              testID="button-view"
             >
               <Text
                 style={
@@ -567,7 +576,6 @@ exports[`Render renders without crashing 1`] = `
                     Object {
                       "color": "#069ccd",
                       "fontSize": 14,
-                      "paddingVertical": 12,
                     },
                     Object {
                       "color": "#00BA90",
@@ -732,8 +740,8 @@ exports[`Render renders without crashing 1`] = `
                           "borderRadius": 6,
                           "flexDirection": "row",
                           "justifyContent": "center",
-                          "paddingLeft": 16,
-                          "paddingRight": 16,
+                          "paddingHorizontal": 12,
+                          "paddingVertical": 8,
                         },
                         Object {
                           "alignItems": "center",
@@ -748,6 +756,7 @@ exports[`Render renders without crashing 1`] = `
                         undefined,
                       ]
                     }
+                    testID="button-view"
                   >
                     <Text
                       style={
@@ -755,7 +764,6 @@ exports[`Render renders without crashing 1`] = `
                           Object {
                             "color": "#069ccd",
                             "fontSize": 14,
-                            "paddingVertical": 12,
                           },
                           Object {
                             "alignSelf": "center",
@@ -854,8 +862,8 @@ exports[`Render renders without crashing 1`] = `
                           "borderRadius": 6,
                           "flexDirection": "row",
                           "justifyContent": "center",
-                          "paddingLeft": 16,
-                          "paddingRight": 16,
+                          "paddingHorizontal": 12,
+                          "paddingVertical": 8,
                         },
                         Object {
                           "alignItems": "center",
@@ -870,6 +878,7 @@ exports[`Render renders without crashing 1`] = `
                         undefined,
                       ]
                     }
+                    testID="button-view"
                   >
                     <Text
                       style={
@@ -877,7 +886,6 @@ exports[`Render renders without crashing 1`] = `
                           Object {
                             "color": "#069ccd",
                             "fontSize": 14,
-                            "paddingVertical": 12,
                           },
                           Object {
                             "alignSelf": "center",
@@ -1114,8 +1122,8 @@ exports[`Render renders without crashing 1`] = `
                         "borderRadius": 6,
                         "flexDirection": "row",
                         "justifyContent": "center",
-                        "paddingLeft": 16,
-                        "paddingRight": 16,
+                        "paddingHorizontal": 12,
+                        "paddingVertical": 8,
                       },
                       Object {
                         "alignItems": "center",
@@ -1130,6 +1138,7 @@ exports[`Render renders without crashing 1`] = `
                       undefined,
                     ]
                   }
+                  testID="button-view"
                 >
                   <Text
                     style={
@@ -1137,7 +1146,6 @@ exports[`Render renders without crashing 1`] = `
                         Object {
                           "color": "#069ccd",
                           "fontSize": 14,
-                          "paddingVertical": 12,
                         },
                         Object {
                           "alignSelf": "center",
@@ -1238,8 +1246,8 @@ exports[`Render renders without crashing 1`] = `
                         "borderRadius": 6,
                         "flexDirection": "row",
                         "justifyContent": "center",
-                        "paddingLeft": 16,
-                        "paddingRight": 16,
+                        "paddingHorizontal": 12,
+                        "paddingVertical": 8,
                       },
                       Object {
                         "alignItems": "center",
@@ -1254,6 +1262,7 @@ exports[`Render renders without crashing 1`] = `
                       undefined,
                     ]
                   }
+                  testID="button-view"
                 >
                   <Text
                     style={
@@ -1261,7 +1270,6 @@ exports[`Render renders without crashing 1`] = `
                         Object {
                           "color": "#069ccd",
                           "fontSize": 14,
-                          "paddingVertical": 12,
                         },
                         Object {
                           "alignSelf": "center",
@@ -1490,8 +1498,8 @@ exports[`Render renders without crashing 1`] = `
                           "borderRadius": 6,
                           "flexDirection": "row",
                           "justifyContent": "center",
-                          "paddingLeft": 16,
-                          "paddingRight": 16,
+                          "paddingHorizontal": 12,
+                          "paddingVertical": 8,
                         },
                         Object {
                           "backgroundColor": "#00BA90",
@@ -1503,6 +1511,7 @@ exports[`Render renders without crashing 1`] = `
                         undefined,
                       ]
                     }
+                    testID="button-view"
                   >
                     <Text
                       style={
@@ -1510,7 +1519,6 @@ exports[`Render renders without crashing 1`] = `
                           Object {
                             "color": "#069ccd",
                             "fontSize": 14,
-                            "paddingVertical": 12,
                           },
                           Object {
                             "color": "#000000",
