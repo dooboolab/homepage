@@ -6,10 +6,13 @@ import {
 } from '@react-navigation/stack';
 
 import CodeOfConduct from '../pages/CodeOfConduct';
+import FindPw from '../pages/FindPw';
 import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import React from 'react';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
 import VisionAndMission from '../pages/VisionAndMission';
 import {useTheme} from '../../providers/ThemeProvider';
@@ -19,6 +22,25 @@ export type RootStackParamList = {
   VisionAndMission: undefined;
   CodeOfConduct: undefined;
   Sponsor: undefined;
+  SignUp: undefined;
+  SignIn: undefined;
+  FindPw: undefined;
+};
+
+const commonScreens = {
+  Home: Home,
+  VisionAndMission,
+  CodeOfConduct,
+};
+
+const authScreens = {
+  SignIn,
+  SignUp,
+  FindPw,
+};
+
+const userScreens = {
+  Sponsor,
 };
 
 export type RootStackNavigationProps<
@@ -56,16 +78,15 @@ function RootNavigator(): React.ReactElement {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{
-            title: 'dooboolab',
-          }}
-        />
-        <Stack.Screen name="VisionAndMission" component={VisionAndMission} />
-        <Stack.Screen name="CodeOfConduct" component={CodeOfConduct} />
-        <Stack.Screen name="Sponsor" component={Sponsor} />
+        {Object.entries({
+          ...commonScreens,
+          ...(false ? userScreens : authScreens),
+        }).map(([name, component]) => (
+          <Stack.Screen
+            name={name as keyof RootStackParamList}
+            component={component}
+          />
+        ))}
       </Stack.Navigator>
     </NavigationContainer>
   );
