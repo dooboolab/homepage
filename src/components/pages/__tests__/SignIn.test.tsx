@@ -4,7 +4,7 @@ import React, {ReactElement} from 'react';
 import {RenderAPI, render} from '@testing-library/react-native';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
-import Page from ../SignIn';
+import Page from '../SignIn';
 
 let props: any;
 let component: ReactElement;

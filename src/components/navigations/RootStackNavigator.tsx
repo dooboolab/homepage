@@ -83,6 +83,7 @@ function RootNavigator(): React.ReactElement {
           ...(false ? userScreens : authScreens),
         }).map(([name, component]) => (
           <Stack.Screen
+            key={name}
             name={name as keyof RootStackParamList}
             component={component}
           />

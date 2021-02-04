@@ -14,11 +14,13 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "stretch",
-          "borderRadius": 6,
+          "backgroundColor": "#393D7A",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingHorizontal": 12,
-          "paddingVertical": 8,
+          "paddingBottom": 8,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 8,
         },
         undefined,
         false,
@@ -31,7 +33,7 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
       style={
         Array [
           Object {
-            "color": "#069ccd",
+            "color": "white",
             "fontSize": 14,
           },
           undefined,
@@ -57,11 +59,13 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "stretch",
-          "borderRadius": 6,
+          "backgroundColor": "#393D7A",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingHorizontal": 12,
-          "paddingVertical": 8,
+          "paddingBottom": 8,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 8,
         },
         undefined,
         false,
@@ -74,7 +78,7 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
       style={
         Array [
           Object {
-            "color": "#069ccd",
+            "color": "white",
             "fontSize": 14,
           },
           undefined,
@@ -100,11 +104,13 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "stretch",
-          "borderRadius": 6,
+          "backgroundColor": "#393D7A",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingHorizontal": 12,
-          "paddingVertical": 8,
+          "paddingBottom": 8,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 8,
         },
         undefined,
         false,
@@ -117,7 +123,7 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
       style={
         Array [
           Object {
-            "color": "#069ccd",
+            "color": "white",
             "fontSize": 14,
           },
           undefined,
@@ -143,11 +149,13 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
         Object {
           "alignItems": "center",
           "alignSelf": "stretch",
-          "borderRadius": 6,
+          "backgroundColor": "#393D7A",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingHorizontal": 12,
-          "paddingVertical": 8,
+          "paddingBottom": 8,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 8,
         },
         undefined,
         false,
@@ -160,7 +168,7 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
       style={
         Array [
           Object {
-            "color": "#069ccd",
+            "color": "white",
             "fontSize": 14,
           },
           undefined,

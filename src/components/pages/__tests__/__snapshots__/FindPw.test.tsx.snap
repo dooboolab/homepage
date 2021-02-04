@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interaction should simulate onClick 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "stretch",
+          "backgroundColor": "#FFFFFF",
+          "flexBasis": 0,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "justifyContent": "flex-start",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "column",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+            "paddingBottom": 0,
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 0,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onPress={[MockFunction]}
+        onPressIn={[Function]}
+        onPressOut={[Function]}
+        onResponderGrant={[Function]}
+        onResponderRelease={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Image
+          source={
+            Object {
+              "canInstrument": true,
+              "createTransformer": [Function],
+              "getCacheKey": [Function],
+              "process": [Function],
+            }
+          }
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "height": 52,
+                "marginBottom": 12,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 12,
+                "width": 124,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginBottom": 14,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 20,
+              "top": 25,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            activeOpacity={0.8}
+            onPress={[MockFunction]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                  "borderRadius": 20,
+                  "justifyContent": "center",
+                  "padding": 12,
+                  "width": 46,
+                },
+                Object {},
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "white",
+                  "borderRadius": 9,
+                  "elevation": 1.5,
+                  "height": 18,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "margin": 4,
+                  "position": "absolute",
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.2,
+                  "shadowRadius": 2.5,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                  "width": 18,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+        ]
+      }
+    >
+      FindPw
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Rendering renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "stretch",
+          "backgroundColor": "#FFFFFF",
+          "flexBasis": 0,
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "justifyContent": "flex-start",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "column",
+            "flexWrap": "wrap",
+            "justifyContent": "center",
+            "paddingBottom": 0,
+            "paddingLeft": 24,
+            "paddingRight": 24,
+            "paddingTop": 0,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onPress={[MockFunction]}
+        onPressIn={[Function]}
+        onPressOut={[Function]}
+        onResponderGrant={[Function]}
+        onResponderRelease={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Image
+          source={
+            Object {
+              "canInstrument": true,
+              "createTransformer": [Function],
+              "getCacheKey": [Function],
+              "process": [Function],
+            }
+          }
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "height": 52,
+                "marginBottom": 12,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 12,
+                "width": 124,
+              },
+              false,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "marginBottom": 14,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 20,
+              "top": 25,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            activeOpacity={0.8}
+            onPress={[MockFunction]}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#ecf0f1",
+                  "borderRadius": 20,
+                  "justifyContent": "center",
+                  "padding": 12,
+                  "width": 46,
+                },
+                Object {},
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "white",
+                  "borderRadius": 9,
+                  "elevation": 1.5,
+                  "height": 18,
+                  "justifyContent": "center",
+                  "left": 0,
+                  "margin": 4,
+                  "position": "absolute",
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.2,
+                  "shadowRadius": 2.5,
+                  "transform": Array [
+                    Object {
+                      "translateX": 0,
+                    },
+                  ],
+                  "width": 18,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+        ]
+      }
+    >
+      FindPw
+    </Text>
+  </View>
+</View>
+`;

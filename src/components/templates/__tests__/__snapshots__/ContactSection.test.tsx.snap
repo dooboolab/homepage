@@ -206,11 +206,13 @@ exports[`Interaction should simulate onClick 1`] = `
                 Object {
                   "alignItems": "center",
                   "alignSelf": "stretch",
-                  "borderRadius": 6,
+                  "backgroundColor": "#393D7A",
                   "flexDirection": "row",
                   "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                  "paddingVertical": 8,
+                  "paddingBottom": 8,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 8,
                 },
                 Object {
                   "backgroundColor": "#00BA90",
@@ -228,7 +230,7 @@ exports[`Interaction should simulate onClick 1`] = `
               style={
                 Array [
                   Object {
-                    "color": "#069ccd",
+                    "color": "white",
                     "fontSize": 14,
                   },
                   Object {
@@ -456,11 +458,13 @@ exports[`Rendering renders without crashing 1`] = `
                 Object {
                   "alignItems": "center",
                   "alignSelf": "stretch",
-                  "borderRadius": 6,
+                  "backgroundColor": "#393D7A",
                   "flexDirection": "row",
                   "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                  "paddingVertical": 8,
+                  "paddingBottom": 8,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 8,
                 },
                 Object {
                   "backgroundColor": "#00BA90",
@@ -478,7 +482,7 @@ exports[`Rendering renders without crashing 1`] = `
               style={
                 Array [
                   Object {
-                    "color": "#069ccd",
+                    "color": "white",
                     "fontSize": 14,
                   },
                   Object {

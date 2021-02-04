@@ -16,6 +16,7 @@ jest.mock('@react-navigation/native', () => {
     createNavigatorFactory: jest.fn(),
     useNavigation: (): Record<string, unknown> => ({
       navigate: jest.fn(),
+      setOptions: jest.fn(),
     }),
   };
 });
