@@ -40,7 +40,7 @@ type Props = {
   navigation: RootStackNavigationProps<'SignIn'>;
 };
 
-const SignIn: FC<Props> = () => {
+const SignIn: FC<Props> = ({navigation}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -85,6 +85,7 @@ const SignIn: FC<Props> = () => {
             }}
           />
           <Button
+            onPress={() => navigation.navigate('SignUp')}
             text={fbt('Sign Up', 'sign up')}
             style={{marginTop: 16, alignSelf: 'stretch'}}
             styles={{
@@ -103,6 +104,7 @@ const SignIn: FC<Props> = () => {
             }}
           />
           <TouchableOpacity
+            onPress={() => navigation.navigate('FindPw')}
             style={{
               marginTop: 12,
             }}>
