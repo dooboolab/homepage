@@ -6,7 +6,7 @@ import {RootStackNavigationProps} from '../../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../../providers/ThemeProvider';
+import {useTheme} from 'dooboo-ui';
 
 // eslint-disable-next-line
 fbt;

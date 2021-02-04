@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 
+import {EditText} from 'dooboo-ui';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import styled from 'styled-components/native';

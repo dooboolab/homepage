@@ -15,7 +15,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
 import VisionAndMission from '../pages/VisionAndMission';
-import {useTheme} from '../../providers/ThemeProvider';
+import {useTheme} from 'dooboo-ui';
 
 export type RootStackParamList = {
   Home: undefined;

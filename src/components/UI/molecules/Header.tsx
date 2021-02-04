@@ -1,6 +1,6 @@
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
 import React, {FC, ReactElement, RefObject, useState} from 'react';
-import {ThemeType, useTheme} from '../../../providers/ThemeProvider';
+import {ThemeType, useTheme} from 'dooboo-ui';
 import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../../utils/Hoverable';
