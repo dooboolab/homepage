@@ -119,7 +119,9 @@ exports[`Interaction should simulate onClick 1`] = `
             "paddingRight": 12,
             "paddingTop": 8,
           },
-          undefined,
+          Object {
+            "backgroundColor": "#FFFFFF",
+          },
           false,
           undefined,
         ]
@@ -267,7 +269,9 @@ exports[`Rendering renders without crashing 1`] = `
             "paddingRight": 12,
             "paddingTop": 8,
           },
-          undefined,
+          Object {
+            "backgroundColor": "#FFFFFF",
+          },
           false,
           undefined,
         ]

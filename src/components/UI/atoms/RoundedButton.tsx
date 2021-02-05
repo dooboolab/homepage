@@ -1,5 +1,10 @@
 import React, {FC, ReactElement} from 'react';
-import type {TextStyle, TouchableOpacityProps} from 'react-native';
+import type {
+  StyleProp,
+  TextStyle,
+  TouchableOpacityProps,
+  ViewStyle,
+} from 'react-native';
 
 import {Button} from 'dooboo-ui';
 import {fbt} from 'fbt';
@@ -11,13 +16,15 @@ type Props = {
   onPress?: TouchableOpacityProps['onPress'];
   text?: string;
   style?: TouchableOpacityProps['style'];
-  textStyle?: TextStyle;
+  containerStyle?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 };
 
 const RoundedButton: FC<Props> = ({
   onPress,
   text = '',
   style,
+  containerStyle,
   textStyle,
 }): ReactElement => {
   return (
@@ -26,9 +33,12 @@ const RoundedButton: FC<Props> = ({
       text={text}
       style={style}
       styles={{
-        container: {
-          borderRadius: 20,
-        },
+        container: [
+          {
+            borderRadius: 20,
+          },
+          containerStyle,
+        ],
         text: textStyle,
       }}
     />

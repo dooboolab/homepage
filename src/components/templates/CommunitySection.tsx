@@ -77,6 +77,7 @@ const CommunitySection: FC<Props> = () => {
         }}
         styles={{
           container: {
+            backgroundColor: theme.contrastBackground,
             borderColor: colors.success,
             borderWidth: 2,
             paddingHorizontal: 20,
@@ -95,7 +96,7 @@ const CommunitySection: FC<Props> = () => {
             alignSelf: 'center',
           },
           hovered: {
-            backgroundColor: colors.darkGray,
+            opacity: 0.7,
           },
         }}
         text={text}
