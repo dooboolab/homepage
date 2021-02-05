@@ -1,6 +1,6 @@
-import {Alert, ScrollView, Text, TouchableOpacity} from 'react-native';
 import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
+import {ScrollView, Text, TouchableOpacity} from 'react-native';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';

@@ -1,21 +1,20 @@
 import * as React from 'react';
 
+import {AuthProvider, useAuthContext} from '../AuthProvider';
 import {Button, View} from 'react-native';
 import {RenderAPI, act, fireEvent, render} from '@testing-library/react-native';
-import {AuthProvider, useStateContext} from '../AuthProvider';
 
 const FakeChild = (): React.ReactElement => {
-  const {setUser} = useStateContext();
+  const {setUser} = useAuthContext();
 
   return (
     <View>
       <Button
         testID="BUTTON"
         onPress={(): void =>
+          // @ts-ignore
           setUser({
             displayName: 'displayName',
-            age: 12,
-            job: 'dev',
           })
         }
         title="Button"

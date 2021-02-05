@@ -69,7 +69,6 @@ exports[`Interaction should simulate onClick 1`] = `
           <View
             style={
               Array [
-                false,
                 Object {
                   "alignSelf": "stretch",
                   "flexDirection": "column",
@@ -88,12 +87,13 @@ exports[`Interaction should simulate onClick 1`] = `
                     Object {
                       "alignSelf": "stretch",
                       "borderBottomColor": "#00000030",
-                      "borderBottomWidth": 0.3,
+                      "borderBottomWidth": 0.5,
                       "flexDirection": "column",
                       "justifyContent": "space-between",
                     },
                     undefined,
                   ],
+                  false,
                   Object {
                     "borderBottomColor": "#00000030",
                     "borderColor": "#00000030",
@@ -106,7 +106,7 @@ exports[`Interaction should simulate onClick 1`] = `
                   Array [
                     Array [
                       Object {
-                        "color": "#00000030",
+                        "color": "#999999",
                         "fontSize": 14,
                       },
                       undefined,
@@ -128,6 +128,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 onChangeText={[Function]}
                 onFocus={[Function]}
                 placeholder="email@email.com"
+                placeholderTextColor="#999999"
                 rejectResponderTermination={true}
                 secureTextEntry={false}
                 style={
@@ -340,7 +341,6 @@ exports[`Rendering renders without crashing 1`] = `
           <View
             style={
               Array [
-                false,
                 Object {
                   "alignSelf": "stretch",
                   "flexDirection": "column",
@@ -359,12 +359,13 @@ exports[`Rendering renders without crashing 1`] = `
                     Object {
                       "alignSelf": "stretch",
                       "borderBottomColor": "#00000030",
-                      "borderBottomWidth": 0.3,
+                      "borderBottomWidth": 0.5,
                       "flexDirection": "column",
                       "justifyContent": "space-between",
                     },
                     undefined,
                   ],
+                  false,
                   Object {
                     "borderBottomColor": "#00000030",
                     "borderColor": "#00000030",
@@ -377,7 +378,7 @@ exports[`Rendering renders without crashing 1`] = `
                   Array [
                     Array [
                       Object {
-                        "color": "#00000030",
+                        "color": "#999999",
                         "fontSize": 14,
                       },
                       undefined,
@@ -399,6 +400,7 @@ exports[`Rendering renders without crashing 1`] = `
                 onChangeText={[Function]}
                 onFocus={[Function]}
                 placeholder="email@email.com"
+                placeholderTextColor="#999999"
                 rejectResponderTermination={true}
                 secureTextEntry={false}
                 style={

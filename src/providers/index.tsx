@@ -1,7 +1,6 @@
 import {ThemeProvider, ThemeType} from 'dooboo-ui';
 import {dark, light} from '../utils/theme';
 
-import {AppProvider} from './AppProvider';
 import {AuthProvider} from '../providers/AuthProvider';
 import React from 'react';
 
@@ -18,9 +17,7 @@ const RootProvider = ({children}: Props): React.ReactElement => {
         light,
         dark,
       }}>
-      <AppProvider>
-        <AuthProvider>{children}</AuthProvider>
-      </AppProvider>
+      <AuthProvider>{children}</AuthProvider>
     </ThemeProvider>
   );
 };

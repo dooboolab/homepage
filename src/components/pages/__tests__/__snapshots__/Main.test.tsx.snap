@@ -220,6 +220,74 @@ exports[`Render renders without crashing 1`] = `
         style={
           Array [
             Object {
+              "left": 20,
+              "position": "absolute",
+              "top": 25,
+              "width": 80,
+            },
+          ]
+        }
+      >
+        <View
+          activeOpacity={0.7}
+          delayPressIn={50}
+          onPress={[MockFunction]}
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "stretch",
+                  "backgroundColor": "#393D7A",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "paddingBottom": 8,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 8,
+                },
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "#B446BF",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 24,
+                  "width": 68,
+                },
+                false,
+                undefined,
+              ]
+            }
+            testID="button-view"
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 14,
+                  },
+                  Object {
+                    "color": "#B446BF",
+                    "fontSize": 11,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 0,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Sign In
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
               "position": "absolute",
               "right": 20,
               "top": 25,
