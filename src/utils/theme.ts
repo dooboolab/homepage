@@ -64,9 +64,6 @@ export const dark = {
   subText: '#D3D8E8',
   text: '#D3D8E8',
   textContrast: '#000000',
-  disabled: colors.mediumGray,
-  border: '#333333',
-  placeholder: '#444444',
 };
 
 export const theme = {

@@ -15,10 +15,12 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
 import VisionAndMission from '../pages/VisionAndMission';
+import WebView from '../pages/WebView';
 import {useTheme} from 'dooboo-ui';
 
 export type RootStackParamList = {
   Home: undefined;
+  WebView: {uri: string};
   VisionAndMission: undefined;
   CodeOfConduct: undefined;
   Sponsor: undefined;
@@ -28,7 +30,8 @@ export type RootStackParamList = {
 };
 
 const commonScreens = {
-  Home: Home,
+  Home,
+  WebView,
   VisionAndMission,
   CodeOfConduct,
 };
@@ -74,9 +77,10 @@ function RootNavigator(): React.ReactElement {
         dark: true,
       }}>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="SignIn"
         screenOptions={{
           headerShown: false,
+          headerBackTitle: '',
         }}>
         {Object.entries({
           ...commonScreens,

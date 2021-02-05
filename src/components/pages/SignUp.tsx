@@ -12,7 +12,7 @@ import {withScreen} from '../../utils/wrapper';
 // eslint-disable-next-line
 fbt;
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};
@@ -31,7 +31,8 @@ const Content = styled.View`
 `;
 
 const HeadingText = styled.Text`
-  margin: 12px 0;
+  margin-top: 40px;
+  margin-bottom: 28px;
   font-size: 28px;
   color: ${({theme}): string => theme.text};
 `;
@@ -41,6 +42,14 @@ type Props = {
 };
 
 const SignIn: FC<Props> = ({navigation}) => {
+  navigation.setOptions({
+    headerShown: Platform.select({
+      web: false,
+      default: true,
+    }),
+    title: '',
+  });
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
@@ -49,7 +58,7 @@ const SignIn: FC<Props> = ({navigation}) => {
 
   return (
     <Container>
-      <Header hideMenus />
+      {Platform.OS === 'web' && <Header hideMenus />}
       <ScrollView style={{alignSelf: 'stretch'}}>
         <Content>
           <HeadingText>

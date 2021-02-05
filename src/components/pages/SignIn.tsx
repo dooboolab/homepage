@@ -5,6 +5,7 @@ import {ScrollView, Text, TouchableOpacity} from 'react-native';
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
+import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {withScreen} from '../../utils/wrapper';
@@ -12,7 +13,7 @@ import {withScreen} from '../../utils/wrapper';
 // eslint-disable-next-line
 fbt;
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};
@@ -31,9 +32,29 @@ const Content = styled.View`
 `;
 
 const HeadingText = styled.Text`
-  margin: 12px 0;
+  margin-top: 40px;
+  margin-bottom: 28px;
   font-size: 28px;
   color: ${({theme}): string => theme.text};
+`;
+
+const StyledAgreementTextWrapper = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 0 40px 0;
+`;
+
+const StyledAgreementText = styled.Text`
+  line-height: 22px;
+  color: #777;
+`;
+
+const StyledAgreementLinedText = styled.Text`
+  line-height: 22px;
+  color: ${({theme}): string => theme.link};
+  text-decoration-line: underline;
 `;
 
 type Props = {
@@ -45,6 +66,10 @@ const SignIn: FC<Props> = ({navigation}) => {
   const [password, setPassword] = useState<string>('');
 
   const {theme} = useTheme();
+
+  const goToWebView = (uri: string): void => {
+    navigation.navigate('WebView', {uri});
+  };
 
   return (
     <Container>
@@ -116,6 +141,33 @@ const SignIn: FC<Props> = ({navigation}) => {
               <fbt desc="forgot password">Forgot password</fbt>?
             </Text>
           </TouchableOpacity>
+          <StyledAgreementTextWrapper>
+            <StyledAgreementText>
+              <fbt desc="agreement1">We consider that you agree with</fbt>
+            </StyledAgreementText>
+            <StyledAgreementLinedText
+              testID="btn-terms"
+              onPress={(): void =>
+                goToWebView('https://legacy.dooboolab.com/termsofservice')
+              }>
+              <fbt desc="agreement2">Terms of Agreement</fbt>
+            </StyledAgreementLinedText>
+            <StyledAgreementText>
+              {' '}
+              <fbt desc="agreement3">and</fbt>{' '}
+            </StyledAgreementText>
+            <StyledAgreementLinedText
+              testID="btn-privacy"
+              onPress={(): void =>
+                goToWebView('https://legacy.dooboolab.com/privacyandpolicy')
+              }>
+              <fbt desc="agreement4">Privary Policy</fbt>
+            </StyledAgreementLinedText>
+            <StyledAgreementText>
+              {' '}
+              <fbt desc="agreement5">by going onto next step</fbt>
+            </StyledAgreementText>
+          </StyledAgreementTextWrapper>
         </Content>
       </ScrollView>
     </Container>
