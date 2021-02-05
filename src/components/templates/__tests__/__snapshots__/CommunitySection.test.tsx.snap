@@ -158,6 +158,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 },
                 Object {
                   "alignItems": "center",
+                  "backgroundColor": "#00000070",
                   "borderColor": "#00BA90",
                   "borderRadius": 12,
                   "borderWidth": 2,
@@ -282,6 +283,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 },
                 Object {
                   "alignItems": "center",
+                  "backgroundColor": "#00000070",
                   "borderColor": "#00BA90",
                   "borderRadius": 12,
                   "borderWidth": 2,
@@ -482,6 +484,7 @@ exports[`Rendering renders without crashing 1`] = `
                 },
                 Object {
                   "alignItems": "center",
+                  "backgroundColor": "#00000070",
                   "borderColor": "#00BA90",
                   "borderRadius": 12,
                   "borderWidth": 2,
@@ -606,6 +609,7 @@ exports[`Rendering renders without crashing 1`] = `
                 },
                 Object {
                   "alignItems": "center",
+                  "backgroundColor": "#00000070",
                   "borderColor": "#00BA90",
                   "borderRadius": 12,
                   "borderWidth": 2,

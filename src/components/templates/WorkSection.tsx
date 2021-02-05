@@ -84,6 +84,7 @@ const Project: FC<ProjectProps> = ({image, description, onViewMore}) => {
         style={{alignSelf: 'center'}}
         styles={{
           container: {
+            backgroundColor: theme.paper,
             borderColor: colors.success,
             borderWidth: 2,
             paddingHorizontal: 20,

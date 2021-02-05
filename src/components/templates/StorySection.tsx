@@ -61,6 +61,9 @@ const StorySection: FC<Props> = () => {
       <Button
         style={{marginTop: 28}}
         styles={{
+          container: {
+            backgroundColor: theme.background,
+          },
           text: {
             color: colors.success,
             fontSize: theme.isDesktop ? 18 : 14,

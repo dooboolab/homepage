@@ -1,13 +1,14 @@
+import {Button, useTheme} from 'dooboo-ui';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
+import {Platform, ScrollView, Text, View} from 'react-native';
 import React, {FC} from 'react';
-import {ScrollView, View} from 'react-native';
 
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
-import {useTheme} from 'dooboo-ui';
+import {useNavigation} from '@react-navigation/core';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.View`
@@ -133,8 +134,63 @@ const membershipItems: Omit<IAPCardProps, 'icon' | 'style'>[] = [
   },
 ];
 
-const Sponsor: FC<Props> = () => {
+const Sponsor: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
+
+  if (Platform.OS === 'web')
+    return (
+      <Container>
+        <Header hideMenus />
+        <View
+          style={{
+            flex: 1,
+            alignSelf: 'stretch',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text
+            style={{
+              color: theme.accent,
+              lineHeight: 30,
+              fontSize: 20,
+              textAlign: 'center',
+            }}>
+            <fbt desc="not supported in web">Not supported in web.</fbt>
+            {'\n'}
+            <fbt desc="try in ios or android">
+              Please try this in iOS or Android app.
+            </fbt>
+          </Text>
+          <Button
+            onPress={() => {
+              navigation.goBack();
+            }}
+            text={fbt('Go back', 'go back')}
+            style={{
+              marginTop: 48,
+              marginBottom: 80,
+              alignSelf: 'center',
+              minWidth: 300,
+              maxWidth: 500,
+            }}
+            styles={{
+              container: {
+                borderRadius: 30,
+                alignSelf: 'stretch',
+                backgroundColor: theme.background,
+                borderWidth: 1,
+                borderColor: theme.text,
+              },
+              text: {
+                paddingHorizontal: 20,
+                paddingVertical: 8,
+                color: theme.text,
+              },
+            }}
+          />
+        </View>
+      </Container>
+    );
 
   return (
     <Container>
@@ -192,6 +248,7 @@ const Sponsor: FC<Props> = () => {
                   ? subscriptionItems.map((item, i) => {
                       return (
                         <IAPCard
+                          type="subscription"
                           key={i.toString()}
                           price={item.price}
                           priceString={item.priceString}
@@ -204,6 +261,7 @@ const Sponsor: FC<Props> = () => {
                   : membershipItems.map((item, i) => {
                       return (
                         <IAPCard
+                          type="forever"
                           key={i.toString()}
                           price={item.price}
                           priceString={item.priceString}

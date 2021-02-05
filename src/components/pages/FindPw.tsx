@@ -1,12 +1,14 @@
+import {Alert, Platform, ScrollView} from 'react-native';
 import {Button, EditText, useTheme} from 'dooboo-ui';
-import {Platform, ScrollView, Text, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 
 // eslint-disable-next-line
@@ -41,7 +43,7 @@ type Props = {
   navigation: RootStackNavigationProps<'SignIn'>;
 };
 
-const SignIn: FC<Props> = ({navigation}) => {
+const FindPw: FC<Props> = ({navigation}) => {
   navigation.setOptions({
     headerShown: Platform.select({
       web: false,
@@ -50,9 +52,45 @@ const SignIn: FC<Props> = ({navigation}) => {
     title: '',
   });
 
-  const [email, setEmail] = useState<string>('');
-
   const {theme} = useTheme();
+
+  const [email, setEmail] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
+  const [sendingEmail, setSendingEmail] = useState<boolean>(false);
+
+  const findPw = async (): Promise<void> => {
+    setEmailError('');
+
+    if (!email || !validateEmail(email))
+      return setEmailError(
+        fbt('Not a valid email address', 'invalid email address'),
+      );
+
+    setSendingEmail(true);
+
+    try {
+      await firebase.auth().sendPasswordResetEmail(email);
+    } catch (err) {
+      setEmailError(err.message);
+    } finally {
+      const successFbtString = fbt(
+        // eslint-disable-next-line max-len
+        'Resetting email link has been sent. Please check your inbox. Sometimes it maybe filtered in your spam box so please check there too.',
+        'password email link sent',
+      ).toString();
+
+      Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(successFbtString),
+        default: Alert.alert(
+          fbt('Success', 'success').toString(),
+          successFbtString,
+        ),
+      });
+
+      setSendingEmail(false);
+    }
+  };
 
   return (
     <Container>
@@ -71,8 +109,10 @@ const SignIn: FC<Props> = ({navigation}) => {
             placeholder="email@email.com"
           />
           <Button
+            loading={sendingEmail}
             text={fbt('Send', 'send')}
             style={{marginTop: 30, alignSelf: 'stretch'}}
+            onPress={findPw}
             styles={{
               container: {
                 borderRadius: 30,
@@ -111,4 +151,4 @@ const SignIn: FC<Props> = ({navigation}) => {
   );
 };
 
-export default withScreen(SignIn);
+export default withScreen(FindPw);

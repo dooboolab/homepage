@@ -16,7 +16,7 @@ export type IAPCardProps = {
   price: number;
   name: string;
   icon: ImageSourcePropType;
-  type?: 'onetime' | 'subscription';
+  type?: 'onetime' | 'subscription' | 'forever';
 };
 
 const IAPCard: FC<IAPCardProps> = ({
@@ -36,7 +36,11 @@ const IAPCard: FC<IAPCardProps> = ({
           paddingVertical: 20,
           width: 160,
           backgroundColor:
-            type === 'subscription' ? colors.eastBay : colors.deYork,
+            type === 'subscription'
+              ? colors.eastBay
+              : type === 'onetime'
+              ? colors.deYork
+              : colors.fuchsiaBlue,
           borderRadius: 24,
 
           flexDirection: 'column',
@@ -57,7 +61,7 @@ const IAPCard: FC<IAPCardProps> = ({
         style={{
           marginTop: 20,
           fontSize: 14,
-          color: type === 'subscription' ? colors.white : colors.darkGray,
+          color: type === 'onetime' ? colors.darkGray : colors.white,
         }}>
         {name}
       </Text>
@@ -65,17 +69,23 @@ const IAPCard: FC<IAPCardProps> = ({
         onPress={onPress}
         text={priceString}
         style={{
-          backgroundColor:
-            type === 'subscription' ? colors.helioTrope : colors.magicMint,
-          borderRadius: 20,
           alignSelf: 'stretch',
           marginTop: 28,
           marginHorizontal: 20,
         }}
+        containerStyle={{
+          backgroundColor:
+            type === 'subscription'
+              ? colors.scampi
+              : type === 'onetime'
+              ? colors.magicMint
+              : colors.helioTrope,
+          borderRadius: 20,
+        }}
         textStyle={{
           fontSize: 14,
           fontWeight: '400',
-          color: colors.downRiver,
+          color: type === 'forever' ? colors.white : colors.downRiver,
         }}
       />
     </View>

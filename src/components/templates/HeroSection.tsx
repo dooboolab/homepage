@@ -5,6 +5,7 @@ import styled, {css} from 'styled-components/native';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {View} from 'react-native';
 import {fbt} from 'fbt';
+import {useAuthContext} from '../../providers/AuthProvider';
 
 // eslint-disable-next-line
 fbt;
@@ -73,6 +74,10 @@ type Props = {
 const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
   const {theme, colors} = useTheme();
 
+  const {
+    state: {user},
+  } = useAuthContext();
+
   return (
     <Container>
       <BackgroundImage
@@ -118,32 +123,33 @@ const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
             }}
             text={fbt('Contact us', 'contact us')}
           />
-          {/* TODO */}
-          {/* <Button
-            onPress={onPressSponsor}
-            activeOpacity={0.7}
-            style={{
-              marginTop: 36,
-              marginLeft: 12,
-            }}
-            styles={{
-              container: {
-                backgroundColor: theme.primary,
-                paddingHorizontal: 40,
-                borderRadius: 20,
-                height: 40,
-              },
-              text: {
-                color: theme.textContrast,
-                fontFamily: 'avenir',
-                fontSize: 16,
-              },
-              hovered: {
-                backgroundColor: colors.darkGray,
-              },
-            }}
-            text={fbt('Sponsor us', 'sponsor us')}
-          /> */}
+          {user ? (
+            <Button
+              onPress={onPressSponsor}
+              activeOpacity={0.7}
+              style={{
+                marginTop: 36,
+                marginLeft: 12,
+              }}
+              styles={{
+                container: {
+                  backgroundColor: theme.primary,
+                  paddingHorizontal: 40,
+                  borderRadius: 20,
+                  height: 40,
+                },
+                text: {
+                  color: theme.textContrast,
+                  fontFamily: 'avenir',
+                  fontSize: 16,
+                },
+                hovered: {
+                  opacity: 0.7,
+                },
+              }}
+              text={fbt('Sponsor us', 'sponsor us')}
+            />
+          ) : null}
         </View>
       </BackgroundImage>
     </Container>

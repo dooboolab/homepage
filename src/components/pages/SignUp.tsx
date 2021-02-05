@@ -1,12 +1,20 @@
+import {
+  Alert,
+  Platform,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import {Button, EditText, useTheme} from 'dooboo-ui';
-import {Platform, ScrollView, Text, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 
 // eslint-disable-next-line
@@ -53,8 +61,82 @@ const SignIn: FC<Props> = ({navigation}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
+  const [displayName, setDisplayName] = useState<string>('');
+  const [isSigningUp, setIsSigningUp] = useState<boolean>(false);
+  const [errorEmail, setErrorEmail] = useState<string>('');
+  const [errorPassword, setErrorPassword] = useState<string>('');
+  const [errorDisplayname, setErrorDisplayName] = useState<string>('');
+  const [errorPasswordConfirm, setErrorPasswordConfirm] = useState<string>('');
 
   const {theme} = useTheme();
+
+  const requestSignUp = async (): Promise<void> => {
+    setErrorEmail('');
+    setErrorPassword('');
+    setErrorPasswordConfirm('');
+    setErrorDisplayName('');
+
+    if (!email || !validateEmail(email))
+      return setErrorEmail(
+        fbt('Not a valid email address', 'invalid email address'),
+      );
+
+    if (!password)
+      setErrorPassword(fbt('Password is missin', 'password missing'));
+
+    if (password !== confirmPassword)
+      setErrorPasswordConfirm(
+        fbt('Password does not match', 'password does not match'),
+      );
+
+    if (!displayName)
+      setErrorDisplayName(
+        fbt('Please enter display name', 'enter display name'),
+      );
+
+    setIsSigningUp(true);
+
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+      const currentUser = firebase.auth().currentUser;
+
+      if (currentUser)
+        await Promise.all([
+          currentUser.updateProfile({
+            displayName,
+          }),
+          firebase.firestore().collection('users').doc(currentUser.uid).set({
+            email,
+            displayName,
+          }),
+          currentUser.sendEmailVerification(),
+        ]);
+
+      navigation.goBack();
+
+      const successFbtString = fbt(
+        // eslint-disable-next-line max-len
+        'Verification email has been sent. Please check your inbox. Sometimes it maybe filtered in your spam box so please check there too.',
+        'email verification sent',
+      ).toString();
+
+      Platform.select({
+        // eslint-disable-next-line no-alert
+        web: alert(successFbtString),
+        default: Alert.alert(
+          fbt('Success', 'success').toString(),
+          successFbtString,
+        ),
+      });
+
+      navigation.goBack();
+    } catch (err) {
+      setErrorDisplayName(err.message);
+    } finally {
+      setIsSigningUp(false);
+    }
+  };
 
   return (
     <Container>
@@ -71,6 +153,7 @@ const SignIn: FC<Props> = ({navigation}) => {
             value={email}
             onChangeText={setEmail}
             placeholder="email@email.com"
+            errorText={errorEmail}
           />
           <EditText
             type="column"
@@ -79,16 +162,34 @@ const SignIn: FC<Props> = ({navigation}) => {
             value={password}
             onChangeText={setPassword}
             placeholder="********"
+            secureTextEntry={true}
+            errorText={errorPassword}
           />
           <EditText
             type="column"
             style={{marginTop: 20}}
             labelText={fbt('Confirm password', 'confirm password')}
-            value={password}
-            onChangeText={setPassword}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
             placeholder="********"
+            secureTextEntry={true}
+            errorText={errorPasswordConfirm}
+          />
+          <EditText
+            type="column"
+            style={{marginTop: 20}}
+            labelText={fbt('Display name', 'display name')}
+            value={displayName}
+            onChangeText={setDisplayName}
+            placeholder={fbt(
+              'Enter display name',
+              'enter display name',
+            ).toString()}
+            errorText={errorDisplayname}
           />
           <Button
+            loading={isSigningUp}
+            onPress={requestSignUp}
             text={fbt('Sign Up', 'sign up')}
             style={{marginTop: 30, alignSelf: 'stretch'}}
             styles={{

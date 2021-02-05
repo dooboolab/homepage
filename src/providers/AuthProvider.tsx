@@ -7,7 +7,6 @@ interface Context {
   state: State;
   setUser: (user: User) => void;
   resetUser: () => void;
-  callDefault: () => void;
 }
 
 const [useCtx, Provider] = createCtx<Context>();
@@ -15,7 +14,6 @@ const [useCtx, Provider] = createCtx<Context>();
 export enum ActionType {
   ResetUser = 'reset-user',
   SetUser = 'set-user',
-  CallDefault = 'call-default',
 }
 
 export interface State {
@@ -35,23 +33,13 @@ interface ResetUserAction {
   type: ActionType.ResetUser;
 }
 
-interface GetStateAction {
-  type: ActionType.CallDefault;
-}
-
-type Action = SetUserAction | ResetUserAction | GetStateAction;
+type Action = SetUserAction | ResetUserAction;
 
 interface Props {
   children?: React.ReactElement;
 }
 
 type Reducer = (state: State, action: Action) => State;
-
-const callDefault = (dispatch: React.Dispatch<GetStateAction>) => (): void => {
-  dispatch({
-    type: ActionType.CallDefault,
-  });
-};
 
 const setUser = (dispatch: React.Dispatch<SetUserAction>) => (
   user: User,
@@ -80,16 +68,15 @@ const reducer: Reducer = (state = initialState, action) => {
   }
 };
 
-function AppProvider(props: Props): React.ReactElement {
+function AuthProvider(props: Props): React.ReactElement {
   const [state, dispatch] = useReducer<Reducer>(reducer, initialState);
 
   const actions = {
     setUser: setUser(dispatch),
     resetUser: resetUser(dispatch),
-    callDefault: callDefault(dispatch),
   };
 
   return <Provider value={{state, ...actions}}>{props.children}</Provider>;
 }
 
-export {useCtx as useAppContext, AppProvider};
+export {useCtx as useAuthContext, AuthProvider};

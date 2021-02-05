@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`[Stack] navigator should renders [Dark] mode 1`] = `null`;
-
-exports[`[Stack] navigator should renders without crashing 1`] = `null`;

@@ -1,5 +1,6 @@
 import './GestureHandler';
 
+import React, {useEffect, useState} from 'react';
 import {
   StackNavigationProp,
   createStackNavigator,
@@ -10,12 +11,13 @@ import FindPw from '../pages/FindPw';
 import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
-import React from 'react';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
 import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
+import firebase from 'firebase';
+import {useAuthContext} from '../../providers/AuthProvider';
 import {useTheme} from 'dooboo-ui';
 
 export type RootStackParamList = {
@@ -55,6 +57,25 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator(): React.ReactElement {
   const {theme} = useTheme();
 
+  const {
+    resetUser,
+    setUser,
+    state: {user},
+  } = useAuthContext();
+
+  const [authInitiated, setAuthInitiated] = useState<boolean>(false);
+  const [loggingOut, setLoggingOut] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (authInitiated) return;
+
+    setAuthInitiated(true);
+
+    firebase.auth().onAuthStateChanged((fireUser) => {
+      fireUser ? setUser(fireUser) : resetUser();
+    });
+  }, [authInitiated, resetUser, setUser]);
+
   const linking = {
     prefixes: ['https://dooboolab.com', 'dooboolab://'],
     enabled: true,
@@ -84,7 +105,7 @@ function RootNavigator(): React.ReactElement {
         }}>
         {Object.entries({
           ...commonScreens,
-          ...(false ? userScreens : authScreens),
+          ...(user ? userScreens : authScreens),
         }).map(([name, component]) => (
           <Stack.Screen
             key={name}
