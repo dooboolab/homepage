@@ -550,6 +550,246 @@
           "variations": {}
         }
       ]
+    },
+    "a0883063e37f7257ecad1258417d55f1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "로그아웃",
+          "variations": {}
+        }
+      ]
+    },
+    "b56a1590832508ca438c11e2fa67794f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "로그인",
+          "variations": {}
+        }
+      ]
+    },
+    "0864b6b10ae026634b6180d22ffc00d7": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "회원가입",
+          "variations": {}
+        }
+      ]
+    },
+    "d1a8745ee6dc791cb6edae809d0ae08d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호를 잊어버리셨나요",
+          "variations": {}
+        }
+      ]
+    },
+    "9e3e2f2beda238e3bea412ecc01e54b3": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "다음 단계로 진행함과 동시에",
+          "variations": {}
+        }
+      ]
+    },
+    "98145228f3a299e2768b57d8afe342d5": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "이용약관",
+          "variations": {}
+        }
+      ]
+    },
+    "ac38b0bed1ff7f620dac81718a326b8a": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "및",
+          "variations": {}
+        }
+      ]
+    },
+    "e3ce5d18b538b2f0cb440a6a1113b9f4": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "개인정보취급방침",
+          "variations": {}
+        }
+      ]
+    },
+    "ee99009962f76a11208aec901d5de00a": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "에 동의하는 것으로 간주합니다",
+          "variations": {}
+        }
+      ]
+    },
+    "c9bba6219255afefd80e09b4231e2659": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "올바른 이메일 주소가 아닙니다",
+          "variations": {}
+        }
+      ]
+    },
+    "49e8838930d91738cea2ab24dc844c38": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호를 입력해주세요",
+          "variations": {}
+        }
+      ]
+    },
+    "a47d3dabc0f2641272587805d7970dc5": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호가 일치하지 않습니다",
+          "variations": {}
+        }
+      ]
+    },
+    "f0226f0567985c72ab34f68707584a9f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "별명을 입력해주세요",
+          "variations": {}
+        }
+      ]
+    },
+    "75bc985d9f3c7be16dcae38215785fb5": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "이메일 인증 링크가 메일함에 발송되었습니다. 메일함을 확인해주세요. 가끔은 스팸함으로 들어가니 스팸함도 확인해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "c700aff276ba221e1ab3d7ecc4b2d894": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "회원가입",
+          "variations": {}
+        }
+      ]
+    },
+    "3600731e949fb66e525cce73a2460bce": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "이메일",
+          "variations": {}
+        }
+      ]
+    },
+    "310ae7cc8d82f105457d5508213101c7": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호",
+          "variations": {}
+        }
+      ]
+    },
+    "41d7c4a6fff7ccfd7a816cfe6c88e28f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호 확인",
+          "variations": {}
+        }
+      ]
+    },
+    "778c3b48e336d6313c4d41bf0dee2fdf": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "별명",
+          "variations": {}
+        }
+      ]
+    },
+    "7dbdec8c0b0fcc5ae041565ceafbab83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "별명을 입력해주세요",
+          "variations": {}
+        }
+      ]
+    },
+    "1b3d4242cea0281d0d4be5508493b844": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "뒤로가기",
+          "variations": {}
+        }
+      ]
+    },
+    "4c06de66a5fdf162d0cf204ff79834aa": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "일회성 후원",
+          "variations": {}
+        }
+      ]
+    },
+    "6c267cb6456049c5928b605acdef7232": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "월별 후원",
+          "variations": {}
+        }
+      ]
+    },
+    "048def56e218dc6f9b764775c6f9f248": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "영구 멤버십",
+          "variations": {}
+        }
+      ]
     }
   }
 }

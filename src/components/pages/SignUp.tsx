@@ -82,7 +82,7 @@ const SignIn: FC<Props> = ({navigation}) => {
       );
 
     if (!password)
-      setErrorPassword(fbt('Password is missin', 'password missing'));
+      setErrorPassword(fbt('Password is missing', 'password missing'));
 
     if (password !== confirmPassword)
       setErrorPasswordConfirm(
