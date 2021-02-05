@@ -77,7 +77,7 @@ function RootNavigator(): React.ReactElement {
         dark: true,
       }}>
       <Stack.Navigator
-        initialRouteName="SignIn"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
           headerBackTitle: '',
