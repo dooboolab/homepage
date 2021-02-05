@@ -12,7 +12,17 @@ let testingLib: RenderAPI;
 
 describe('Rendering', () => {
   beforeEach(() => {
-    props = createTestProps();
+    props = createTestProps({
+      navigation: {
+        setOptions: jest.fn(),
+      },
+      route: {
+        params: {
+          uri: 'http:',
+        },
+      },
+    });
+
     component = createTestElement(<Page {...props} />);
     testingLib = render(component);
   });
@@ -27,7 +37,17 @@ describe('Rendering', () => {
 
 describe('Interaction', () => {
   beforeEach(() => {
-    props = createTestProps();
+    props = createTestProps({
+      navigation: {
+        setOptions: jest.fn(),
+      },
+      route: {
+        params: {
+          uri: 'http:',
+        },
+      },
+    });
+
     component = createTestElement(<Page {...props} />);
     testingLib = render(component);
   });

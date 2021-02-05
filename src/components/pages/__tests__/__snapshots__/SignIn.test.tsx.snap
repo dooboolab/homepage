@@ -10,7 +10,8 @@ exports[`Interaction should simulate onClick 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -195,10 +196,8 @@ exports[`Interaction should simulate onClick 1`] = `
                 Object {
                   "color": "#000000",
                   "fontSize": 28,
-                  "marginBottom": 12,
-                  "marginLeft": 0,
-                  "marginRight": 0,
-                  "marginTop": 12,
+                  "marginBottom": 28,
+                  "marginTop": 40,
                 },
               ]
             }
@@ -507,10 +506,96 @@ exports[`Interaction should simulate onClick 1`] = `
               ?
             </Text>
           </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                  "marginTop": 40,
+                  "paddingBottom": 40,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 0,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+              We consider that you agree with
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "color": "#393D7A",
+                    "lineHeight": 22,
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+              testID="btn-terms"
+            >
+              Terms of Agreement
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+               
+              and
+               
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "color": "#393D7A",
+                    "lineHeight": 22,
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+              testID="btn-privacy"
+            >
+              Privary Policy
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+               
+              by going onto next step
+            </Text>
+          </View>
         </View>
       </View>
     </RCTScrollView>
-  </View>
+  </RCTSafeAreaView>
 </View>
 `;
 
@@ -524,7 +609,8 @@ exports[`Rendering renders without crashing 1`] = `
     }
   }
 >
-  <View
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -709,10 +795,8 @@ exports[`Rendering renders without crashing 1`] = `
                 Object {
                   "color": "#000000",
                   "fontSize": 28,
-                  "marginBottom": 12,
-                  "marginLeft": 0,
-                  "marginRight": 0,
-                  "marginTop": 12,
+                  "marginBottom": 28,
+                  "marginTop": 40,
                 },
               ]
             }
@@ -1021,9 +1105,95 @@ exports[`Rendering renders without crashing 1`] = `
               ?
             </Text>
           </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                  "marginTop": 40,
+                  "paddingBottom": 40,
+                  "paddingLeft": 0,
+                  "paddingRight": 0,
+                  "paddingTop": 0,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+              We consider that you agree with
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "color": "#393D7A",
+                    "lineHeight": 22,
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+              testID="btn-terms"
+            >
+              Terms of Agreement
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+               
+              and
+               
+            </Text>
+            <Text
+              onPress={[Function]}
+              style={
+                Array [
+                  Object {
+                    "color": "#393D7A",
+                    "lineHeight": 22,
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+              testID="btn-privacy"
+            >
+              Privary Policy
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#777",
+                    "lineHeight": 22,
+                  },
+                ]
+              }
+            >
+               
+              by going onto next step
+            </Text>
+          </View>
         </View>
       </View>
     </RCTScrollView>
-  </View>
+  </RCTSafeAreaView>
 </View>
 `;
