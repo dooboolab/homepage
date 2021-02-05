@@ -2,7 +2,7 @@ import React, {ReactElement} from 'react';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
 import StackNavigator from '../RootStackNavigator';
-import {ThemeType} from '../../../providers/ThemeProvider';
+import {ThemeType} from 'dooboo-ui';
 import {View} from 'react-native';
 import renderer from 'react-test-renderer';
 
@@ -16,6 +16,7 @@ jest.mock('@react-navigation/native', () => {
     createNavigatorFactory: jest.fn(),
     useNavigation: (): Record<string, unknown> => ({
       navigate: jest.fn(),
+      setOptions: jest.fn(),
     }),
   };
 });

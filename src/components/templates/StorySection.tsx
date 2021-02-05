@@ -1,12 +1,11 @@
+import {Button, useTheme} from 'dooboo-ui';
 import {Description, SubTitle, Title} from '../UI/Typography';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import {Button} from 'dooboo-ui';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import {useNavigation} from '@react-navigation/native';
-import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

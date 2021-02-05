@@ -7,7 +7,7 @@ import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
-import {useTheme} from '../../providers/ThemeProvider';
+import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.View`

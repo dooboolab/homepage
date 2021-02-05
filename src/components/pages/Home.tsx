@@ -32,6 +32,10 @@ const Page: FC<Props> = () => {
   const scrollRef = useRef<ScrollView>(null);
   const navigation = useNavigation();
 
+  navigation.setOptions({
+    title: 'dooboolab',
+  });
+
   return (
     <Container>
       <Header scrollRef={scrollRef} />
