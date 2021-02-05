@@ -1,4 +1,5 @@
 import 'firebase/firestore';
+import 'firebase/auth';
 
 import Base64 from 'Base64';
 import React from 'react';
