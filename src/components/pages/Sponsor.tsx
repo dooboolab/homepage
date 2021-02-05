@@ -11,7 +11,7 @@ import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/core';
 import {withScreen} from '../../utils/wrapper';
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
   background-color: ${({theme}): string => theme.background};
@@ -90,33 +90,33 @@ const subscriptionItems: Omit<IAPCardProps, 'icon' | 'style'>[] = [
     name: 'Iron Tier',
   },
   {
-    price: 100,
-    priceString: '$100',
+    price: 50,
+    priceString: '$50',
     name: 'Bronze Tier',
   },
   {
-    price: 200,
-    priceString: '$300',
+    price: 100,
+    priceString: '$100',
     name: 'Silver Tier',
+  },
+  {
+    price: 200,
+    priceString: '$200',
+    name: 'Gold Tier',
   },
   {
     price: 300,
     priceString: '$300',
-    name: 'Gold Tier',
+    name: 'Platinum Tier',
   },
   {
     price: 400,
     priceString: '$400',
-    name: 'Platinum Tier',
+    name: 'Diamond Tier',
   },
   {
     price: 500,
     priceString: '$500',
-    name: 'Diamond Tier',
-  },
-  {
-    price: 1000,
-    priceString: '$1,000',
     name: 'Challenger',
   },
 ];
@@ -195,87 +195,88 @@ const Sponsor: FC<Props> = ({navigation}) => {
   return (
     <Container>
       <Header hideMenus />
-
-      <View
-        style={{
-          alignSelf: 'stretch',
-          paddingTop: 20,
-          paddingBottom: 40,
-          backgroundColor: theme.background,
-        }}>
-        {itemTypes.map((type) => {
-          return (
-            <ListContainer key={type}>
-              <StyledText
-                style={{
-                  fontSize: 28,
-                  fontWeight: 'bold',
-                  marginLeft: 12,
-                  marginBottom: 8,
-                  textAlign: 'center',
-                }}>
-                {type === 'onetime'
-                  ? fbt('One-time sponsoring', 'one time sponsoring')
-                  : type === 'subscription'
-                  ? fbt('Monthly donation', 'monthly donation')
-                  : fbt('Forever membership', 'forever membership')}
-              </StyledText>
-              <ScrollView
-                horizontal
-                style={{
-                  backgroundColor: theme.paper,
-                }}
-                contentContainerStyle={{
-                  paddingVertical: 28,
-                  backgroundColor: theme.paper,
-                  paddingHorizontal: 40,
-                  height: 300,
-                }}>
-                {type === 'onetime'
-                  ? onetimeItems.map((item, i) => {
-                      return (
-                        <IAPCard
-                          key={i.toString()}
-                          price={item.price}
-                          priceString={item.priceString}
-                          name={item.name}
-                          icon={IC_COFFEE}
-                          style={{marginRight: 16}}
-                        />
-                      );
-                    })
-                  : type === 'subscription'
-                  ? subscriptionItems.map((item, i) => {
-                      return (
-                        <IAPCard
-                          type="subscription"
-                          key={i.toString()}
-                          price={item.price}
-                          priceString={item.priceString}
-                          name={item.name}
-                          icon={IC_DOOBOO_IAP}
-                          style={{marginRight: 16}}
-                        />
-                      );
-                    })
-                  : membershipItems.map((item, i) => {
-                      return (
-                        <IAPCard
-                          type="forever"
-                          key={i.toString()}
-                          price={item.price}
-                          priceString={item.priceString}
-                          name={item.name}
-                          icon={IC_LOGO}
-                          style={{marginRight: 16}}
-                        />
-                      );
-                    })}
-              </ScrollView>
-            </ListContainer>
-          );
-        })}
-      </View>
+      <ScrollView>
+        <View
+          style={{
+            alignSelf: 'stretch',
+            paddingTop: 20,
+            paddingBottom: 40,
+            backgroundColor: theme.background,
+          }}>
+          {itemTypes.map((type) => {
+            return (
+              <ListContainer key={type}>
+                <StyledText
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 'bold',
+                    marginLeft: 12,
+                    marginBottom: 8,
+                    textAlign: 'center',
+                  }}>
+                  {type === 'onetime'
+                    ? fbt('One-time sponsoring', 'one time sponsoring')
+                    : type === 'subscription'
+                    ? fbt('Monthly donation', 'monthly donation')
+                    : fbt('Forever membership', 'forever membership')}
+                </StyledText>
+                <ScrollView
+                  horizontal
+                  style={{
+                    backgroundColor: theme.paper,
+                  }}
+                  contentContainerStyle={{
+                    paddingVertical: 28,
+                    backgroundColor: theme.paper,
+                    paddingHorizontal: 40,
+                    height: 300,
+                  }}>
+                  {type === 'onetime'
+                    ? onetimeItems.map((item, i) => {
+                        return (
+                          <IAPCard
+                            key={i.toString()}
+                            price={item.price}
+                            priceString={item.priceString}
+                            name={item.name}
+                            icon={IC_COFFEE}
+                            style={{marginRight: 16}}
+                          />
+                        );
+                      })
+                    : type === 'subscription'
+                    ? subscriptionItems.map((item, i) => {
+                        return (
+                          <IAPCard
+                            type="subscription"
+                            key={i.toString()}
+                            price={item.price}
+                            priceString={item.priceString}
+                            name={item.name}
+                            icon={IC_DOOBOO_IAP}
+                            style={{marginRight: 16}}
+                          />
+                        );
+                      })
+                    : membershipItems.map((item, i) => {
+                        return (
+                          <IAPCard
+                            type="forever"
+                            key={i.toString()}
+                            price={item.price}
+                            priceString={item.priceString}
+                            name={item.name}
+                            icon={IC_LOGO}
+                            style={{marginRight: 16}}
+                          />
+                        );
+                      })}
+                </ScrollView>
+              </ListContainer>
+            );
+          })}
+        </View>
+      </ScrollView>
     </Container>
   );
 };

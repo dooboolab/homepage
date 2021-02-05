@@ -32,15 +32,15 @@ exports[`Render renders without crashing 1`] = `
         Array [
           Object {
             "alignItems": "center",
+            "alignSelf": "stretch",
             "backgroundColor": "#FFFFFF",
-            "flexDirection": "column",
+            "flexDirection": "row",
             "flexWrap": "wrap",
             "justifyContent": "center",
             "paddingBottom": 0,
             "paddingLeft": 24,
             "paddingRight": 24,
             "paddingTop": 0,
-            "width": "100%",
           },
         ]
       }
@@ -59,6 +59,9 @@ exports[`Render renders without crashing 1`] = `
               "alignItems": "center",
               "justifyContent": "center",
             },
+            Object {
+              "alignSelf": "center",
+            },
           ]
         }
       >
@@ -74,7 +77,6 @@ exports[`Render renders without crashing 1`] = `
           style={
             Array [
               Object {
-                "alignSelf": "center",
                 "height": 52,
                 "marginBottom": 12,
                 "marginLeft": 0,
@@ -272,7 +274,7 @@ exports[`Render renders without crashing 1`] = `
                   Object {
                     "color": "#B446BF",
                     "fontSize": 11,
-                    "paddingBottom": 2,
+                    "paddingBottom": 12,
                     "paddingHorizontal": 0,
                   },
                   undefined,
@@ -847,6 +849,7 @@ exports[`Render renders without crashing 1`] = `
                             "color": "#00BA90",
                             "fontFamily": "avenir",
                             "fontSize": 10,
+                            "paddingBottom": 12,
                             "paddingVertical": 0,
                             "textAlign": "center",
                           },
@@ -972,6 +975,7 @@ exports[`Render renders without crashing 1`] = `
                             "color": "#00BA90",
                             "fontFamily": "avenir",
                             "fontSize": 10,
+                            "paddingBottom": 12,
                             "paddingVertical": 0,
                             "textAlign": "center",
                           },
@@ -1235,6 +1239,7 @@ exports[`Render renders without crashing 1`] = `
                           "color": "#00BA90",
                           "fontFamily": "avenir",
                           "fontSize": 10,
+                          "paddingBottom": 12,
                           "paddingVertical": 0,
                           "textAlign": "center",
                         },
@@ -1362,6 +1367,7 @@ exports[`Render renders without crashing 1`] = `
                           "color": "#00BA90",
                           "fontFamily": "avenir",
                           "fontSize": 10,
+                          "paddingBottom": 12,
                           "paddingVertical": 0,
                           "textAlign": "center",
                         },

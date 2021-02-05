@@ -1,10 +1,10 @@
 import {Button, useTheme} from 'dooboo-ui';
 import {Description, SubTitle} from '../UI/Typography';
 import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
+import {Linking, Platform} from 'react-native';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import {Linking} from 'react-native';
 import {fbt} from 'fbt';
 
 // eslint-disable-next-line
@@ -94,6 +94,10 @@ const CommunitySection: FC<Props> = () => {
             fontSize: 10,
             textAlign: 'center',
             alignSelf: 'center',
+            paddingBottom: Platform.select({
+              web: 0,
+              default: 12,
+            }),
           },
           hovered: {
             opacity: 0.7,

@@ -1,11 +1,11 @@
 import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import type {FC, ReactElement, RefObject} from 'react';
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
+import {Platform, ScrollView, View} from 'react-native';
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../../utils/Hoverable';
-import {ScrollView} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
@@ -16,11 +16,11 @@ import {useNavigation} from '@react-navigation/native';
 fbt;
 
 const Container = styled.View`
-  width: 100%;
+  align-self: stretch;
   padding: 0 24px;
   background-color: ${({theme}) => theme.background};
 
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -43,7 +43,6 @@ const Logo = styled.Image`
   width: 124px;
   height: 52px;
   margin: 12px 0;
-  align-self: center;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
@@ -136,7 +135,7 @@ type Props = {
 
 const Header: FC<Props> = ({scrollRef, hideMenus}) => {
   const navigation = useNavigation();
-  const {theme, changeThemeType, themeType} = useTheme();
+  const {theme, changeThemeType, themeType, media} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
   const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
 
@@ -149,13 +148,14 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
       <Hoverable>
         {(isHovered) => (
           <LogoTouch
+            style={{alignSelf: 'center'}}
             onPress={() =>
               hideMenus
                 ? navigation.navigate('Home')
                 : scrollRef?.current?.scrollTo({y: 0})
             }>
             <Logo
-              style={
+              style={[
                 isHovered && {
                   shadowColor: theme.primary,
                   shadowOffset: {
@@ -164,8 +164,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                   },
                   shadowOpacity: 0.24,
                   shadowRadius: 16,
-                }
-              }
+                },
+              ]}
               source={
                 themeType === ThemeType.LIGHT ? IC_DOOBOOLAB : IC_DOOBOOLAB_DARK
               }
@@ -221,7 +221,10 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 fontSize: 11,
                 paddingHorizontal: 0,
                 color: theme.negative,
-                paddingBottom: 2,
+                paddingBottom: Platform.select({
+                  web: 2,
+                  default: 12,
+                }),
               },
             }}
           />
@@ -242,7 +245,10 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 fontSize: 11,
                 paddingHorizontal: 0,
                 color: theme.accent,
-                paddingBottom: 2,
+                paddingBottom: Platform.select({
+                  web: 2,
+                  default: 12,
+                }),
               },
             }}
           />

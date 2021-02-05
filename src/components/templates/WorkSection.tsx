@@ -7,7 +7,7 @@ import {
   IC_HACKATALK_DARK,
   IC_WECOUNT,
 } from '../../utils/Icons';
-import {Linking, View} from 'react-native';
+import {Linking, Platform, View} from 'react-native';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
 
@@ -101,6 +101,10 @@ const Project: FC<ProjectProps> = ({image, description, onViewMore}) => {
             fontSize: 10,
             textAlign: 'center',
             alignSelf: 'center',
+            paddingBottom: Platform.select({
+              web: 0,
+              default: 12,
+            }),
           },
           hovered: {
             backgroundColor: theme.background,
