@@ -105,7 +105,7 @@ function RootNavigator(): React.ReactElement {
         }}>
         {Object.entries({
           ...commonScreens,
-          ...(false ? userScreens : authScreens),
+          ...(user ? userScreens : authScreens),
         }).map(([name, component]) => (
           <Stack.Screen
             key={name}

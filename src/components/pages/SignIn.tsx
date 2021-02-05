@@ -1,13 +1,15 @@
+import {Alert, ScrollView, Text, TouchableOpacity} from 'react-native';
 import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
-import {ScrollView, Text, TouchableOpacity} from 'react-native';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 
 // eslint-disable-next-line
@@ -62,10 +64,54 @@ type Props = {
 };
 
 const SignIn: FC<Props> = ({navigation}) => {
+  const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
+  const [passwordError, setPasswordError] = useState<string>('');
 
   const {theme} = useTheme();
+
+  const signIn = async (): Promise<void> => {
+    setEmailError('');
+    setPasswordError('');
+
+    if (firebase.auth().currentUser) await firebase.auth().signOut();
+
+    if (!email || !validateEmail(email))
+      return setEmailError(
+        fbt('Not a valid email address', 'invalid email address'),
+      );
+
+    if (!password)
+      return setPasswordError(
+        fbt('Password is not correct', 'incorrect password'),
+      );
+
+    setIsLoggingIn(true);
+
+    try {
+      const {user} = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password);
+
+      if (user && !user.emailVerified) {
+        firebase.auth().signOut();
+
+        return setPasswordError(
+          fbt(
+            'Please verify your email address in your email inbox',
+            'verify your email address',
+          ),
+        );
+      }
+    } catch (err) {
+      setPasswordError(err.message);
+    } finally {
+      setIsLoggingIn(false);
+    }
+  };
 
   const goToWebView = (uri: string): void => {
     navigation.navigate('WebView', {uri});
@@ -85,7 +131,9 @@ const SignIn: FC<Props> = ({navigation}) => {
             labelText={fbt('Email', 'email')}
             value={email}
             onChangeText={setEmail}
+            errorText={emailError}
             placeholder="email@email.com"
+            onSubmitEditing={signIn}
           />
           <EditText
             type="column"
@@ -93,9 +141,14 @@ const SignIn: FC<Props> = ({navigation}) => {
             labelText={fbt('Password', 'password')}
             value={password}
             onChangeText={setPassword}
+            errorText={passwordError}
             placeholder="********"
+            secureTextEntry={true}
+            onSubmitEditing={signIn}
           />
           <Button
+            loading={isLoggingIn}
+            onPress={signIn}
             text={fbt('Sign In', 'sign in')}
             style={{marginTop: 30, alignSelf: 'stretch'}}
             styles={{

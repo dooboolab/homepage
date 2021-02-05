@@ -1,12 +1,15 @@
+import {Button, ThemeType, useTheme} from 'dooboo-ui';
+import type {FC, ReactElement, RefObject} from 'react';
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
-import React, {FC, ReactElement, RefObject, useState} from 'react';
-import {ThemeType, useTheme} from 'dooboo-ui';
+import React, {useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../../utils/Hoverable';
 import {ScrollView} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
+import {useAuthContext} from '../../../providers/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
 
 //eslint-disable-next-line
@@ -59,7 +62,7 @@ const LinkWrapper = styled.View`
   ${({theme: {isDesktop}}) =>
     isDesktop &&
     css`
-      margin-right: 48px;
+      margin-right: 140px;
       margin-bottom: 0px;
     `}
 `;
@@ -73,6 +76,21 @@ const LinkText = styled.Text`
   font-size: 18px;
   padding: 0 28px;
   color: ${({theme}) => theme.text};
+`;
+
+const SignOutWrapper = styled.View`
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  width: 80px;
+
+  ${({theme: {isDesktop}}) =>
+    isDesktop &&
+    css`
+      left: undfined;
+      right: 80px;
+      top: 25px;
+    `}
 `;
 
 const SwitchWrapper = styled.View`
@@ -120,6 +138,11 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
   const navigation = useNavigation();
   const {theme, changeThemeType, themeType} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
+  const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
+
+  const {
+    state: {user},
+  } = useAuthContext();
 
   return (
     <Container>
@@ -174,6 +197,57 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
           </>
         )}
       </LinkWrapper>
+      <SignOutWrapper>
+        {user ? (
+          <Button
+            loading={isSigningOut}
+            onPress={async () => {
+              setIsSigningOut(true);
+              await firebase.auth().signOut();
+              setIsSigningOut(false);
+            }}
+            text={fbt('Logout', 'logout')}
+            indicatorColor={theme.accent}
+            styles={{
+              container: {
+                borderRadius: 20,
+                backgroundColor: theme.background,
+                borderWidth: 1,
+                borderColor: theme.negative,
+                height: 24,
+                width: 68,
+              },
+              text: {
+                fontSize: 11,
+                paddingHorizontal: 0,
+                color: theme.negative,
+                paddingBottom: 2,
+              },
+            }}
+          />
+        ) : (
+          <Button
+            onPress={() => navigation.navigate('SignIn')}
+            text={fbt('Sign In', 'sign in')}
+            styles={{
+              container: {
+                borderRadius: 20,
+                backgroundColor: theme.background,
+                borderWidth: 1,
+                borderColor: theme.accent,
+                height: 24,
+                width: 68,
+              },
+              text: {
+                fontSize: 11,
+                paddingHorizontal: 0,
+                color: theme.accent,
+                paddingBottom: 2,
+              },
+            }}
+          />
+        )}
+      </SignOutWrapper>
       <SwitchWrapper>
         <ToggleSwitch
           isOn={switchOn}

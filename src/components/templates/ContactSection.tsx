@@ -6,7 +6,7 @@ import styled, {css} from 'styled-components/native';
 import {IMG_LABTOP} from '../../utils/Icons';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
-import {validateEmail} from '../../utils/functions';
+import {validateEmail} from '../../utils/common';
 
 // eslint-disable-next-line
 fbt;
