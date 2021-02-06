@@ -477,7 +477,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LCXV255WTL;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = dooboolab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
