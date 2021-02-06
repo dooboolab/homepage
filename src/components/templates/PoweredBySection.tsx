@@ -1,8 +1,8 @@
 import {Description, SubTitle} from '../UI/Typography';
+import {Linking, Platform} from 'react-native';
 import React, {FC} from 'react';
 
 import Hoverable from '../../utils/Hoverable';
-import {Linking} from 'react-native';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useTheme} from 'dooboo-ui';
@@ -70,9 +70,7 @@ const PoweredBySection: FC<Props> = () => {
                     color: theme.heading,
                     textDecorationLine: 'underline',
                   },
-                  {
-                    color: theme.accent,
-                  },
+                  {color: theme.accent},
                 ]}>
                 OpenCollectives
               </LinkText>

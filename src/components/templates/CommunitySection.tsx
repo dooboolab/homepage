@@ -95,8 +95,8 @@ const CommunitySection: FC<Props> = () => {
             textAlign: 'center',
             alignSelf: 'center',
             paddingBottom: Platform.select({
-              web: 0,
-              default: 12,
+              ios: 12,
+              default: 0,
             }),
           },
           hovered: {

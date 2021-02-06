@@ -222,8 +222,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 paddingHorizontal: 0,
                 color: theme.negative,
                 paddingBottom: Platform.select({
-                  web: 2,
-                  default: 12,
+                  ios: 12,
+                  default: 2,
                 }),
               },
             }}
@@ -246,8 +246,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 paddingHorizontal: 0,
                 color: theme.accent,
                 paddingBottom: Platform.select({
-                  web: 2,
-                  default: 12,
+                  ios: 12,
+                  default: 2,
                 }),
               },
             }}
