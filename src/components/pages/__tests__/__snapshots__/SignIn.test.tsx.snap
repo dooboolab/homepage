@@ -607,6 +607,7 @@ exports[`Interaction should simulate onClick 1`] = `
               }
             >
               We consider that you agree with
+               
             </Text>
             <Text
               onPress={[Function]}
@@ -1280,6 +1281,7 @@ exports[`Rendering renders without crashing 1`] = `
               }
             >
               We consider that you agree with
+               
             </Text>
             <Text
               onPress={[Function]}

@@ -1,6 +1,12 @@
 import {Button, EditText, useTheme} from 'dooboo-ui';
+import {
+  Linking,
+  Platform,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
-import {ScrollView, Text, TouchableOpacity} from 'react-native';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
@@ -196,13 +202,18 @@ const SignIn: FC<Props> = ({navigation}) => {
           </TouchableOpacity>
           <StyledAgreementTextWrapper>
             <StyledAgreementText>
-              <fbt desc="agreement1">We consider that you agree with</fbt>
+              <fbt desc="agreement1">We consider that you agree with</fbt>{' '}
             </StyledAgreementText>
             <StyledAgreementLinedText
               testID="btn-terms"
-              onPress={(): void =>
-                goToWebView('https://legacy.dooboolab.com/termsofservice')
-              }>
+              onPress={(): Promise<void> | undefined => {
+                if (Platform.OS === 'web')
+                  return Linking.openURL(
+                    'https://legacy.dooboolab.com/termsofservice',
+                  );
+
+                goToWebView('https://legacy.dooboolab.com/termsofservice');
+              }}>
               <fbt desc="agreement2">Terms of Agreement</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>
@@ -211,9 +222,14 @@ const SignIn: FC<Props> = ({navigation}) => {
             </StyledAgreementText>
             <StyledAgreementLinedText
               testID="btn-privacy"
-              onPress={(): void =>
-                goToWebView('https://legacy.dooboolab.com/privacyandpolicy')
-              }>
+              onPress={(): Promise<void> | undefined => {
+                if (Platform.OS === 'web')
+                  return Linking.openURL(
+                    'https://legacy.dooboolab.com/privacyandpolicy',
+                  );
+
+                goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
+              }}>
               <fbt desc="agreement4">Privary Policy</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>
