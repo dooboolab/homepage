@@ -1,6 +1,8 @@
-package com.dooboolab;
+package com.dooboolab.app;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

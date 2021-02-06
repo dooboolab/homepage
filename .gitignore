@@ -73,3 +73,6 @@ src/utils/i18n/fbt/.src_manifest.json
 
 # env
 .env
+
+# android build
+*.aab

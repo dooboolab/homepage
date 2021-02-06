@@ -22,12 +22,3 @@ target 'dooboolab' do
     flipper_post_install(installer)
   end
 end
-
-target 'dooboolab-tvOS' do
-  # Pods for dooboolab-tvOS
-
-  target 'dooboolab-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
