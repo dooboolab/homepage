@@ -278,6 +278,28 @@
           "referenceName" : "Diamond Tier",
           "subscriptionGroupID" : "25C9B2DC",
           "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "20AF190B",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly Donation - Skeleton",
+              "displayName" : "Skeleton Tier",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.dooboolab.skeleton",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Skeleton Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
         }
       ]
     }
