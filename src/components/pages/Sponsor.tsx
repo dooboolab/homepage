@@ -13,7 +13,9 @@ import {requestPurchase, requestSubscription, useIAP} from 'react-native-iap';
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {useAuthContext} from '../../providers/AuthProvider';
 import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';
 
@@ -74,6 +76,10 @@ const Sponsor: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
 
   const {
+    state: {user},
+  } = useAuthContext();
+
+  const {
     connected,
     products,
     subscriptions,
@@ -106,6 +112,20 @@ const Sponsor: FC<Props> = ({navigation}) => {
   useEffect(() => {
     const checkCurrentPurchase = async (purchase?: Purchase): Promise<void> => {
       if (purchase) {
+        if (user) {
+          firebase
+            .firestore()
+            .collection('users')
+            .doc(user.uid)
+            .collection('purchases')
+            .add(purchase);
+
+          firebase.firestore().collection('sponsors').add({
+            purchase,
+            user,
+          });
+        }
+
         const receipt = purchase.transactionReceipt;
 
         if (receipt)
@@ -120,7 +140,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
     };
 
     checkCurrentPurchase(currentPurchase);
-  }, [currentPurchase, finishTransaction]);
+  }, [currentPurchase, finishTransaction, user]);
 
   useEffect(() => {
     if (currentPurchaseError)
