@@ -10,6 +10,7 @@ import google from '../assets/icons/icGoogle.png';
 import graphqlSeoul from '../assets/images/graphql-seoul.png';
 import hackatalk from '../assets/icons/hackatalk.png';
 import hackatalkDark from '../assets/icons/hackatalk-dark.png';
+import icGuest from '../assets/icons/guest.png';
 import labtop from '../assets/images/labtop.jpg';
 import logo from '../assets/icons/logo.png';
 import reactNativeSeoul from '../assets/images/react-native-seoul.png';
@@ -28,6 +29,7 @@ export const IC_WECOUNT = wecount as ImageSourcePropType;
 export const IC_COFFEE = coffee as ImageSourcePropType;
 export const IC_DOOBOO_IAP = doobooIAP as ImageSourcePropType;
 export const IC_LOGO = logo as ImageSourcePropType;
+export const IC_GUEST = icGuest;
 
 export const IMG_SYMBOL = symbol as ImageSourcePropType;
 export const IMG_RN_SEOUL = reactNativeSeoul as ImageSourcePropType;
