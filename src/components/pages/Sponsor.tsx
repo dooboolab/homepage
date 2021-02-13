@@ -1,8 +1,13 @@
+import {Alert, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
-import type {Product, Subscription} from 'react-native-iap';
+import type {
+  Product,
+  ProductPurchase,
+  Purchase,
+  Subscription,
+} from 'react-native-iap';
 import React, {FC, useCallback, useEffect, useMemo, useState} from 'react';
-import {ScrollView, View} from 'react-native';
 import {requestPurchase, requestSubscription, useIAP} from 'react-native-iap';
 
 import Header from '../UI/molecules/Header';
@@ -96,10 +101,6 @@ const Sponsor: FC<Props> = ({navigation}) => {
     currentPurchaseError,
   } = useIAP();
 
-  if (currentPurchase) console.log('success', currentPurchase);
-
-  if (currentPurchaseError) console.log('error', currentPurchaseError);
-
   const sortedProducts = useMemo(
     () =>
       products.sort((a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)),
@@ -118,6 +119,32 @@ const Sponsor: FC<Props> = ({navigation}) => {
     getProducts(iapSkus);
     getSubscriptions(subSkus);
   }, [getProducts, getSubscriptions]);
+
+  useEffect(() => {
+    const checkCurrentPurchase = async (purchase?: Purchase): Promise<void> => {
+      if (purchase) {
+        const receipt = purchase.transactionReceipt;
+
+        if (receipt)
+          try {
+            const ackResult = await finishTransaction(purchase);
+
+            console.log('ackResult', ackResult);
+          } catch (ackErr) {
+            console.warn('ackErr', ackErr);
+          }
+      }
+    };
+
+    checkCurrentPurchase(currentPurchase);
+  }, [currentPurchase, finishTransaction]);
+
+  useEffect(() => {
+    Alert.alert(
+      'purchase error',
+      JSON.stringify(currentPurchaseError?.message),
+    );
+  }, [currentPurchaseError?.message]);
 
   const purchase = (item: Product | Subscription): void => {
     if (item.type === 'iap') requestPurchase(item.productId);
