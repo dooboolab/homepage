@@ -6,19 +6,9 @@ import {
   Text,
   View,
 } from 'react-native';
-import {Button, useTheme} from 'dooboo-ui';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
-import RNIap, {
-  InAppPurchase,
-  Product,
-  PurchaseError,
-  Subscription,
-  SubscriptionPurchase,
-  finishTransaction,
-  purchaseErrorListener,
-  purchaseUpdatedListener,
-} from 'react-native-iap';
+import RNIap, {Product, Subscription, useIAP} from 'react-native-iap';
 import React, {FC, useCallback, useEffect, useState} from 'react';
 
 import Header from '../UI/molecules/Header';
@@ -26,6 +16,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/core';
+import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';
 
 const iapSkus = [
@@ -36,11 +27,12 @@ const iapSkus = [
   'com.dooboolab.coffee10',
   'com.dooboolab.coffee20',
   'com.dooboolab.coffee50',
-  'com.dooboolab.lite', // non-consumable
-  'com.dooboolab.pro', // non-consumable
+  'com.dooboolab.lite',
+  'com.dooboolab.pro',
 ];
 
 const subSkus = [
+  'com.dooboolab.skeleton',
   'com.dooboolab.iron',
   'com.dooboolab.bronze',
   'com.dooboolab.silver',
@@ -201,158 +193,33 @@ interface SectionSubscription {
 
 type Section = SectionProduct | SectionSubscription;
 
-let purchaseUpdateSubscription: EmitterSubscription;
-let purchaseErrorSubscription: EmitterSubscription;
-
 const Sponsor: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
   const [sections, setSections] = useState<Section[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [totalPaidAmount, setTotalPaidAmount] = useState<number>(10000);
 
-  const getProducts = useCallback(async (): Promise<void> => {
-    RNIap.clearProductsIOS();
+  const {
+    connected,
+    products,
+    subscriptions,
+    getProducts,
+    getSubscriptions,
+  } = useIAP();
 
-    try {
-      const result = await RNIap.initConnection();
-
-      await RNIap.consumeAllItemsAndroid();
-      console.log('result', result);
-    } catch (err) {
-      console.warn(err.code, err.message);
-    }
-
-    purchaseUpdateSubscription = purchaseUpdatedListener(
-      async (purchase: InAppPurchase | SubscriptionPurchase) => {
-        const receipt = purchase.transactionReceipt;
-
-        if (receipt) {
-          try {
-            const ackResult = await finishTransaction(purchase);
-
-            console.log('ackResult', ackResult);
-          } catch (ackErr) {
-            console.warn('ackErr', ackErr);
-          }
-
-          Alert.alert('purchase error', JSON.stringify(receipt));
-        }
-      },
-    );
-
-    purchaseErrorSubscription = purchaseErrorListener(
-      (error: PurchaseError) => {
-        console.log('purchaseErrorListener', error);
-        Alert.alert('purchase error', JSON.stringify(error));
-      },
-    );
-
-    try {
-      const products = await RNIap.getProducts(iapSkus);
-
-      console.log('iap', JSON.stringify(products));
-
-      products.forEach((product) => {
-        product.type = 'inapp';
-      });
-
-      // console.log('products', JSON.stringify(products));
-      const subscriptions = await RNIap.getSubscriptions(subSkus);
-
-      console.log('subscriptions', JSON.stringify(subscriptions));
-
-      subscriptions.forEach((subscription) => {
-        subscription.type = 'subs';
-      });
-
-      // const list = [
-      //   {
-      //     title: getString('ONE_TIME_PURCHASE'),
-      //     data: products,
-      //   },
-      //   {
-      //     title: getString('SUBSCRIPTION_PURCHASE'),
-      //     data: subscriptions,
-      //   },
-      // ];
-
-      // setSections(list);
-      // setLoading(false);
-    } catch (err) {
-      console.log('iap error', err);
-    }
-  }, []);
+  console.log('connected', connected);
+  console.log('products', products);
+  console.log('subscriptions', subscriptions);
 
   useEffect(() => {
-    getProducts();
-
-    return (): void => {
-      if (purchaseUpdateSubscription) purchaseUpdateSubscription.remove();
-
-      if (purchaseErrorSubscription) purchaseErrorSubscription.remove();
-    };
-  }, [getProducts]);
+    getProducts(iapSkus);
+    getSubscriptions(subSkus);
+  }, [getProducts, getSubscriptions]);
 
   const purchase = (item: Product | Subscription): void => {
-    if (getSkuType(item) === ITEM_TYPE.PRODUCT)
-      RNIap.requestPurchase(item.productId);
+    if (item.type === 'iap') RNIap.requestPurchase(item.productId);
     else RNIap.requestSubscription(item.productId);
   };
-
-  if (Platform.OS === 'web')
-    return (
-      <Container>
-        <Header hideMenus />
-        <View
-          style={{
-            flex: 1,
-            alignSelf: 'stretch',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: theme.accent,
-              lineHeight: 30,
-              fontSize: 20,
-              textAlign: 'center',
-            }}>
-            <fbt desc="not supported in web">Not supported in web.</fbt>
-            {'\n'}
-            <fbt desc="try in ios or android">
-              Please try this in iOS or Android app.
-            </fbt>
-          </Text>
-          <Button
-            onPress={() => {
-              navigation.goBack();
-            }}
-            text={fbt('Go back', 'go back')}
-            style={{
-              marginTop: 48,
-              marginBottom: 80,
-              alignSelf: 'center',
-              minWidth: 300,
-              maxWidth: 500,
-            }}
-            styles={{
-              container: {
-                borderRadius: 30,
-                alignSelf: 'stretch',
-                backgroundColor: theme.background,
-                borderWidth: 1,
-                borderColor: theme.text,
-              },
-              text: {
-                paddingHorizontal: 20,
-                paddingVertical: 8,
-                color: theme.text,
-              },
-            }}
-          />
-        </View>
-      </Container>
-    );
 
   return (
     <Container>
