@@ -123,11 +123,12 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, [currentPurchase, finishTransaction]);
 
   useEffect(() => {
-    Alert.alert(
-      'purchase error',
-      JSON.stringify(currentPurchaseError?.message),
-    );
-  }, [currentPurchaseError?.message]);
+    if (currentPurchaseError)
+      Alert.alert(
+        'purchase error',
+        JSON.stringify(currentPurchaseError?.message),
+      );
+  }, [currentPurchaseError, currentPurchaseError?.message]);
 
   const purchase = (item: Product | Subscription): void => {
     if (item.type === 'iap') requestPurchase(item.productId);
