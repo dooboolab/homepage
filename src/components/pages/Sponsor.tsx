@@ -41,23 +41,6 @@ const subSkus = [
   'com.dooboolab.diamond',
 ];
 
-enum ITEM_TYPE {
-  PRODUCT = 'product',
-  SUBSCRIPTION = 'subscription',
-}
-
-function getSkuType(item: Product | Subscription): ITEM_TYPE {
-  switch (item.type) {
-    case 'iap':
-    case 'inapp':
-      return ITEM_TYPE.PRODUCT;
-
-    case 'sub':
-    case 'subs':
-      return ITEM_TYPE.PRODUCT;
-  }
-}
-
 const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
