@@ -11,9 +11,11 @@ import FindPw from '../pages/FindPw';
 import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {Platform} from 'react-native';
+import ProfileEdit from '../pages/ProfileEdit';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
+import {User} from '../../types';
 import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
 import firebase from 'firebase';
@@ -22,6 +24,7 @@ import {useTheme} from 'dooboo-ui';
 
 export type RootStackParamList = {
   Home: undefined;
+  ProfileEdit: undefined;
   WebView: {uri: string};
   VisionAndMission: undefined;
   CodeOfConduct: undefined;
@@ -46,6 +49,7 @@ const authScreens = {
 
 const userScreens = {
   Sponsor,
+  ProfileEdit,
 };
 
 export type RootStackNavigationProps<
@@ -72,7 +76,32 @@ function RootNavigator(): React.ReactElement {
     setAuthInitiated(true);
 
     firebase.auth().onAuthStateChanged((fireUser) => {
-      fireUser ? setUser(fireUser) : resetUser();
+      if (fireUser) {
+        firebase
+          .firestore()
+          .collection('users')
+          .doc(fireUser.uid)
+          .get()
+          .then((doc) => {
+            const updatedUser: User = {
+              uid: fireUser.uid,
+              email: fireUser.email,
+              displayName: fireUser.displayName,
+              emailVerified: fireUser.emailVerified,
+              photoURL: fireUser.photoURL,
+              introduction: '',
+            };
+
+            if (doc.exists)
+              updatedUser.introduction = (doc.data() as User).introduction;
+
+            setUser(updatedUser);
+          });
+
+        return;
+      }
+
+      resetUser();
     });
   }, [authInitiated, resetUser, setUser]);
 
