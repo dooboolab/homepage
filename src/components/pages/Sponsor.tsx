@@ -1,15 +1,47 @@
-import {Button, useTheme} from 'dooboo-ui';
+import {Alert, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
-import {Platform, ScrollView, Text, View} from 'react-native';
-import React, {FC} from 'react';
+import type {
+  Product,
+  ProductPurchase,
+  Purchase,
+  Subscription,
+} from 'react-native-iap';
+import React, {FC, useCallback, useEffect, useMemo, useState} from 'react';
+import {requestPurchase, requestSubscription, useIAP} from 'react-native-iap';
 
 import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
+import firebase from 'firebase';
 import styled from 'styled-components/native';
-import {useNavigation} from '@react-navigation/core';
+import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';
+
+const consumableSkus = [
+  'com.dooboolab.bean',
+  'com.dooboolab.coffee1',
+  'com.dooboolab.coffee3',
+  'com.dooboolab.coffee5',
+  'com.dooboolab.coffee10',
+  'com.dooboolab.coffee20',
+  'com.dooboolab.coffee50',
+];
+
+const membershipSkus = ['com.dooboolab.lite', 'com.dooboolab.pro'];
+
+const iapSkus = [...consumableSkus, ...membershipSkus];
+
+const subSkus = [
+  'com.dooboolab.skeleton',
+  'com.dooboolab.iron',
+  'com.dooboolab.bronze',
+  'com.dooboolab.silver',
+  'com.dooboolab.gold',
+  'com.dooboolab.platinum',
+  'com.dooboolab.diamond',
+];
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -40,157 +72,88 @@ type ItemType = 'onetime' | 'subscription' | 'membership';
 
 const itemTypes: ItemType[] = ['onetime', 'subscription', 'membership'];
 
-const onetimeItems: Omit<IAPCardProps, 'icon' | 'style'>[] = [
-  {
-    price: 5,
-    priceString: '$5',
-    name: '1 Coffee',
-  },
-  {
-    price: 15,
-    priceString: '$15',
-    name: '3 Coffee',
-  },
-  {
-    price: 25,
-    priceString: '$25',
-    name: '5 Coffee',
-  },
-  {
-    price: 50,
-    priceString: '$50',
-    name: '10 Coffee',
-  },
-  {
-    price: 100,
-    priceString: '$100',
-    name: '20 Coffee',
-  },
-  {
-    price: 250,
-    priceString: '$250',
-    name: '50 Coffee',
-  },
-  {
-    price: 500,
-    priceString: '$500',
-    name: '100 Coffee',
-  },
-  {
-    price: 1000,
-    priceString: '$1000',
-    name: '200 Coffee',
-  },
-];
-
-const subscriptionItems: Omit<IAPCardProps, 'icon' | 'style'>[] = [
-  {
-    price: 20,
-    priceString: '$20',
-    name: 'Iron Tier',
-  },
-  {
-    price: 50,
-    priceString: '$50',
-    name: 'Bronze Tier',
-  },
-  {
-    price: 100,
-    priceString: '$100',
-    name: 'Silver Tier',
-  },
-  {
-    price: 200,
-    priceString: '$200',
-    name: 'Gold Tier',
-  },
-  {
-    price: 300,
-    priceString: '$300',
-    name: 'Platinum Tier',
-  },
-  {
-    price: 400,
-    priceString: '$400',
-    name: 'Diamond Tier',
-  },
-  {
-    price: 500,
-    priceString: '$500',
-    name: 'Challenger',
-  },
-];
-
-const membershipItems: Omit<IAPCardProps, 'icon' | 'style'>[] = [
-  {
-    price: 100,
-    priceString: '$100',
-    name: 'LITE',
-  },
-  {
-    price: 1000,
-    priceString: '$1,000',
-    name: 'PRO',
-  },
-];
-
 const Sponsor: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
 
-  if (Platform.OS === 'web')
-    return (
-      <Container>
-        <Header hideMenus />
-        <View
-          style={{
-            flex: 1,
-            alignSelf: 'stretch',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: theme.accent,
-              lineHeight: 30,
-              fontSize: 20,
-              textAlign: 'center',
-            }}>
-            <fbt desc="not supported in web">Not supported in web.</fbt>
-            {'\n'}
-            <fbt desc="try in ios or android">
-              Please try this in iOS or Android app.
-            </fbt>
-          </Text>
-          <Button
-            onPress={() => {
-              navigation.goBack();
-            }}
-            text={fbt('Go back', 'go back')}
-            style={{
-              marginTop: 48,
-              marginBottom: 80,
-              alignSelf: 'center',
-              minWidth: 300,
-              maxWidth: 500,
-            }}
-            styles={{
-              container: {
-                borderRadius: 30,
-                alignSelf: 'stretch',
-                backgroundColor: theme.background,
-                borderWidth: 1,
-                borderColor: theme.text,
-              },
-              text: {
-                paddingHorizontal: 20,
-                paddingVertical: 8,
-                color: theme.text,
-              },
-            }}
-          />
-        </View>
-      </Container>
-    );
+  const {
+    state: {user},
+  } = useAuthContext();
+
+  const {
+    connected,
+    products,
+    subscriptions,
+    getProducts,
+    getSubscriptions,
+    finishTransaction,
+    currentPurchase,
+    currentPurchaseError,
+  } = useIAP();
+
+  const sortedProducts = useMemo(
+    () =>
+      products.sort((a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)),
+    [products],
+  );
+
+  const sortedSubscriptions = useMemo(
+    () =>
+      subscriptions.sort(
+        (a, b) => parseInt(a.price, 10) - parseInt(b.price, 10),
+      ),
+    [subscriptions],
+  );
+
+  useEffect(() => {
+    getProducts(iapSkus);
+    getSubscriptions(subSkus);
+  }, [getProducts, getSubscriptions]);
+
+  useEffect(() => {
+    const checkCurrentPurchase = async (purchase?: Purchase): Promise<void> => {
+      if (purchase) {
+        if (user) {
+          firebase
+            .firestore()
+            .collection('users')
+            .doc(user.uid)
+            .collection('purchases')
+            .add(purchase);
+
+          firebase.firestore().collection('sponsors').add({
+            purchase,
+            user,
+          });
+        }
+
+        const receipt = purchase.transactionReceipt;
+
+        if (receipt)
+          try {
+            const ackResult = await finishTransaction(purchase);
+
+            console.log('ackResult', ackResult);
+          } catch (ackErr) {
+            console.warn('ackErr', ackErr);
+          }
+      }
+    };
+
+    checkCurrentPurchase(currentPurchase);
+  }, [currentPurchase, finishTransaction, user]);
+
+  useEffect(() => {
+    if (currentPurchaseError)
+      Alert.alert(
+        'purchase error',
+        JSON.stringify(currentPurchaseError?.message),
+      );
+  }, [currentPurchaseError, currentPurchaseError?.message]);
+
+  const purchase = (item: Product | Subscription): void => {
+    if (item.type === 'iap') requestPurchase(item.productId);
+    else requestSubscription(item.productId);
+  };
 
   return (
     <Container>
@@ -232,40 +195,45 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     height: 300,
                   }}>
                   {type === 'onetime'
-                    ? onetimeItems.map((item, i) => {
+                    ? sortedProducts.map((item, i) => {
+                        if (membershipSkus.includes(item.productId)) return;
+
                         return (
                           <IAPCard
                             key={i.toString()}
-                            price={item.price}
-                            priceString={item.priceString}
-                            name={item.name}
+                            price={parseFloat(item.price)}
+                            priceString={item.localizedPrice}
+                            name={item.title}
                             icon={IC_COFFEE}
                             style={{marginRight: 16}}
+                            onPress={() => purchase(item)}
                           />
                         );
                       })
                     : type === 'subscription'
-                    ? subscriptionItems.map((item, i) => {
+                    ? sortedSubscriptions.map((item, i) => {
                         return (
                           <IAPCard
                             type="subscription"
                             key={i.toString()}
-                            price={item.price}
-                            priceString={item.priceString}
-                            name={item.name}
+                            price={parseFloat(item.price)}
+                            priceString={item.localizedPrice}
+                            name={item.title}
                             icon={IC_DOOBOO_IAP}
                             style={{marginRight: 16}}
                           />
                         );
                       })
-                    : membershipItems.map((item, i) => {
+                    : sortedProducts.map((item, i) => {
+                        if (consumableSkus.includes(item.productId)) return;
+
                         return (
                           <IAPCard
                             type="forever"
                             key={i.toString()}
-                            price={item.price}
-                            priceString={item.priceString}
-                            name={item.name}
+                            price={parseFloat(item.price)}
+                            priceString={item.localizedPrice}
+                            name={item.title}
                             icon={IC_LOGO}
                             style={{marginRight: 16}}
                           />

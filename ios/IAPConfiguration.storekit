@@ -1,0 +1,381 @@
+{
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "3BD59D31",
+      "localizations" : [
+        {
+          "description" : "Buy 1 Coffee Bean",
+          "displayName" : "1 Coffee Bean",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피땅콩 한개 사주기",
+          "displayName" : "1 커피땅콩",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.bean",
+      "referenceName" : "1 Coffee Bean",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "CAC34E3B",
+      "localizations" : [
+        {
+          "description" : "Buy 1 coffee",
+          "displayName" : "1 Coffee",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 1잔 사주기",
+          "displayName" : "커피 1잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee1",
+      "referenceName" : "1 Coffee",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "14.99",
+      "familyShareable" : false,
+      "internalID" : "3EF8A69C",
+      "localizations" : [
+        {
+          "description" : "Buy 3 coffees",
+          "displayName" : "3 Coffees",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 3잔 사주기",
+          "displayName" : "커피 3잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee3",
+      "referenceName" : "3 Coffees",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "24.99",
+      "familyShareable" : false,
+      "internalID" : "448583E0",
+      "localizations" : [
+        {
+          "description" : "Buy 5 coffees",
+          "displayName" : "5 Coffees",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 5잔 사주기",
+          "displayName" : "커피 5잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee5",
+      "referenceName" : "5 Coffees",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "239EDFF4",
+      "localizations" : [
+        {
+          "description" : "Buy 10 coffees",
+          "displayName" : "10 Coffees",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 10잔 사주기",
+          "displayName" : "커피 10잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee10",
+      "referenceName" : "10 Coffees",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "3EAF65DE",
+      "localizations" : [
+        {
+          "description" : "Buy 20 coffees",
+          "displayName" : "20 Coffees",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 20잔 사주기",
+          "displayName" : "커피 20잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee20",
+      "referenceName" : "20 Coffees",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "F9AABD1C",
+      "localizations" : [
+        {
+          "description" : "Buy 50 Coffees",
+          "displayName" : "50 Coffees",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "커피 50잔 사주기",
+          "displayName" : "커피 50잔",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.dooboolab.coffee50",
+      "referenceName" : "50 Coffees",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6F9E5FFB",
+      "localizations" : [
+        {
+          "description" : "Lite membereship",
+          "displayName" : "Membership Lite",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dooboolab.lite",
+      "referenceName" : "Membership - Lite",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "449.99",
+      "familyShareable" : false,
+      "internalID" : "8C43835E",
+      "localizations" : [
+        {
+          "description" : "Pro membership",
+          "displayName" : "Membership Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.dooboolab.pro",
+      "referenceName" : "Membership - Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "25C9B2DC",
+      "localizations" : [
+
+      ],
+      "name" : "Monthly Donation",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "3BB24118",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Iron Tier",
+              "displayName" : "Iron Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 아이언 티어",
+              "displayName" : "아이언 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.iron",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Iron Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1D353574",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Bronze Tier",
+              "displayName" : "Bronze Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 브론즈 티어",
+              "displayName" : "브론즈 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.bronze",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Bronze Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "99.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "352058C4",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Silver Tier",
+              "displayName" : "Silver Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 실버 티어",
+              "displayName" : "실버 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.doooolab.silver",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Silver Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "199.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "40DD9FAF",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Gold Tier",
+              "displayName" : "Gold Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 골드 티어",
+              "displayName" : "골드 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.gold",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Gold Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "299.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "ACCD359C",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Platinum Tier",
+              "displayName" : "Platinum Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 플래티넘 티어",
+              "displayName" : "플래티넘 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.platinum",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Platinum Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "399.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "F5A76686",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly donation - Diamond Tier",
+              "displayName" : "Diamond Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 다이아몬드 티어",
+              "displayName" : "다이아몬드 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.diamond",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Diamond Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "20AF190B",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly Donation - Skeleton",
+              "displayName" : "Skeleton Tier",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "월 정기 후원 - 해골 티어",
+              "displayName" : "해골 티어",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dooboolab.skeleton",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Skeleton Tier",
+          "subscriptionGroupID" : "25C9B2DC",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}

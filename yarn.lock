@@ -2683,10 +2683,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@react-native-community/async-storage@^1.12.0":
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.12.1.tgz#25f821b4f6b13abe005ad67e47c6f1cee9f27b24"
-  integrity sha512-70WGaH3PKYASi4BThuEEKMkyAgE9k7VytBqmgPRx3MzJx9/MkspwqJGmn3QLCgHLIFUgF1pit2mWICbRJ3T3lg==
+"@react-native-async-storage/async-storage@^1.13.4":
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.13.4.tgz#05d29b7884be16fc3c40dcaa44e02fa291a020a2"
+  integrity sha512-P7cbA77XNhUFEBKAIaex17mKI/Db1RQHZVwplagskqzEnpqB+Yi+/l8QeOMr5OJdfmPkBA+V7DOmuWeB8Po6cQ==
   dependencies:
     deep-assign "^3.0.0"
 
@@ -12950,10 +12950,10 @@ react-native-gesture-handler@^1.9.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-iap@^5.2.5:
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-5.2.5.tgz#36b4f2502e7c2a7d12e569d18fe6adcdf234d3ce"
-  integrity sha512-KqEjums9cP1eRl7xe/PkfzwJWt6Od30mTn9fWqxcK9qQHNx4zN9p19BXDrrl0EHFVvT/C7SA+Nyrm+pfN7EhIg==
+react-native-iap@^6.0.0-rc.13:
+  version "6.0.0-rc.13"
+  resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-6.0.0-rc.13.tgz#20f1e1f85f24e0f6c84aad50a8a052d4cd51929b"
+  integrity sha512-EVWR/QtTxqRZe/119oz+D08mV9pnuCrL1fkIYjlbtu7ErBCP5pLkVX1zwnmDnYdL7v5ai9ZxVt84dL6Cltxc5Q==
   dependencies:
     dooboolab-welcome "^1.2.0"
 

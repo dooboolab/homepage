@@ -44,7 +44,7 @@
     "fbt:android": "babel-node  src/utils/i18n/scripts/generate-android-localizables-executor.js"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.0",
+    "@react-native-async-storage/async-storage": "^1.13.4",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/core": "^5.15.1",
     "@react-navigation/native": "^5.9.2",
@@ -58,7 +58,7 @@
     "react-native-dark-mode-switch": "^0.0.0-alpha.1",
     "react-native-dotenv": "^2.5.1",
     "react-native-gesture-handler": "^1.9.0",
-    "react-native-iap": "^5.2.5",
+    "react-native-iap": "^6.0.0-rc.13",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.17.1",
