@@ -50,8 +50,6 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
     setUser,
   } = useAuthContext();
 
-  console.log('user photourl', user);
-
   const [profilePath, setProfilePath] = useState<string | null>(
     user?.photoURL ?? '',
   );
@@ -99,10 +97,11 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
           mediaType: 'photo',
         },
         async (response) => {
-          if (response.didCancel) console.log('User cancelled image picker');
-          else if (response.errorCode)
-            console.log('ImagePicker Error: ', response.errorMessage);
-          else if (user && response.uri) {
+          if (response.didCancel) {
+            // console.log('User cancelled image picker');
+          } else if (response.errorCode) {
+            // console.log('ImagePicker Error: ', response.errorMessage);
+          } else if (user && response.uri) {
             setIsLoading(true);
             setProfilePath(response.uri);
 
