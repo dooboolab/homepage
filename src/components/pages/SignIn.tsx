@@ -15,6 +15,7 @@ import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {useAuthContext} from '../../providers/AuthProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 
@@ -77,6 +78,7 @@ const SignIn: FC<Props> = ({navigation}) => {
   const [emailError, setEmailError] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
 
+  const {setUser} = useAuthContext();
   const {theme} = useTheme();
 
   const signIn = async (): Promise<void> => {
@@ -84,6 +86,8 @@ const SignIn: FC<Props> = ({navigation}) => {
     setPasswordError('');
 
     if (firebase.auth().currentUser) await firebase.auth().signOut();
+
+    console.log('signIn');
 
     if (!email || !validateEmail(email))
       return setEmailError(
@@ -112,6 +116,15 @@ const SignIn: FC<Props> = ({navigation}) => {
           ),
         );
       }
+
+      if (user)
+        setUser({
+          displayName: user?.displayName,
+          email: user?.email,
+          uid: user?.uid,
+          emailVerified: user?.emailVerified,
+          photoURL: user?.photoURL,
+        });
     } catch (err) {
       setPasswordError(err.message);
     } finally {

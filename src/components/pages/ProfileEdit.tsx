@@ -103,36 +103,32 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             // console.log('ImagePicker Error: ', response.errorMessage);
           } else if (user && response.uri) {
             setIsLoading(true);
-            setProfilePath(response.uri);
 
-            const blob = await uriToBlob(response.uri);
+            try {
+              const blob = await uriToBlob(response.uri);
 
-            const snap = await firebase
-              .storage()
-              .ref(`users/${user.uid}`)
-              .put(blob);
+              const snap = await firebase
+                .storage()
+                .ref(`users/${user.uid}`)
+                .put(blob);
 
-            if (snap) {
-              const url = await snap.ref.getDownloadURL();
+              if (snap) {
+                const url = await snap.ref.getDownloadURL();
 
-              setProfilePath(url);
+                setProfilePath(url);
 
-              setUser({
-                ...user,
-                photoURL: url,
-              });
-            }
+                setUser({
+                  ...user,
+                  photoURL: url,
+                });
+              }
 
-            const fireUser = firebase.auth().currentUser;
+              const fireUser = firebase.auth().currentUser;
 
-            if (fireUser) {
-              fireUser.updateProfile({displayName});
+              if (fireUser) {
+                fireUser.updateProfile({displayName});
 
-              await firebase
-                .firestore()
-                .collection('users')
-                .doc(fireUser.uid)
-                .set(
+                firebase.firestore().collection('users').doc(fireUser.uid).set(
                   {
                     photoURL: profilePath,
                   },
@@ -140,9 +136,12 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                     merge: true,
                   },
                 );
+              }
+            } catch (err) {
+              console.log('updateImage', err.message);
+            } finally {
+              setIsLoading(false);
             }
-
-            setIsLoading(false);
           }
         },
       );
@@ -156,32 +155,37 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
 
     setIsLoading(true);
 
-    const fireUser = firebase.auth().currentUser;
+    try {
+      const fireUser = firebase.auth().currentUser;
 
-    if (fireUser) {
-      fireUser.updateProfile({displayName});
+      if (fireUser) {
+        fireUser.updateProfile({displayName});
 
-      await firebase.firestore().collection('users').doc(fireUser.uid).set(
-        {
-          displayName,
-          introduction,
-        },
-        {
-          merge: true,
-        },
-      );
+        const db = firebase.firestore();
 
-      if (user)
-        setUser({
-          ...user,
-          displayName,
-          introduction,
-        });
+        db.collection('users').doc(fireUser.uid).set(
+          {
+            displayName,
+            introduction,
+          },
+          {
+            merge: true,
+          },
+        );
+
+        if (user)
+          setUser({
+            ...user,
+            displayName,
+            introduction,
+          });
+      }
+    } catch (err) {
+      console.log('updateProfile', err.message);
+    } finally {
+      setIsLoading(false);
+      navigation.goBack();
     }
-
-    setIsLoading(false);
-
-    navigation.goBack();
   };
 
   return (

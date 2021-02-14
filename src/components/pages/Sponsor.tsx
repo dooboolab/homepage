@@ -120,7 +120,9 @@ const Sponsor: FC<Props> = ({navigation}) => {
             .collection('purchases')
             .add(purchase);
 
-          firebase.firestore().collection('sponsors').add({
+          const db = firebase.firestore();
+
+          db.collection('sponsors').add({
             purchase,
             user,
           });
