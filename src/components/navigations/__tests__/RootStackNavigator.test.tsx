@@ -2,14 +2,20 @@ import React, {ReactElement} from 'react';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
 
 import StackNavigator from '../RootStackNavigator';
-import {ThemeType} from 'dooboo-ui';
-import {View} from 'react-native';
-import firebase from '../../../../__mocks__/firebase/app';
-import renderer from 'react-test-renderer';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let props: any;
 let component: ReactElement;
+
+jest.mock('../../../services/firebase', () => {
+  return {
+    currentUser: {
+      displayName: 'testDisplayName',
+      email: 'test@test.com',
+      emailVerified: true,
+    },
+  };
+});
 
 jest.mock('@react-navigation/native', () => {
   return {

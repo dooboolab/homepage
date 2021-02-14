@@ -1738,6 +1738,10 @@ exports[`Render renders without crashing 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "space-around",
                 "minHeight": 110,
+                "paddingBottom": 12,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "paddingTop": 12,
               },
             ]
           }
@@ -1897,6 +1901,7 @@ exports[`Render renders without crashing 1`] = `
                     "color": "#000000",
                     "fontSize": 10,
                     "marginTop": 10,
+                    "textAlign": "center",
                   },
                 ]
               }

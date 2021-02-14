@@ -13,6 +13,7 @@ fbt;
 
 const Container = styled.View`
   min-height: 110px;
+  padding: 12px 0;
   align-self: stretch;
   background-color: ${({theme}) => theme.background};
 
@@ -52,6 +53,7 @@ const LinkText = styled.Text`
 const CopyrightText = styled.Text`
   margin-top: 10px;
   font-size: 10px;
+  text-align: center;
   color: ${({theme}) => theme.text};
 `;
 
