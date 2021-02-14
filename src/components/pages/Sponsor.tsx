@@ -58,7 +58,7 @@ const StyledText = styled.Text`
 `;
 
 const ListContainer = styled.View`
-  height: 352px;
+  height: 380px;
   margin-bottom: 40px;
 
   flex-direction: column;
