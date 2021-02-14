@@ -140,6 +140,9 @@ function RootNavigator(): React.ReactElement {
             key={name}
             name={name as keyof RootStackParamList}
             component={component}
+            options={{
+              headerShown: Platform.OS !== 'web' && name !== 'Home',
+            }}
           />
         ))}
       </Stack.Navigator>
