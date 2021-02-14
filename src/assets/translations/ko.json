@@ -960,6 +960,16 @@
           "variations": {}
         }
       ]
+    },
+    "54d6544ca0b115345de6fa50d09a6858": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "구독중",
+          "variations": {}
+        }
+      ]
     }
   }
 }

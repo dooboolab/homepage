@@ -393,7 +393,11 @@ const Sponsor: FC<Props> = ({navigation}) => {
                             key={i.toString()}
                             price={parseFloat(item.price)}
                             priceString={item.localizedPrice}
-                            name={item.title}
+                            name={
+                              item.productId === subscribedProductId
+                                ? fbt('Subscribing', 'subscribing')
+                                : item.title
+                            }
                             icon={IC_DOOBOO_IAP}
                             style={{marginRight: 16}}
                             subscribed={item.productId === subscribedProductId}
