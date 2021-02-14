@@ -1,12 +1,13 @@
 import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import type {FC, ReactElement, RefObject} from 'react';
-import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK} from '../../../utils/Icons';
-import {Platform, ScrollView, View} from 'react-native';
+import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../../utils/Icons';
+import {Image, Platform, ScrollView, View} from 'react-native';
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import {useAuthContext} from '../../../providers/AuthProvider';
@@ -87,7 +88,7 @@ const SignOutWrapper = styled.View`
     isDesktop &&
     css`
       left: undfined;
-      right: 80px;
+      right: 64px;
       top: 25px;
     `}
 `;
@@ -137,7 +138,6 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
   const navigation = useNavigation();
   const {theme, changeThemeType, themeType, media} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
-  const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
 
   const {
     state: {user},
@@ -199,35 +199,31 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
       </LinkWrapper>
       <SignOutWrapper>
         {user ? (
-          <Button
-            loading={isSigningOut}
-            onPress={async () => {
-              setIsSigningOut(true);
-              await firebase.auth().signOut();
-              setIsSigningOut(false);
-            }}
-            text={fbt('Logout', 'logout')}
-            indicatorColor={theme.accent}
-            styles={{
-              container: {
-                borderRadius: 20,
-                backgroundColor: theme.background,
-                borderWidth: 1,
-                borderColor: theme.negative,
-                height: 24,
-                width: 68,
-              },
-              text: {
-                fontSize: 11,
-                paddingHorizontal: 0,
-                color: theme.negative,
-                paddingBottom: Platform.select({
-                  ios: 12,
-                  default: 2,
-                }),
-              },
-            }}
-          />
+          <Hoverable>
+            {(isHovered) => (
+              <TouchableOpacity
+                style={{marginHorizontal: 10}}
+                onPress={() => {
+                  navigation.navigate('ProfileEdit');
+                }}>
+                <Image
+                  style={{
+                    opacity: isHovered ? 0.7 : 1,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 12,
+                  }}
+                  source={
+                    user.photoURL
+                      ? {
+                          uri: user.photoURL,
+                        }
+                      : IC_GUEST
+                  }
+                />
+              </TouchableOpacity>
+            )}
+          </Hoverable>
         ) : (
           <Button
             onPress={() => navigation.navigate('SignIn')}

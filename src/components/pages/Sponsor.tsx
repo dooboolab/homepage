@@ -157,7 +157,6 @@ const Sponsor: FC<Props> = ({navigation}) => {
 
   return (
     <Container>
-      <Header hideMenus />
       <ScrollView>
         <View
           style={{
@@ -165,6 +164,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
             paddingTop: 20,
             paddingBottom: 40,
             backgroundColor: theme.background,
+            marginHorizontal: 16,
           }}>
           {itemTypes.map((type) => {
             return (
@@ -173,6 +173,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                   style={{
                     fontSize: 28,
                     fontWeight: 'bold',
+                    marginTop: 32,
                     marginLeft: 12,
                     marginBottom: 8,
                     textAlign: 'center',
@@ -187,12 +188,12 @@ const Sponsor: FC<Props> = ({navigation}) => {
                   horizontal
                   style={{
                     backgroundColor: theme.paper,
+                    borderRadius: 8,
                   }}
                   contentContainerStyle={{
                     paddingVertical: 28,
                     backgroundColor: theme.paper,
                     paddingHorizontal: 40,
-                    height: 300,
                   }}>
                   {type === 'onetime'
                     ? sortedProducts.map((item, i) => {
