@@ -17,6 +17,7 @@ export type IAPCardProps = {
   name: string;
   icon: ImageSourcePropType;
   type?: 'onetime' | 'subscription' | 'forever';
+  subscribed?: boolean;
 };
 
 const IAPCard: FC<IAPCardProps> = ({
@@ -26,6 +27,7 @@ const IAPCard: FC<IAPCardProps> = ({
   priceString,
   name,
   icon,
+  subscribed = false,
 }): ReactElement => {
   const {colors} = useTheme();
 
