@@ -7,6 +7,7 @@ import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
+import {sendPasswordResetEmail} from '../../services/firebase';
 import styled from 'styled-components/native';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
@@ -69,7 +70,7 @@ const FindPw: FC<Props> = ({navigation}) => {
     setSendingEmail(true);
 
     try {
-      await firebase.auth().sendPasswordResetEmail(email);
+      await sendPasswordResetEmail(email);
     } catch (err) {
       setEmailError(err.message);
     } finally {

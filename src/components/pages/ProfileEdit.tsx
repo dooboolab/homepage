@@ -9,6 +9,11 @@ import {
   View,
 } from 'react-native';
 import React, {FC, ReactElement, useState} from 'react';
+import {
+  currentUser,
+  signOut,
+  updateCurrentUserProfile,
+} from '../../services/firebase';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -123,19 +128,14 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                 });
               }
 
-              const fireUser = firebase.auth().currentUser;
+              const fireUser = currentUser;
 
               if (fireUser) {
                 fireUser.updateProfile({displayName});
 
-                firebase.firestore().collection('users').doc(fireUser.uid).set(
-                  {
-                    photoURL: profilePath,
-                  },
-                  {
-                    merge: true,
-                  },
-                );
+                updateCurrentUserProfile({
+                  photoURL: profilePath,
+                });
               }
             } catch (err) {
               setIntroductionErrorText(err.message);
@@ -156,22 +156,13 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
     setIsLoading(true);
 
     try {
-      const fireUser = firebase.auth().currentUser;
+      if (currentUser) {
+        currentUser.updateProfile({displayName});
 
-      if (fireUser) {
-        fireUser.updateProfile({displayName});
-
-        const db = firebase.firestore();
-
-        db.collection('users').doc(fireUser.uid).set(
-          {
-            displayName,
-            introduction,
-          },
-          {
-            merge: true,
-          },
-        );
+        updateCurrentUserProfile({
+          displayName,
+          introduction,
+        });
 
         if (user)
           setUser({
@@ -344,7 +335,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             loading={isSigningOut}
             onPress={async () => {
               setIsSigningOut(true);
-              await firebase.auth().signOut();
+              await signOut();
               setIsSigningOut(false);
             }}
             text={fbt('Logout', 'logout')}

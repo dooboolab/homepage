@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+import {currentUser, signInWithEmail, signOut} from '../../services/firebase';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
@@ -85,7 +86,7 @@ const SignIn: FC<Props> = ({navigation}) => {
     setEmailError('');
     setPasswordError('');
 
-    if (firebase.auth().currentUser) await firebase.auth().signOut();
+    if (currentUser) await signOut();
 
     if (!email || !validateEmail(email))
       return setEmailError(
@@ -100,12 +101,10 @@ const SignIn: FC<Props> = ({navigation}) => {
     setIsLoggingIn(true);
 
     try {
-      const {user} = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password);
+      const {user} = await signInWithEmail(email, password);
 
       if (user && !user.emailVerified) {
-        firebase.auth().signOut();
+        signOut();
 
         return setPasswordError(
           fbt(
