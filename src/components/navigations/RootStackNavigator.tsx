@@ -142,6 +142,8 @@ function RootNavigator(): React.ReactElement {
             component={component}
             options={{
               headerShown: Platform.OS !== 'web' && name !== 'Home',
+              headerBackTitle: undefined,
+              headerTitle: '',
             }}
           />
         ))}

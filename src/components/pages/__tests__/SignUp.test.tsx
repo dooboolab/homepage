@@ -1,5 +1,7 @@
 import 'react-native';
 
+import * as fbService from '../../../services/firebase';
+
 import React, {ReactElement} from 'react';
 import {RenderAPI, render} from '@testing-library/react-native';
 import {createTestElement, createTestProps} from '../../../../test/testUtils';
@@ -9,6 +11,16 @@ import Page from '../SignUp';
 let props: any;
 let component: ReactElement;
 let testingLib: RenderAPI;
+
+jest.mock('../../../services/firebase', () => {
+  return {
+    currentUser: {
+      displayName: 'testDisplayName',
+      email: 'test@test.com',
+      emailVerified: true,
+    },
+  };
+});
 
 describe('Rendering', () => {
   beforeEach(() => {

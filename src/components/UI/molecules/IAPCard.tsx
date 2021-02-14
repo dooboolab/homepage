@@ -34,6 +34,7 @@ const IAPCard: FC<IAPCardProps> = ({
       style={[
         {
           paddingVertical: 20,
+          paddingHorizontal: 8,
           width: 160,
           backgroundColor:
             type === 'subscription'
@@ -61,6 +62,7 @@ const IAPCard: FC<IAPCardProps> = ({
         style={{
           marginTop: 20,
           fontSize: 14,
+          textAlign: 'center',
           color: type === 'onetime' ? colors.darkGray : colors.white,
         }}>
         {name}

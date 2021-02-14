@@ -7,6 +7,11 @@ import {
 } from 'react-native';
 import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
+import {
+  createUserWithEmailAndPassword,
+  currentUser,
+  updateCurrentUserProfile,
+} from '../../services/firebase';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
@@ -97,16 +102,12 @@ const SignIn: FC<Props> = ({navigation}) => {
     setIsSigningUp(true);
 
     try {
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
-
-      const currentUser = firebase.auth().currentUser;
+      await createUserWithEmailAndPassword(email, password);
 
       if (currentUser)
         await Promise.all([
-          currentUser.updateProfile({
-            displayName,
-          }),
-          firebase.firestore().collection('users').doc(currentUser.uid).set({
+          currentUser.updateProfile({displayName}),
+          updateCurrentUserProfile({
             email,
             displayName,
           }),

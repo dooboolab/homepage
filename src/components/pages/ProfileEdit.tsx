@@ -9,6 +9,11 @@ import {
   View,
 } from 'react-native';
 import React, {FC, ReactElement, useState} from 'react';
+import {
+  currentUser,
+  signOut,
+  updateCurrentUserProfile,
+} from '../../services/firebase';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -103,46 +108,40 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             // console.log('ImagePicker Error: ', response.errorMessage);
           } else if (user && response.uri) {
             setIsLoading(true);
-            setProfilePath(response.uri);
 
-            const blob = await uriToBlob(response.uri);
+            try {
+              const blob = await uriToBlob(response.uri);
 
-            const snap = await firebase
-              .storage()
-              .ref(`users/${user.uid}`)
-              .put(blob);
+              const snap = await firebase
+                .storage()
+                .ref(`users/${user.uid}`)
+                .put(blob);
 
-            if (snap) {
-              const url = await snap.ref.getDownloadURL();
+              if (snap) {
+                const url = await snap.ref.getDownloadURL();
 
-              setProfilePath(url);
+                setProfilePath(url);
 
-              setUser({
-                ...user,
-                photoURL: url,
-              });
+                setUser({
+                  ...user,
+                  photoURL: url,
+                });
+              }
+
+              const fireUser = currentUser;
+
+              if (fireUser) {
+                fireUser.updateProfile({displayName});
+
+                updateCurrentUserProfile({
+                  photoURL: profilePath,
+                });
+              }
+            } catch (err) {
+              setIntroductionErrorText(err.message);
+            } finally {
+              setIsLoading(false);
             }
-
-            const fireUser = firebase.auth().currentUser;
-
-            if (fireUser) {
-              fireUser.updateProfile({displayName});
-
-              await firebase
-                .firestore()
-                .collection('users')
-                .doc(fireUser.uid)
-                .set(
-                  {
-                    photoURL: profilePath,
-                  },
-                  {
-                    merge: true,
-                  },
-                );
-            }
-
-            setIsLoading(false);
           }
         },
       );
@@ -156,32 +155,28 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
 
     setIsLoading(true);
 
-    const fireUser = firebase.auth().currentUser;
+    try {
+      if (currentUser) {
+        currentUser.updateProfile({displayName});
 
-    if (fireUser) {
-      fireUser.updateProfile({displayName});
-
-      await firebase.firestore().collection('users').doc(fireUser.uid).set(
-        {
-          displayName,
-          introduction,
-        },
-        {
-          merge: true,
-        },
-      );
-
-      if (user)
-        setUser({
-          ...user,
+        updateCurrentUserProfile({
           displayName,
           introduction,
         });
+
+        if (user)
+          setUser({
+            ...user,
+            displayName,
+            introduction,
+          });
+      }
+    } catch (err) {
+      setIntroductionErrorText(err.message);
+    } finally {
+      setIsLoading(false);
+      navigation.goBack();
     }
-
-    setIsLoading(false);
-
-    navigation.goBack();
   };
 
   return (
@@ -340,7 +335,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             loading={isSigningOut}
             onPress={async () => {
               setIsSigningOut(true);
-              await firebase.auth().signOut();
+              await signOut();
               setIsSigningOut(false);
             }}
             text={fbt('Logout', 'logout')}

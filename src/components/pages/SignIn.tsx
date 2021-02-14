@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+import {currentUser, signInWithEmail, signOut} from '../../services/firebase';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
@@ -15,6 +16,7 @@ import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import styled from 'styled-components/native';
+import {useAuthContext} from '../../providers/AuthProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 
@@ -77,13 +79,14 @@ const SignIn: FC<Props> = ({navigation}) => {
   const [emailError, setEmailError] = useState<string>('');
   const [passwordError, setPasswordError] = useState<string>('');
 
+  const {setUser} = useAuthContext();
   const {theme} = useTheme();
 
   const signIn = async (): Promise<void> => {
     setEmailError('');
     setPasswordError('');
 
-    if (firebase.auth().currentUser) await firebase.auth().signOut();
+    if (currentUser) await signOut();
 
     if (!email || !validateEmail(email))
       return setEmailError(
@@ -98,12 +101,10 @@ const SignIn: FC<Props> = ({navigation}) => {
     setIsLoggingIn(true);
 
     try {
-      const {user} = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password);
+      const {user} = await signInWithEmail(email, password);
 
       if (user && !user.emailVerified) {
-        firebase.auth().signOut();
+        signOut();
 
         return setPasswordError(
           fbt(
@@ -112,6 +113,15 @@ const SignIn: FC<Props> = ({navigation}) => {
           ),
         );
       }
+
+      if (user)
+        setUser({
+          displayName: user?.displayName,
+          email: user?.email,
+          uid: user?.uid,
+          emailVerified: user?.emailVerified,
+          photoURL: user?.photoURL,
+        });
     } catch (err) {
       setPasswordError(err.message);
     } finally {
