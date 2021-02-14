@@ -44,7 +44,6 @@
     "fbt:android": "babel-node  src/utils/i18n/scripts/generate-android-localizables-executor.js"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.13.4",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/core": "^5.15.1",
     "@react-navigation/native": "^5.9.2",

@@ -9,11 +9,7 @@ import {
   View,
 } from 'react-native';
 import React, {FC, ReactElement, useState} from 'react';
-import {
-  currentUser,
-  signOut,
-  updateCurrentUserProfile,
-} from '../../services/firebase';
+import {signOut, updateCurrentUserProfile} from '../../services/firebase';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -128,7 +124,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                 });
               }
 
-              const fireUser = currentUser;
+              const fireUser = firebase.auth().currentUser;
 
               if (fireUser) {
                 fireUser.updateProfile({displayName});
@@ -156,6 +152,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
     setIsLoading(true);
 
     try {
+      const currentUser = firebase.auth().currentUser;
+
       if (currentUser) {
         currentUser.updateProfile({displayName});
 

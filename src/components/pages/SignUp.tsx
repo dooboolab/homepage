@@ -9,7 +9,6 @@ import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
 import {
   createUserWithEmailAndPassword,
-  currentUser,
   updateCurrentUserProfile,
 } from '../../services/firebase';
 
@@ -103,6 +102,8 @@ const SignIn: FC<Props> = ({navigation}) => {
 
     try {
       await createUserWithEmailAndPassword(email, password);
+
+      const currentUser = firebase.auth().currentUser;
 
       if (currentUser)
         await Promise.all([

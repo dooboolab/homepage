@@ -22,11 +22,11 @@ export const sendPasswordResetEmail = (email: string): Promise<void> => {
   return firebase.auth().sendPasswordResetEmail(email);
 };
 
-export const currentUser = firebase.auth().currentUser;
-
 export const updateCurrentUserProfile = async (
   data: Record<string, unknown>,
 ): Promise<void> => {
+  const currentUser = firebase.auth().currentUser;
+
   if (currentUser)
     return firebase
       .firestore()

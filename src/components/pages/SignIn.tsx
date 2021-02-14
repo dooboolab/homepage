@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import {currentUser, signInWithEmail, signOut} from '../../services/firebase';
+import {signInWithEmail, signOut} from '../../services/firebase';
 
 import type {FC} from 'react';
 import Header from '../UI/molecules/Header';
@@ -85,6 +85,8 @@ const SignIn: FC<Props> = ({navigation}) => {
   const signIn = async (): Promise<void> => {
     setEmailError('');
     setPasswordError('');
+
+    const currentUser = firebase.auth().currentUser;
 
     if (currentUser) await signOut();
 

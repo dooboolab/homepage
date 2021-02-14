@@ -10,16 +10,6 @@ let props: any;
 let component: ReactElement;
 let testingLib: RenderAPI;
 
-jest.mock('../../../services/firebase', () => {
-  return {
-    currentUser: {
-      displayName: 'testDisplayName',
-      email: 'test@test.com',
-      emailVerified: true,
-    },
-  };
-});
-
 describe('Rendering', () => {
   beforeEach(() => {
     props = createTestProps({
