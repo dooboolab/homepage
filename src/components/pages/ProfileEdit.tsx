@@ -138,7 +138,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                 );
               }
             } catch (err) {
-              console.log('updateImage', err.message);
+              setIntroductionErrorText(err.message);
             } finally {
               setIsLoading(false);
             }
@@ -181,7 +181,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
           });
       }
     } catch (err) {
-      console.log('updateProfile', err.message);
+      setIntroductionErrorText(err.message);
     } finally {
       setIsLoading(false);
       navigation.goBack();

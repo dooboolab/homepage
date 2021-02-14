@@ -87,8 +87,6 @@ const SignIn: FC<Props> = ({navigation}) => {
 
     if (firebase.auth().currentUser) await firebase.auth().signOut();
 
-    console.log('signIn');
-
     if (!email || !validateEmail(email))
       return setEmailError(
         fbt('Not a valid email address', 'invalid email address'),
