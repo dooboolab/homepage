@@ -17,6 +17,7 @@ export type IAPCardProps = {
   name: string;
   icon: ImageSourcePropType;
   type?: 'onetime' | 'subscription' | 'forever';
+  subscribed?: boolean;
 };
 
 const IAPCard: FC<IAPCardProps> = ({
@@ -26,6 +27,7 @@ const IAPCard: FC<IAPCardProps> = ({
   priceString,
   name,
   icon,
+  subscribed = false,
 }): ReactElement => {
   const {colors} = useTheme();
 
@@ -37,7 +39,9 @@ const IAPCard: FC<IAPCardProps> = ({
           paddingHorizontal: 8,
           width: 160,
           backgroundColor:
-            type === 'subscription'
+            type === 'subscription' && subscribed
+              ? colors.downRiver
+              : type === 'subscription'
               ? colors.eastBay
               : type === 'onetime'
               ? colors.deYork
@@ -68,7 +72,7 @@ const IAPCard: FC<IAPCardProps> = ({
         {name}
       </Text>
       <RoundedButton
-        onPress={onPress}
+        onPress={subscribed ? undefined : onPress}
         text={priceString}
         style={{
           alignSelf: 'stretch',
@@ -77,7 +81,9 @@ const IAPCard: FC<IAPCardProps> = ({
         }}
         containerStyle={{
           backgroundColor:
-            type === 'subscription'
+            type === 'subscription' && subscribed
+              ? colors.babyBlue
+              : type === 'subscription'
               ? colors.scampi
               : type === 'onetime'
               ? colors.magicMint

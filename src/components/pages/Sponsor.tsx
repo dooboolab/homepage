@@ -1,4 +1,4 @@
-import {Alert, ScrollView, View} from 'react-native';
+import {Alert, Platform, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
 import type {
@@ -6,6 +6,15 @@ import type {
   ProductPurchase,
   Purchase,
   Subscription,
+} from 'react-native-iap';
+import {
+  PurchaseStateAndroid,
+  getAvailablePurchases,
+  requestPurchase,
+  requestSubscription,
+  useIAP,
+  validateReceiptAndroid,
+  validateReceiptIos,
 } from 'react-native-iap';
 import React, {
   FC,
@@ -15,10 +24,14 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import {requestPurchase, requestSubscription, useIAP} from 'react-native-iap';
+import {
+  ReceiptValidationResponse,
+  ReceiptValidationStatus,
+} from 'react-native-iap/src/types/apple';
+import {androidAccessToken, itunesConnectSharedSecret} from '@env';
 
-import Header from '../UI/molecules/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
+import {User} from '../../types';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import styled from 'styled-components/native';
@@ -50,6 +63,56 @@ const subSkus = [
   'com.dooboolab.diamond',
 ];
 
+const getActiveSubscriptionId = async (): Promise<string | undefined> => {
+  if (Platform.OS === 'ios') {
+    const availablePurchases = await getAvailablePurchases();
+
+    const sortedAvailablePurchases = availablePurchases.sort(
+      (a, b) => b.transactionDate - a.transactionDate,
+    );
+
+    const latestAvailableReceipt =
+      sortedAvailablePurchases[0].transactionReceipt;
+
+    const isTestEnvironment = __DEV__;
+
+    const decodedReceipt = await validateReceiptIos(
+      {
+        'receipt-data': latestAvailableReceipt,
+        password: itunesConnectSharedSecret,
+      },
+      isTestEnvironment,
+    );
+
+    if (decodedReceipt) {
+      const {
+        latest_receipt_info: latestReceiptInfo,
+      } = decodedReceipt as ReceiptValidationResponse;
+
+      const expirationInMilliseconds = Number(
+        latestReceiptInfo?.expires_date_ms,
+      );
+
+      const nowInMilliseconds = Date.now();
+
+      if (expirationInMilliseconds > nowInMilliseconds)
+        return sortedAvailablePurchases[0].productId;
+    }
+
+    return undefined;
+  }
+
+  if (Platform.OS === 'android') {
+    const availablePurchases = await getAvailablePurchases();
+
+    for (let i = 0; i < availablePurchases.length; i++)
+      if (subSkus.includes(availablePurchases[i].productId))
+        return availablePurchases[i].productId;
+
+    return undefined;
+  }
+};
+
 const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
@@ -78,6 +141,24 @@ type ItemType = 'onetime' | 'subscription' | 'membership';
 
 const itemTypes: ItemType[] = ['onetime', 'subscription', 'membership'];
 
+const addPurchaseRecord = (user: User | null, purchase: Purchase): void => {
+  if (user) {
+    firebase
+      .firestore()
+      .collection('users')
+      .doc(user.uid)
+      .collection('purchases')
+      .add(purchase);
+
+    const db = firebase.firestore();
+
+    db.collection('sponsors').add({
+      purchase,
+      user,
+    });
+  }
+};
+
 const Sponsor: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
 
@@ -96,6 +177,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
     currentPurchaseError,
   } = useIAP();
 
+  const [subscribedProductId, setSubscribedProdutId] = useState<string>();
+
   const sortedProducts = useMemo(
     () =>
       products.sort((a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)),
@@ -110,40 +193,79 @@ const Sponsor: FC<Props> = ({navigation}) => {
     [subscriptions],
   );
 
+  const getSubcribedProuduct = useCallback(async (): Promise<void> => {
+    setSubscribedProdutId(await getActiveSubscriptionId());
+  }, []);
+
   useEffect(() => {
     getProducts(iapSkus);
     getSubscriptions(subSkus);
-  }, [getProducts, getSubscriptions]);
+    getSubcribedProuduct();
+  }, [getProducts, getSubcribedProuduct, getSubscriptions]);
 
   useEffect(() => {
     const checkCurrentPurchase = async (purchase?: Purchase): Promise<void> => {
       if (purchase) {
-        if (user) {
-          firebase
-            .firestore()
-            .collection('users')
-            .doc(user.uid)
-            .collection('purchases')
-            .add(purchase);
-
-          const db = firebase.firestore();
-
-          db.collection('sponsors').add({
-            purchase,
-            user,
-          });
-        }
-
         const receipt = purchase.transactionReceipt;
 
-        if (receipt)
-          try {
-            const ackResult = await finishTransaction(purchase);
+        if (receipt) {
+          if (Platform.OS === 'ios') {
+            const isTestEnvironment = __DEV__;
 
-            console.log('ackResult', ackResult);
+            const decodedReceipt = await validateReceiptIos(
+              {
+                'receipt-data': receipt,
+                password: itunesConnectSharedSecret,
+              },
+              isTestEnvironment,
+            );
+
+            if (decodedReceipt) {
+              const {status} = decodedReceipt as ReceiptValidationResponse;
+
+              if (status === ReceiptValidationStatus.SUCCESS)
+                try {
+                  await finishTransaction(purchase);
+                  addPurchaseRecord(user, purchase);
+                } catch (ackErr) {
+                  console.warn('ackErr', ackErr);
+                }
+            }
+
+            return;
+          }
+
+          if (Platform.OS === 'android') {
+            const decodedReceipt = await validateReceiptAndroid(
+              'com.dooboolab.app',
+              purchase.productId,
+              purchase.purchaseToken as string,
+              androidAccessToken,
+              !!purchase.autoRenewingAndroid,
+            );
+
+            if (decodedReceipt) {
+              const {paymentState} = decodedReceipt;
+
+              if (paymentState === PurchaseStateAndroid.PURCHASED)
+                try {
+                  await finishTransaction(purchase);
+                  addPurchaseRecord(user, purchase);
+                } catch (ackErr) {
+                  console.warn('ackErr', ackErr);
+                }
+            }
+
+            return;
+          }
+
+          try {
+            await finishTransaction(purchase);
+            addPurchaseRecord(user, purchase);
           } catch (ackErr) {
             console.warn('ackErr', ackErr);
           }
+        }
       }
     };
 
@@ -271,9 +393,14 @@ const Sponsor: FC<Props> = ({navigation}) => {
                             key={i.toString()}
                             price={parseFloat(item.price)}
                             priceString={item.localizedPrice}
-                            name={item.title}
+                            name={
+                              item.productId === subscribedProductId
+                                ? fbt('Subscribing', 'subscribing')
+                                : item.title
+                            }
                             icon={IC_DOOBOO_IAP}
                             style={{marginRight: 16}}
+                            subscribed={item.productId === subscribedProductId}
                           />
                         );
                       })

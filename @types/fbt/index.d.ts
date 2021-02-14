@@ -8,6 +8,8 @@ declare module '@env' {
   export const messagingSenderId: string;
   export const projectId: string;
   export const storageBucket: string;
+  export const itunesConnectSharedSecret: string;
+  export const androidAccessToken: string;
 }
 
 declare module 'fbt' {
