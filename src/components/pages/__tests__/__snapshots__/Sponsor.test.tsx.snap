@@ -27,214 +27,6 @@ exports[`Interaction should simulate onClick 1`] = `
       ]
     }
   >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "justifyContent": "center",
-            "paddingBottom": 0,
-            "paddingLeft": 24,
-            "paddingRight": 24,
-            "paddingTop": 0,
-          },
-        ]
-      }
-    >
-      <View
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onPress={[MockFunction]}
-        onPressIn={[Function]}
-        onPressOut={[Function]}
-        onResponderGrant={[Function]}
-        onResponderRelease={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            },
-            Object {
-              "alignSelf": "center",
-            },
-          ]
-        }
-      >
-        <Image
-          source={
-            Object {
-              "canInstrument": true,
-              "createTransformer": [Function],
-              "getCacheKey": [Function],
-              "process": [Function],
-            }
-          }
-          style={
-            Array [
-              Object {
-                "height": 52,
-                "marginBottom": 12,
-                "marginLeft": 0,
-                "marginRight": 0,
-                "marginTop": 12,
-                "width": 124,
-              },
-              false,
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": 14,
-            },
-          ]
-        }
-      />
-      <View
-        style={
-          Array [
-            Object {
-              "left": 20,
-              "position": "absolute",
-              "top": 25,
-              "width": 80,
-            },
-          ]
-        }
-      >
-        <View
-          activeOpacity={0.7}
-          delayPressIn={50}
-          onPress={[MockFunction]}
-        >
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#393D7A",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "paddingBottom": 8,
-                  "paddingLeft": 12,
-                  "paddingRight": 12,
-                  "paddingTop": 8,
-                },
-                Object {
-                  "backgroundColor": "#FFFFFF",
-                  "borderColor": "#B446BF",
-                  "borderRadius": 20,
-                  "borderWidth": 1,
-                  "height": 24,
-                  "width": 68,
-                },
-                false,
-                undefined,
-              ]
-            }
-            testID="button-view"
-          >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "white",
-                    "fontSize": 14,
-                  },
-                  Object {
-                    "color": "#B446BF",
-                    "fontSize": 11,
-                    "paddingBottom": 12,
-                    "paddingHorizontal": 0,
-                  },
-                  undefined,
-                ]
-              }
-            >
-              Sign In
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "position": "absolute",
-              "right": 20,
-              "top": 25,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            activeOpacity={0.8}
-            onPress={[MockFunction]}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#ecf0f1",
-                  "borderRadius": 20,
-                  "justifyContent": "center",
-                  "padding": 12,
-                  "width": 46,
-                },
-                Object {},
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "white",
-                  "borderRadius": 9,
-                  "elevation": 1.5,
-                  "height": 18,
-                  "justifyContent": "center",
-                  "left": 0,
-                  "margin": 4,
-                  "position": "absolute",
-                  "shadowColor": "#000",
-                  "shadowOffset": Object {
-                    "height": 2,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.2,
-                  "shadowRadius": 2.5,
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </View>
-    </View>
     <RCTScrollView>
       <View>
         <View
@@ -242,6 +34,7 @@ exports[`Interaction should simulate onClick 1`] = `
             Object {
               "alignSelf": "stretch",
               "backgroundColor": "#FFFFFF",
+              "marginHorizontal": 16,
               "paddingBottom": 40,
               "paddingTop": 20,
             }
@@ -269,6 +62,7 @@ exports[`Interaction should simulate onClick 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -280,7 +74,6 @@ exports[`Interaction should simulate onClick 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -289,6 +82,7 @@ exports[`Interaction should simulate onClick 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
@@ -317,6 +111,7 @@ exports[`Interaction should simulate onClick 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -328,7 +123,6 @@ exports[`Interaction should simulate onClick 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -337,6 +131,7 @@ exports[`Interaction should simulate onClick 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
@@ -365,6 +160,7 @@ exports[`Interaction should simulate onClick 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -376,7 +172,6 @@ exports[`Interaction should simulate onClick 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -385,6 +180,7 @@ exports[`Interaction should simulate onClick 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
@@ -425,214 +221,6 @@ exports[`Rendering renders without crashing 1`] = `
       ]
     }
   >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "alignSelf": "stretch",
-            "backgroundColor": "#FFFFFF",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "justifyContent": "center",
-            "paddingBottom": 0,
-            "paddingLeft": 24,
-            "paddingRight": 24,
-            "paddingTop": 0,
-          },
-        ]
-      }
-    >
-      <View
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onPress={[MockFunction]}
-        onPressIn={[Function]}
-        onPressOut={[Function]}
-        onResponderGrant={[Function]}
-        onResponderRelease={[Function]}
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "justifyContent": "center",
-            },
-            Object {
-              "alignSelf": "center",
-            },
-          ]
-        }
-      >
-        <Image
-          source={
-            Object {
-              "canInstrument": true,
-              "createTransformer": [Function],
-              "getCacheKey": [Function],
-              "process": [Function],
-            }
-          }
-          style={
-            Array [
-              Object {
-                "height": 52,
-                "marginBottom": 12,
-                "marginLeft": 0,
-                "marginRight": 0,
-                "marginTop": 12,
-                "width": 124,
-              },
-              false,
-            ]
-          }
-        />
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": 14,
-            },
-          ]
-        }
-      />
-      <View
-        style={
-          Array [
-            Object {
-              "left": 20,
-              "position": "absolute",
-              "top": 25,
-              "width": 80,
-            },
-          ]
-        }
-      >
-        <View
-          activeOpacity={0.7}
-          delayPressIn={50}
-          onPress={[MockFunction]}
-        >
-          <View
-            onLayout={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#393D7A",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
-                  "paddingBottom": 8,
-                  "paddingLeft": 12,
-                  "paddingRight": 12,
-                  "paddingTop": 8,
-                },
-                Object {
-                  "backgroundColor": "#FFFFFF",
-                  "borderColor": "#B446BF",
-                  "borderRadius": 20,
-                  "borderWidth": 1,
-                  "height": 24,
-                  "width": 68,
-                },
-                false,
-                undefined,
-              ]
-            }
-            testID="button-view"
-          >
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "white",
-                    "fontSize": 14,
-                  },
-                  Object {
-                    "color": "#B446BF",
-                    "fontSize": 11,
-                    "paddingBottom": 12,
-                    "paddingHorizontal": 0,
-                  },
-                  undefined,
-                ]
-              }
-            >
-              Sign In
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "position": "absolute",
-              "right": 20,
-              "top": 25,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            activeOpacity={0.8}
-            onPress={[MockFunction]}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#ecf0f1",
-                  "borderRadius": 20,
-                  "justifyContent": "center",
-                  "padding": 12,
-                  "width": 46,
-                },
-                Object {},
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "white",
-                  "borderRadius": 9,
-                  "elevation": 1.5,
-                  "height": 18,
-                  "justifyContent": "center",
-                  "left": 0,
-                  "margin": 4,
-                  "position": "absolute",
-                  "shadowColor": "#000",
-                  "shadowOffset": Object {
-                    "height": 2,
-                    "width": 0,
-                  },
-                  "shadowOpacity": 0.2,
-                  "shadowRadius": 2.5,
-                  "transform": Array [
-                    Object {
-                      "translateX": 0,
-                    },
-                  ],
-                  "width": 18,
-                }
-              }
-            />
-          </View>
-        </View>
-      </View>
-    </View>
     <RCTScrollView>
       <View>
         <View
@@ -640,6 +228,7 @@ exports[`Rendering renders without crashing 1`] = `
             Object {
               "alignSelf": "stretch",
               "backgroundColor": "#FFFFFF",
+              "marginHorizontal": 16,
               "paddingBottom": 40,
               "paddingTop": 20,
             }
@@ -667,6 +256,7 @@ exports[`Rendering renders without crashing 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -678,7 +268,6 @@ exports[`Rendering renders without crashing 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -687,6 +276,7 @@ exports[`Rendering renders without crashing 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
@@ -715,6 +305,7 @@ exports[`Rendering renders without crashing 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -726,7 +317,6 @@ exports[`Rendering renders without crashing 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -735,6 +325,7 @@ exports[`Rendering renders without crashing 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
@@ -763,6 +354,7 @@ exports[`Rendering renders without crashing 1`] = `
                     "fontWeight": "bold",
                     "marginBottom": 8,
                     "marginLeft": 12,
+                    "marginTop": 32,
                     "textAlign": "center",
                   },
                 ]
@@ -774,7 +366,6 @@ exports[`Rendering renders without crashing 1`] = `
               contentContainerStyle={
                 Object {
                   "backgroundColor": "#EAEBF4",
-                  "height": 300,
                   "paddingHorizontal": 40,
                   "paddingVertical": 28,
                 }
@@ -783,6 +374,7 @@ exports[`Rendering renders without crashing 1`] = `
               style={
                 Object {
                   "backgroundColor": "#EAEBF4",
+                  "borderRadius": 8,
                 }
               }
             >
