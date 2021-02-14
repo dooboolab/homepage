@@ -7,7 +7,14 @@ import type {
   Purchase,
   Subscription,
 } from 'react-native-iap';
-import React, {FC, useCallback, useEffect, useMemo, useState} from 'react';
+import React, {
+  FC,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import {requestPurchase, requestSubscription, useIAP} from 'react-native-iap';
 
 import Header from '../UI/molecules/Header';
@@ -58,7 +65,6 @@ const StyledText = styled.Text`
 `;
 
 const ListContainer = styled.View`
-  height: 380px;
   margin-bottom: 40px;
 
   flex-direction: column;
@@ -157,9 +163,53 @@ const Sponsor: FC<Props> = ({navigation}) => {
     else requestSubscription(item.productId);
   };
 
+  const renderIntro = (): ReactElement => {
+    return (
+      <StyledText
+        style={{
+          fontSize: 14,
+          color: theme.primary,
+          fontWeight: 'bold',
+          marginTop: 48,
+          marginLeft: 12,
+          marginBottom: 8,
+          textAlign: 'center',
+          lineHeight: 18,
+          paddingHorizontal: 32,
+        }}>
+        {fbt(
+          // eslint-disable-next-line max-len
+          'Your sponsoring will be noted in our homepage and app when transaction is completed 🎉. Your interests will make our community much valuable 🙏.',
+          'transaction warning note',
+        )}
+      </StyledText>
+    );
+  };
+
+  const renderWarningTextBox = (): ReactElement => {
+    return (
+      <StyledText
+        style={{
+          fontSize: 12,
+          color: theme.negative,
+          marginTop: 16,
+          marginLeft: 12,
+          marginBottom: 8,
+          textAlign: 'center',
+          paddingHorizontal: 20,
+        }}>
+        {fbt(
+          'Note that once purchased, it will not be refunded. Please watch out before you continue transactions.',
+          'transaction warning note',
+        )}
+      </StyledText>
+    );
+  };
+
   return (
     <Container>
       <ScrollView>
+        {renderIntro()}
         <View
           style={{
             alignSelf: 'stretch',
@@ -243,6 +293,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                         );
                       })}
                 </ScrollView>
+                {renderWarningTextBox()}
               </ListContainer>
             );
           })}
