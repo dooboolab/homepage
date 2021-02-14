@@ -75,7 +75,7 @@ const FindPw: FC<Props> = ({navigation}) => {
     } finally {
       const successFbtString = fbt(
         // eslint-disable-next-line max-len
-        'Resetting email link has been sent. Please check your inbox. Sometimes it maybe filtered in your spam box so please check there too.',
+        'Resetting password link has been sent. Please check your inbox. Sometimes it maybe filtered in your spam box so please check there too.',
         'password email link sent',
       ).toString();
 

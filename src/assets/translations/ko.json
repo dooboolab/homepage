@@ -790,6 +790,156 @@
           "variations": {}
         }
       ]
+    },
+    "46c64df62c1a3f3489e7ed5cbc51431b": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "닉네임이 비었습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "8f644342599c667a96e48a67d1f17502": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "닉네임을 작성해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "fe45f4604b5fcc6584d4185585869e9e": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "닉네임",
+          "variations": {}
+        }
+      ]
+    },
+    "2f5c6cca86acf440543c30ded4f53d00": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "자신을 소개해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "66bc35b35dcb99b68bd1682789513c6d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "소개",
+          "variations": {}
+        }
+      ]
+    },
+    "789745dc3280d88162bad1ca9388dd6e": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "수정",
+          "variations": {}
+        }
+      ]
+    },
+    "d045dda0e2a4f8df14e676e3adbcf94d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "뒤로가기",
+          "variations": {}
+        }
+      ]
+    },
+    "964cc6b43c151c4bd05793e53e0d9da8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호 찾기",
+          "variations": {}
+        }
+      ]
+    },
+    "a2c4116f514964f923c8d3ca401e8fea": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "비밀번호 재설정 링크가 메일로 전송되었습니다. 가끔 스팸함으로 들어가니 회신이 안되었을 경우 스팸함을 확인해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "5756299b9293481b03beb05c7295eb37": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "올바른 비밀번호가 아닙니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "0937566731526910c4572cefb3ec452c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "메일함을 통해서 이메일을 인증해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "2ef633143b319c08a1b156ace05ae16b": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "웹에서 지원되지 않습니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "5f9a61faacf3caadd44a6665831d139b": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "안드로이드나 iOS에서 시도해주세요.",
+          "variations": {}
+        }
+      ]
+    },
+    "ecec5171d5f1215b0f9b737c1bf860d6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "연락하기",
+          "variations": {}
+        }
+      ]
+    },
+    "a63aab6c59efe8c595525e17de82a93d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "후원하기",
+          "variations": {}
+        }
+      ]
     }
   }
 }
