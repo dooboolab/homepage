@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import React, {FC, ReactElement, useState} from 'react';
+import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {signOut, updateCurrentUserProfile} from '../../services/firebase';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
@@ -21,9 +22,8 @@ import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {withScreen} from '../../utils/wrapper';
 
-const Container = styled.SafeAreaView`
+const Container = styled.View`
   background-color: ${({theme}): string => theme.background};
-  margin-bottom: 40px;
 
   flex-direction: column;
   align-items: center;
@@ -45,6 +45,7 @@ const regURL = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\
 
 const ProfileEdit: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
+  const inset = useSafeAreaInsets();
 
   const {
     state: {user},
@@ -122,16 +123,13 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                   ...user,
                   photoURL: url,
                 });
-              }
 
-              const fireUser = firebase.auth().currentUser;
+                const fireUser = firebase.auth().currentUser;
 
-              if (fireUser) {
-                fireUser.updateProfile({displayName});
-
-                updateCurrentUserProfile({
-                  photoURL: profilePath,
-                });
+                if (fireUser) {
+                  fireUser.updateProfile({photoURL: url});
+                  updateCurrentUserProfile({photoURL: url});
+                }
               }
             } catch (err) {
               setIntroductionErrorText(err.message);
@@ -178,187 +176,196 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <ScrollView
-        style={{
-          alignSelf: 'stretch',
-        }}
-        contentContainerStyle={{
-          paddingTop: 24,
-          paddingHorizontal: 16,
-          alignSelf: 'stretch',
-        }}>
-        <Container>
-          <View>
-            <TouchableOpacity
-              style={{marginTop: 12}}
-              onPress={pressProfileImage}>
-              <UserImage source={profilePath ? {uri: profilePath} : IC_GUEST} />
-            </TouchableOpacity>
-            {isLoading && <LoadingIndicator />}
-          </View>
-          <EditText
-            type="row"
-            placeholder={fbt(
-              'Please write your display name.',
-              'please write your display name',
-            ).toString()}
-            errorText={displayNameErrorText}
-            style={{marginTop: 24, marginHorizontal: 24, paddingHorizontal: 20}}
-            styles={{
-              container: {
-                height: displayNameErrorText ? 80 : 54,
-              },
-              errorText: {
-                marginBottom: 20,
-              },
-            }}
-            focusColor={theme.primary}
-            labelText={fbt('Nickanme', 'nickname')}
-            onChangeText={(text) => setDisplayName(text)}
-            value={displayName}
-          />
-          <EditText
-            textInputProps={{
-              multiline: true,
-              numberOfLines: 8,
-              textAlignVertical: 'center',
-            }}
-            placeholder={fbt(
-              'Please introduce yourself.',
-              'please introduce yourself',
-            ).toString()}
-            errorText={introductionErrorText}
-            style={{
-              marginTop: 8,
-              marginHorizontal: 24,
-              paddingVertical: 12,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            styles={{
-              container: {
-                marginTop: 8,
-                width: '100%',
-                alignItems: 'center',
-                borderWidth: 1,
-                borderColor: theme.disabled,
-                height: 200,
-                paddingHorizontal: 20,
-              },
-              input: {
-                textAlignVertical: 'center',
-              },
-              errorText: {
-                alignSelf: 'flex-start',
-              },
-            }}
-            focusColor={theme.primary}
-            type="row"
-            labelText={fbt('Introduction', 'intro')}
-            onChangeText={(text) => setIntroduction(text)}
-            value={introduction}
-          />
-        </Container>
-      </ScrollView>
-      <View
-        style={{
-          flexDirection: 'row-reverse',
-          flexWrap: 'wrap',
-
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Button
-          loading={isLoading}
-          disabled={isLoading}
-          onPress={updateProfile}
-          text={fbt('Update', 'update')}
-          indicatorColor={theme.accent}
-          styles={{
-            container: {
-              marginTop: 20,
-              marginBottom: 4,
-              borderRadius: 6,
-              backgroundColor: theme.positive,
-              borderWidth: 1,
-              borderColor: colors.white,
-              height: 44,
-            },
-            text: {
-              fontSize: 14,
-              width: 240,
-              textAlign: 'center',
-              color: colors.white,
-              alignSelf: 'center',
-              paddingBottom: 2,
-            },
+    <SafeAreaView>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <ScrollView
+          style={{
+            alignSelf: 'stretch',
           }}
-        />
+          contentContainerStyle={{
+            paddingTop: 24 - inset.top,
+            paddingHorizontal: 16,
+            alignSelf: 'stretch',
+          }}>
+          <Container>
+            <View>
+              <TouchableOpacity
+                style={{marginTop: 12}}
+                onPress={pressProfileImage}>
+                <UserImage
+                  source={profilePath ? {uri: profilePath} : IC_GUEST}
+                />
+              </TouchableOpacity>
+              {isLoading && <LoadingIndicator />}
+            </View>
+            <EditText
+              type="row"
+              placeholder={fbt(
+                'Please write your display name.',
+                'please write your display name',
+              ).toString()}
+              errorText={displayNameErrorText}
+              style={{
+                marginTop: 24,
+                marginHorizontal: 24,
+                paddingHorizontal: 20,
+              }}
+              styles={{
+                container: {
+                  height: displayNameErrorText ? 80 : 54,
+                },
+                errorText: {
+                  marginBottom: 20,
+                },
+              }}
+              focusColor={theme.primary}
+              labelText={fbt('Nickanme', 'nickname')}
+              onChangeText={(text) => setDisplayName(text)}
+              value={displayName}
+            />
+            <EditText
+              textInputProps={{
+                multiline: true,
+                numberOfLines: 8,
+                textAlignVertical: 'center',
+              }}
+              placeholder={fbt(
+                'Please introduce yourself.',
+                'please introduce yourself',
+              ).toString()}
+              errorText={introductionErrorText}
+              style={{
+                marginTop: 8,
+                marginHorizontal: 24,
+                paddingVertical: 12,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              styles={{
+                container: {
+                  marginTop: 8,
+                  width: '100%',
+                  alignItems: 'center',
+                  borderWidth: 1,
+                  borderColor: theme.disabled,
+                  height: 200,
+                  paddingHorizontal: 20,
+                },
+                input: {
+                  textAlignVertical: 'center',
+                },
+                errorText: {
+                  alignSelf: 'flex-start',
+                },
+              }}
+              focusColor={theme.primary}
+              type="row"
+              labelText={fbt('Introduction', 'intro')}
+              onChangeText={(text) => setIntroduction(text)}
+              value={introduction}
+            />
+          </Container>
+        </ScrollView>
         <View
           style={{
-            marginTop: 24,
-            marginHorizontal: 40,
+            flexDirection: 'row-reverse',
+            flexWrap: 'wrap',
 
-            flexDirection: 'row',
-            justifyContent: 'center',
             alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 60 + inset.bottom,
           }}>
           <Button
-            loading={isSigningOut}
-            onPress={() => {
-              navigation.goBack();
-            }}
-            text={fbt('Go Back', 'go back')}
+            loading={isLoading}
+            disabled={isLoading}
+            onPress={updateProfile}
+            text={fbt('Update', 'update')}
             indicatorColor={theme.accent}
             styles={{
               container: {
+                marginTop: 20,
+                marginBottom: 4,
                 borderRadius: 6,
-                backgroundColor: theme.background,
-                borderWidth: 0.5,
-                borderColor: theme.text,
-                height: 44,
-              },
-              text: {
-                fontSize: 14,
-                width: 100,
-                textAlign: 'center',
-                color: theme.text,
-                alignSelf: 'center',
-              },
-            }}
-          />
-          <Button
-            loading={isSigningOut}
-            onPress={async () => {
-              setIsSigningOut(true);
-              await signOut();
-              setIsSigningOut(false);
-            }}
-            text={fbt('Logout', 'logout')}
-            indicatorColor={theme.accent}
-            styles={{
-              container: {
-                borderRadius: 6,
-                marginLeft: 12,
-                backgroundColor: theme.background,
+                backgroundColor: theme.positive,
                 borderWidth: 1,
-                borderColor: theme.negative,
+                borderColor: colors.white,
                 height: 44,
               },
               text: {
                 fontSize: 14,
-                width: 100,
+                width: 240,
                 textAlign: 'center',
-                color: theme.negative,
+                color: colors.white,
                 alignSelf: 'center',
+                paddingBottom: 2,
               },
             }}
           />
+          <View
+            style={{
+              marginTop: 24,
+              marginHorizontal: 40,
+
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Button
+              loading={isSigningOut}
+              onPress={() => {
+                navigation.goBack();
+              }}
+              text={fbt('Go Back', 'go back')}
+              indicatorColor={theme.accent}
+              styles={{
+                container: {
+                  borderRadius: 6,
+                  backgroundColor: theme.background,
+                  borderWidth: 0.5,
+                  borderColor: theme.text,
+                  height: 44,
+                },
+                text: {
+                  fontSize: 14,
+                  width: 100,
+                  textAlign: 'center',
+                  color: theme.text,
+                  alignSelf: 'center',
+                },
+              }}
+            />
+            <Button
+              loading={isSigningOut}
+              onPress={async () => {
+                setIsSigningOut(true);
+                await signOut();
+                setIsSigningOut(false);
+              }}
+              text={fbt('Logout', 'logout')}
+              indicatorColor={theme.accent}
+              styles={{
+                container: {
+                  borderRadius: 6,
+                  marginLeft: 12,
+                  backgroundColor: theme.background,
+                  borderWidth: 1,
+                  borderColor: theme.negative,
+                  height: 44,
+                },
+                text: {
+                  fontSize: 14,
+                  width: 100,
+                  textAlign: 'center',
+                  color: theme.negative,
+                  alignSelf: 'center',
+                },
+              }}
+            />
+          </View>
         </View>
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
 

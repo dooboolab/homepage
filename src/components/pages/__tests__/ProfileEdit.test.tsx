@@ -2,7 +2,11 @@ import 'react-native';
 
 import React, {ReactElement} from 'react';
 import {RenderAPI, render} from '@testing-library/react-native';
-import {createTestElement, createTestProps} from '../../../../test/testUtils';
+import {
+  TestSafeAreaProvider,
+  createTestElement,
+  createTestProps,
+} from '../../../../test/testUtils';
 
 import Page from '../ProfileEdit';
 
@@ -13,7 +17,13 @@ let testingLib: RenderAPI;
 describe('Rendering', () => {
   beforeEach(() => {
     props = createTestProps();
-    component = createTestElement(<Page {...props} />);
+
+    component = createTestElement(
+      <TestSafeAreaProvider>
+        <Page {...props} />
+      </TestSafeAreaProvider>,
+    );
+
     testingLib = render(component);
   });
 
@@ -28,7 +38,13 @@ describe('Rendering', () => {
 describe('Interaction', () => {
   beforeEach(() => {
     props = createTestProps();
-    component = createTestElement(<Page {...props} />);
+
+    component = createTestElement(
+      <TestSafeAreaProvider>
+        <Page {...props} />
+      </TestSafeAreaProvider>,
+    );
+
     testingLib = render(component);
   });
 
