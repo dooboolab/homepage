@@ -9,6 +9,7 @@ import type {
 } from 'react-native-iap';
 import {
   PurchaseStateAndroid,
+  finishTransaction,
   getAvailablePurchases,
   requestPurchase,
   requestSubscription,
@@ -172,7 +173,6 @@ const Sponsor: FC<Props> = ({navigation}) => {
     subscriptions,
     getProducts,
     getSubscriptions,
-    finishTransaction,
     currentPurchase,
     currentPurchaseError,
   } = useIAP();
@@ -225,7 +225,11 @@ const Sponsor: FC<Props> = ({navigation}) => {
 
               if (status === ReceiptValidationStatus.SUCCESS)
                 try {
-                  await finishTransaction(purchase);
+                  await finishTransaction(
+                    purchase,
+                    consumableSkus.includes(purchase.productId),
+                  );
+
                   addPurchaseRecord(user, purchase);
                 } catch (ackErr) {
                   console.warn('ackErr', ackErr);
@@ -236,41 +240,59 @@ const Sponsor: FC<Props> = ({navigation}) => {
           }
 
           if (Platform.OS === 'android') {
-            const decodedReceipt = await validateReceiptAndroid(
-              'com.dooboolab.app',
-              purchase.productId,
-              purchase.purchaseToken as string,
-              androidAccessToken,
-              !!purchase.autoRenewingAndroid,
-            );
+            const isTestEnvironment = __DEV__;
 
-            if (decodedReceipt) {
-              const {paymentState} = decodedReceipt;
+            if (isTestEnvironment) {
+              try {
+                await finishTransaction(
+                  purchase,
+                  consumableSkus.includes(purchase.productId),
+                );
 
-              if (paymentState === PurchaseStateAndroid.PURCHASED)
-                try {
-                  await finishTransaction(purchase);
-                  addPurchaseRecord(user, purchase);
-                } catch (ackErr) {
-                  console.warn('ackErr', ackErr);
-                }
+                addPurchaseRecord(user, purchase);
+              } catch (ackErr) {
+                console.warn('ackErr', ackErr);
+              }
+
+              return;
             }
 
-            return;
-          }
+            try {
+              const decodedReceipt = await validateReceiptAndroid(
+                'com.dooboolab.app',
+                purchase.productId,
+                purchase.purchaseToken as string,
+                androidAccessToken,
+                !!purchase.autoRenewingAndroid,
+              );
 
-          try {
-            await finishTransaction(purchase);
-            addPurchaseRecord(user, purchase);
-          } catch (ackErr) {
-            console.warn('ackErr', ackErr);
+              if (decodedReceipt) {
+                const {paymentState} = decodedReceipt;
+
+                if (paymentState === PurchaseStateAndroid.PURCHASED)
+                  try {
+                    await finishTransaction(
+                      purchase,
+                      consumableSkus.includes(purchase.productId),
+                    );
+
+                    addPurchaseRecord(user, purchase);
+                  } catch (ackErr) {
+                    console.warn('ackErr', ackErr);
+                  }
+              }
+
+              return;
+            } catch (err) {
+              console.log('error receipt', JSON.stringify(err));
+            }
           }
         }
       }
     };
 
     checkCurrentPurchase(currentPurchase);
-  }, [currentPurchase, finishTransaction, user]);
+  }, [currentPurchase, user]);
 
   useEffect(() => {
     if (currentPurchaseError)
