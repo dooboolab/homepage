@@ -76,3 +76,10 @@ src/utils/i18n/fbt/.src_manifest.json
 
 # android build
 *.aab
+
+# functions
+functions/src/service-account.json
+functions/firebase-debug.log
+functions/lib
+ui-debug.log
+hosting.*

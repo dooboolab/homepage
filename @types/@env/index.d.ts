@@ -8,4 +8,5 @@ declare module '@env' {
   export const storageBucket: string;
   export const itunesConnectSharedSecret: string;
   export const androidAccessToken: string;
+  export const androidIAPEndPoint: string;
 }
