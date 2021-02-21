@@ -10,6 +10,7 @@ import type {
 import {
   PurchaseStateAndroid,
   finishTransaction,
+  flushFailedPurchasesCachedAsPendingAndroid,
   getAvailablePurchases,
   requestPurchase,
   requestSubscription,
@@ -197,11 +198,16 @@ const Sponsor: FC<Props> = ({navigation}) => {
     setSubscribedProdutId(await getActiveSubscriptionId());
   }, []);
 
-  useEffect(() => {
+  const fetchProducts = useCallback(async (): Promise<void> => {
+    await flushFailedPurchasesCachedAsPendingAndroid();
     getProducts(iapSkus);
     getSubscriptions(subSkus);
     getSubcribedProuduct();
   }, [getProducts, getSubcribedProuduct, getSubscriptions]);
+
+  useEffect(() => {
+    if (connected) fetchProducts();
+  }, [fetchProducts, connected]);
 
   useEffect(() => {
     const checkCurrentPurchase = async (purchase?: Purchase): Promise<void> => {
@@ -423,6 +429,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                             icon={IC_DOOBOO_IAP}
                             style={{marginRight: 16}}
                             subscribed={item.productId === subscribedProductId}
+                            onPress={() => purchase(item)}
                           />
                         );
                       })
@@ -438,6 +445,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                             name={item.title}
                             icon={IC_LOGO}
                             style={{marginRight: 16}}
+                            onPress={() => purchase(item)}
                           />
                         );
                       })}
