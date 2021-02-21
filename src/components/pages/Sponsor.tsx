@@ -1,12 +1,7 @@
 import {Alert, Platform, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../UI/molecules/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
-import type {
-  Product,
-  ProductPurchase,
-  Purchase,
-  Subscription,
-} from 'react-native-iap';
+import type {Product, Purchase, Subscription} from 'react-native-iap';
 import {
   PurchaseStateAndroid,
   finishTransaction,
@@ -15,7 +10,6 @@ import {
   requestPurchase,
   requestSubscription,
   useIAP,
-  validateReceiptAndroid,
   validateReceiptIos,
 } from 'react-native-iap';
 import React, {
@@ -30,7 +24,7 @@ import {
   ReceiptValidationResponse,
   ReceiptValidationStatus,
 } from 'react-native-iap/src/types/apple';
-import {androidAccessToken, itunesConnectSharedSecret} from '@env';
+import {androidIAPEndPoint, itunesConnectSharedSecret} from '@env';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {User} from '../../types';
@@ -143,14 +137,21 @@ type ItemType = 'onetime' | 'subscription' | 'membership';
 
 const itemTypes: ItemType[] = ['onetime', 'subscription', 'membership'];
 
-const addPurchaseRecord = (user: User | null, purchase: Purchase): void => {
+const addPurchaseRecord = (
+  user: User | null,
+  purchase: Purchase,
+  receipt,
+): void => {
   if (user) {
     firebase
       .firestore()
       .collection('users')
       .doc(user.uid)
       .collection('purchases')
-      .add(purchase);
+      .add({
+        purchase,
+        receipt,
+      });
 
     const db = firebase.firestore();
 
@@ -218,7 +219,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
           if (Platform.OS === 'ios') {
             const isTestEnvironment = __DEV__;
 
-            const decodedReceipt = await validateReceiptIos(
+            const appleReceiptResponse = await validateReceiptIos(
               {
                 'receipt-data': receipt,
                 password: itunesConnectSharedSecret,
@@ -226,8 +227,10 @@ const Sponsor: FC<Props> = ({navigation}) => {
               isTestEnvironment,
             );
 
-            if (decodedReceipt) {
-              const {status} = decodedReceipt as ReceiptValidationResponse;
+            if (appleReceiptResponse) {
+              const {
+                status,
+              } = appleReceiptResponse as ReceiptValidationResponse;
 
               if (status === ReceiptValidationStatus.SUCCESS)
                 try {
@@ -236,7 +239,11 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     consumableSkus.includes(purchase.productId),
                   );
 
-                  addPurchaseRecord(user, purchase);
+                  addPurchaseRecord(
+                    user,
+                    purchase,
+                    appleReceiptResponse.receipt,
+                  );
                 } catch (ackErr) {
                   console.warn('ackErr', ackErr);
                 }
@@ -245,54 +252,45 @@ const Sponsor: FC<Props> = ({navigation}) => {
             return;
           }
 
-          if (Platform.OS === 'android') {
-            const isTestEnvironment = __DEV__;
-
-            if (isTestEnvironment) {
-              try {
-                await finishTransaction(
-                  purchase,
-                  consumableSkus.includes(purchase.productId),
-                );
-
-                addPurchaseRecord(user, purchase);
-              } catch (ackErr) {
-                console.warn('ackErr', ackErr);
-              }
-
-              return;
-            }
-
+          if (Platform.OS === 'android')
             try {
-              const decodedReceipt = await validateReceiptAndroid(
-                'com.dooboolab.app',
-                purchase.productId,
-                purchase.purchaseToken as string,
-                androidAccessToken,
-                !!purchase.autoRenewingAndroid,
+              const body = {
+                packageName: 'com.dooboolab.app',
+                productId: purchase.productId,
+                productToken: purchase.purchaseToken as string,
+                type: !!purchase.autoRenewingAndroid,
+              };
+
+              const response = await fetch(
+                `${androidIAPEndPoint}/validateGoogleIAP`,
+                {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                  },
+                  body: JSON.stringify(body),
+                },
               );
 
-              if (decodedReceipt) {
-                const {paymentState} = decodedReceipt;
+              const androidReceipt = await response.json();
 
-                if (paymentState === PurchaseStateAndroid.PURCHASED)
-                  try {
-                    await finishTransaction(
-                      purchase,
-                      consumableSkus.includes(purchase.productId),
-                    );
+              if (androidReceipt) {
+                const {purchaseState} = androidReceipt;
 
-                    addPurchaseRecord(user, purchase);
-                  } catch (ackErr) {
-                    console.warn('ackErr', ackErr);
-                  }
+                if (purchaseState === PurchaseStateAndroid.PURCHASED) {
+                  await finishTransaction(
+                    purchase,
+                    consumableSkus.includes(purchase.productId),
+                  );
+
+                  addPurchaseRecord(user, purchase, androidReceipt);
+                }
               }
 
               return;
             } catch (err) {
-              console.log('error receipt', JSON.stringify(err));
+              console.log('error', JSON.stringify(err));
             }
-          }
         }
       }
     };
