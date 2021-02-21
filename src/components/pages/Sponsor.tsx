@@ -286,11 +286,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
                   addPurchaseRecord(user, purchase, androidReceipt);
                 }
               }
-
-              return;
             } catch (err) {
               console.log('error', JSON.stringify(err));
             }
+
+          const activeSubId = await getActiveSubscriptionId();
+
+          if (activeSubId) setSubscribedProdutId(activeSubId);
         }
       }
     };
