@@ -2,8 +2,8 @@ import React, {FC, useRef} from 'react';
 
 import CommunitySection from '../templates/CommunitySection';
 import ContactSection from '../templates/ContactSection';
-import Footer from '../UI/molecules/Footer';
-import Header from '../UI/molecules/Header';
+import Footer from '../UI/Footer';
+import Header from '../UI/Header';
 import HeroSection from '../templates/HeroSection';
 import PoweredBySection from '../templates/PoweredBySection';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';

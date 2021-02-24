@@ -2,8 +2,8 @@ import {Description, SubTitle} from '../UI/Typography';
 import React, {FC} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
-import Footer from '../UI/molecules/Footer';
-import Header from '../UI/molecules/Header';
+import Footer from '../UI/Footer';
+import Header from '../UI/Header';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';

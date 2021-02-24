@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 
-import {Description} from '../Typography';
-import Hoverable from '../../../utils/Hoverable';
-import {RootStackNavigationProps} from '../../navigations/RootStackNavigator';
+import {Description} from './Typography';
+import Hoverable from '../../utils/Hoverable';
+import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';

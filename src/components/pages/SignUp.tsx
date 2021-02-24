@@ -13,7 +13,7 @@ import {
 } from '../../services/firebase';
 
 import type {FC} from 'react';
-import Header from '../UI/molecules/Header';
+import Header from '../UI/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase';

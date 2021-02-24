@@ -2,7 +2,7 @@ import {Image, Text, View, ViewStyle} from 'react-native';
 import type {ImageSourcePropType, TouchableOpacityProps} from 'react-native';
 import React, {FC, ReactElement} from 'react';
 
-import RoundedButton from '../atoms/RoundedButton';
+import RoundedButton from './RoundedButton';
 import {fbt} from 'fbt';
 import {useTheme} from 'dooboo-ui';
 

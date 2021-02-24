@@ -10,7 +10,7 @@ import React, {useState} from 'react';
 import {signInWithEmail, signOut} from '../../services/firebase';
 
 import type {FC} from 'react';
-import Header from '../UI/molecules/Header';
+import Header from '../UI/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import WebView from '../pages/WebView';
 import {fbt} from 'fbt';

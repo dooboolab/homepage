@@ -1,16 +1,16 @@
 import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import type {FC, ReactElement, RefObject} from 'react';
-import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../../utils/Icons';
+import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../utils/Icons';
 import {Image, Platform, ScrollView, View} from 'react-native';
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
-import Hoverable from '../../../utils/Hoverable';
+import Hoverable from '../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
-import {useAuthContext} from '../../../providers/AuthProvider';
+import {useAuthContext} from '../../providers/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
 
 //eslint-disable-next-line
