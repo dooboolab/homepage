@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   babel: {
     presets: [
@@ -16,5 +18,21 @@ module.exports = {
       '@babel/plugin-syntax-class-properties',
       'babel-plugin-fbt-runtime',
     ],
+  },
+  webpack: {
+    configure: {
+      module: {
+        rules: [
+          {
+            test: /\.ttf$/,
+            loader: 'url-loader', // or directly file-loader
+            include: path.resolve(
+              __dirname,
+              'node_modules/react-native-vector-icons',
+            ),
+          },
+        ],
+      },
+    },
   },
 };
