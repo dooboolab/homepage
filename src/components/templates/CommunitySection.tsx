@@ -1,5 +1,5 @@
 import {Button, useTheme} from 'dooboo-ui';
-import {Description, SubTitle} from '../UI/Typography';
+import {Description, SubTitle} from '../uis/Typography';
 import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
 import {Linking, Platform} from 'react-native';
 import React, {FC, ReactElement} from 'react';

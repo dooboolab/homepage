@@ -1,5 +1,5 @@
 import {Button, ThemeType, useTheme} from 'dooboo-ui';
-import {Description, SubDescription, Title} from '../UI/Typography';
+import {Description, SubDescription, Title} from '../uis/Typography';
 import {
   IC_DOOBOO_UI,
   IC_DOOBOO_UI_DARK,

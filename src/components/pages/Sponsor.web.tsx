@@ -1,11 +1,11 @@
 import {Button, useTheme} from 'dooboo-ui';
-import IAPCard, {IAPCardProps} from '../UI/IAPCard';
+import IAPCard, {IAPCardProps} from '../uis/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
 import RNIap, {Product, Subscription, useIAP} from 'react-native-iap';
 import React, {FC, useCallback, useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
 
-import Header from '../UI/Header';
+import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';

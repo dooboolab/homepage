@@ -1,5 +1,5 @@
 import {Button, useTheme} from 'dooboo-ui';
-import {Description, SubTitle, Title} from '../UI/Typography';
+import {Description, SubTitle, Title} from '../uis/Typography';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 

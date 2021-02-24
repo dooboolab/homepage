@@ -1,4 +1,4 @@
-import {Description, SubTitle} from '../UI/Typography';
+import {Description, SubTitle} from '../uis/Typography';
 import {Linking, Platform} from 'react-native';
 import React, {FC} from 'react';
 

@@ -15,6 +15,7 @@ import ProfileEdit from '../pages/ProfileEdit';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Sponsor from '../pages/Sponsor';
+// import Todo from '../pages/Todo';
 import {User} from '../../types';
 import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
@@ -28,6 +29,7 @@ export type RootStackParamList = {
   WebView: {uri: string};
   VisionAndMission: undefined;
   CodeOfConduct: undefined;
+  // Todo: undefined;
   Sponsor: undefined;
   SignUp: undefined;
   SignIn: undefined;
@@ -48,6 +50,7 @@ const authScreens = {
 };
 
 const userScreens = {
+  // Todo,
   Sponsor,
   ProfileEdit,
 };

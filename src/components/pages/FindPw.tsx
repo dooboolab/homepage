@@ -3,7 +3,7 @@ import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
 
 import type {FC} from 'react';
-import Header from '../UI/Header';
+import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
