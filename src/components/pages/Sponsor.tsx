@@ -68,7 +68,7 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
     );
 
     const latestAvailableReceipt =
-      sortedAvailablePurchases[0].transactionReceipt;
+      sortedAvailablePurchases?.[0]?.transactionReceipt;
 
     const isTestEnvironment = __DEV__;
 
@@ -92,7 +92,7 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
       const nowInMilliseconds = Date.now();
 
       if (expirationInMilliseconds > nowInMilliseconds)
-        return sortedAvailablePurchases[0].productId;
+        return sortedAvailablePurchases?.[0].productId;
     }
 
     return undefined;
