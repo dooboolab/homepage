@@ -195,7 +195,65 @@ exports[`Interaction should simulate onClick 1`] = `
                 ]
               }
             >
-              Note that once purchased, it will not be refunded. Please watch out before you continue transactions.
+              Payment will be charged to your iTunes account upon confirmation of purchase. Subscriptions automatically renew on a monthly basis from the date of original purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24-hours before the end of the current period. Any unused portion of a free trial period will be forfeited when a subscription is purchased. To manage auto-renewal or cancel your subscription, please go to the iTunes Account Settings on your device.
+              
+
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "lineHeight": 22,
+                    },
+                  ]
+                }
+              >
+                For more inforamtion refer to our
+                 
+              </Text>
+              <Text
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#393D7A",
+                      "lineHeight": 22,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                testID="btn-terms"
+              >
+                Terms of Agreement
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "lineHeight": 22,
+                    },
+                  ]
+                }
+              >
+                 
+                and
+                 
+              </Text>
+              <Text
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#393D7A",
+                      "lineHeight": 22,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                testID="btn-privacy"
+              >
+                Privary Policy
+                .
+              </Text>
             </Text>
           </View>
           <View
@@ -468,7 +526,65 @@ exports[`Rendering renders without crashing 1`] = `
                 ]
               }
             >
-              Note that once purchased, it will not be refunded. Please watch out before you continue transactions.
+              Payment will be charged to your iTunes account upon confirmation of purchase. Subscriptions automatically renew on a monthly basis from the date of original purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24-hours before the end of the current period. Any unused portion of a free trial period will be forfeited when a subscription is purchased. To manage auto-renewal or cancel your subscription, please go to the iTunes Account Settings on your device.
+              
+
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "lineHeight": 22,
+                    },
+                  ]
+                }
+              >
+                For more inforamtion refer to our
+                 
+              </Text>
+              <Text
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#393D7A",
+                      "lineHeight": 22,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                testID="btn-terms"
+              >
+                Terms of Agreement
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "lineHeight": 22,
+                    },
+                  ]
+                }
+              >
+                 
+                and
+                 
+              </Text>
+              <Text
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#393D7A",
+                      "lineHeight": 22,
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                testID="btn-privacy"
+              >
+                Privary Policy
+                .
+              </Text>
             </Text>
           </View>
           <View

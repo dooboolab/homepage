@@ -1,4 +1,4 @@
-import {Alert, Platform, ScrollView, View} from 'react-native';
+import {Alert, Linking, Platform, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../uis/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
 import type {Product, Purchase, Subscription} from 'react-native-iap';
@@ -129,6 +129,16 @@ const ListContainer = styled.View`
   flex-direction: column;
 `;
 
+const StyledAgreementText = styled.Text`
+  line-height: 22px;
+`;
+
+const StyledAgreementLinedText = styled.Text`
+  line-height: 22px;
+  color: ${({theme}): string => theme.link};
+  text-decoration-line: underline;
+`;
+
 type Props = {
   navigation: RootStackNavigationProps<'Sponsor'>;
 };
@@ -178,6 +188,10 @@ const Sponsor: FC<Props> = ({navigation}) => {
     currentPurchase,
     currentPurchaseError,
   } = useIAP();
+
+  const goToWebView = (uri: string): void => {
+    navigation.navigate('WebView', {uri});
+  };
 
   const [subscribedProductId, setSubscribedProdutId] = useState<string>();
 
@@ -336,7 +350,66 @@ const Sponsor: FC<Props> = ({navigation}) => {
     );
   };
 
-  const renderWarningTextBox = (): ReactElement => {
+  const renderWarningTextBox = (type: ItemType): ReactElement => {
+    if (type === 'subscription' && Platform.OS === 'ios')
+      return (
+        <>
+          <StyledText
+            style={{
+              fontSize: 12,
+              color: theme.negative,
+              marginTop: 16,
+              marginLeft: 12,
+              marginBottom: 8,
+              textAlign: 'center',
+              paddingHorizontal: 20,
+            }}>
+            {fbt(
+              `
+              Payment will be charged to your iTunes account upon confirmation of purchase.
+              Subscriptions automatically renew on a monthly basis from the date of original purchase.
+              Subscriptions automatically renew unless auto-renew is turned off at least 24-hours before the end of the current period.
+              Any unused portion of a free trial period will be forfeited when a subscription is purchased.
+              To manage auto-renewal or cancel your subscription, please go to the iTunes Account Settings on your device.
+              `,
+              'apple subscription agreement',
+            )}
+            {'\n'}
+            <StyledAgreementText>
+              <fbt desc="sub_agreement1">For more inforamtion refer to our</fbt>{' '}
+            </StyledAgreementText>
+            <StyledAgreementLinedText
+              testID="btn-terms"
+              onPress={(): Promise<void> | undefined => {
+                if (Platform.OS === 'web')
+                  return Linking.openURL(
+                    'https://legacy.dooboolab.com/termsofservice',
+                  );
+
+                goToWebView('https://legacy.dooboolab.com/termsofservice');
+              }}>
+              <fbt desc="agreement2">Terms of Agreement</fbt>
+            </StyledAgreementLinedText>
+            <StyledAgreementText>
+              {' '}
+              <fbt desc="agreement3">and</fbt>{' '}
+            </StyledAgreementText>
+            <StyledAgreementLinedText
+              testID="btn-privacy"
+              onPress={(): Promise<void> | undefined => {
+                if (Platform.OS === 'web')
+                  return Linking.openURL(
+                    'https://legacy.dooboolab.com/privacyandpolicy',
+                  );
+
+                goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
+              }}>
+              <fbt desc="agreement4">Privary Policy</fbt>.
+            </StyledAgreementLinedText>
+          </StyledText>
+        </>
+      );
+
     return (
       <StyledText
         style={{
@@ -450,7 +523,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                         );
                       })}
                 </ScrollView>
-                {renderWarningTextBox()}
+                {renderWarningTextBox(type)}
               </ListContainer>
             );
           })}
