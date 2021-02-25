@@ -54,7 +54,9 @@ const CheckBox: FC<Props> = ({
         activeOpacity={0.7}
         delayPressIn={100}
         onPress={onPress}
-        style={{marginBottom: 6}}>
+        style={{
+          marginTop: 2,
+        }}>
         <Circle
           style={{
             borderColor: checked ? theme.primary : theme.text,

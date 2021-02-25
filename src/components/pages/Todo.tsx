@@ -1,7 +1,8 @@
 import {Button, EditText, useTheme} from 'dooboo-ui';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {Text, TextStyle, View} from 'react-native';
+import {formatDistance, subDays} from 'date-fns';
 
 import CheckBox from '../uis/CheckBox';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -56,107 +57,103 @@ const TodoList: FC<TodoListProps> = ({
   const {theme} = useTheme();
   const hasTextChanged = todo.text !== todo.initialText;
 
+  const textDoneStyle: Partial<TextStyle> = {
+    textDecorationColor: theme.negative,
+    textDecorationStyle: 'double',
+    textDecorationLine: 'line-through',
+  };
+
   return (
     <View
       style={{
-        alignSelf: 'stretch',
-        height: 48,
-
-        flexDirection: 'row',
+        flexDirection: 'column',
       }}>
-      {todo.done && (
-        <View
-          style={{
-            position: 'absolute',
-            width: '100%',
-            top: 18,
-          }}>
+      <View
+        style={{
+          alignSelf: 'stretch',
+
+          flexDirection: 'row',
+        }}>
+        <CheckBox
+          checked={todo.done}
+          onPress={onDoneChecked}
+          renderElement={() => (
+            <EditText
+              style={{
+                flex: 1,
+                alignSelf: 'stretch',
+
+                alignItems: 'center',
+              }}
+              editable={!todo.done}
+              value={todo.text}
+              onChangeText={onChangeText}
+              styles={{
+                container: {
+                  alignSelf: 'stretch',
+                  borderBottomWidth: 0,
+                  borderWidth: 0,
+
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                },
+                input: [
+                  {
+                    color: theme.text,
+                    fontSize: 14,
+                    alignSelf: 'stretch',
+                  },
+                  todo.done && {...textDoneStyle},
+                ],
+              }}
+            />
+          )}
+        />
+        <TouchableOpacity onPress={onEditPressed}>
           <View
             style={{
-              paddingLeft: 32,
-              paddingRight: 40,
+              padding: 8,
             }}>
-            <View
-              style={{
-                height: 1,
-                backgroundColor: theme.negative,
-              }}
-            />
-            <View
-              style={{
-                marginTop: 3,
-                height: 1,
-                backgroundColor: theme.negative,
-              }}
-            />
+            {hasTextChanged && (
+              <Icon
+                name="check"
+                size={30}
+                color={theme.text}
+                style={{
+                  fontSize: 24,
+                }}
+              />
+            )}
           </View>
-        </View>
-      )}
-      <CheckBox
-        checked={todo.done}
-        onPress={onDoneChecked}
-        renderElement={() => (
-          <EditText
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onDeletePressed}>
+          <View
             style={{
-              flex: 1,
-              alignSelf: 'stretch',
-
-              alignItems: 'center',
-            }}
-            editable={!todo.done}
-            value={todo.text}
-            onChangeText={onChangeText}
-            styles={{
-              container: {
-                alignSelf: 'stretch',
-                borderBottomWidth: 0,
-                borderWidth: 0,
-
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-              },
-              input: {
-                color: theme.text,
-                fontSize: 14,
-                alignSelf: 'stretch',
-              },
-            }}
-          />
-        )}
-      />
-      <TouchableOpacity onPress={onEditPressed}>
-        <View
-          style={{
-            padding: 8,
-          }}>
-          {hasTextChanged && (
+              padding: 8,
+            }}>
             <Icon
-              name="check"
+              name="delete"
               size={30}
               color={theme.text}
               style={{
                 fontSize: 24,
               }}
             />
-          )}
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={onDeletePressed}>
-        <View
-          style={{
-            padding: 8,
-          }}>
-          <Icon
-            name="delete"
-            size={30}
-            color={theme.text}
-            style={{
-              fontSize: 24,
-            }}
-          />
-        </View>
-      </TouchableOpacity>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          marginLeft: 32,
+          marginBottom: 8,
+        }}>
+        <Text style={todo.done && {...textDoneStyle}}>
+          {formatDistance(todo.createdAt, new Date(), {
+            addSuffix: true,
+          })}
+        </Text>
+      </View>
     </View>
   );
 };
@@ -194,16 +191,18 @@ const Todo: FC<Props> = ({navigation}) => {
 
       const initialTodos: TodoType[] = [];
 
+      type TodoDocType = Omit<TodoType, 'id' | 'createdAt'> & {
+        createdAt: firebase.firestore.Timestamp;
+      };
+
       for (const doc of snap.docs) {
-        const todoData: Omit<TodoType, 'id'> = doc.data() as Omit<
-          TodoType,
-          'id'
-        >;
+        const todoData: TodoDocType = doc.data() as TodoDocType;
 
         const todo: TodoType = {
           ...todoData,
           id: doc.id,
           initialText: todoData.text,
+          createdAt: todoData?.createdAt?.toDate(),
         };
 
         initialTodos.push(todo);
@@ -232,7 +231,7 @@ const Todo: FC<Props> = ({navigation}) => {
         .add({
           text,
           done: false,
-          createdAt,
+          createdAt: firebase.firestore.Timestamp.fromDate(createdAt),
         });
 
       const todo: TodoType = {
