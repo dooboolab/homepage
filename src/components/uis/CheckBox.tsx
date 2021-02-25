@@ -1,5 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 
+import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 import {useTheme} from 'dooboo-ui';
 
@@ -63,9 +64,16 @@ const CheckBox: FC<Props> = ({
             marginRight: 8,
           }}>
           <CircleDot
-            style={{
-              backgroundColor: checked ? theme.primary : 'transparent',
-            }}
+            style={Platform.select({
+              default: {
+                backgroundColor: checked ? theme.primary : 'transparent',
+              },
+              web: {
+                backgroundColor: checked ? theme.primary : 'transparent',
+                width: 8,
+                height: 8,
+              },
+            })}
           />
         </Circle>
       </Touch>
