@@ -1,4 +1,4 @@
-import {Button, EditText, useTheme} from 'dooboo-ui';
+import {Button, EditText, LoadingIndicator, useTheme} from 'dooboo-ui';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import {Text, TextStyle, View} from 'react-native';
@@ -22,7 +22,7 @@ const Container = styled.SafeAreaView`
 
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 type TodoType = {
@@ -171,6 +171,7 @@ const Todo: FC<Props> = ({navigation}) => {
 
   const [todos, setTodos] = useState<TodoType[]>([]);
   const [text, setText] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
 
   const {theme} = useTheme();
 
@@ -209,6 +210,7 @@ const Todo: FC<Props> = ({navigation}) => {
       }
 
       setTodos(sortTodos(initialTodos));
+      setLoading(false);
     }
   }, [user]);
 
@@ -288,94 +290,97 @@ const Todo: FC<Props> = ({navigation}) => {
   return (
     <Container>
       {renderInput()}
-      <FlatList
-        style={{alignSelf: 'stretch'}}
-        keyExtractor={(_, index) => index.toString()}
-        contentContainerStyle={{
-          alignSelf: 'stretch',
-          paddingHorizontal: 16,
-        }}
-        data={todos}
-        renderItem={({item}) => (
-          <TodoList
-            todo={item}
-            onDoneChecked={async () => {
-              const index = todos.findIndex((el) => el.id === item.id);
+      {loading && <LoadingIndicator />}
+      {!loading && (
+        <FlatList
+          style={{alignSelf: 'stretch'}}
+          keyExtractor={(_, index) => index.toString()}
+          contentContainerStyle={{
+            alignSelf: 'stretch',
+            paddingHorizontal: 16,
+          }}
+          data={todos}
+          renderItem={({item}) => (
+            <TodoList
+              todo={item}
+              onDoneChecked={async () => {
+                const index = todos.findIndex((el) => el.id === item.id);
 
-              const db = firebase.firestore();
+                const db = firebase.firestore();
 
-              if (user) {
-                await db
-                  .collection('users')
-                  .doc(user.uid)
-                  .collection('todos')
-                  .doc(item.id)
-                  .set({done: !item.done}, {merge: true});
+                if (user) {
+                  await db
+                    .collection('users')
+                    .doc(user.uid)
+                    .collection('todos')
+                    .doc(item.id)
+                    .set({done: !item.done}, {merge: true});
 
-                const nextState = produce(todos, (draft) => {
-                  draft[index] = item;
-                  draft[index].done = !item.done;
-                  draft[index].text = draft[index].initialText;
-                  draft = sortTodos(draft);
-                });
+                  const nextState = produce(todos, (draft) => {
+                    draft[index] = item;
+                    draft[index].done = !item.done;
+                    draft[index].text = draft[index].initialText;
+                    draft = sortTodos(draft);
+                  });
 
-                setTodos(nextState);
-              }
-            }}
-            onEditPressed={async () => {
-              const index = todos.findIndex((el) => el.id === item.id);
-              const db = firebase.firestore();
+                  setTodos(nextState);
+                }
+              }}
+              onEditPressed={async () => {
+                const index = todos.findIndex((el) => el.id === item.id);
+                const db = firebase.firestore();
 
-              if (user) {
-                await db
-                  .collection('users')
-                  .doc(user.uid)
-                  .collection('todos')
-                  .doc(item.id)
-                  .set({text: item.text}, {merge: true});
+                if (user) {
+                  await db
+                    .collection('users')
+                    .doc(user.uid)
+                    .collection('todos')
+                    .doc(item.id)
+                    .set({text: item.text}, {merge: true});
 
-                const nextState = produce(todos, (draft) => {
-                  draft[index] = item;
-                  draft[index].initialText = item.text;
-                });
+                  const nextState = produce(todos, (draft) => {
+                    draft[index] = item;
+                    draft[index].initialText = item.text;
+                  });
 
-                setTodos(nextState);
-              }
-            }}
-            onChangeText={async (str: string) => {
-              const index = todos.findIndex((el) => el.id === item.id);
-
-              const nextState = produce(todos, (draft) => {
-                draft[index] = item;
-                draft[index].text = str;
-              });
-
-              setTodos(nextState);
-            }}
-            onDeletePressed={async () => {
-              const index = todos.findIndex((el) => el.id === item.id);
-
-              const db = firebase.firestore();
-
-              if (user) {
-                await db
-                  .collection('users')
-                  .doc(user.uid)
-                  .collection('todos')
-                  .doc(item.id)
-                  .delete();
+                  setTodos(nextState);
+                }
+              }}
+              onChangeText={async (str: string) => {
+                const index = todos.findIndex((el) => el.id === item.id);
 
                 const nextState = produce(todos, (draft) => {
                   draft[index] = item;
-                  draft.splice(index, 1);
+                  draft[index].text = str;
                 });
 
                 setTodos(nextState);
-              }
-            }}
-          />
-        )}
-      />
+              }}
+              onDeletePressed={async () => {
+                const index = todos.findIndex((el) => el.id === item.id);
+
+                const db = firebase.firestore();
+
+                if (user) {
+                  await db
+                    .collection('users')
+                    .doc(user.uid)
+                    .collection('todos')
+                    .doc(item.id)
+                    .delete();
+
+                  const nextState = produce(todos, (draft) => {
+                    draft[index] = item;
+                    draft.splice(index, 1);
+                  });
+
+                  setTodos(nextState);
+                }
+              }}
+            />
+          )}
+        />
+      )}
     </Container>
   );
 };

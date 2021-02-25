@@ -22,7 +22,7 @@ exports[`Interaction should simulate onClick 1`] = `
           "flexDirection": "column",
           "flexGrow": 1,
           "flexShrink": 1,
-          "justifyContent": "center",
+          "justifyContent": "flex-start",
         },
       ]
     }
@@ -167,47 +167,28 @@ exports[`Interaction should simulate onClick 1`] = `
         </View>
       </View>
     </View>
-    <RCTScrollView
-      collapsable={false}
-      contentContainerStyle={
-        Object {
-          "alignSelf": "stretch",
-          "paddingHorizontal": 16,
-        }
-      }
-      data={Array []}
-      disableVirtualization={false}
-      getItem={[Function]}
-      getItemCount={[Function]}
-      horizontal={false}
-      initialNumToRender={10}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={10}
-      onContentSizeChange={[Function]}
-      onEndReachedThreshold={2}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      renderScrollComponent={[Function]}
-      scrollEventThrottle={50}
-      stickyHeaderIndices={Array []}
+    <View
       style={
         Object {
-          "alignSelf": "stretch",
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "transparent",
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "position": "absolute",
+          "width": "100%",
         }
       }
-      updateCellsBatchingPeriod={50}
-      viewabilityConfigCallbackPairs={Array []}
-      windowSize={21}
     >
-      <View />
-    </RCTScrollView>
+      <ActivityIndicator
+        animating={true}
+        color="#969696"
+        hidesWhenStopped={true}
+        size="large"
+      />
+    </View>
   </RCTSafeAreaView>
 </View>
 `;
@@ -234,7 +215,7 @@ exports[`Rendering renders without crashing 1`] = `
           "flexDirection": "column",
           "flexGrow": 1,
           "flexShrink": 1,
-          "justifyContent": "center",
+          "justifyContent": "flex-start",
         },
       ]
     }
@@ -379,47 +360,28 @@ exports[`Rendering renders without crashing 1`] = `
         </View>
       </View>
     </View>
-    <RCTScrollView
-      collapsable={false}
-      contentContainerStyle={
-        Object {
-          "alignSelf": "stretch",
-          "paddingHorizontal": 16,
-        }
-      }
-      data={Array []}
-      disableVirtualization={false}
-      getItem={[Function]}
-      getItemCount={[Function]}
-      horizontal={false}
-      initialNumToRender={10}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={10}
-      onContentSizeChange={[Function]}
-      onEndReachedThreshold={2}
-      onGestureHandlerEvent={[Function]}
-      onGestureHandlerStateChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      renderScrollComponent={[Function]}
-      scrollEventThrottle={50}
-      stickyHeaderIndices={Array []}
+    <View
       style={
         Object {
-          "alignSelf": "stretch",
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "transparent",
+          "flex": 1,
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "position": "absolute",
+          "width": "100%",
         }
       }
-      updateCellsBatchingPeriod={50}
-      viewabilityConfigCallbackPairs={Array []}
-      windowSize={21}
     >
-      <View />
-    </RCTScrollView>
+      <ActivityIndicator
+        animating={true}
+        color="#969696"
+        hidesWhenStopped={true}
+        size="large"
+      />
+    </View>
   </RCTSafeAreaView>
 </View>
 `;
