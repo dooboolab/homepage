@@ -116,7 +116,7 @@ exports[`Render renders without crashing 1`] = `
                 "justifyContent": "center",
               },
               Object {
-                "marginHorizontal": 10,
+                "padding": 12,
               },
             ]
           }
@@ -125,7 +125,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#B446BF",
                   "fontSize": 18,
                   "paddingBottom": 0,
                   "paddingLeft": 28,
@@ -155,7 +155,7 @@ exports[`Render renders without crashing 1`] = `
                 "justifyContent": "center",
               },
               Object {
-                "marginHorizontal": 10,
+                "padding": 12,
               },
             ]
           }
@@ -164,7 +164,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#B446BF",
                   "fontSize": 18,
                   "paddingBottom": 0,
                   "paddingLeft": 28,
@@ -194,7 +194,7 @@ exports[`Render renders without crashing 1`] = `
                 "justifyContent": "center",
               },
               Object {
-                "marginHorizontal": 10,
+                "padding": 12,
               },
             ]
           }
@@ -203,7 +203,7 @@ exports[`Render renders without crashing 1`] = `
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#B446BF",
                   "fontSize": 18,
                   "paddingBottom": 0,
                   "paddingLeft": 28,
