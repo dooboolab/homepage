@@ -148,7 +148,13 @@ const TodoList: FC<TodoListProps> = ({
           marginLeft: 32,
           marginBottom: 8,
         }}>
-        <Text style={todo.done && {...textDoneStyle}}>
+        <Text
+          style={[
+            {
+              color: theme.text,
+            },
+            todo.done && {...textDoneStyle},
+          ]}>
           {formatDistance(todo.createdAt, new Date(), {
             addSuffix: true,
           })}
