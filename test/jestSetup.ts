@@ -1,5 +1,3 @@
-import 'react-native-gesture-handler/jestSetup';
-
 import {createStackNavigator} from '@react-navigation/stack';
 // import {GlobalWithFetchMock} from 'jest-fetch-mock';
 import {initFbt} from '../src/utils/fbt';
@@ -9,8 +7,6 @@ import {initFbt} from '../src/utils/fbt';
  * https://gist.github.com/MoOx/08b465c3eac9e36e683929532472d1e0
  */
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
-
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');

@@ -41,8 +41,6 @@ type Props = {
   navigation: RootStackNavigationProps<'ProfileEdit'>;
 };
 
-const regURL = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
-
 const ProfileEdit: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
   const inset = useSafeAreaInsets();
