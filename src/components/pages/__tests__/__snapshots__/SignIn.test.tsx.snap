@@ -180,12 +180,27 @@ exports[`Interaction should simulate onClick 1`] = `
         }
       >
         <View
+          animationSpeed={300}
+          circleColor="white"
+          disabled={false}
+          icon={null}
+          isOn={false}
+          labelStyle={Object {}}
+          offColor="#ecf0f1"
+          onColor="#D3D8E8"
+          onToggle={[Function]}
+          size="medium"
           style={
             Object {
               "alignItems": "center",
               "flexDirection": "row",
             }
           }
+          thumbOffStyle={Object {}}
+          thumbOnStyle={Object {}}
+          trackOffStyle={Object {}}
+          trackOnStyle={Object {}}
+          useNativeDriver={true}
         >
           <View
             activeOpacity={0.8}
@@ -854,12 +869,27 @@ exports[`Rendering renders without crashing 1`] = `
         }
       >
         <View
+          animationSpeed={300}
+          circleColor="white"
+          disabled={false}
+          icon={null}
+          isOn={false}
+          labelStyle={Object {}}
+          offColor="#ecf0f1"
+          onColor="#D3D8E8"
+          onToggle={[Function]}
+          size="medium"
           style={
             Object {
               "alignItems": "center",
               "flexDirection": "row",
             }
           }
+          thumbOffStyle={Object {}}
+          thumbOnStyle={Object {}}
+          trackOffStyle={Object {}}
+          trackOnStyle={Object {}}
+          useNativeDriver={true}
         >
           <View
             activeOpacity={0.8}
