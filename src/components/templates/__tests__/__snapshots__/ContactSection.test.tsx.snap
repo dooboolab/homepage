@@ -9,6 +9,7 @@ exports[`Interaction should simulate onClick 1`] = `
         "backgroundColor": "#FFFFFF",
         "minHeight": 600,
       },
+      undefined,
     ]
   }
 >
@@ -28,6 +29,7 @@ exports[`Interaction should simulate onClick 1`] = `
           "paddingRight": 24,
           "paddingTop": 0,
         },
+        undefined,
       ]
     }
   >
@@ -69,6 +71,7 @@ exports[`Interaction should simulate onClick 1`] = `
             "flexDirection": "column",
             "justifyContent": "center",
           },
+          undefined,
         ]
       }
     >
@@ -86,6 +89,7 @@ exports[`Interaction should simulate onClick 1`] = `
               "maxWidth": "60%",
               "textAlign": "center",
             },
+            undefined,
           ]
         }
       >
@@ -100,6 +104,7 @@ exports[`Interaction should simulate onClick 1`] = `
               "marginTop": 56,
               "width": "86%",
             },
+            undefined,
           ]
         }
       >
@@ -114,9 +119,18 @@ exports[`Interaction should simulate onClick 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -126,6 +140,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -142,9 +157,18 @@ exports[`Interaction should simulate onClick 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -154,6 +178,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -172,9 +197,18 @@ exports[`Interaction should simulate onClick 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -184,6 +218,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -214,14 +249,16 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Object {
-                  "backgroundColor": "#00BA90",
-                  "borderRadius": 20,
-                  "height": 44,
-                  "paddingHorizontal": 40,
-                },
-                false,
-                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "#00BA90",
+                    "borderRadius": 20,
+                    "height": 44,
+                    "paddingHorizontal": 40,
+                  },
+                  false,
+                  undefined,
+                ],
               ]
             }
             testID="button-view"
@@ -233,12 +270,14 @@ exports[`Interaction should simulate onClick 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 16,
-                  },
-                  undefined,
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "avenir",
+                      "fontSize": 16,
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >
@@ -261,6 +300,7 @@ exports[`Rendering renders without crashing 1`] = `
         "backgroundColor": "#FFFFFF",
         "minHeight": 600,
       },
+      undefined,
     ]
   }
 >
@@ -280,6 +320,7 @@ exports[`Rendering renders without crashing 1`] = `
           "paddingRight": 24,
           "paddingTop": 0,
         },
+        undefined,
       ]
     }
   >
@@ -321,6 +362,7 @@ exports[`Rendering renders without crashing 1`] = `
             "flexDirection": "column",
             "justifyContent": "center",
           },
+          undefined,
         ]
       }
     >
@@ -338,6 +380,7 @@ exports[`Rendering renders without crashing 1`] = `
               "maxWidth": "60%",
               "textAlign": "center",
             },
+            undefined,
           ]
         }
       >
@@ -352,6 +395,7 @@ exports[`Rendering renders without crashing 1`] = `
               "marginTop": 56,
               "width": "86%",
             },
+            undefined,
           ]
         }
       >
@@ -366,9 +410,18 @@ exports[`Rendering renders without crashing 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -378,6 +431,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -394,9 +448,18 @@ exports[`Rendering renders without crashing 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -406,6 +469,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -424,9 +488,18 @@ exports[`Rendering renders without crashing 1`] = `
               Object {
                 "alignSelf": "stretch",
                 "backgroundColor": "#D3D8E8",
-                "borderColor": "#393D7A",
-                "borderRadius": 10,
-                "borderWidth": 1,
+                "borderBottomColor": "#393D7A",
+                "borderBottomLeftRadius": 10,
+                "borderBottomRightRadius": 10,
+                "borderBottomWidth": 1,
+                "borderLeftColor": "#393D7A",
+                "borderLeftWidth": 1,
+                "borderRightColor": "#393D7A",
+                "borderRightWidth": 1,
+                "borderTopColor": "#393D7A",
+                "borderTopLeftRadius": 10,
+                "borderTopRightRadius": 10,
+                "borderTopWidth": 1,
                 "color": "#000000",
                 "fontSize": 14,
                 "marginBottom": 12,
@@ -436,6 +509,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 18,
                 "paddingTop": 16,
               },
+              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -466,14 +540,16 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Object {
-                  "backgroundColor": "#00BA90",
-                  "borderRadius": 20,
-                  "height": 44,
-                  "paddingHorizontal": 40,
-                },
-                false,
-                undefined,
+                Array [
+                  Object {
+                    "backgroundColor": "#00BA90",
+                    "borderRadius": 20,
+                    "height": 44,
+                    "paddingHorizontal": 40,
+                  },
+                  false,
+                  undefined,
+                ],
               ]
             }
             testID="button-view"
@@ -485,12 +561,14 @@ exports[`Rendering renders without crashing 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 16,
-                  },
-                  undefined,
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "avenir",
+                      "fontSize": 16,
+                    },
+                    undefined,
+                  ],
                 ]
               }
             >

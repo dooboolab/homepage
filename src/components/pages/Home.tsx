@@ -10,7 +10,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native';
 import StorySection from '../templates/StorySection';
 import WorkSection from '../templates/WorkSection';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 import {useNavigation} from '@react-navigation/native';
 import {withScreen} from '../../utils/wrapper';
 

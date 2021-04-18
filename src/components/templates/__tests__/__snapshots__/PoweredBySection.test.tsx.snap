@@ -12,6 +12,7 @@ exports[`Interaction should simulate onClick 1`] = `
         "justifyContent": "center",
         "minHeight": 160,
       },
+      undefined,
     ]
   }
 >
@@ -86,10 +87,12 @@ exports[`Interaction should simulate onClick 1`] = `
               "fontSize": 18,
               "textDecorationLine": "underline",
             },
-            false,
-            Object {
-              "color": "#B446BF",
-            },
+            Array [
+              false,
+              Object {
+                "color": "#B446BF",
+              },
+            ],
           ]
         }
       >
@@ -112,6 +115,7 @@ exports[`Rendering renders without crashing 1`] = `
         "justifyContent": "center",
         "minHeight": 160,
       },
+      undefined,
     ]
   }
 >
@@ -186,10 +190,12 @@ exports[`Rendering renders without crashing 1`] = `
               "fontSize": 18,
               "textDecorationLine": "underline",
             },
-            false,
-            Object {
-              "color": "#B446BF",
-            },
+            Array [
+              false,
+              Object {
+                "color": "#B446BF",
+              },
+            ],
           ]
         }
       >

@@ -15,6 +15,7 @@ exports[`Interaction should simulate onClick 1`] = `
         "paddingRight": 0,
         "paddingTop": 80,
       },
+      undefined,
     ]
   }
 >
@@ -29,6 +30,7 @@ exports[`Interaction should simulate onClick 1`] = `
           "maxWidth": "60%",
           "textAlign": "center",
         },
+        undefined,
       ]
     }
   >
@@ -119,11 +121,13 @@ exports[`Interaction should simulate onClick 1`] = `
             "paddingRight": 12,
             "paddingTop": 8,
           },
-          Object {
-            "backgroundColor": "#FFFFFF",
-          },
-          false,
-          undefined,
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+            },
+            false,
+            undefined,
+          ],
         ]
       }
       testID="button-view"
@@ -135,11 +139,13 @@ exports[`Interaction should simulate onClick 1`] = `
               "color": "white",
               "fontSize": 14,
             },
-            Object {
-              "color": "#00BA90",
-              "fontSize": 14,
-            },
-            undefined,
+            Array [
+              Object {
+                "color": "#00BA90",
+                "fontSize": 14,
+              },
+              undefined,
+            ],
           ]
         }
       >
@@ -165,6 +171,7 @@ exports[`Rendering renders without crashing 1`] = `
         "paddingRight": 0,
         "paddingTop": 80,
       },
+      undefined,
     ]
   }
 >
@@ -179,6 +186,7 @@ exports[`Rendering renders without crashing 1`] = `
           "maxWidth": "60%",
           "textAlign": "center",
         },
+        undefined,
       ]
     }
   >
@@ -269,11 +277,13 @@ exports[`Rendering renders without crashing 1`] = `
             "paddingRight": 12,
             "paddingTop": 8,
           },
-          Object {
-            "backgroundColor": "#FFFFFF",
-          },
-          false,
-          undefined,
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+            },
+            false,
+            undefined,
+          ],
         ]
       }
       testID="button-view"
@@ -285,11 +295,13 @@ exports[`Rendering renders without crashing 1`] = `
               "color": "white",
               "fontSize": 14,
             },
-            Object {
-              "color": "#00BA90",
-              "fontSize": 14,
-            },
-            undefined,
+            Array [
+              Object {
+                "color": "#00BA90",
+                "fontSize": 14,
+              },
+              undefined,
+            ],
           ]
         }
       >

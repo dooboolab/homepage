@@ -24,6 +24,7 @@ exports[`Interaction should simulate onClick 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
+        undefined,
       ]
     }
   >
@@ -49,6 +50,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingTop": 0,
                 "width": "100%",
               },
+              undefined,
             ]
           }
         >
@@ -61,6 +63,7 @@ exports[`Interaction should simulate onClick 1`] = `
                   "marginBottom": 28,
                   "marginTop": 40,
                 },
+                undefined,
               ]
             }
           >
@@ -432,12 +435,14 @@ exports[`Interaction should simulate onClick 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 8,
                   },
-                  Object {
-                    "alignSelf": "stretch",
-                    "borderRadius": 30,
-                  },
-                  false,
-                  undefined,
+                  Array [
+                    Object {
+                      "alignSelf": "stretch",
+                      "borderRadius": 30,
+                    },
+                    false,
+                    undefined,
+                  ],
                 ]
               }
               testID="button-view"
@@ -449,11 +454,13 @@ exports[`Interaction should simulate onClick 1`] = `
                       "color": "white",
                       "fontSize": 14,
                     },
-                    Object {
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 8,
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "paddingHorizontal": 20,
+                        "paddingVertical": 8,
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -487,15 +494,17 @@ exports[`Interaction should simulate onClick 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 8,
                   },
-                  Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "#000000",
-                    "borderRadius": 30,
-                    "borderWidth": 1,
-                  },
-                  false,
-                  undefined,
+                  Array [
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#000000",
+                      "borderRadius": 30,
+                      "borderWidth": 1,
+                    },
+                    false,
+                    undefined,
+                  ],
                 ]
               }
               testID="button-view"
@@ -507,12 +516,14 @@ exports[`Interaction should simulate onClick 1`] = `
                       "color": "white",
                       "fontSize": 14,
                     },
-                    Object {
-                      "color": "#000000",
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 8,
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "paddingHorizontal": 20,
+                        "paddingVertical": 8,
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -551,6 +562,7 @@ exports[`Rendering renders without crashing 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
+        undefined,
       ]
     }
   >
@@ -576,6 +588,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingTop": 0,
                 "width": "100%",
               },
+              undefined,
             ]
           }
         >
@@ -588,6 +601,7 @@ exports[`Rendering renders without crashing 1`] = `
                   "marginBottom": 28,
                   "marginTop": 40,
                 },
+                undefined,
               ]
             }
           >
@@ -959,12 +973,14 @@ exports[`Rendering renders without crashing 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 8,
                   },
-                  Object {
-                    "alignSelf": "stretch",
-                    "borderRadius": 30,
-                  },
-                  false,
-                  undefined,
+                  Array [
+                    Object {
+                      "alignSelf": "stretch",
+                      "borderRadius": 30,
+                    },
+                    false,
+                    undefined,
+                  ],
                 ]
               }
               testID="button-view"
@@ -976,11 +992,13 @@ exports[`Rendering renders without crashing 1`] = `
                       "color": "white",
                       "fontSize": 14,
                     },
-                    Object {
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 8,
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "paddingHorizontal": 20,
+                        "paddingVertical": 8,
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >
@@ -1014,15 +1032,17 @@ exports[`Rendering renders without crashing 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 8,
                   },
-                  Object {
-                    "alignSelf": "stretch",
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "#000000",
-                    "borderRadius": 30,
-                    "borderWidth": 1,
-                  },
-                  false,
-                  undefined,
+                  Array [
+                    Object {
+                      "alignSelf": "stretch",
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#000000",
+                      "borderRadius": 30,
+                      "borderWidth": 1,
+                    },
+                    false,
+                    undefined,
+                  ],
                 ]
               }
               testID="button-view"
@@ -1034,12 +1054,14 @@ exports[`Rendering renders without crashing 1`] = `
                       "color": "white",
                       "fontSize": 14,
                     },
-                    Object {
-                      "color": "#000000",
-                      "paddingHorizontal": 20,
-                      "paddingVertical": 8,
-                    },
-                    undefined,
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "paddingHorizontal": 20,
+                        "paddingVertical": 8,
+                      },
+                      undefined,
+                    ],
                   ]
                 }
               >

@@ -24,6 +24,7 @@ exports[`Interaction should simulate onClick 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
+        undefined,
       ]
     }
   >
@@ -143,9 +144,11 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 12,
                 "paddingTop": 8,
               },
-              undefined,
-              false,
-              undefined,
+              Array [
+                undefined,
+                false,
+                undefined,
+              ],
             ]
           }
           testID="button-view"
@@ -157,8 +160,10 @@ exports[`Interaction should simulate onClick 1`] = `
                   "color": "white",
                   "fontSize": 14,
                 },
-                undefined,
-                undefined,
+                Array [
+                  undefined,
+                  undefined,
+                ],
               ]
             }
           >
@@ -217,6 +222,7 @@ exports[`Rendering renders without crashing 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
+        undefined,
       ]
     }
   >
@@ -336,9 +342,11 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 12,
                 "paddingTop": 8,
               },
-              undefined,
-              false,
-              undefined,
+              Array [
+                undefined,
+                false,
+                undefined,
+              ],
             ]
           }
           testID="button-view"
@@ -350,8 +358,10 @@ exports[`Rendering renders without crashing 1`] = `
                   "color": "white",
                   "fontSize": 14,
                 },
-                undefined,
-                undefined,
+                Array [
+                  undefined,
+                  undefined,
+                ],
               ]
             }
           >

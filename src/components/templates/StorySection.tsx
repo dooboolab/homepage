@@ -1,7 +1,7 @@
 import {Button, useTheme} from 'dooboo-ui';
 import {Description, SubTitle, Title} from '../uis/Typography';
 import React, {FC} from 'react';
-import styled, {css} from 'styled-components/native';
+import styled, {css} from '@emotion/native';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';

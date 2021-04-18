@@ -8,7 +8,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import {sendPasswordResetEmail} from '../../services/firebase';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 

@@ -1,9 +1,9 @@
 import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import type {FC, ReactElement, RefObject} from 'react';
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../utils/Icons';
-import {Image, Platform, ScrollView, View} from 'react-native';
+import {Image, Platform, ScrollView} from 'react-native';
 import React, {useState} from 'react';
-import styled, {css} from 'styled-components/native';
+import styled, {css} from '@emotion/native';
 
 import Hoverable from '../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';
@@ -47,7 +47,9 @@ const Logo = styled.Image`
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
-    css`
+    //! Adhoc: Putting `css` underneath cause typing errors
+    //!        which happens in `Image` tag.
+    `
       width: 112px;
       height: 48px;
       align-self: stretch;

@@ -1,9 +1,11 @@
-import 'styled-components';
-import type {Theme} from './utils/theme';
-import type {DoobooTheme, Theme as DoobooTheme} from 'dooboo-ui';
+import '@emotion/react';
+import type {Theme as CustomTheme} from './utils/theme';
+import {DoobooTheme} from 'dooboo-ui';
 
-declare module 'styled-components' {
-  export interface DefaultTheme extends Theme, DoobooTheme {
+type CompositeTheme = DoobooTheme & CustomTheme;
+
+declare module '@emotion/react' {
+  export interface Theme extends CompositeTheme {
     isMobile?: boolean;
     isTablet?: boolean;
     isDesktop?: boolean;

@@ -18,7 +18,7 @@ import {colors} from '../../utils/theme';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
 import {launchImageLibrary} from '../../utils/ImagePicker';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {withScreen} from '../../utils/wrapper';
 

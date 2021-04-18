@@ -4,7 +4,7 @@ import React, {FC} from 'react';
 
 import Hoverable from '../../utils/Hoverable';
 import {fbt} from 'fbt';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 import {useTheme} from 'dooboo-ui';
 
 // eslint-disable-next-line

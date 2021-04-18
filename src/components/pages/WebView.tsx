@@ -6,7 +6,7 @@ import {
 
 import {RouteProp} from '@react-navigation/core';
 import {WebView} from 'react-native-webview';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 
 const Container = styled.SafeAreaView`
   flex: 1;

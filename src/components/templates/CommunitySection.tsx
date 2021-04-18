@@ -3,7 +3,7 @@ import {Description, SubTitle} from '../uis/Typography';
 import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
 import {Linking, Platform} from 'react-native';
 import React, {FC, ReactElement} from 'react';
-import styled, {css} from 'styled-components/native';
+import styled, {css} from '@emotion/native';
 
 import {fbt} from 'fbt';
 
