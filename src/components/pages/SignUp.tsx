@@ -86,15 +86,15 @@ const SignIn: FC<Props> = ({navigation}) => {
       );
 
     if (!password)
-      setErrorPassword(fbt('Password is missing', 'password missing'));
+      return setErrorPassword(fbt('Password is missing', 'password missing'));
 
     if (password !== confirmPassword)
-      setErrorPasswordConfirm(
+      return setErrorPasswordConfirm(
         fbt('Password does not match', 'password does not match'),
       );
 
     if (!displayName)
-      setErrorDisplayName(
+      return setErrorDisplayName(
         fbt('Please enter display name', 'enter display name'),
       );
 

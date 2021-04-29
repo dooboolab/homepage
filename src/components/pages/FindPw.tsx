@@ -6,7 +6,6 @@ import type {FC} from 'react';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
 import {sendPasswordResetEmail} from '../../services/firebase';
 import styled from '@emotion/native';
 import {validateEmail} from '../../utils/common';
@@ -56,7 +55,7 @@ const FindPw: FC<Props> = ({navigation}) => {
   const {theme} = useTheme();
 
   const [email, setEmail] = useState<string>('');
-  const [emailError, setEmailError] = useState<string>('');
+  const [_, setEmailError] = useState<string>('');
   const [sendingEmail, setSendingEmail] = useState<boolean>(false);
 
   const findPw = async (): Promise<void> => {
