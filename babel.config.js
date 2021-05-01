@@ -6,19 +6,17 @@ const fbtEnumPath = path.join(
   'src/utils/i18n/fbt/.enum_manifest.json',
 );
 
-module.exports = {
+const babel = {
   presets: [
-    'module:metro-react-native-babel-preset',
-    '@babel/preset-typescript',
     [
-      '@babel/preset-react',
-      {runtime: 'automatic', importSource: '@emotion/react'},
+      'module:metro-react-native-babel-preset',
+      {useTransformReactJSXExperimental: true},
     ],
+    '@babel/preset-typescript',
+    ['@babel/preset-react', {runtime: 'automatic'}],
   ],
   plugins: [
     ['module:react-native-dotenv'],
-    'babel-plugin-fbt-runtime',
-    '@babel/plugin-syntax-class-properties',
     [
       'babel-plugin-fbt',
       {
@@ -26,6 +24,17 @@ module.exports = {
         extraOptions: {__self: true},
       },
     ],
+    'babel-plugin-fbt-runtime',
+    [
+      '@babel/plugin-transform-react-jsx',
+      {
+        runtime: 'automatic',
+      },
+    ],
     '@emotion/babel-plugin',
+    'react-native-reanimated/plugin',
+    '@babel/plugin-syntax-class-properties',
   ],
 };
+
+module.exports = babel;
