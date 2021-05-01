@@ -1,6 +1,6 @@
 import {Button, useTheme} from 'dooboo-ui';
 import React, {FC} from 'react';
-import styled, {css} from '@emotion/native';
+import styled, {css} from 'styled-components/native';
 
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {View} from 'react-native';

@@ -7,7 +7,7 @@ import Header from '../uis/Header';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';
 

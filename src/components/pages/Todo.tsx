@@ -11,7 +11,7 @@ import {fbt} from 'fbt';
 import firebase from 'firebase';
 import {getPromotedProductIOS} from 'react-native-iap';
 import produce from 'immer';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {withScreen} from '../../utils/wrapper';
 

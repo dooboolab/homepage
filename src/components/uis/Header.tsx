@@ -3,7 +3,7 @@ import type {FC, ReactElement, RefObject} from 'react';
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../utils/Icons';
 import {Image, Platform, ScrollView} from 'react-native';
 import React, {useState} from 'react';
-import styled, {css} from '@emotion/native';
+import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../utils/Hoverable';
 import ToggleSwitch from 'toggle-switch-react-native';

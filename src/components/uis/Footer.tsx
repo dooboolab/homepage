@@ -4,7 +4,7 @@ import {Description} from './Typography';
 import Hoverable from '../../utils/Hoverable';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from 'dooboo-ui';
 

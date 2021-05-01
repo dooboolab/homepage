@@ -8,13 +8,7 @@ const fbtEnumPath = path.join(
 
 const babel = {
   presets: [
-    [
-      'module:metro-react-native-babel-preset',
-      {
-        runtime: 'automatic',
-        importSource: '@emotion/react',
-      },
-    ],
+    ['module:metro-react-native-babel-preset'],
     '@babel/preset-typescript',
   ],
   plugins: [
@@ -28,7 +22,7 @@ const babel = {
     ],
     'babel-plugin-fbt-runtime',
     '@babel/plugin-syntax-class-properties',
-    '@emotion/babel-plugin',
+    'babel-plugin-styled-components',
     'react-native-reanimated/plugin',
   ],
 };

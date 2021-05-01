@@ -8,7 +8,7 @@ import {Text, View} from 'react-native';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/core';
 import {withScreen} from '../../utils/wrapper';
 

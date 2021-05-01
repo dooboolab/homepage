@@ -1,7 +1,7 @@
 import React, {FC, ReactElement} from 'react';
 
 import {Platform} from 'react-native';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useTheme} from 'dooboo-ui';
 
 const Container = styled.View`

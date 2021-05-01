@@ -15,7 +15,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';

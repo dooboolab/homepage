@@ -30,7 +30,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {User} from '../../types';
 import {fbt} from 'fbt';
 import firebase from 'firebase';
-import styled from '@emotion/native';
+import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {useTheme} from 'dooboo-ui';
 import {withScreen} from '../../utils/wrapper';

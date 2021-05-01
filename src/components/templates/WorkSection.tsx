@@ -9,7 +9,7 @@ import {
 } from '../../utils/Icons';
 import {Linking, Platform, View} from 'react-native';
 import React, {FC, ReactElement} from 'react';
-import styled, {css} from '@emotion/native';
+import styled, {css} from 'styled-components/native';
 
 import {fbt} from 'fbt';
 
