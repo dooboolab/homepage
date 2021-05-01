@@ -15,7 +15,6 @@ exports[`Interaction should simulate onClick 1`] = `
         "paddingRight": 0,
         "paddingTop": 80,
       },
-      undefined,
     ]
   }
 >
@@ -70,7 +69,6 @@ exports[`Interaction should simulate onClick 1`] = `
           "paddingRight": 80,
           "paddingTop": 36,
         },
-        undefined,
       ]
     }
   >
@@ -87,7 +85,6 @@ exports[`Interaction should simulate onClick 1`] = `
             "paddingRight": 12,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -102,7 +99,6 @@ exports[`Interaction should simulate onClick 1`] = `
               "justifyContent": "center",
               "width": 280,
             },
-            undefined,
           ]
         }
       >
@@ -160,20 +156,18 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#00000070",
-                    "borderColor": "#00BA90",
-                    "borderRadius": 12,
-                    "borderWidth": 2,
-                    "height": 26,
-                    "justifyContent": "center",
-                    "paddingHorizontal": 20,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#00000070",
+                  "borderColor": "#00BA90",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "height": 26,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 20,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -185,18 +179,16 @@ exports[`Interaction should simulate onClick 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "alignSelf": "center",
-                      "color": "#00BA90",
-                      "fontFamily": "avenir",
-                      "fontSize": 10,
-                      "paddingBottom": 12,
-                      "paddingVertical": 0,
-                      "textAlign": "center",
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "alignSelf": "center",
+                    "color": "#00BA90",
+                    "fontFamily": "avenir",
+                    "fontSize": 10,
+                    "paddingBottom": 12,
+                    "paddingVertical": 0,
+                    "textAlign": "center",
+                  },
+                  undefined,
                 ]
               }
             >
@@ -219,7 +211,6 @@ exports[`Interaction should simulate onClick 1`] = `
             "paddingRight": 12,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -234,7 +225,6 @@ exports[`Interaction should simulate onClick 1`] = `
               "justifyContent": "center",
               "width": 280,
             },
-            undefined,
           ]
         }
       >
@@ -292,20 +282,18 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#00000070",
-                    "borderColor": "#00BA90",
-                    "borderRadius": 12,
-                    "borderWidth": 2,
-                    "height": 26,
-                    "justifyContent": "center",
-                    "paddingHorizontal": 20,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#00000070",
+                  "borderColor": "#00BA90",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "height": 26,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 20,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -317,18 +305,16 @@ exports[`Interaction should simulate onClick 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "alignSelf": "center",
-                      "color": "#00BA90",
-                      "fontFamily": "avenir",
-                      "fontSize": 10,
-                      "paddingBottom": 12,
-                      "paddingVertical": 0,
-                      "textAlign": "center",
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "alignSelf": "center",
+                    "color": "#00BA90",
+                    "fontFamily": "avenir",
+                    "fontSize": 10,
+                    "paddingBottom": 12,
+                    "paddingVertical": 0,
+                    "textAlign": "center",
+                  },
+                  undefined,
                 ]
               }
             >
@@ -357,7 +343,6 @@ exports[`Rendering renders without crashing 1`] = `
         "paddingRight": 0,
         "paddingTop": 80,
       },
-      undefined,
     ]
   }
 >
@@ -412,7 +397,6 @@ exports[`Rendering renders without crashing 1`] = `
           "paddingRight": 80,
           "paddingTop": 36,
         },
-        undefined,
       ]
     }
   >
@@ -429,7 +413,6 @@ exports[`Rendering renders without crashing 1`] = `
             "paddingRight": 12,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -444,7 +427,6 @@ exports[`Rendering renders without crashing 1`] = `
               "justifyContent": "center",
               "width": 280,
             },
-            undefined,
           ]
         }
       >
@@ -502,20 +484,18 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#00000070",
-                    "borderColor": "#00BA90",
-                    "borderRadius": 12,
-                    "borderWidth": 2,
-                    "height": 26,
-                    "justifyContent": "center",
-                    "paddingHorizontal": 20,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#00000070",
+                  "borderColor": "#00BA90",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "height": 26,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 20,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -527,18 +507,16 @@ exports[`Rendering renders without crashing 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "alignSelf": "center",
-                      "color": "#00BA90",
-                      "fontFamily": "avenir",
-                      "fontSize": 10,
-                      "paddingBottom": 12,
-                      "paddingVertical": 0,
-                      "textAlign": "center",
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "alignSelf": "center",
+                    "color": "#00BA90",
+                    "fontFamily": "avenir",
+                    "fontSize": 10,
+                    "paddingBottom": 12,
+                    "paddingVertical": 0,
+                    "textAlign": "center",
+                  },
+                  undefined,
                 ]
               }
             >
@@ -561,7 +539,6 @@ exports[`Rendering renders without crashing 1`] = `
             "paddingRight": 12,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -576,7 +553,6 @@ exports[`Rendering renders without crashing 1`] = `
               "justifyContent": "center",
               "width": 280,
             },
-            undefined,
           ]
         }
       >
@@ -634,20 +610,18 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#00000070",
-                    "borderColor": "#00BA90",
-                    "borderRadius": 12,
-                    "borderWidth": 2,
-                    "height": 26,
-                    "justifyContent": "center",
-                    "paddingHorizontal": 20,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#00000070",
+                  "borderColor": "#00BA90",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "height": 26,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 20,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -659,18 +633,16 @@ exports[`Rendering renders without crashing 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "alignSelf": "center",
-                      "color": "#00BA90",
-                      "fontFamily": "avenir",
-                      "fontSize": 10,
-                      "paddingBottom": 12,
-                      "paddingVertical": 0,
-                      "textAlign": "center",
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "alignSelf": "center",
+                    "color": "#00BA90",
+                    "fontFamily": "avenir",
+                    "fontSize": 10,
+                    "paddingBottom": 12,
+                    "paddingVertical": 0,
+                    "textAlign": "center",
+                  },
+                  undefined,
                 ]
               }
             >

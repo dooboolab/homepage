@@ -8,7 +8,6 @@ exports[`Interaction should simulate onClick 1`] = `
         "alignSelf": "stretch",
         "minHeight": 380,
       },
-      undefined,
     ]
   }
 >
@@ -28,7 +27,6 @@ exports[`Interaction should simulate onClick 1`] = `
           "paddingRight": 24,
           "paddingTop": 0,
         },
-        undefined,
       ]
     }
   >
@@ -72,7 +70,6 @@ exports[`Interaction should simulate onClick 1`] = `
             "maxWidth": "60%",
             "textAlign": "center",
           },
-          undefined,
         ]
       }
     >
@@ -90,7 +87,6 @@ exports[`Interaction should simulate onClick 1`] = `
             "maxWidth": "60%",
             "textAlign": "center",
           },
-          undefined,
         ]
       }
     >
@@ -128,16 +124,14 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 12,
                 "paddingTop": 8,
               },
-              Array [
-                Object {
-                  "backgroundColor": "#00BA90",
-                  "borderRadius": 20,
-                  "height": 40,
-                  "paddingHorizontal": 40,
-                },
-                false,
-                undefined,
-              ],
+              Object {
+                "backgroundColor": "#00BA90",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
+              },
+              false,
+              undefined,
             ]
           }
           testID="button-view"
@@ -149,14 +143,12 @@ exports[`Interaction should simulate onClick 1`] = `
                   "color": "white",
                   "fontSize": 14,
                 },
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 16,
-                  },
-                  undefined,
-                ],
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
               ]
             }
           >
@@ -177,7 +169,6 @@ exports[`Rendering renders without crashing 1`] = `
         "alignSelf": "stretch",
         "minHeight": 380,
       },
-      undefined,
     ]
   }
 >
@@ -197,7 +188,6 @@ exports[`Rendering renders without crashing 1`] = `
           "paddingRight": 24,
           "paddingTop": 0,
         },
-        undefined,
       ]
     }
   >
@@ -241,7 +231,6 @@ exports[`Rendering renders without crashing 1`] = `
             "maxWidth": "60%",
             "textAlign": "center",
           },
-          undefined,
         ]
       }
     >
@@ -259,7 +248,6 @@ exports[`Rendering renders without crashing 1`] = `
             "maxWidth": "60%",
             "textAlign": "center",
           },
-          undefined,
         ]
       }
     >
@@ -297,16 +285,14 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 12,
                 "paddingTop": 8,
               },
-              Array [
-                Object {
-                  "backgroundColor": "#00BA90",
-                  "borderRadius": 20,
-                  "height": 40,
-                  "paddingHorizontal": 40,
-                },
-                false,
-                undefined,
-              ],
+              Object {
+                "backgroundColor": "#00BA90",
+                "borderRadius": 20,
+                "height": 40,
+                "paddingHorizontal": 40,
+              },
+              false,
+              undefined,
             ]
           }
           testID="button-view"
@@ -318,14 +304,12 @@ exports[`Rendering renders without crashing 1`] = `
                   "color": "white",
                   "fontSize": 14,
                 },
-                Array [
-                  Object {
-                    "color": "#000000",
-                    "fontFamily": "avenir",
-                    "fontSize": 16,
-                  },
-                  undefined,
-                ],
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "avenir",
+                  "fontSize": 16,
+                },
+                undefined,
               ]
             }
           >

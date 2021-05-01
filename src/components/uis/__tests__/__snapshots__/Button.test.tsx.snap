@@ -22,11 +22,9 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
           "paddingRight": 12,
           "paddingTop": 8,
         },
-        Array [
-          undefined,
-          false,
-          undefined,
-        ],
+        undefined,
+        false,
+        undefined,
       ]
     }
     testID="button-view"
@@ -38,10 +36,8 @@ exports[`[Button] [ThemeType.Light] renders without crashing 1`] = `
             "color": "white",
             "fontSize": 14,
           },
-          Array [
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
         ]
       }
     />
@@ -71,11 +67,9 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
           "paddingRight": 12,
           "paddingTop": 8,
         },
-        Array [
-          undefined,
-          false,
-          undefined,
-        ],
+        undefined,
+        false,
+        undefined,
       ]
     }
     testID="button-view"
@@ -87,10 +81,8 @@ exports[`[Button] should render [ThemeType.Dark] without crashing 1`] = `
             "color": "white",
             "fontSize": 14,
           },
-          Array [
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
         ]
       }
     />
@@ -120,11 +112,9 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
           "paddingRight": 12,
           "paddingTop": 8,
         },
-        Array [
-          undefined,
-          false,
-          undefined,
-        ],
+        undefined,
+        false,
+        undefined,
       ]
     }
     testID="button-view"
@@ -136,10 +126,8 @@ exports[`[Button] should render [isDisabled] status without crashing 1`] = `
             "color": "white",
             "fontSize": 14,
           },
-          Array [
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
         ]
       }
     />
@@ -169,11 +157,9 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
           "paddingRight": 12,
           "paddingTop": 8,
         },
-        Array [
-          undefined,
-          false,
-          undefined,
-        ],
+        undefined,
+        false,
+        undefined,
       ]
     }
     testID="button-view"
@@ -185,10 +171,8 @@ exports[`[Button] should render [isLoading] status without crashing 1`] = `
             "color": "white",
             "fontSize": 14,
           },
-          Array [
-            undefined,
-            undefined,
-          ],
+          undefined,
+          undefined,
         ]
       }
     />

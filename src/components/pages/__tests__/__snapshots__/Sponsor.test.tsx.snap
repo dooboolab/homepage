@@ -24,7 +24,6 @@ exports[`Interaction should simulate onClick 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
-        undefined,
       ]
     }
   >
@@ -70,7 +69,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >
@@ -139,7 +137,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >
@@ -207,7 +204,6 @@ exports[`Interaction should simulate onClick 1`] = `
                     Object {
                       "lineHeight": 22,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -223,7 +219,6 @@ exports[`Interaction should simulate onClick 1`] = `
                       "lineHeight": 22,
                       "textDecorationLine": "underline",
                     },
-                    undefined,
                   ]
                 }
                 testID="btn-terms"
@@ -236,7 +231,6 @@ exports[`Interaction should simulate onClick 1`] = `
                     Object {
                       "lineHeight": 22,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -253,7 +247,6 @@ exports[`Interaction should simulate onClick 1`] = `
                       "lineHeight": 22,
                       "textDecorationLine": "underline",
                     },
-                    undefined,
                   ]
                 }
                 testID="btn-privacy"
@@ -270,7 +263,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >
@@ -363,7 +355,6 @@ exports[`Rendering renders without crashing 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
-        undefined,
       ]
     }
   >
@@ -409,7 +400,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >
@@ -478,7 +468,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >
@@ -546,7 +535,6 @@ exports[`Rendering renders without crashing 1`] = `
                     Object {
                       "lineHeight": 22,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -562,7 +550,6 @@ exports[`Rendering renders without crashing 1`] = `
                       "lineHeight": 22,
                       "textDecorationLine": "underline",
                     },
-                    undefined,
                   ]
                 }
                 testID="btn-terms"
@@ -575,7 +562,6 @@ exports[`Rendering renders without crashing 1`] = `
                     Object {
                       "lineHeight": 22,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -592,7 +578,6 @@ exports[`Rendering renders without crashing 1`] = `
                       "lineHeight": 22,
                       "textDecorationLine": "underline",
                     },
-                    undefined,
                   ]
                 }
                 testID="btn-privacy"
@@ -609,7 +594,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "flexDirection": "column",
                   "marginBottom": 40,
                 },
-                undefined,
               ]
             }
           >

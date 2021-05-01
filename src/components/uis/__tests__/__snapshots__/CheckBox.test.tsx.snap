@@ -13,7 +13,6 @@ exports[`Interaction should simulate onClick 1`] = `
         "flexShrink": 1,
         "justifyContent": "flex-start",
       },
-      undefined,
     ]
   }
 >
@@ -35,10 +34,7 @@ exports[`Interaction should simulate onClick 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderBottomWidth": 1,
-            "borderLeftWidth": 1,
-            "borderRightWidth": 1,
-            "borderTopWidth": 1,
+            "borderWidth": 1,
             "height": 16,
             "justifyContent": "center",
             "width": 16,
@@ -96,7 +92,6 @@ exports[`Rendering renders without crashing 1`] = `
         "flexShrink": 1,
         "justifyContent": "flex-start",
       },
-      undefined,
     ]
   }
 >
@@ -118,10 +113,7 @@ exports[`Rendering renders without crashing 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "borderBottomWidth": 1,
-            "borderLeftWidth": 1,
-            "borderRightWidth": 1,
-            "borderTopWidth": 1,
+            "borderWidth": 1,
             "height": 16,
             "justifyContent": "center",
             "width": 16,

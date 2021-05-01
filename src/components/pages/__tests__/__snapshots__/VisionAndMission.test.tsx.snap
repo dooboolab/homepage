@@ -24,7 +24,6 @@ exports[`Interaction should simulate onClick 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
-        undefined,
       ]
     }
   >
@@ -43,7 +42,6 @@ exports[`Interaction should simulate onClick 1`] = `
             "paddingRight": 24,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -86,9 +84,7 @@ exports[`Interaction should simulate onClick 1`] = `
                 "marginTop": 12,
                 "width": 124,
               },
-              Array [
-                false,
-              ],
+              false,
             ]
           }
         />
@@ -101,7 +97,6 @@ exports[`Interaction should simulate onClick 1`] = `
               "flexDirection": "row",
               "marginBottom": 14,
             },
-            undefined,
           ]
         }
       />
@@ -114,7 +109,6 @@ exports[`Interaction should simulate onClick 1`] = `
               "top": 25,
               "width": 80,
             },
-            undefined,
           ]
         }
       >
@@ -138,18 +132,16 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "#B446BF",
-                    "borderRadius": 20,
-                    "borderWidth": 1,
-                    "height": 24,
-                    "width": 68,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "#B446BF",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 24,
+                  "width": 68,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -161,15 +153,13 @@ exports[`Interaction should simulate onClick 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "color": "#B446BF",
-                      "fontSize": 11,
-                      "paddingBottom": 12,
-                      "paddingHorizontal": 0,
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "color": "#B446BF",
+                    "fontSize": 11,
+                    "paddingBottom": 12,
+                    "paddingHorizontal": 0,
+                  },
+                  undefined,
                 ]
               }
             >
@@ -186,7 +176,6 @@ exports[`Interaction should simulate onClick 1`] = `
               "right": 20,
               "top": 25,
             },
-            undefined,
           ]
         }
       >
@@ -276,7 +265,6 @@ exports[`Interaction should simulate onClick 1`] = `
                 "alignSelf": "stretch",
                 "minHeight": 300,
               },
-              undefined,
             ]
           }
         >
@@ -296,7 +284,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 24,
                   "paddingTop": 0,
                 },
-                undefined,
               ]
             }
           >
@@ -387,7 +374,6 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 20,
               },
-              undefined,
             ]
           }
         >
@@ -918,7 +904,6 @@ exports[`Interaction should simulate onClick 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 12,
               },
-              undefined,
             ]
           }
         >
@@ -933,7 +918,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "flexShrink": 1,
                   "justifyContent": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -995,7 +979,6 @@ exports[`Interaction should simulate onClick 1`] = `
                   "paddingRight": 0,
                   "paddingTop": 4,
                 },
-                undefined,
               ]
             }
           >
@@ -1028,9 +1011,7 @@ exports[`Interaction should simulate onClick 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -1067,9 +1048,7 @@ exports[`Interaction should simulate onClick 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -1085,7 +1064,6 @@ exports[`Interaction should simulate onClick 1`] = `
                     "marginTop": 10,
                     "textAlign": "center",
                   },
-                  undefined,
                 ]
               }
             >
@@ -1126,7 +1104,6 @@ exports[`Rendering renders without crashing 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
-        undefined,
       ]
     }
   >
@@ -1145,7 +1122,6 @@ exports[`Rendering renders without crashing 1`] = `
             "paddingRight": 24,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -1188,9 +1164,7 @@ exports[`Rendering renders without crashing 1`] = `
                 "marginTop": 12,
                 "width": 124,
               },
-              Array [
-                false,
-              ],
+              false,
             ]
           }
         />
@@ -1203,7 +1177,6 @@ exports[`Rendering renders without crashing 1`] = `
               "flexDirection": "row",
               "marginBottom": 14,
             },
-            undefined,
           ]
         }
       />
@@ -1216,7 +1189,6 @@ exports[`Rendering renders without crashing 1`] = `
               "top": 25,
               "width": 80,
             },
-            undefined,
           ]
         }
       >
@@ -1240,18 +1212,16 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "#B446BF",
-                    "borderRadius": 20,
-                    "borderWidth": 1,
-                    "height": 24,
-                    "width": 68,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "#B446BF",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 24,
+                  "width": 68,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -1263,15 +1233,13 @@ exports[`Rendering renders without crashing 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "color": "#B446BF",
-                      "fontSize": 11,
-                      "paddingBottom": 12,
-                      "paddingHorizontal": 0,
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "color": "#B446BF",
+                    "fontSize": 11,
+                    "paddingBottom": 12,
+                    "paddingHorizontal": 0,
+                  },
+                  undefined,
                 ]
               }
             >
@@ -1288,7 +1256,6 @@ exports[`Rendering renders without crashing 1`] = `
               "right": 20,
               "top": 25,
             },
-            undefined,
           ]
         }
       >
@@ -1378,7 +1345,6 @@ exports[`Rendering renders without crashing 1`] = `
                 "alignSelf": "stretch",
                 "minHeight": 300,
               },
-              undefined,
             ]
           }
         >
@@ -1398,7 +1364,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 24,
                   "paddingTop": 0,
                 },
-                undefined,
               ]
             }
           >
@@ -1489,7 +1454,6 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 20,
               },
-              undefined,
             ]
           }
         >
@@ -2020,7 +1984,6 @@ exports[`Rendering renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 12,
               },
-              undefined,
             ]
           }
         >
@@ -2035,7 +1998,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "flexShrink": 1,
                   "justifyContent": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -2097,7 +2059,6 @@ exports[`Rendering renders without crashing 1`] = `
                   "paddingRight": 0,
                   "paddingTop": 4,
                 },
-                undefined,
               ]
             }
           >
@@ -2130,9 +2091,7 @@ exports[`Rendering renders without crashing 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -2169,9 +2128,7 @@ exports[`Rendering renders without crashing 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -2187,7 +2144,6 @@ exports[`Rendering renders without crashing 1`] = `
                     "marginTop": 10,
                     "textAlign": "center",
                   },
-                  undefined,
                 ]
               }
             >

@@ -24,7 +24,6 @@ exports[`Render renders without crashing 1`] = `
           "flexShrink": 1,
           "justifyContent": "flex-start",
         },
-        undefined,
       ]
     }
   >
@@ -43,7 +42,6 @@ exports[`Render renders without crashing 1`] = `
             "paddingRight": 24,
             "paddingTop": 0,
           },
-          undefined,
         ]
       }
     >
@@ -86,9 +84,7 @@ exports[`Render renders without crashing 1`] = `
                 "marginTop": 12,
                 "width": 124,
               },
-              Array [
-                false,
-              ],
+              false,
             ]
           }
         />
@@ -101,7 +97,6 @@ exports[`Render renders without crashing 1`] = `
               "flexDirection": "row",
               "marginBottom": 14,
             },
-            undefined,
           ]
         }
       >
@@ -232,7 +227,6 @@ exports[`Render renders without crashing 1`] = `
               "top": 25,
               "width": 80,
             },
-            undefined,
           ]
         }
       >
@@ -256,18 +250,16 @@ exports[`Render renders without crashing 1`] = `
                   "paddingRight": 12,
                   "paddingTop": 8,
                 },
-                Array [
-                  Object {
-                    "backgroundColor": "#FFFFFF",
-                    "borderColor": "#B446BF",
-                    "borderRadius": 20,
-                    "borderWidth": 1,
-                    "height": 24,
-                    "width": 68,
-                  },
-                  false,
-                  undefined,
-                ],
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                  "borderColor": "#B446BF",
+                  "borderRadius": 20,
+                  "borderWidth": 1,
+                  "height": 24,
+                  "width": 68,
+                },
+                false,
+                undefined,
               ]
             }
             testID="button-view"
@@ -279,15 +271,13 @@ exports[`Render renders without crashing 1`] = `
                     "color": "white",
                     "fontSize": 14,
                   },
-                  Array [
-                    Object {
-                      "color": "#B446BF",
-                      "fontSize": 11,
-                      "paddingBottom": 12,
-                      "paddingHorizontal": 0,
-                    },
-                    undefined,
-                  ],
+                  Object {
+                    "color": "#B446BF",
+                    "fontSize": 11,
+                    "paddingBottom": 12,
+                    "paddingHorizontal": 0,
+                  },
+                  undefined,
                 ]
               }
             >
@@ -304,7 +294,6 @@ exports[`Render renders without crashing 1`] = `
               "right": 20,
               "top": 25,
             },
-            undefined,
           ]
         }
       >
@@ -394,7 +383,6 @@ exports[`Render renders without crashing 1`] = `
                 "alignSelf": "stretch",
                 "minHeight": 380,
               },
-              undefined,
             ]
           }
         >
@@ -414,7 +402,6 @@ exports[`Render renders without crashing 1`] = `
                   "paddingRight": 24,
                   "paddingTop": 0,
                 },
-                undefined,
               ]
             }
           >
@@ -458,7 +445,6 @@ exports[`Render renders without crashing 1`] = `
                     "maxWidth": "60%",
                     "textAlign": "center",
                   },
-                  undefined,
                 ]
               }
             >
@@ -476,7 +462,6 @@ exports[`Render renders without crashing 1`] = `
                     "maxWidth": "60%",
                     "textAlign": "center",
                   },
-                  undefined,
                 ]
               }
             >
@@ -514,16 +499,14 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 12,
                         "paddingTop": 8,
                       },
-                      Array [
-                        Object {
-                          "backgroundColor": "#00BA90",
-                          "borderRadius": 20,
-                          "height": 40,
-                          "paddingHorizontal": 40,
-                        },
-                        false,
-                        undefined,
-                      ],
+                      Object {
+                        "backgroundColor": "#00BA90",
+                        "borderRadius": 20,
+                        "height": 40,
+                        "paddingHorizontal": 40,
+                      },
+                      false,
+                      undefined,
                     ]
                   }
                   testID="button-view"
@@ -535,14 +518,12 @@ exports[`Render renders without crashing 1`] = `
                           "color": "white",
                           "fontSize": 14,
                         },
-                        Array [
-                          Object {
-                            "color": "#000000",
-                            "fontFamily": "avenir",
-                            "fontSize": 16,
-                          },
-                          undefined,
-                        ],
+                        Object {
+                          "color": "#000000",
+                          "fontFamily": "avenir",
+                          "fontSize": 16,
+                        },
+                        undefined,
                       ]
                     }
                   >
@@ -567,7 +548,6 @@ exports[`Render renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 80,
               },
-              undefined,
             ]
           }
         >
@@ -582,7 +562,6 @@ exports[`Render renders without crashing 1`] = `
                   "maxWidth": "60%",
                   "textAlign": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -673,13 +652,11 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 8,
                   },
-                  Array [
-                    Object {
-                      "backgroundColor": "#FFFFFF",
-                    },
-                    false,
-                    undefined,
-                  ],
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  },
+                  false,
+                  undefined,
                 ]
               }
               testID="button-view"
@@ -691,13 +668,11 @@ exports[`Render renders without crashing 1`] = `
                       "color": "white",
                       "fontSize": 14,
                     },
-                    Array [
-                      Object {
-                        "color": "#00BA90",
-                        "fontSize": 14,
-                      },
-                      undefined,
-                    ],
+                    Object {
+                      "color": "#00BA90",
+                      "fontSize": 14,
+                    },
+                    undefined,
                   ]
                 }
               >
@@ -720,7 +695,6 @@ exports[`Render renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 80,
               },
-              undefined,
             ]
           }
         >
@@ -775,7 +749,6 @@ exports[`Render renders without crashing 1`] = `
                   "paddingRight": 80,
                   "paddingTop": 36,
                 },
-                undefined,
               ]
             }
           >
@@ -792,7 +765,6 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 0,
                   },
-                  undefined,
                 ]
               }
             >
@@ -807,7 +779,6 @@ exports[`Render renders without crashing 1`] = `
                       "justifyContent": "center",
                       "width": 280,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -865,20 +836,18 @@ exports[`Render renders without crashing 1`] = `
                           "paddingRight": 12,
                           "paddingTop": 8,
                         },
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "#00000070",
-                            "borderColor": "#00BA90",
-                            "borderRadius": 12,
-                            "borderWidth": 2,
-                            "height": 26,
-                            "justifyContent": "center",
-                            "paddingHorizontal": 20,
-                          },
-                          false,
-                          undefined,
-                        ],
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#00000070",
+                          "borderColor": "#00BA90",
+                          "borderRadius": 12,
+                          "borderWidth": 2,
+                          "height": 26,
+                          "justifyContent": "center",
+                          "paddingHorizontal": 20,
+                        },
+                        false,
+                        undefined,
                       ]
                     }
                     testID="button-view"
@@ -890,18 +859,16 @@ exports[`Render renders without crashing 1`] = `
                             "color": "white",
                             "fontSize": 14,
                           },
-                          Array [
-                            Object {
-                              "alignSelf": "center",
-                              "color": "#00BA90",
-                              "fontFamily": "avenir",
-                              "fontSize": 10,
-                              "paddingBottom": 12,
-                              "paddingVertical": 0,
-                              "textAlign": "center",
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "alignSelf": "center",
+                            "color": "#00BA90",
+                            "fontFamily": "avenir",
+                            "fontSize": 10,
+                            "paddingBottom": 12,
+                            "paddingVertical": 0,
+                            "textAlign": "center",
+                          },
+                          undefined,
                         ]
                       }
                     >
@@ -924,7 +891,6 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 12,
                     "paddingTop": 0,
                   },
-                  undefined,
                 ]
               }
             >
@@ -939,7 +905,6 @@ exports[`Render renders without crashing 1`] = `
                       "justifyContent": "center",
                       "width": 280,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -997,20 +962,18 @@ exports[`Render renders without crashing 1`] = `
                           "paddingRight": 12,
                           "paddingTop": 8,
                         },
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "#00000070",
-                            "borderColor": "#00BA90",
-                            "borderRadius": 12,
-                            "borderWidth": 2,
-                            "height": 26,
-                            "justifyContent": "center",
-                            "paddingHorizontal": 20,
-                          },
-                          false,
-                          undefined,
-                        ],
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#00000070",
+                          "borderColor": "#00BA90",
+                          "borderRadius": 12,
+                          "borderWidth": 2,
+                          "height": 26,
+                          "justifyContent": "center",
+                          "paddingHorizontal": 20,
+                        },
+                        false,
+                        undefined,
                       ]
                     }
                     testID="button-view"
@@ -1022,18 +985,16 @@ exports[`Render renders without crashing 1`] = `
                             "color": "white",
                             "fontSize": 14,
                           },
-                          Array [
-                            Object {
-                              "alignSelf": "center",
-                              "color": "#00BA90",
-                              "fontFamily": "avenir",
-                              "fontSize": 10,
-                              "paddingBottom": 12,
-                              "paddingVertical": 0,
-                              "textAlign": "center",
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "alignSelf": "center",
+                            "color": "#00BA90",
+                            "fontFamily": "avenir",
+                            "fontSize": 10,
+                            "paddingBottom": 12,
+                            "paddingVertical": 0,
+                            "textAlign": "center",
+                          },
+                          undefined,
                         ]
                       }
                     >
@@ -1059,7 +1020,6 @@ exports[`Render renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 80,
               },
-              undefined,
             ]
           }
         >
@@ -1074,7 +1034,6 @@ exports[`Render renders without crashing 1`] = `
                   "maxWidth": "60%",
                   "textAlign": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -1109,7 +1068,6 @@ exports[`Render renders without crashing 1`] = `
                   "minHeight": 360,
                   "width": "80%",
                 },
-                undefined,
               ]
             }
           >
@@ -1120,10 +1078,7 @@ exports[`Render renders without crashing 1`] = `
                     "alignItems": "center",
                     "alignSelf": "stretch",
                     "backgroundColor": "#EAEBF4",
-                    "borderBottomLeftRadius": 20,
-                    "borderBottomRightRadius": 20,
-                    "borderTopLeftRadius": 20,
-                    "borderTopRightRadius": 20,
+                    "borderRadius": 20,
                     "flexBasis": 0,
                     "flexDirection": "column",
                     "flexGrow": 1,
@@ -1139,7 +1094,6 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 0,
                     "paddingTop": 28,
                   },
-                  undefined,
                 ]
               }
             >
@@ -1178,7 +1132,6 @@ exports[`Render renders without crashing 1`] = `
                       "maxWidth": "70%",
                       "textAlign": "center",
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1193,10 +1146,7 @@ exports[`Render renders without crashing 1`] = `
                     "alignItems": "center",
                     "alignSelf": "stretch",
                     "backgroundColor": "#EAEBF4",
-                    "borderBottomLeftRadius": 20,
-                    "borderBottomRightRadius": 20,
-                    "borderTopLeftRadius": 20,
-                    "borderTopRightRadius": 20,
+                    "borderRadius": 20,
                     "flexBasis": 0,
                     "flexDirection": "column",
                     "flexGrow": 1,
@@ -1212,7 +1162,6 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 0,
                     "paddingTop": 28,
                   },
-                  undefined,
                 ]
               }
             >
@@ -1232,7 +1181,6 @@ exports[`Render renders without crashing 1`] = `
                       "height": 30,
                       "width": 120,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1248,7 +1196,6 @@ exports[`Render renders without crashing 1`] = `
                       "maxWidth": "70%",
                       "textAlign": "center",
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1279,20 +1226,18 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 12,
                         "paddingTop": 8,
                       },
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "#EAEBF4",
-                          "borderColor": "#00BA90",
-                          "borderRadius": 12,
-                          "borderWidth": 2,
-                          "height": 26,
-                          "justifyContent": "center",
-                          "paddingHorizontal": 20,
-                        },
-                        false,
-                        undefined,
-                      ],
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#EAEBF4",
+                        "borderColor": "#00BA90",
+                        "borderRadius": 12,
+                        "borderWidth": 2,
+                        "height": 26,
+                        "justifyContent": "center",
+                        "paddingHorizontal": 20,
+                      },
+                      false,
+                      undefined,
                     ]
                   }
                   testID="button-view"
@@ -1304,18 +1249,16 @@ exports[`Render renders without crashing 1`] = `
                           "color": "white",
                           "fontSize": 14,
                         },
-                        Array [
-                          Object {
-                            "alignSelf": "center",
-                            "color": "#00BA90",
-                            "fontFamily": "avenir",
-                            "fontSize": 10,
-                            "paddingBottom": 12,
-                            "paddingVertical": 0,
-                            "textAlign": "center",
-                          },
-                          undefined,
-                        ],
+                        Object {
+                          "alignSelf": "center",
+                          "color": "#00BA90",
+                          "fontFamily": "avenir",
+                          "fontSize": 10,
+                          "paddingBottom": 12,
+                          "paddingVertical": 0,
+                          "textAlign": "center",
+                        },
+                        undefined,
                       ]
                     }
                   >
@@ -1331,10 +1274,7 @@ exports[`Render renders without crashing 1`] = `
                     "alignItems": "center",
                     "alignSelf": "stretch",
                     "backgroundColor": "#EAEBF4",
-                    "borderBottomLeftRadius": 20,
-                    "borderBottomRightRadius": 20,
-                    "borderTopLeftRadius": 20,
-                    "borderTopRightRadius": 20,
+                    "borderRadius": 20,
                     "flexBasis": 0,
                     "flexDirection": "column",
                     "flexGrow": 1,
@@ -1350,7 +1290,6 @@ exports[`Render renders without crashing 1`] = `
                     "paddingRight": 0,
                     "paddingTop": 28,
                   },
-                  undefined,
                 ]
               }
             >
@@ -1370,7 +1309,6 @@ exports[`Render renders without crashing 1`] = `
                       "height": 30,
                       "width": 120,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1386,7 +1324,6 @@ exports[`Render renders without crashing 1`] = `
                       "maxWidth": "70%",
                       "textAlign": "center",
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1417,20 +1354,18 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 12,
                         "paddingTop": 8,
                       },
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "#EAEBF4",
-                          "borderColor": "#00BA90",
-                          "borderRadius": 12,
-                          "borderWidth": 2,
-                          "height": 26,
-                          "justifyContent": "center",
-                          "paddingHorizontal": 20,
-                        },
-                        false,
-                        undefined,
-                      ],
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#EAEBF4",
+                        "borderColor": "#00BA90",
+                        "borderRadius": 12,
+                        "borderWidth": 2,
+                        "height": 26,
+                        "justifyContent": "center",
+                        "paddingHorizontal": 20,
+                      },
+                      false,
+                      undefined,
                     ]
                   }
                   testID="button-view"
@@ -1442,18 +1377,16 @@ exports[`Render renders without crashing 1`] = `
                           "color": "white",
                           "fontSize": 14,
                         },
-                        Array [
-                          Object {
-                            "alignSelf": "center",
-                            "color": "#00BA90",
-                            "fontFamily": "avenir",
-                            "fontSize": 10,
-                            "paddingBottom": 12,
-                            "paddingVertical": 0,
-                            "textAlign": "center",
-                          },
-                          undefined,
-                        ],
+                        Object {
+                          "alignSelf": "center",
+                          "color": "#00BA90",
+                          "fontFamily": "avenir",
+                          "fontSize": 10,
+                          "paddingBottom": 12,
+                          "paddingVertical": 0,
+                          "textAlign": "center",
+                        },
+                        undefined,
                       ]
                     }
                   >
@@ -1472,7 +1405,6 @@ exports[`Render renders without crashing 1`] = `
                 "backgroundColor": "#FFFFFF",
                 "minHeight": 600,
               },
-              undefined,
             ]
           }
         >
@@ -1492,7 +1424,6 @@ exports[`Render renders without crashing 1`] = `
                   "paddingRight": 24,
                   "paddingTop": 0,
                 },
-                undefined,
               ]
             }
           >
@@ -1534,7 +1465,6 @@ exports[`Render renders without crashing 1`] = `
                     "flexDirection": "column",
                     "justifyContent": "center",
                   },
-                  undefined,
                 ]
               }
             >
@@ -1552,7 +1482,6 @@ exports[`Render renders without crashing 1`] = `
                       "maxWidth": "60%",
                       "textAlign": "center",
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1567,7 +1496,6 @@ exports[`Render renders without crashing 1`] = `
                       "marginTop": 56,
                       "width": "86%",
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1582,18 +1510,9 @@ exports[`Render renders without crashing 1`] = `
                       Object {
                         "alignSelf": "stretch",
                         "backgroundColor": "#D3D8E8",
-                        "borderBottomColor": "#393D7A",
-                        "borderBottomLeftRadius": 10,
-                        "borderBottomRightRadius": 10,
-                        "borderBottomWidth": 1,
-                        "borderLeftColor": "#393D7A",
-                        "borderLeftWidth": 1,
-                        "borderRightColor": "#393D7A",
-                        "borderRightWidth": 1,
-                        "borderTopColor": "#393D7A",
-                        "borderTopLeftRadius": 10,
-                        "borderTopRightRadius": 10,
-                        "borderTopWidth": 1,
+                        "borderColor": "#393D7A",
+                        "borderRadius": 10,
+                        "borderWidth": 1,
                         "color": "#000000",
                         "fontSize": 14,
                         "marginBottom": 12,
@@ -1603,7 +1522,6 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 18,
                         "paddingTop": 16,
                       },
-                      undefined,
                     ]
                   }
                   underlineColorAndroid="transparent"
@@ -1620,18 +1538,9 @@ exports[`Render renders without crashing 1`] = `
                       Object {
                         "alignSelf": "stretch",
                         "backgroundColor": "#D3D8E8",
-                        "borderBottomColor": "#393D7A",
-                        "borderBottomLeftRadius": 10,
-                        "borderBottomRightRadius": 10,
-                        "borderBottomWidth": 1,
-                        "borderLeftColor": "#393D7A",
-                        "borderLeftWidth": 1,
-                        "borderRightColor": "#393D7A",
-                        "borderRightWidth": 1,
-                        "borderTopColor": "#393D7A",
-                        "borderTopLeftRadius": 10,
-                        "borderTopRightRadius": 10,
-                        "borderTopWidth": 1,
+                        "borderColor": "#393D7A",
+                        "borderRadius": 10,
+                        "borderWidth": 1,
                         "color": "#000000",
                         "fontSize": 14,
                         "marginBottom": 12,
@@ -1641,7 +1550,6 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 18,
                         "paddingTop": 16,
                       },
-                      undefined,
                     ]
                   }
                   underlineColorAndroid="transparent"
@@ -1660,18 +1568,9 @@ exports[`Render renders without crashing 1`] = `
                       Object {
                         "alignSelf": "stretch",
                         "backgroundColor": "#D3D8E8",
-                        "borderBottomColor": "#393D7A",
-                        "borderBottomLeftRadius": 10,
-                        "borderBottomRightRadius": 10,
-                        "borderBottomWidth": 1,
-                        "borderLeftColor": "#393D7A",
-                        "borderLeftWidth": 1,
-                        "borderRightColor": "#393D7A",
-                        "borderRightWidth": 1,
-                        "borderTopColor": "#393D7A",
-                        "borderTopLeftRadius": 10,
-                        "borderTopRightRadius": 10,
-                        "borderTopWidth": 1,
+                        "borderColor": "#393D7A",
+                        "borderRadius": 10,
+                        "borderWidth": 1,
                         "color": "#000000",
                         "fontSize": 14,
                         "marginBottom": 12,
@@ -1681,7 +1580,6 @@ exports[`Render renders without crashing 1`] = `
                         "paddingRight": 18,
                         "paddingTop": 16,
                       },
-                      undefined,
                     ]
                   }
                   underlineColorAndroid="transparent"
@@ -1712,16 +1610,14 @@ exports[`Render renders without crashing 1`] = `
                           "paddingRight": 12,
                           "paddingTop": 8,
                         },
-                        Array [
-                          Object {
-                            "backgroundColor": "#00BA90",
-                            "borderRadius": 20,
-                            "height": 44,
-                            "paddingHorizontal": 40,
-                          },
-                          false,
-                          undefined,
-                        ],
+                        Object {
+                          "backgroundColor": "#00BA90",
+                          "borderRadius": 20,
+                          "height": 44,
+                          "paddingHorizontal": 40,
+                        },
+                        false,
+                        undefined,
                       ]
                     }
                     testID="button-view"
@@ -1733,14 +1629,12 @@ exports[`Render renders without crashing 1`] = `
                             "color": "white",
                             "fontSize": 14,
                           },
-                          Array [
-                            Object {
-                              "color": "#000000",
-                              "fontFamily": "avenir",
-                              "fontSize": 16,
-                            },
-                            undefined,
-                          ],
+                          Object {
+                            "color": "#000000",
+                            "fontFamily": "avenir",
+                            "fontSize": 16,
+                          },
+                          undefined,
                         ]
                       }
                     >
@@ -1763,7 +1657,6 @@ exports[`Render renders without crashing 1`] = `
                 "justifyContent": "center",
                 "minHeight": 160,
               },
-              undefined,
             ]
           }
         >
@@ -1838,12 +1731,10 @@ exports[`Render renders without crashing 1`] = `
                       "fontSize": 18,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                      Object {
-                        "color": "#B446BF",
-                      },
-                    ],
+                    false,
+                    Object {
+                      "color": "#B446BF",
+                    },
                   ]
                 }
               >
@@ -1867,7 +1758,6 @@ exports[`Render renders without crashing 1`] = `
                 "paddingRight": 0,
                 "paddingTop": 12,
               },
-              undefined,
             ]
           }
         >
@@ -1882,7 +1772,6 @@ exports[`Render renders without crashing 1`] = `
                   "flexShrink": 1,
                   "justifyContent": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -1944,7 +1833,6 @@ exports[`Render renders without crashing 1`] = `
                   "paddingRight": 0,
                   "paddingTop": 4,
                 },
-                undefined,
               ]
             }
           >
@@ -1977,9 +1865,7 @@ exports[`Render renders without crashing 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -2016,9 +1902,7 @@ exports[`Render renders without crashing 1`] = `
                       "fontSize": 12,
                       "textDecorationLine": "underline",
                     },
-                    Array [
-                      false,
-                    ],
+                    false,
                   ]
                 }
               >
@@ -2034,7 +1918,6 @@ exports[`Render renders without crashing 1`] = `
                     "marginTop": 10,
                     "textAlign": "center",
                   },
-                  undefined,
                 ]
               }
             >

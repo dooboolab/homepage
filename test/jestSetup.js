@@ -8,9 +8,9 @@ jest.mock('@react-navigation/stack', () => ({
 /**
  * Below mock is to prevent test failing from `dooboo-ui`
  */
-jest.mock('dooboo-ui/theme/useColorScheme.js', () => {
-  return jest.fn().mockReturnValue('dark');
-});
+// jest.mock('dooboo-ui/theme/useColorScheme.js', () => {
+//   return jest.fn().mockReturnValue('dark');
+// });
 
 jest.mock('react-native/Libraries/Utilities/Appearance.js', () => {
   return {
