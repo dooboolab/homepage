@@ -10,10 +10,12 @@ const babel = {
   presets: [
     [
       'module:metro-react-native-babel-preset',
-      {useTransformReactJSXExperimental: true},
+      {
+        runtime: 'automatic',
+        importSource: '@emotion/react',
+      },
     ],
     '@babel/preset-typescript',
-    ['@babel/preset-react', {runtime: 'automatic'}],
   ],
   plugins: [
     ['module:react-native-dotenv'],
@@ -25,15 +27,9 @@ const babel = {
       },
     ],
     'babel-plugin-fbt-runtime',
-    [
-      '@babel/plugin-transform-react-jsx',
-      {
-        runtime: 'automatic',
-      },
-    ],
+    '@babel/plugin-syntax-class-properties',
     '@emotion/babel-plugin',
     'react-native-reanimated/plugin',
-    '@babel/plugin-syntax-class-properties',
   ],
 };
 
