@@ -6,6 +6,22 @@ jest.mock('@react-navigation/stack', () => ({
 }));
 
 /**
+ * Below mock is to prevent test failing from `dooboo-ui`
+ */
+jest.mock('dooboo-ui/theme/useColorScheme.js', () => {
+  return jest.fn().mockReturnValue('dark');
+});
+
+jest.mock('react-native/Libraries/Utilities/Appearance.js', () => {
+  return {
+    getColorScheme: jest.fn(),
+    addChangeListener: jest.fn(),
+    removeChangeListener: jest.fn(),
+    useColorScheme: jest.fn(),
+  };
+});
+
+/**
  * Temporarily test files that resolves https://github.com/facebook/react-native/issues/27721
  */
 
