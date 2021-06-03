@@ -243,7 +243,6 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 backgroundColor: theme.background,
                 borderWidth: 1,
                 borderColor: theme.accent,
-                height: 24,
                 width: 68,
               },
               text: {
@@ -252,6 +251,7 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 color: theme.accent,
                 paddingBottom: Platform.select({
                   ios: 12,
+                  android: 0,
                   default: 2,
                 }),
               },
