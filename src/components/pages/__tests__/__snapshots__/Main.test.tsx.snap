@@ -255,7 +255,6 @@ exports[`Render renders without crashing 1`] = `
                   "borderColor": "#B446BF",
                   "borderRadius": 20,
                   "borderWidth": 1,
-                  "height": 24,
                   "width": 68,
                 },
                 false,

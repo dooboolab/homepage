@@ -180,7 +180,6 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				6E56F887B30778DFF52435B1 /* [CP] Copy Pods Resources */,
-				70B258E69A08223161BFFC32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +202,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				B178AE0C5D6DB2535136862E /* [CP] Copy Pods Resources */,
-				F3AD73D7A07D068C20E5DF03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,24 +303,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dooboolab-dooboolabTests/Pods-dooboolab-dooboolabTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70B258E69A08223161BFFC32 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dooboolab-dooboolabTests/Pods-dooboolab-dooboolabTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dooboolab-dooboolabTests/Pods-dooboolab-dooboolabTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		825F2D0075ABA9392DF69DDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,24 +363,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dooboolab/Pods-dooboolab-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3AD73D7A07D068C20E5DF03 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dooboolab/Pods-dooboolab-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dooboolab/Pods-dooboolab-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

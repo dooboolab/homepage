@@ -251,6 +251,7 @@ const Todo: FC<Props> = ({navigation}) => {
       };
 
       setTodos([todo, ...todos]);
+      setText('');
     }
   }, [text, todos, user]);
 
