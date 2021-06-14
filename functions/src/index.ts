@@ -20,10 +20,10 @@ export const joinRNSeoul = functions.https.onRequest(
   },
 );
 
-export const joinGraphQLSeoul = functions.https.onRequest(
+export const joinPrismaKorea = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(
-      'https://join.slack.com/t/graphql-seoul/shared_invite/enQtOTMyNzc4NzYxMjg1LTMwNzg3ODFiY2I2ODlkMWFiZTU0NDg5Zjg0MDRkMGY3MGExZTAwZTIxNmE1YzJkNGJhMmU5ZGYzYTY0N2EzNDY',
+      'https://join.slack.com/t/prisma-korea/shared_invite/enQtOTMyNzc4NzYxMjg1LTMwNzg3ODFiY2I2ODlkMWFiZTU0NDg5Zjg0MDRkMGY3MGExZTAwZTIxNmE1YzJkNGJhMmU5ZGYzYTY0N2EzNDY',
     );
   },
 );

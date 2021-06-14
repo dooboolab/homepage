@@ -1,6 +1,6 @@
 import {Button, useTheme} from 'dooboo-ui';
 import {Description, SubTitle} from '../uis/Typography';
-import {IMG_GRAPHQL_SEOUL, IMG_RN_SEOUL} from '../../utils/Icons';
+import {IMG_PRISMA_KOREA, IMG_RN_SEOUL} from '../../utils/Icons';
 import {Linking, Platform} from 'react-native';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
@@ -130,7 +130,7 @@ const CommunitySection: FC<Props> = () => {
           </CommunityBackground>
         </Community>
         <Community>
-          <CommunityBackground source={IMG_GRAPHQL_SEOUL} resizeMode="contain">
+          <CommunityBackground source={IMG_PRISMA_KOREA} resizeMode="contain">
             {renderViewMoreButton(fbt('View more', 'view more'), () => {
               Linking.openURL('https://medium.com/graphql-seoul');
             })}
