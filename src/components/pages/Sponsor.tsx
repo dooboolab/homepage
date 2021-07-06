@@ -81,9 +81,8 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
     );
 
     if (decodedReceipt) {
-      const {
-        latest_receipt_info: latestReceiptInfo,
-      } = decodedReceipt as ReceiptValidationResponse;
+      const {latest_receipt_info: latestReceiptInfo} =
+        decodedReceipt as ReceiptValidationResponse;
 
       const expirationInMilliseconds = Number(
         latestReceiptInfo?.expires_date_ms,
@@ -242,9 +241,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
             );
 
             if (appleReceiptResponse) {
-              const {
-                status,
-              } = appleReceiptResponse as ReceiptValidationResponse;
+              const {status} =
+                appleReceiptResponse as ReceiptValidationResponse;
 
               if (status === ReceiptValidationStatus.SUCCESS)
                 try {

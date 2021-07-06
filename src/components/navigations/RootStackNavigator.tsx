@@ -55,9 +55,8 @@ const userScreens = {
   ProfileEdit,
 };
 
-export type RootStackNavigationProps<
-  T extends keyof RootStackParamList
-> = StackNavigationProp<RootStackParamList, T>;
+export type RootStackNavigationProps<T extends keyof RootStackParamList> =
+  StackNavigationProp<RootStackParamList, T>;
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -72,9 +71,8 @@ function RootNavigator(): React.ReactElement {
 
   const [authInitiated, setAuthInitiated] = useState<boolean>(false);
 
-  const [fireAuthStateChanged, setFireAuthStateChanged] = useState<boolean>(
-    false,
-  );
+  const [fireAuthStateChanged, setFireAuthStateChanged] =
+    useState<boolean>(false);
 
   const [loggingOut, setLoggingOut] = useState<boolean>(false);
 

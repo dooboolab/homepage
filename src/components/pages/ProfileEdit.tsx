@@ -61,9 +61,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   const [introduction, setIntroduction] = useState<string>('');
   const [displayNameErrorText, setDisplayNameErrorText] = useState<string>('');
 
-  const [introductionErrorText, setIntroductionErrorText] = useState<string>(
-    '',
-  );
+  const [introductionErrorText, setIntroductionErrorText] =
+    useState<string>('');
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
