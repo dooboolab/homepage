@@ -13,7 +13,7 @@ jobs:
         run: yarn
 
       - name: Build craco
-        run: yarn build
+        run: SKIP_PREFLIGHT_CHECK=true yarn build
         env:
           apiKey: ${{ secrets.APIKEY }}
           authDomain: ${{ secrets.AUTHDOMAIN }}

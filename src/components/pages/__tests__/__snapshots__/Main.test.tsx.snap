@@ -68,10 +68,7 @@ exports[`Render renders without crashing 1`] = `
         <Image
           source={
             Object {
-              "canInstrument": true,
               "createTransformer": [Function],
-              "getCacheKey": [Function],
-              "process": [Function],
             }
           }
           style={
@@ -408,10 +405,7 @@ exports[`Render renders without crashing 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "canInstrument": true,
                   "createTransformer": [Function],
-                  "getCacheKey": [Function],
-                  "process": [Function],
                 }
               }
               style={
@@ -785,10 +779,7 @@ exports[`Render renders without crashing 1`] = `
                   resizeMode="contain"
                   source={
                     Object {
-                      "canInstrument": true,
                       "createTransformer": [Function],
-                      "getCacheKey": [Function],
-                      "process": [Function],
                     }
                   }
                   style={
@@ -911,10 +902,7 @@ exports[`Render renders without crashing 1`] = `
                   resizeMode="contain"
                   source={
                     Object {
-                      "canInstrument": true,
                       "createTransformer": [Function],
-                      "getCacheKey": [Function],
-                      "process": [Function],
                     }
                   }
                   style={
@@ -1100,10 +1088,7 @@ exports[`Render renders without crashing 1`] = `
                 resizeMode="cover"
                 source={
                   Object {
-                    "canInstrument": true,
                     "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
                   }
                 }
                 style={
@@ -1168,10 +1153,7 @@ exports[`Render renders without crashing 1`] = `
                 resizeMode="cover"
                 source={
                   Object {
-                    "canInstrument": true,
                     "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
                   }
                 }
                 style={
@@ -1296,10 +1278,7 @@ exports[`Render renders without crashing 1`] = `
                 resizeMode="cover"
                 source={
                   Object {
-                    "canInstrument": true,
                     "createTransformer": [Function],
-                    "getCacheKey": [Function],
-                    "process": [Function],
                   }
                 }
                 style={
@@ -1430,10 +1409,7 @@ exports[`Render renders without crashing 1`] = `
               resizeMode="cover"
               source={
                 Object {
-                  "canInstrument": true,
                   "createTransformer": [Function],
-                  "getCacheKey": [Function],
-                  "process": [Function],
                 }
               }
               style={

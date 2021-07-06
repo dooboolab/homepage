@@ -96,10 +96,7 @@ exports[`Interaction should simulate onClick 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={
@@ -164,10 +161,7 @@ exports[`Interaction should simulate onClick 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={
@@ -292,10 +286,7 @@ exports[`Interaction should simulate onClick 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={
@@ -490,10 +481,7 @@ exports[`Rendering renders without crashing 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={
@@ -558,10 +546,7 @@ exports[`Rendering renders without crashing 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={
@@ -686,10 +671,7 @@ exports[`Rendering renders without crashing 1`] = `
         resizeMode="cover"
         source={
           Object {
-            "canInstrument": true,
             "createTransformer": [Function],
-            "getCacheKey": [Function],
-            "process": [Function],
           }
         }
         style={

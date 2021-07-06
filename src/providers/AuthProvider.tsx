@@ -41,14 +41,14 @@ interface Props {
 
 type Reducer = (state: State, action: Action) => State;
 
-const setUser = (dispatch: React.Dispatch<SetUserAction>) => (
-  user: User,
-): void => {
-  dispatch({
-    type: ActionType.SetUser,
-    payload: user,
-  });
-};
+const setUser =
+  (dispatch: React.Dispatch<SetUserAction>) =>
+  (user: User): void => {
+    dispatch({
+      type: ActionType.SetUser,
+      payload: user,
+    });
+  };
 
 const resetUser = (dispatch: React.Dispatch<ResetUserAction>) => (): void => {
   dispatch({

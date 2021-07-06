@@ -1,5 +1,6 @@
 import './GestureHandler';
 
+import {LoadingIndicator, useTheme} from 'dooboo-ui';
 import React, {useEffect, useState} from 'react';
 import {
   StackNavigationProp,
@@ -21,7 +22,6 @@ import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
 import firebase from 'firebase';
 import {useAuthContext} from '../../providers/AuthProvider';
-import {useTheme} from 'dooboo-ui';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -55,9 +55,8 @@ const userScreens = {
   ProfileEdit,
 };
 
-export type RootStackNavigationProps<
-  T extends keyof RootStackParamList
-> = StackNavigationProp<RootStackParamList, T>;
+export type RootStackNavigationProps<T extends keyof RootStackParamList> =
+  StackNavigationProp<RootStackParamList, T>;
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -71,6 +70,10 @@ function RootNavigator(): React.ReactElement {
   } = useAuthContext();
 
   const [authInitiated, setAuthInitiated] = useState<boolean>(false);
+
+  const [fireAuthStateChanged, setFireAuthStateChanged] =
+    useState<boolean>(false);
+
   const [loggingOut, setLoggingOut] = useState<boolean>(false);
 
   useEffect(() => {
@@ -79,6 +82,8 @@ function RootNavigator(): React.ReactElement {
     setAuthInitiated(true);
 
     firebase.auth().onAuthStateChanged((fireUser) => {
+      setFireAuthStateChanged(true);
+
       if (fireUser) {
         firebase
           .firestore()
@@ -112,6 +117,8 @@ function RootNavigator(): React.ReactElement {
     prefixes: ['https://dooboolab.com', 'dooboolab://'],
     enabled: true,
   };
+
+  if (!fireAuthStateChanged) return <LoadingIndicator />;
 
   return (
     <NavigationContainer

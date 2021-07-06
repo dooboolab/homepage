@@ -61,9 +61,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   const [introduction, setIntroduction] = useState<string>('');
   const [displayNameErrorText, setDisplayNameErrorText] = useState<string>('');
 
-  const [introductionErrorText, setIntroductionErrorText] = useState<string>(
-    '',
-  );
+  const [introductionErrorText, setIntroductionErrorText] =
+    useState<string>('');
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState<boolean>(false);
@@ -101,10 +100,12 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             // console.log('User cancelled image picker');
           } else if (response.errorCode) {
             // console.log('ImagePicker Error: ', response.errorMessage);
+            // @ts-ignore
           } else if (user && response.uri) {
             setIsLoading(true);
 
             try {
+              // @ts-ignore
               const blob = await uriToBlob(response.uri);
 
               const snap = await firebase
