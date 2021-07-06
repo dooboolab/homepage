@@ -97,7 +97,6 @@
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.11",
     "@types/styled-components-react-native": "^5.1.1",
-    "babel-jest": "^27.0.6",
     "babel-plugin-fbt": "^0.20.0",
     "babel-plugin-fbt-runtime": "^0.9.17",
     "babel-plugin-styled-components": "^1.13.1",
