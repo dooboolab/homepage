@@ -85,6 +85,7 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
         decodedReceipt as ReceiptValidationResponse;
 
       const expirationInMilliseconds = Number(
+        // @ts-ignore
         latestReceiptInfo?.expires_date_ms,
       );
 
