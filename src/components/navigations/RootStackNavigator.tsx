@@ -137,7 +137,10 @@ function RootNavigator(): React.ReactElement {
     return (
       <View
         style={{
-          height: '100vh',
+          height: Platform.select({
+            web: '100vh',
+            default: '100%',
+          }),
           alignSelf: 'stretch',
           backgroundColor: theme.background,
         }}>
