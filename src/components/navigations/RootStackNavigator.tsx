@@ -1,6 +1,7 @@
 import './GestureHandler';
 
 import {LoadingIndicator, useTheme} from 'dooboo-ui';
+import {Platform, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {
   StackNavigationProp,
@@ -11,7 +12,6 @@ import CodeOfConduct from '../pages/CodeOfConduct';
 import FindPw from '../pages/FindPw';
 import Home from '../pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
-import {Platform} from 'react-native';
 import ProfileEdit from '../pages/ProfileEdit';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
@@ -53,6 +53,20 @@ const userScreens = {
   Todo,
   Sponsor,
   ProfileEdit,
+};
+
+const webConfig = {
+  screens: {
+    SignIn: 'sign_in',
+    SignUp: 'sign_up',
+    FindPw: 'find_password',
+    Home: 'home',
+    ProfileEdit: 'profile_edit',
+    VisionAndMission: 'vision_and_mission',
+    CodeOfConduct: 'code_of_conduct',
+    Sponsor: 'sponsor',
+    Todo: 'todo',
+  },
 };
 
 export type RootStackNavigationProps<T extends keyof RootStackParamList> =
@@ -116,9 +130,20 @@ function RootNavigator(): React.ReactElement {
   const linking = {
     prefixes: ['https://dooboolab.com', 'dooboolab://'],
     enabled: true,
+    config: webConfig,
   };
 
-  if (!fireAuthStateChanged) return <LoadingIndicator />;
+  if (!fireAuthStateChanged)
+    return (
+      <View
+        style={{
+          height: '100vh',
+          alignSelf: 'stretch',
+          backgroundColor: theme.background,
+        }}>
+        <LoadingIndicator />
+      </View>
+    );
 
   return (
     <NavigationContainer
