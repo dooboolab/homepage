@@ -12,6 +12,14 @@ export const joinSlack = functions.https.onRequest(
   },
 );
 
+export const joinWeCount = functions.https.onRequest(
+  (_: any, response: {redirect: (arg0: string) => void}) => {
+    response.redirect(
+      'https://join.slack.com/t/wecount-dev/shared_invite/zt-ts3zriqd-BCVKYOTBCKw_U6DlcvOI2A',
+    );
+  },
+);
+
 export const joinRNSeoul = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(

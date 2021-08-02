@@ -21,6 +21,10 @@
         "function": "joinSlack"
       },
       {
+        "source": "/joinWeCount",
+        "function": "joinWeCount"
+      },
+      {
         "source": "/joinRNSeoul",
         "function": "joinRNSeoul"
       },
