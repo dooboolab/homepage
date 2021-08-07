@@ -152,7 +152,7 @@ exports[`Interaction should simulate onClick 1`] = `
                   Object {
                     "color": "#B446BF",
                     "fontSize": 11,
-                    "paddingBottom": 12,
+                    "paddingBottom": 0,
                     "paddingHorizontal": 0,
                   },
                   undefined,
@@ -837,7 +837,7 @@ exports[`Rendering renders without crashing 1`] = `
                   Object {
                     "color": "#B446BF",
                     "fontSize": 11,
-                    "paddingBottom": 12,
+                    "paddingBottom": 0,
                     "paddingHorizontal": 0,
                   },
                   undefined,

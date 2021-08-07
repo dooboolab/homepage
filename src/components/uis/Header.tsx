@@ -6,6 +6,7 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components/native';
 
 import Hoverable from '../../utils/Hoverable';
+import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {fbt} from 'fbt';
@@ -134,7 +135,7 @@ type Props = {
 };
 
 const Header: FC<Props> = ({scrollRef, hideMenus}) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackNavigationProps<'Home'>>();
   const {theme, changeThemeType, themeType, media} = useTheme();
   const [switchOn, setSwitchOn] = useState(themeType === ThemeType.DARK);
 
@@ -250,7 +251,7 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 paddingHorizontal: 0,
                 color: theme.accent,
                 paddingBottom: Platform.select({
-                  ios: 12,
+                  ios: 0,
                   android: 0,
                   default: 2,
                 }),
