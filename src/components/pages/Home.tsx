@@ -30,7 +30,7 @@ type Props = {
 
 const Page: FC<Props> = () => {
   const scrollRef = useRef<ScrollView>(null);
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackNavigationProps<'Home'>>();
 
   navigation.setOptions({
     title: 'dooboolab',
