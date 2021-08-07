@@ -250,7 +250,7 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 paddingHorizontal: 0,
                 color: theme.accent,
                 paddingBottom: Platform.select({
-                  ios: 12,
+                  ios: 0,
                   android: 0,
                   default: 2,
                 }),
