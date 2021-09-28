@@ -36,5 +36,9 @@ export const runIapApp = (): express.Application => {
     res.status(response.status).json(await response.json());
   });
 
+  iapApp.get('/artifacts', async (req: express.Request, res) => {
+    res.status(200).send(false);
+  });
+
   return iapApp;
 };
