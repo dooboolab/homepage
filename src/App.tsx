@@ -9,6 +9,7 @@ import RootProvider from './providers';
 import firebase from 'firebase/app';
 import {firebaseConfig} from './config';
 import {initFbt} from './utils/fbt';
+import {withIAPContext} from 'react-native-iap';
 
 !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig).firestore()
@@ -33,4 +34,4 @@ function ProviderWrapper(): React.ReactElement {
   );
 }
 
-export default ProviderWrapper;
+export default withIAPContext(ProviderWrapper);

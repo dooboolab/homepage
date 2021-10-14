@@ -279,7 +279,7 @@ PODS:
     - React
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNIap (7.2.1):
+  - RNIap (8.0.0-rc.2):
     - React-Core
   - RNReanimated (2.2.0):
     - DoubleConversion
@@ -481,13 +481,13 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 56a3355a10b5d660c48c6e37325ac85ebfd09885
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNIap: 536b64f090a3d2e707b4f55d9aa5351482f20ea4
+  RNIap: bd7984080e666b13f9cabe64da4bb7f6603e9fda
   RNReanimated: 9c13c86454bfd54dab7505c1a054470bfecd2563
   RNScreens: 01ab149b5dd5c27f5ff26741b1d2bdf2cee1af35
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
-  RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
+  RNVectorIcons: c7abe7863f6221220414dfcac1cbde5823506d37
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
 PODFILE CHECKSUM: f6ccae9a67841034fed67709c2049e480dd16be5
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.0

@@ -214,7 +214,12 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, []);
 
   const fetchProducts = useCallback(async (): Promise<void> => {
-    await flushFailedPurchasesCachedAsPendingAndroid();
+    try {
+      await flushFailedPurchasesCachedAsPendingAndroid();
+    } catch (err) {
+      console.log('flushFailedPurchasesCachedAsPendingAndroid', err);
+    }
+
     getProducts(iapSkus);
     getSubscriptions(subSkus);
     getSubcribedProuduct();
