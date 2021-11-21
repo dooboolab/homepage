@@ -60,7 +60,6 @@ const Logo = styled.Image`
 const LinkWrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 14px;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
@@ -84,7 +83,7 @@ const LinkText = styled.Text`
 const SignOutWrapper = styled.View`
   position: absolute;
   left: 20px;
-  top: 25px;
+  top: 22px;
   width: 80px;
 
   ${({theme: {isDesktop}}) =>
@@ -92,7 +91,7 @@ const SignOutWrapper = styled.View`
     css`
       left: undfined;
       right: 64px;
-      top: 25px;
+      top: 20px;
     `}
 `;
 
