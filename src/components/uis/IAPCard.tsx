@@ -53,7 +53,8 @@ const IAPCard: FC<IAPCardProps> = ({
           alignItems: 'center',
         },
         style,
-      ]}>
+      ]}
+    >
       <Image
         source={icon}
         style={{
@@ -68,7 +69,8 @@ const IAPCard: FC<IAPCardProps> = ({
           fontSize: 14,
           textAlign: 'center',
           color: type === 'onetime' ? colors.darkGray : colors.white,
-        }}>
+        }}
+      >
         {name}
       </Text>
       <RoundedButton

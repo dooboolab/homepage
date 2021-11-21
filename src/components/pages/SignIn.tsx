@@ -209,12 +209,14 @@ const SignIn: FC<Props> = ({navigation}) => {
             onPress={() => navigation.navigate('FindPw')}
             style={{
               marginTop: 12,
-            }}>
+            }}
+          >
             <Text
               style={{
                 textDecorationLine: 'underline',
                 color: theme.link,
-              }}>
+              }}
+            >
               <fbt desc="forgot password">Forgot password</fbt>?
             </Text>
           </TouchableOpacity>
@@ -232,7 +234,8 @@ const SignIn: FC<Props> = ({navigation}) => {
                 }
 
                 goToWebView('https://legacy.dooboolab.com/termsofservice');
-              }}>
+              }}
+            >
               <fbt desc="agreement2">Terms of Agreement</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>
@@ -249,7 +252,8 @@ const SignIn: FC<Props> = ({navigation}) => {
                 }
 
                 goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
-              }}>
+              }}
+            >
               <fbt desc="agreement4">Privary Policy</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>

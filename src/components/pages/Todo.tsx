@@ -78,13 +78,15 @@ const TodoList: FC<TodoListProps> = ({
     <View
       style={{
         flexDirection: 'column',
-      }}>
+      }}
+    >
       <View
         style={{
           alignSelf: 'stretch',
 
           flexDirection: 'row',
-        }}>
+        }}
+      >
         <CheckBox
           checked={todo.done}
           onPress={onDoneChecked}
@@ -125,7 +127,8 @@ const TodoList: FC<TodoListProps> = ({
           <View
             style={{
               padding: 8,
-            }}>
+            }}
+          >
             {hasTextChanged && (
               <Icon
                 name="check"
@@ -142,7 +145,8 @@ const TodoList: FC<TodoListProps> = ({
           <View
             style={{
               padding: 8,
-            }}>
+            }}
+          >
             <Icon
               name="delete"
               size={30}
@@ -158,14 +162,16 @@ const TodoList: FC<TodoListProps> = ({
         style={{
           marginLeft: 32,
           marginBottom: 8,
-        }}>
+        }}
+      >
         <Text
           style={[
             {
               color: theme.text,
             },
             todo.done && {...textDoneStyle},
-          ]}>
+          ]}
+        >
           {formatDistance(todo.createdAt, new Date(), {
             addSuffix: true,
           })}
@@ -268,7 +274,8 @@ const Todo: FC<Props> = ({navigation}) => {
           marginTop: 16,
           marginBottom: 12,
           marginHorizontal: 12,
-        }}>
+        }}
+      >
         <EditText
           value={text}
           onChangeText={(e) => setText(e)}

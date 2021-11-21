@@ -61,10 +61,11 @@ const FindPw: FC<Props> = ({navigation}) => {
   const findPw = async (): Promise<void> => {
     setEmailError('');
 
-    if (!email || !validateEmail(email))
+    if (!email || !validateEmail(email)) {
       return setEmailError(
         fbt('Not a valid email address', 'invalid email address'),
       );
+    }
 
     setSendingEmail(true);
 

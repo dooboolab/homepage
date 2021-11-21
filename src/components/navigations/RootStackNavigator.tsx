@@ -145,7 +145,8 @@ function RootNavigator(): React.ReactElement {
           }),
           alignSelf: 'stretch',
           backgroundColor: theme.background,
-        }}>
+        }}
+      >
         <LoadingIndicator />
       </View>
     );
@@ -166,13 +167,15 @@ function RootNavigator(): React.ReactElement {
           text: theme.text,
         },
         dark: true,
-      }}>
+      }}
+    >
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
           headerShown: false,
           headerBackTitle: '',
-        }}>
+        }}
+      >
         {Object.entries({
           ...commonScreens,
           ...(user ? userScreens : authScreens),

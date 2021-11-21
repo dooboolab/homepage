@@ -120,7 +120,8 @@ const Link: FC<LinkProps> = ({onPress, text}): ReactElement => {
                 color: theme.heading,
                 textDecorationLine: 'underline',
               }
-            }>
+            }
+          >
             {text}
           </LinkText>
         </LinkTouch>
@@ -153,7 +154,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
               hideMenus
                 ? navigation.navigate('Home')
                 : scrollRef?.current?.scrollTo({y: 0})
-            }>
+            }
+          >
             <Logo
               style={[
                 isHovered && {
@@ -215,7 +217,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 style={{marginHorizontal: 10}}
                 onPress={() => {
                   navigation.navigate('ProfileEdit');
-                }}>
+                }}
+              >
                 <Image
                   style={{
                     opacity: isHovered ? 0.7 : 1,

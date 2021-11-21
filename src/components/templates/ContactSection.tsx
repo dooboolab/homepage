@@ -108,9 +108,11 @@ const ContactSection: FC<Props> = () => {
   const [story, setStory] = useState<string>('');
 
   const sendContact = async (): Promise<void> => {
-    if (!name || !email || !story) return;
+    if (!name || !email || !story) {
+      return;
+    }
 
-    if (!validateEmail(email))
+    if (!validateEmail(email)) {
       return Platform.select({
         // eslint-disable-next-line no-alert
         web: alert(
@@ -121,6 +123,7 @@ const ContactSection: FC<Props> = () => {
           fbt('Email is not a valid email address', 'email not valid'),
         ),
       });
+    }
 
     const db = firebase.firestore();
 
@@ -165,7 +168,8 @@ const ContactSection: FC<Props> = () => {
         resizeMode="cover"
         imageStyle={{
           opacity: 0.65,
-        }}>
+        }}
+      >
         <Content>
           <Title>
             <fbt desc="who is next">Who's next? Feel free to talk.</fbt>

@@ -15,8 +15,9 @@ if (canUseDOM) {
   let lastTouchTimestamp = 0;
 
   const enableHover = (): void => {
-    if (isEnabled || Date.now() - lastTouchTimestamp < HOVER_THRESHOLD_MS)
+    if (isEnabled || Date.now() - lastTouchTimestamp < HOVER_THRESHOLD_MS) {
       return;
+    }
 
     isEnabled = true;
   };
@@ -24,7 +25,9 @@ if (canUseDOM) {
   const disableHover = (): void => {
     lastTouchTimestamp = Date.now();
 
-    if (isEnabled) isEnabled = false;
+    if (isEnabled) {
+      isEnabled = false;
+    }
   };
 
   document.addEventListener('touchstart', disableHover, true);

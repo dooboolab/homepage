@@ -70,7 +70,8 @@ const Footer: FC<Props> = () => {
         <Description
           style={{
             fontSize: 14,
-          }}>
+          }}
+        >
           <fbt desc="address">Address</fbt>
         </Description>
         <Description
@@ -78,7 +79,8 @@ const Footer: FC<Props> = () => {
             marginTop: 4,
             fontSize: 12,
             lineHeight: 18,
-          }}>
+          }}
+        >
           <fbt desc="address value">
             203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
           </fbt>
@@ -90,14 +92,16 @@ const Footer: FC<Props> = () => {
             <LinkTouch
               style={{marginHorizontal: 10}}
               activeOpacity={0.7}
-              onPress={() => navigation.navigate('VisionAndMission')}>
+              onPress={() => navigation.navigate('VisionAndMission')}
+            >
               <LinkText
                 style={[
                   isHovered && {
                     color: theme.heading,
                     textDecorationLine: 'underline',
                   },
-                ]}>
+                ]}
+              >
                 <fbt desc="vision and mission">Vision & Mission</fbt>
               </LinkText>
             </LinkTouch>
@@ -108,14 +112,16 @@ const Footer: FC<Props> = () => {
             <LinkTouch
               style={{marginHorizontal: 10, marginTop: 4}}
               activeOpacity={0.7}
-              onPress={() => navigation.navigate('CodeOfConduct')}>
+              onPress={() => navigation.navigate('CodeOfConduct')}
+            >
               <LinkText
                 style={[
                   isHovered && {
                     color: theme.heading,
                     textDecorationLine: 'underline',
                   },
-                ]}>
+                ]}
+              >
                 <fbt desc="code of conduct">Code of conduct</fbt>
               </LinkText>
             </LinkTouch>

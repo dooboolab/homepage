@@ -180,7 +180,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   return (
     <SafeAreaView>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
         <ScrollView
           style={{
             alignSelf: 'stretch',
@@ -189,12 +190,14 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             paddingTop: 24 - inset.top,
             paddingHorizontal: 16,
             alignSelf: 'stretch',
-          }}>
+          }}
+        >
           <Container>
             <View>
               <TouchableOpacity
                 style={{marginTop: 12}}
-                onPress={pressProfileImage}>
+                onPress={pressProfileImage}
+              >
                 <UserImage
                   source={profilePath ? {uri: profilePath} : IC_GUEST}
                 />
@@ -277,7 +280,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 60 + inset.bottom,
-          }}>
+          }}
+        >
           <Button
             loading={isLoading}
             disabled={isLoading}
@@ -312,7 +316,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Button
               loading={isSigningOut}
               onPress={() => {

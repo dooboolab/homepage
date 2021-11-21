@@ -14,7 +14,9 @@ const Hoverable = ({onHoverIn, onHoverOut, children}: Props): ReactElement => {
 
   const handleMouseEnter = useCallback(() => {
     if (isHoverEnabled() && !isHovered) {
-      if (onHoverIn) onHoverIn();
+      if (onHoverIn) {
+        onHoverIn();
+      }
 
       setHovered(true);
     }
@@ -22,7 +24,9 @@ const Hoverable = ({onHoverIn, onHoverOut, children}: Props): ReactElement => {
 
   const handleMouseLeave = useCallback(() => {
     if (isHovered) {
-      if (onHoverOut) onHoverOut();
+      if (onHoverOut) {
+        onHoverOut();
+      }
 
       setHovered(false);
     }
