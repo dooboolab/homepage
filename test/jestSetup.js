@@ -1,5 +1,3 @@
-import React from 'react';
-
 jest.mock('@react-navigation/stack', () => ({
   ...jest.requireActual('@react-navigation/stack'),
   useHeaderHeight: () => 12,
@@ -12,6 +10,14 @@ jest.mock('dooboo-ui/theme/useColorScheme.js', () => {
   return jest.fn().mockReturnValue('dark');
 });
 
+jest.mock('@react-navigation/stack', () => {
+  return {
+    // @ts-ignore
+    ...jest.requireActual('@react-navigation/stack'),
+    createStackNavigator: jest.fn(),
+  };
+});
+
 jest.mock('react-native/Libraries/Utilities/Appearance.js', () => {
   return {
     getColorScheme: jest.fn(),
@@ -20,41 +26,3 @@ jest.mock('react-native/Libraries/Utilities/Appearance.js', () => {
     useColorScheme: jest.fn(),
   };
 });
-
-/**
- * Temporarily test files that resolves https://github.com/facebook/react-native/issues/27721
- */
-
-jest.mock(
-  'react-native/Libraries/Components/Touchable/TouchableOpacity.js',
-  () => {
-    const {View} = require('react-native');
-
-    const MockTouchable = (props): ReactElement => {
-      const moreProps = {
-        onPress: jest.fn(),
-      };
-
-      return <View {...props} {...moreProps} />;
-    };
-
-    MockTouchable.displayName = 'TouchableOpacity';
-
-    return MockTouchable;
-  },
-);
-
-jest.mock(
-  'react-native/Libraries/Components/Touchable/TouchableHighlight.js',
-  () => {
-    const {View} = require('react-native');
-
-    const MockTouchable = (props): ReactElement => {
-      return <View {...props} />;
-    };
-
-    MockTouchable.displayName = 'TouchableHighlight';
-
-    return MockTouchable;
-  },
-);

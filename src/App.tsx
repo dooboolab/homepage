@@ -1,18 +1,21 @@
-import 'firebase/firestore';
-import 'firebase/auth';
-import 'firebase/storage';
+import firebase, {initializeApp} from 'firebase/app';
 
 import Base64 from 'Base64';
+import {Platform} from 'react-native';
 import React from 'react';
 import RootNavigator from './components/navigations/RootStackNavigator';
 import RootProvider from './providers';
-import firebase from 'firebase/app';
 import {firebaseConfig} from './config';
+import {getAuth} from 'firebase/auth';
+import {getFirestore} from 'firebase/firestore';
+import {getStorage} from '@firebase/storage';
 import {initFbt} from './utils/fbt';
+import {withIAPContext} from 'react-native-iap';
 
-!firebase.apps.length
-  ? firebase.initializeApp(firebaseConfig).firestore()
-  : firebase.app().firestore();
+const app = initializeApp(firebaseConfig);
+export const firestore = getFirestore(app);
+export const fireAuth = getAuth();
+export const firestorage = getStorage();
 
 // @ts-ignore
 global.btoa = Base64.btoa;
@@ -33,4 +36,10 @@ function ProviderWrapper(): React.ReactElement {
   );
 }
 
-export default ProviderWrapper;
+const root = Platform.select({
+  ios: withIAPContext(ProviderWrapper),
+  android: withIAPContext(ProviderWrapper),
+  default: ProviderWrapper,
+});
+
+export default root;

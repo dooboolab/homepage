@@ -22,7 +22,8 @@ const RootProvider = ({children}: Props): React.ReactElement => {
       customTheme={{
         light,
         dark,
-      }}>
+      }}
+    >
       <AuthProvider>{children}</AuthProvider>
     </ThemeProvider>
   );

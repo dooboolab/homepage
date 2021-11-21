@@ -24,12 +24,14 @@ import {
   ReceiptValidationResponse,
   ReceiptValidationStatus,
 } from 'react-native-iap/src/types/apple';
+import {addDoc, collection} from 'firebase/firestore';
 import {androidIAPEndPoint, itunesConnectSharedSecret} from '@env';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {User} from '../../types';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import {firestore} from '../../App';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {useTheme} from 'dooboo-ui';
@@ -91,8 +93,9 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
 
       const nowInMilliseconds = Date.now();
 
-      if (expirationInMilliseconds > nowInMilliseconds)
+      if (expirationInMilliseconds > nowInMilliseconds) {
         return sortedAvailablePurchases?.[0].productId;
+      }
     }
 
     return undefined;
@@ -101,9 +104,11 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
   if (Platform.OS === 'android') {
     const availablePurchases = await getAvailablePurchases();
 
-    for (let i = 0; i < availablePurchases.length; i++)
-      if (subSkus.includes(availablePurchases[i].productId))
+    for (let i = 0; i < availablePurchases.length; i++) {
+      if (subSkus.includes(availablePurchases[i].productId)) {
         return availablePurchases[i].productId;
+      }
+    }
 
     return undefined;
   }
@@ -153,19 +158,15 @@ const addPurchaseRecord = (
   receipt,
 ): void => {
   if (user) {
-    firebase
-      .firestore()
-      .collection('users')
-      .doc(user.uid)
-      .collection('purchases')
-      .add({
-        purchase,
-        receipt,
-      });
+    const purchaseRef = collection(firestore, `users/${user.uid}/purchases`);
+    const sponsorRef = collection(firestore, `sponsors`);
 
-    const db = firebase.firestore();
+    addDoc(purchaseRef, {
+      purchase,
+      receipt,
+    });
 
-    db.collection('sponsors').add({
+    addDoc(sponsorRef, {
       purchase,
       user,
     });
@@ -214,14 +215,21 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, []);
 
   const fetchProducts = useCallback(async (): Promise<void> => {
-    await flushFailedPurchasesCachedAsPendingAndroid();
+    try {
+      await flushFailedPurchasesCachedAsPendingAndroid();
+    } catch (err) {
+      console.log('flushFailedPurchasesCachedAsPendingAndroid', err);
+    }
+
     getProducts(iapSkus);
     getSubscriptions(subSkus);
     getSubcribedProuduct();
   }, [getProducts, getSubcribedProuduct, getSubscriptions]);
 
   useEffect(() => {
-    if (connected) fetchProducts();
+    if (connected) {
+      fetchProducts();
+    }
   }, [fetchProducts, connected]);
 
   useEffect(() => {
@@ -245,7 +253,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
               const {status} =
                 appleReceiptResponse as ReceiptValidationResponse;
 
-              if (status === ReceiptValidationStatus.SUCCESS)
+              if (status === ReceiptValidationStatus.SUCCESS) {
                 try {
                   await finishTransaction(
                     purchase,
@@ -260,12 +268,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
                 } catch (ackErr) {
                   console.warn('ackErr', ackErr);
                 }
+              }
             }
 
             return;
           }
 
-          if (Platform.OS === 'android')
+          if (Platform.OS === 'android') {
             try {
               const body = {
                 packageName: 'com.dooboolab.app',
@@ -302,10 +311,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
             } catch (err) {
               console.log('error', JSON.stringify(err));
             }
+          }
 
           const activeSubId = await getActiveSubscriptionId();
 
-          if (activeSubId) setSubscribedProdutId(activeSubId);
+          if (activeSubId) {
+            setSubscribedProdutId(activeSubId);
+          }
         }
       }
     };
@@ -314,16 +326,20 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, [currentPurchase, user]);
 
   useEffect(() => {
-    if (currentPurchaseError)
+    if (currentPurchaseError) {
       Alert.alert(
         'purchase error',
         JSON.stringify(currentPurchaseError?.message),
       );
+    }
   }, [currentPurchaseError, currentPurchaseError?.message]);
 
   const purchase = (item: Product | Subscription): void => {
-    if (item.type === 'iap') requestPurchase(item.productId);
-    else requestSubscription(item.productId);
+    if (item.type === 'iap') {
+      requestPurchase(item.productId);
+    } else {
+      requestSubscription(item.productId);
+    }
   };
 
   const renderIntro = (): ReactElement => {
@@ -339,7 +355,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
           textAlign: 'center',
           lineHeight: 18,
           paddingHorizontal: 32,
-        }}>
+        }}
+      >
         {fbt(
           // eslint-disable-next-line max-len
           'Your sponsoring will be noted in our homepage and app when transaction is completed 🎉. Your interests will make our community much valuable 🙏.',
@@ -350,7 +367,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
   };
 
   const renderWarningTextBox = (type: ItemType): ReactElement => {
-    if (type === 'subscription' && Platform.OS === 'ios')
+    if (type === 'subscription' && Platform.OS === 'ios') {
       return (
         <>
           <StyledText
@@ -362,7 +379,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
               marginBottom: 8,
               textAlign: 'center',
               paddingHorizontal: 20,
-            }}>
+            }}
+          >
             {fbt(
               `
               Payment will be charged to your iTunes account upon confirmation of purchase.
@@ -380,13 +398,15 @@ const Sponsor: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-terms"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/termsofservice',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/termsofservice');
-              }}>
+              }}
+            >
               <fbt desc="agreement2">Terms of Agreement</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>
@@ -396,18 +416,21 @@ const Sponsor: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-privacy"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/privacyandpolicy',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
-              }}>
+              }}
+            >
               <fbt desc="agreement4">Privary Policy</fbt>.
             </StyledAgreementLinedText>
           </StyledText>
         </>
       );
+    }
 
     return (
       <StyledText
@@ -419,7 +442,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
           marginBottom: 8,
           textAlign: 'center',
           paddingHorizontal: 20,
-        }}>
+        }}
+      >
         {fbt(
           'Note that once purchased, it will not be refunded. Please watch out before you continue transactions.',
           'transaction warning note',
@@ -439,7 +463,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
             paddingBottom: 40,
             backgroundColor: theme.background,
             marginHorizontal: 16,
-          }}>
+          }}
+        >
           {itemTypes.map((type) => {
             return (
               <ListContainer key={type}>
@@ -451,7 +476,8 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     marginLeft: 12,
                     marginBottom: 8,
                     textAlign: 'center',
-                  }}>
+                  }}
+                >
                   {type === 'onetime'
                     ? fbt('One-time sponsoring', 'one time sponsoring')
                     : type === 'subscription'
@@ -468,10 +494,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     paddingVertical: 28,
                     backgroundColor: theme.paper,
                     paddingHorizontal: 40,
-                  }}>
+                  }}
+                >
                   {type === 'onetime'
                     ? sortedProducts.map((item, i) => {
-                        if (membershipSkus.includes(item.productId)) return;
+                        if (membershipSkus.includes(item.productId)) {
+                          return;
+                        }
 
                         return (
                           <IAPCard
@@ -506,7 +535,9 @@ const Sponsor: FC<Props> = ({navigation}) => {
                         );
                       })
                     : sortedProducts.map((item, i) => {
-                        if (consumableSkus.includes(item.productId)) return;
+                        if (consumableSkus.includes(item.productId)) {
+                          return;
+                        }
 
                         return (
                           <IAPCard

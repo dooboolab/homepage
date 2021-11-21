@@ -10,7 +10,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
 
@@ -60,7 +60,6 @@ const Logo = styled.Image`
 const LinkWrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 14px;
 
   ${({theme: {isDesktop}}) =>
     isDesktop &&
@@ -84,7 +83,7 @@ const LinkText = styled.Text`
 const SignOutWrapper = styled.View`
   position: absolute;
   left: 20px;
-  top: 25px;
+  top: 22px;
   width: 80px;
 
   ${({theme: {isDesktop}}) =>
@@ -92,7 +91,7 @@ const SignOutWrapper = styled.View`
     css`
       left: undfined;
       right: 64px;
-      top: 25px;
+      top: 20px;
     `}
 `;
 
@@ -120,7 +119,8 @@ const Link: FC<LinkProps> = ({onPress, text}): ReactElement => {
                 color: theme.heading,
                 textDecorationLine: 'underline',
               }
-            }>
+            }
+          >
             {text}
           </LinkText>
         </LinkTouch>
@@ -153,7 +153,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
               hideMenus
                 ? navigation.navigate('Home')
                 : scrollRef?.current?.scrollTo({y: 0})
-            }>
+            }
+          >
             <Logo
               style={[
                 isHovered && {
@@ -215,7 +216,8 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
                 style={{marginHorizontal: 10}}
                 onPress={() => {
                   navigation.navigate('ProfileEdit');
-                }}>
+                }}
+              >
                 <Image
                   style={{
                     opacity: isHovered ? 0.7 : 1,

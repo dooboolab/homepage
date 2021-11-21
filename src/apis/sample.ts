@@ -4,7 +4,9 @@ export const sample = async (
   body: Record<string, unknown> | undefined,
   signal?: AbortSignal | undefined,
 ): Promise<Response> => {
-  if (!body) throw new Error('No request object');
+  if (!body) {
+    throw new Error('No request object');
+  }
 
   const fetchOption = {
     signal,
@@ -20,7 +22,7 @@ export const sample = async (
     const res: Response = await fetch(`${ROOT_URL}`, fetchOption);
 
     return res;
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err);
   }
 };

@@ -27,8 +27,12 @@ if (Platform.OS === 'web') {
   style.type = 'text/css';
 
   // @ts-ignore
-  if (style.styleSheet) style.styleSheet.cssText = iconFontStyles;
-  else style.appendChild(document.createTextNode(iconFontStyles));
+  if (style.styleSheet) {
+    // @ts-ignore
+    style.styleSheet.cssText = iconFontStyles;
+  } else {
+    style.appendChild(document.createTextNode(iconFontStyles));
+  }
 
   // Inject stylesheet
   document.head.appendChild(style);
@@ -37,10 +41,11 @@ if (Platform.OS === 'web') {
     rootTag: document.getElementById('root'),
   });
 
-  if ('serviceWorker' in navigator)
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(
       `${process.env.PUBLIC_URL}/service-worker.js`,
     );
+  }
 }
 
 export default App;

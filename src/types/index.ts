@@ -1,7 +1,7 @@
 import {StyleProp, TextStyle} from 'react-native';
 
 import {SFC} from 'react';
-import firebase from 'firebase';
+import firebase from 'firebase/auth';
 
 export type User = {
   uid: firebase.User['uid'];

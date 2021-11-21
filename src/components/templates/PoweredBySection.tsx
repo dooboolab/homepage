@@ -41,7 +41,8 @@ const PoweredBySection: FC<Props> = () => {
       <SubTitle
         style={{
           marginTop: 8,
-        }}>
+        }}
+      >
         <fbt desc="powered by">Powered by</fbt>
       </SubTitle>
       <Description
@@ -52,7 +53,8 @@ const PoweredBySection: FC<Props> = () => {
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <fbt desc="everyone">Everyone in</fbt>
         <Hoverable>
           {(isHovered) => (
@@ -63,7 +65,8 @@ const PoweredBySection: FC<Props> = () => {
                 Linking.openURL(
                   'https://opencollective.com/dooboolab-community',
                 )
-              }>
+              }
+            >
               <LinkText
                 style={[
                   isHovered && {
@@ -71,7 +74,8 @@ const PoweredBySection: FC<Props> = () => {
                     textDecorationLine: 'underline',
                   },
                   {color: theme.accent},
-                ]}>
+                ]}
+              >
                 OpenCollectives
               </LinkText>
             </LinkTouch>

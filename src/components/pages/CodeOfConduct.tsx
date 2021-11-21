@@ -55,7 +55,8 @@ const Section: FC = () => {
         backgroundColor: theme.paper,
         paddingVertical: 40,
         paddingHorizontal: media.isDesktop ? 140 : 80,
-      }}>
+      }}
+    >
       <Text
         style={{
           color: theme.text,
@@ -64,7 +65,8 @@ const Section: FC = () => {
           fontFamily: 'avenir',
           lineHeight: 24,
           textAlign: 'center',
-        }}>
+        }}
+      >
         <fbt desc="code of conduct desc">
           We expect dooboolab's contributors to act professionally and
           respectfully. All contributors should have their own self-observation
@@ -92,14 +94,16 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      }}>
+      }}
+    >
       <SubTitle
         style={{
           color: theme.primary,
           fontSize: 20,
           marginTop: 24,
           marginBottom: 20,
-        }}>
+        }}
+      >
         {title}
       </SubTitle>
       <View
@@ -119,20 +123,23 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
           },
           media.isTablet && {width: 660},
           media.isDesktop && {width: 800},
-        ]}>
+        ]}
+      >
         {texts.map((text, i) => {
           return (
             <View
               key={i}
               style={{
                 flexDirection: 'row',
-              }}>
+              }}
+            >
               <Text
                 style={{
                   color: theme.text,
                   marginTop: 3,
                   fontSize: 18,
-                }}>
+                }}
+              >
                 •{' '}
               </Text>
               <Description
@@ -140,7 +147,8 @@ const Mission: FC<MissionProps> = ({title, texts}) => {
                   textAlign: 'left',
                   fontSize: 16,
                   maxWidth: media.isMobile ? '95%' : '100%',
-                }}>
+                }}
+              >
                 {text}
               </Description>
             </View>
@@ -166,12 +174,14 @@ const CodeOfConduct: FC<Props> = () => {
             resizeMode="cover"
             imageStyle={{
               opacity: 0.7,
-            }}>
+            }}
+          >
             <SubTitle
               style={{
                 marginTop: 200,
                 fontSize: 32,
-              }}>
+              }}
+            >
               <fbt desc="code of conduct">Code of Conduct</fbt>
             </SubTitle>
           </BackgroundImage>

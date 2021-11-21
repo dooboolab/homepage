@@ -10,15 +10,18 @@ import {
 } from 'react-native';
 import React, {FC, ReactElement, useState} from 'react';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
+import {fireAuth, firestorage} from '../../App';
+import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage';
 import {signOut, updateCurrentUserProfile} from '../../services/firebase';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
 import {colors} from '../../utils/theme';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import {launchImageLibrary} from '../../utils/ImagePicker';
 import styled from 'styled-components/native';
+import {updateProfile as updateProfileFire} from 'firebase/auth';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {withScreen} from '../../utils/wrapper';
 
@@ -90,7 +93,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   };
 
   const pressProfileImage = async (): Promise<void> => {
-    if (Platform.OS !== 'web')
+    if (Platform.OS !== 'web') {
       launchImageLibrary(
         {
           mediaType: 'photo',
@@ -107,14 +110,11 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             try {
               // @ts-ignore
               const blob = await uriToBlob(response.uri);
-
-              const snap = await firebase
-                .storage()
-                .ref(`users/${user.uid}`)
-                .put(blob);
+              const storageRef = ref(firestorage, `users/${user.uid}`);
+              const snap = await uploadBytes(storageRef, blob);
 
               if (snap) {
-                const url = await snap.ref.getDownloadURL();
+                const url = await getDownloadURL(storageRef);
 
                 setProfilePath(url);
 
@@ -123,14 +123,14 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                   photoURL: url,
                 });
 
-                const fireUser = firebase.auth().currentUser;
+                const fireUser = fireAuth.currentUser;
 
                 if (fireUser) {
-                  fireUser.updateProfile({photoURL: url});
+                  updateProfileFire(fireUser, {photoURL: url});
                   updateCurrentUserProfile({photoURL: url});
                 }
               }
-            } catch (err) {
+            } catch (err: any) {
               setIntroductionErrorText(err.message);
             } finally {
               setIsLoading(false);
@@ -138,35 +138,38 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
           }
         },
       );
+    }
   };
 
   const updateProfile = async (): Promise<void> => {
-    if (!displayName)
+    if (!displayName) {
       return setDisplayNameErrorText(
         fbt('Display name must not be empty', 'display name must not be empty'),
       );
+    }
 
     setIsLoading(true);
 
     try {
-      const currentUser = firebase.auth().currentUser;
+      const currentUser = fireAuth.currentUser;
 
       if (currentUser) {
-        currentUser.updateProfile({displayName});
+        updateProfileFire(currentUser, {displayName});
 
         updateCurrentUserProfile({
           displayName,
           introduction,
         });
 
-        if (user)
+        if (user) {
           setUser({
             ...user,
             displayName,
             introduction,
           });
+        }
       }
-    } catch (err) {
+    } catch (err: any) {
       setIntroductionErrorText(err.message);
     } finally {
       setIsLoading(false);
@@ -177,7 +180,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
   return (
     <SafeAreaView>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
         <ScrollView
           style={{
             alignSelf: 'stretch',
@@ -186,12 +190,14 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             paddingTop: 24 - inset.top,
             paddingHorizontal: 16,
             alignSelf: 'stretch',
-          }}>
+          }}
+        >
           <Container>
             <View>
               <TouchableOpacity
                 style={{marginTop: 12}}
-                onPress={pressProfileImage}>
+                onPress={pressProfileImage}
+              >
                 <UserImage
                   source={profilePath ? {uri: profilePath} : IC_GUEST}
                 />
@@ -274,7 +280,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 60 + inset.bottom,
-          }}>
+          }}
+        >
           <Button
             loading={isLoading}
             disabled={isLoading}
@@ -309,7 +316,8 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
-            }}>
+            }}
+          >
             <Button
               loading={isSigningOut}
               onPress={() => {

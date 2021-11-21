@@ -38,14 +38,16 @@ const Sponsor: FC<Props> = ({navigation}) => {
           alignSelf: 'stretch',
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Text
           style={{
             color: theme.accent,
             lineHeight: 30,
             fontSize: 20,
             textAlign: 'center',
-          }}>
+          }}
+        >
           <fbt desc="not supported in web">Not supported in web.</fbt>
           {'\n'}
           <fbt desc="try in ios or android">
