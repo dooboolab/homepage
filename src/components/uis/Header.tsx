@@ -213,7 +213,7 @@ const Header: FC<Props> = ({scrollRef, hideMenus}) => {
           <Hoverable>
             {(isHovered) => (
               <TouchableOpacity
-                style={{marginHorizontal: 10}}
+                style={{marginHorizontal: 10, marginTop: 4}}
                 onPress={() => {
                   navigation.navigate('ProfileEdit');
                 }}
