@@ -4,8 +4,22 @@ exports[`Rendering component and snapshot matches 1`] = `
 <View>
   <View
     accessibilityRole="button"
-    accessibilityState={Object {}}
-    onPress={[MockFunction]}
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
     testID="BUTTON"
   >
     <View

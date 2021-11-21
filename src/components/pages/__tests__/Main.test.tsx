@@ -12,6 +12,7 @@ let testingLib: RenderAPI;
 
 jest.mock('@react-navigation/native', () => {
   return {
+    // @ts-ignore
     ...jest.requireActual('@react-navigation/native'),
     createNavigatorFactory: jest.fn(),
     useNavigation: (): Record<string, unknown> => ({

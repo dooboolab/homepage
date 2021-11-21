@@ -6,4 +6,6 @@ const useIAP = (): Record<string, unknown> => ({
   subscriptions: [],
 });
 
-export {useIAP};
+const withIAPContext = jest.fn();
+
+export {useIAP, withIAPContext};

@@ -130,7 +130,7 @@ const SignIn: FC<Props> = ({navigation}) => {
           photoURL: user?.photoURL,
         });
       }
-    } catch (err) {
+    } catch (err: any) {
       setPasswordError(err.message);
     } finally {
       setIsLoggingIn(false);
