@@ -1,6 +1,7 @@
 import firebase, {initializeApp} from 'firebase/app';
 
 import Base64 from 'Base64';
+import {Platform} from 'react-native';
 import React from 'react';
 import RootNavigator from './components/navigations/RootStackNavigator';
 import RootProvider from './providers';
@@ -35,4 +36,10 @@ function ProviderWrapper(): React.ReactElement {
   );
 }
 
-export default withIAPContext(ProviderWrapper);
+const root = Platform.select({
+  ios: withIAPContext(ProviderWrapper),
+  android: withIAPContext(ProviderWrapper),
+  default: ProviderWrapper,
+});
+
+export default root;
