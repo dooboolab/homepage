@@ -28,6 +28,7 @@ if (Platform.OS === 'web') {
 
   // @ts-ignore
   if (style.styleSheet) {
+    // @ts-ignore
     style.styleSheet.cssText = iconFontStyles;
   } else {
     style.appendChild(document.createTextNode(iconFontStyles));

@@ -130,7 +130,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
                   updateCurrentUserProfile({photoURL: url});
                 }
               }
-            } catch (err) {
+            } catch (err: any) {
               setIntroductionErrorText(err.message);
             } finally {
               setIsLoading(false);
@@ -169,7 +169,7 @@ const ProfileEdit: FC<Props> = ({navigation}) => {
           });
         }
       }
-    } catch (err) {
+    } catch (err: any) {
       setIntroductionErrorText(err.message);
     } finally {
       setIsLoading(false);

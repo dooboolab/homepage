@@ -140,7 +140,7 @@ const SignIn: FC<Props> = ({navigation}) => {
       });
 
       navigation.goBack();
-    } catch (err) {
+    } catch (err: any) {
       setErrorDisplayName(err.message);
     } finally {
       setIsSigningUp(false);

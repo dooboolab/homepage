@@ -1,11 +1,13 @@
 import {Alert, Platform} from 'react-native';
 import {Button, useTheme} from 'dooboo-ui';
 import React, {FC, useState} from 'react';
+import {addDoc, collection} from 'firebase/firestore';
 import styled, {css} from 'styled-components/native';
 
 import {IMG_LABTOP} from '../../utils/Icons';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
+import {firestore} from '../../App';
 import {validateEmail} from '../../utils/common';
 
 // eslint-disable-next-line
@@ -125,14 +127,11 @@ const ContactSection: FC<Props> = () => {
       });
     }
 
-    const db = firebase.firestore();
-
     try {
       setLoading(true);
 
-      await db
-        .collection('contacts')
-        .add({email, name, message: story, createdAt: new Date()});
+      const contactRef = collection(firestore, `contacts`);
+      addDoc(contactRef, {email, name, message: story, createdAt: new Date()});
 
       Platform.select({
         // eslint-disable-next-line no-alert
@@ -154,7 +153,7 @@ const ContactSection: FC<Props> = () => {
       setEmail('');
       setName('');
       setStory('');
-    } catch (err) {
+    } catch (err: any) {
       Alert.alert(fbt('Error', 'error'), err.message);
     } finally {
       setLoading(false);

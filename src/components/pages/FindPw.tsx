@@ -71,7 +71,7 @@ const FindPw: FC<Props> = ({navigation}) => {
 
     try {
       await sendPasswordResetEmail(email);
-    } catch (err) {
+    } catch (err: any) {
       setEmailError(err.message);
     } finally {
       const successFbtString = fbt(
