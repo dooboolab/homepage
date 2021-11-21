@@ -14,7 +14,8 @@ import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import WebView from '../pages/WebView';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import {fireAuth} from '../../App';
+import firebase from 'firebase/app';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {validateEmail} from '../../utils/common';
@@ -86,19 +87,23 @@ const SignIn: FC<Props> = ({navigation}) => {
     setEmailError('');
     setPasswordError('');
 
-    const currentUser = firebase.auth().currentUser;
+    const currentUser = fireAuth.currentUser;
 
-    if (currentUser) await signOut();
+    if (currentUser) {
+      await signOut();
+    }
 
-    if (!email || !validateEmail(email))
+    if (!email || !validateEmail(email)) {
       return setEmailError(
         fbt('Not a valid email address', 'invalid email address'),
       );
+    }
 
-    if (!password)
+    if (!password) {
       return setPasswordError(
         fbt('Password is not correct', 'incorrect password'),
       );
+    }
 
     setIsLoggingIn(true);
 
@@ -116,7 +121,7 @@ const SignIn: FC<Props> = ({navigation}) => {
         );
       }
 
-      if (user)
+      if (user) {
         setUser({
           displayName: user?.displayName,
           email: user?.email,
@@ -124,6 +129,7 @@ const SignIn: FC<Props> = ({navigation}) => {
           emailVerified: user?.emailVerified,
           photoURL: user?.photoURL,
         });
+      }
     } catch (err) {
       setPasswordError(err.message);
     } finally {
@@ -219,10 +225,11 @@ const SignIn: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-terms"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/termsofservice',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/termsofservice');
               }}>
@@ -235,10 +242,11 @@ const SignIn: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-privacy"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/privacyandpolicy',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
               }}>

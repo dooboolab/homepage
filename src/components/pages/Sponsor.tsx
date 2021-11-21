@@ -24,12 +24,14 @@ import {
   ReceiptValidationResponse,
   ReceiptValidationStatus,
 } from 'react-native-iap/src/types/apple';
+import {addDoc, collection} from 'firebase/firestore';
 import {androidIAPEndPoint, itunesConnectSharedSecret} from '@env';
 
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {User} from '../../types';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import {firestore} from '../../App';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {useTheme} from 'dooboo-ui';
@@ -91,8 +93,9 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
 
       const nowInMilliseconds = Date.now();
 
-      if (expirationInMilliseconds > nowInMilliseconds)
+      if (expirationInMilliseconds > nowInMilliseconds) {
         return sortedAvailablePurchases?.[0].productId;
+      }
     }
 
     return undefined;
@@ -101,9 +104,11 @@ const getActiveSubscriptionId = async (): Promise<string | undefined> => {
   if (Platform.OS === 'android') {
     const availablePurchases = await getAvailablePurchases();
 
-    for (let i = 0; i < availablePurchases.length; i++)
-      if (subSkus.includes(availablePurchases[i].productId))
+    for (let i = 0; i < availablePurchases.length; i++) {
+      if (subSkus.includes(availablePurchases[i].productId)) {
         return availablePurchases[i].productId;
+      }
+    }
 
     return undefined;
   }
@@ -153,19 +158,15 @@ const addPurchaseRecord = (
   receipt,
 ): void => {
   if (user) {
-    firebase
-      .firestore()
-      .collection('users')
-      .doc(user.uid)
-      .collection('purchases')
-      .add({
-        purchase,
-        receipt,
-      });
+    const purchaseRef = collection(firestore, `users/${user.uid}/purchases`);
+    const sponsorRef = collection(firestore, `sponsors`);
 
-    const db = firebase.firestore();
+    addDoc(purchaseRef, {
+      purchase,
+      receipt,
+    });
 
-    db.collection('sponsors').add({
+    addDoc(sponsorRef, {
       purchase,
       user,
     });
@@ -226,7 +227,9 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, [getProducts, getSubcribedProuduct, getSubscriptions]);
 
   useEffect(() => {
-    if (connected) fetchProducts();
+    if (connected) {
+      fetchProducts();
+    }
   }, [fetchProducts, connected]);
 
   useEffect(() => {
@@ -250,7 +253,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
               const {status} =
                 appleReceiptResponse as ReceiptValidationResponse;
 
-              if (status === ReceiptValidationStatus.SUCCESS)
+              if (status === ReceiptValidationStatus.SUCCESS) {
                 try {
                   await finishTransaction(
                     purchase,
@@ -265,12 +268,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
                 } catch (ackErr) {
                   console.warn('ackErr', ackErr);
                 }
+              }
             }
 
             return;
           }
 
-          if (Platform.OS === 'android')
+          if (Platform.OS === 'android') {
             try {
               const body = {
                 packageName: 'com.dooboolab.app',
@@ -307,10 +311,13 @@ const Sponsor: FC<Props> = ({navigation}) => {
             } catch (err) {
               console.log('error', JSON.stringify(err));
             }
+          }
 
           const activeSubId = await getActiveSubscriptionId();
 
-          if (activeSubId) setSubscribedProdutId(activeSubId);
+          if (activeSubId) {
+            setSubscribedProdutId(activeSubId);
+          }
         }
       }
     };
@@ -319,16 +326,20 @@ const Sponsor: FC<Props> = ({navigation}) => {
   }, [currentPurchase, user]);
 
   useEffect(() => {
-    if (currentPurchaseError)
+    if (currentPurchaseError) {
       Alert.alert(
         'purchase error',
         JSON.stringify(currentPurchaseError?.message),
       );
+    }
   }, [currentPurchaseError, currentPurchaseError?.message]);
 
   const purchase = (item: Product | Subscription): void => {
-    if (item.type === 'iap') requestPurchase(item.productId);
-    else requestSubscription(item.productId);
+    if (item.type === 'iap') {
+      requestPurchase(item.productId);
+    } else {
+      requestSubscription(item.productId);
+    }
   };
 
   const renderIntro = (): ReactElement => {
@@ -355,7 +366,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
   };
 
   const renderWarningTextBox = (type: ItemType): ReactElement => {
-    if (type === 'subscription' && Platform.OS === 'ios')
+    if (type === 'subscription' && Platform.OS === 'ios') {
       return (
         <>
           <StyledText
@@ -385,10 +396,11 @@ const Sponsor: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-terms"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/termsofservice',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/termsofservice');
               }}>
@@ -401,10 +413,11 @@ const Sponsor: FC<Props> = ({navigation}) => {
             <StyledAgreementLinedText
               testID="btn-privacy"
               onPress={(): Promise<void> | undefined => {
-                if (Platform.OS === 'web')
+                if (Platform.OS === 'web') {
                   return Linking.openURL(
                     'https://legacy.dooboolab.com/privacyandpolicy',
                   );
+                }
 
                 goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
               }}>
@@ -413,6 +426,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
           </StyledText>
         </>
       );
+    }
 
     return (
       <StyledText
@@ -476,7 +490,9 @@ const Sponsor: FC<Props> = ({navigation}) => {
                   }}>
                   {type === 'onetime'
                     ? sortedProducts.map((item, i) => {
-                        if (membershipSkus.includes(item.productId)) return;
+                        if (membershipSkus.includes(item.productId)) {
+                          return;
+                        }
 
                         return (
                           <IAPCard
@@ -511,7 +527,9 @@ const Sponsor: FC<Props> = ({navigation}) => {
                         );
                       })
                     : sortedProducts.map((item, i) => {
-                        if (consumableSkus.includes(item.productId)) return;
+                        if (consumableSkus.includes(item.productId)) {
+                          return;
+                        }
 
                         return (
                           <IAPCard

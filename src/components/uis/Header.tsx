@@ -10,7 +10,7 @@ import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import ToggleSwitch from 'toggle-switch-react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import {useAuthContext} from '../../providers/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
 

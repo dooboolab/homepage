@@ -2,13 +2,24 @@ import {Button, EditText, LoadingIndicator, useTheme} from 'dooboo-ui';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import {Text, TextStyle, View} from 'react-native';
+import {
+  Timestamp,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+} from 'firebase/firestore';
 import {formatDistance, subDays} from 'date-fns';
 
 import CheckBox from '../uis/CheckBox';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import {firestore} from '../../App';
 import {getPromotedProductIOS} from 'react-native-iap';
 import produce from 'immer';
 import styled from 'styled-components/native';
@@ -187,27 +198,23 @@ const Todo: FC<Props> = ({navigation}) => {
   } = useAuthContext();
 
   const setInitialTodos = useCallback(async (): Promise<void> => {
-    const db = firebase.firestore();
-
     if (user) {
-      const snap = await db
-        .collection('users')
-        .doc(user.uid)
-        .collection('todos')
-        .get();
+      const todoRef = collection(firestore, `users/${user.uid}/todos`);
+      const q = query(todoRef);
+      const snap = await getDocs(q);
 
       const initialTodos: TodoType[] = [];
 
       type TodoDocType = Omit<TodoType, 'id' | 'createdAt'> & {
-        createdAt: firebase.firestore.Timestamp;
+        createdAt: Timestamp;
       };
 
-      for (const doc of snap.docs) {
-        const todoData: TodoDocType = doc.data() as TodoDocType;
+      for (const snapDoc of snap.docs) {
+        const todoData: TodoDocType = snapDoc.data() as TodoDocType;
 
         const todo: TodoType = {
           ...todoData,
-          id: doc.id,
+          id: snapDoc.id,
           initialText: todoData.text,
           createdAt: todoData?.createdAt?.toDate(),
         };
@@ -225,22 +232,20 @@ const Todo: FC<Props> = ({navigation}) => {
   }, [setInitialTodos]);
 
   const addTodo = useCallback(async (): Promise<void> => {
-    if (!text) return;
-
-    const db = firebase.firestore();
+    if (!text) {
+      return;
+    }
 
     if (user) {
       const createdAt = new Date();
 
-      const added = await db
-        .collection('users')
-        .doc(user.uid)
-        .collection('todos')
-        .add({
-          text,
-          done: false,
-          createdAt: firebase.firestore.Timestamp.fromDate(createdAt),
-        });
+      const todoRef = collection(firestore, `users/${user.uid}/todos`);
+
+      const added = await addDoc(todoRef, {
+        text,
+        done: false,
+        createdAt: Timestamp.fromDate(createdAt),
+      });
 
       const todo: TodoType = {
         id: added.id,
@@ -313,15 +318,13 @@ const Todo: FC<Props> = ({navigation}) => {
               onDoneChecked={async () => {
                 const index = todos.findIndex((el) => el.id === item.id);
 
-                const db = firebase.firestore();
-
                 if (user) {
-                  await db
-                    .collection('users')
-                    .doc(user.uid)
-                    .collection('todos')
-                    .doc(item.id)
-                    .set({done: !item.done}, {merge: true});
+                  const todoRef = doc(
+                    firestore,
+                    `users/${user.uid}/todos/${item.id}`,
+                  );
+
+                  setDoc(todoRef, {done: !item.done}, {merge: true});
 
                   const nextState = produce(todos, (draft) => {
                     draft[index] = item;
@@ -335,15 +338,14 @@ const Todo: FC<Props> = ({navigation}) => {
               }}
               onEditPressed={async () => {
                 const index = todos.findIndex((el) => el.id === item.id);
-                const db = firebase.firestore();
 
                 if (user) {
-                  await db
-                    .collection('users')
-                    .doc(user.uid)
-                    .collection('todos')
-                    .doc(item.id)
-                    .set({text: item.text}, {merge: true});
+                  const todoRef = doc(
+                    firestore,
+                    `users/${user.uid}/todos/${item.id}`,
+                  );
+
+                  setDoc(todoRef, {text: item.text}, {merge: true});
 
                   const nextState = produce(todos, (draft) => {
                     draft[index] = item;
@@ -366,15 +368,13 @@ const Todo: FC<Props> = ({navigation}) => {
               onDeletePressed={async () => {
                 const index = todos.findIndex((el) => el.id === item.id);
 
-                const db = firebase.firestore();
-
                 if (user) {
-                  await db
-                    .collection('users')
-                    .doc(user.uid)
-                    .collection('todos')
-                    .doc(item.id)
-                    .delete();
+                  const todoRef = doc(
+                    firestore,
+                    `users/${user.uid}/todos/${item.id}`,
+                  );
+
+                  deleteDoc(todoRef);
 
                   const nextState = produce(todos, (draft) => {
                     draft[index] = item;

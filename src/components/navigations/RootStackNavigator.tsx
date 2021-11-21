@@ -7,6 +7,8 @@ import {
   StackNavigationProp,
   createStackNavigator,
 } from '@react-navigation/stack';
+import {doc, getDoc} from 'firebase/firestore';
+import {fireAuth, firestore} from '../../App';
 
 import CodeOfConduct from '../pages/CodeOfConduct';
 import FindPw from '../pages/FindPw';
@@ -20,7 +22,7 @@ import Todo from '../pages/Todo';
 import {User} from '../../types';
 import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import {useAuthContext} from '../../providers/AuthProvider';
 
 export type RootStackParamList = {
@@ -91,34 +93,34 @@ function RootNavigator(): React.ReactElement {
   const [loggingOut, setLoggingOut] = useState<boolean>(false);
 
   useEffect(() => {
-    if (authInitiated) return;
+    if (authInitiated) {
+      return;
+    }
 
     setAuthInitiated(true);
 
-    firebase.auth().onAuthStateChanged((fireUser) => {
+    fireAuth.onAuthStateChanged((fireUser) => {
       setFireAuthStateChanged(true);
 
       if (fireUser) {
-        firebase
-          .firestore()
-          .collection('users')
-          .doc(fireUser.uid)
-          .get()
-          .then((doc) => {
-            const updatedUser: User = {
-              uid: fireUser.uid,
-              email: fireUser.email,
-              displayName: fireUser.displayName,
-              emailVerified: fireUser.emailVerified,
-              photoURL: fireUser.photoURL,
-              introduction: '',
-            };
+        const docRef = doc(firestore, `users/${fireUser.uid}`);
 
-            if (doc.exists)
-              updatedUser.introduction = (doc.data() as User).introduction;
+        getDoc(docRef).then((userDoc) => {
+          const updatedUser: User = {
+            uid: fireUser.uid,
+            email: fireUser.email,
+            displayName: fireUser.displayName,
+            emailVerified: fireUser.emailVerified,
+            photoURL: fireUser.photoURL,
+            introduction: '',
+          };
 
-            setUser(updatedUser);
-          });
+          if (userDoc.exists()) {
+            updatedUser.introduction = (userDoc.data() as User).introduction;
+          }
+
+          setUser(updatedUser);
+        });
 
         return;
       }
@@ -133,7 +135,7 @@ function RootNavigator(): React.ReactElement {
     config: webConfig,
   };
 
-  if (!fireAuthStateChanged)
+  if (!fireAuthStateChanged) {
     return (
       <View
         style={{
@@ -147,6 +149,7 @@ function RootNavigator(): React.ReactElement {
         <LoadingIndicator />
       </View>
     );
+  }
 
   return (
     <NavigationContainer

@@ -11,12 +11,14 @@ import {
   createUserWithEmailAndPassword,
   updateCurrentUserProfile,
 } from '../../services/firebase';
+import {sendEmailVerification, updateProfile} from 'firebase/auth';
 
 import type {FC} from 'react';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
-import firebase from 'firebase';
+import {fireAuth} from '../../App';
+import firebase from 'firebase/app';
 import styled from 'styled-components/native';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
@@ -80,40 +82,45 @@ const SignIn: FC<Props> = ({navigation}) => {
     setErrorPasswordConfirm('');
     setErrorDisplayName('');
 
-    if (!email || !validateEmail(email))
+    if (!email || !validateEmail(email)) {
       return setErrorEmail(
         fbt('Not a valid email address', 'invalid email address'),
       );
+    }
 
-    if (!password)
+    if (!password) {
       return setErrorPassword(fbt('Password is missing', 'password missing'));
+    }
 
-    if (password !== confirmPassword)
+    if (password !== confirmPassword) {
       return setErrorPasswordConfirm(
         fbt('Password does not match', 'password does not match'),
       );
+    }
 
-    if (!displayName)
+    if (!displayName) {
       return setErrorDisplayName(
         fbt('Please enter display name', 'enter display name'),
       );
+    }
 
     setIsSigningUp(true);
 
     try {
       await createUserWithEmailAndPassword(email, password);
 
-      const currentUser = firebase.auth().currentUser;
+      const currentUser = fireAuth.currentUser;
 
-      if (currentUser)
+      if (currentUser) {
         await Promise.all([
-          currentUser.updateProfile({displayName}),
+          updateProfile(currentUser, {displayName}),
           updateCurrentUserProfile({
             email,
             displayName,
           }),
-          currentUser.sendEmailVerification(),
+          sendEmailVerification(currentUser),
         ]);
+      }
 
       navigation.goBack();
 
