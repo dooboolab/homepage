@@ -166,16 +166,13 @@ const VisionAndMission: FC<Props> = () => {
         <MissionWrapper>
           <Mission
             title="01"
-            text={fbt(
-              'We wish to get connected with great people who meet our vision, which is making a better society.',
-              'mission 1',
-            )}
+            text={fbt('We wish to contribute on fair society.', 'mission 1')}
           />
           <Mission
             title="02"
             text={fbt(
               // eslint-disable-next-line max-len
-              'When faced with limitations in pursing innovation, feel free to contact us. However, please adhere with our Code of Conduct below.',
+              'We communicate with many people, share experiences and spread good influence',
               'mission 2',
             )}
           />
@@ -183,7 +180,7 @@ const VisionAndMission: FC<Props> = () => {
             title="03"
             text={fbt(
               // eslint-disable-next-line max-len
-              'Our goal is to make a just society. Though this may be nearly impossible to fully achieve, we will communicate with others, share our experience and spread ideas to achieve this goal. We are willing to embrace change as we meet with other’s experience and stories.',
+              'Grow with great people working in various fields who aligns with our vision',
               'mission 3',
             )}
           />
@@ -191,29 +188,15 @@ const VisionAndMission: FC<Props> = () => {
             title="04"
             text={fbt(
               // eslint-disable-next-line max-len
-              'We wish to grow together with multiple stakeholders working in various fields.',
+              'We discover or participate in as many open sources as possible to achieve our goals.',
               'mission 4',
             )}
           />
           <Mission
             title="05"
             text={fbt(
-              'We wish to bring justice. Therefore, we will participate in public work as much as possible.',
+              'We operate a strong open source community for individuals, businesses and social groups.',
               'mission 5',
-            )}
-          />
-          <Mission
-            title="06"
-            text={fbt(
-              'We want to become a strong open source community for individuals, companies, and group of societies.',
-              'mission 6',
-            )}
-          />
-          <Mission
-            title="07"
-            text={fbt(
-              'Finally, our mission is to contribute in making a reasonable society.',
-              'mission 7',
             )}
           />
         </MissionWrapper>
