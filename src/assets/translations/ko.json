@@ -990,6 +990,16 @@
           "variations": {}
         }
       ]
+    },
+    "d444d19d03a277db602f30b7d846e70c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "연락을 남기지 못했습니다. 다시 시도해주세요.\n반복적으로 해당 문제가 발생하면 support@dooboolab.com으로 연락주시면 감사하겠습니다.",
+          "variations": {}
+        }
+      ]
     }
   }
 }

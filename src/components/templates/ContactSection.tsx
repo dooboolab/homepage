@@ -1,6 +1,7 @@
 import {Alert, Platform} from 'react-native';
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {addDoc, collection} from 'firebase/firestore';
+import {emailHost, emailSecret} from '@env';
 import styled, {css} from 'styled-components/native';
 
 import {Button} from '../uis/Button';
@@ -131,8 +132,47 @@ const ContactSection: FC<Props> = () => {
     try {
       setLoading(true);
 
+      const createdAt = new Date();
+
+      const res = await fetch(`${emailHost}/send_email`, {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          emailTo: 'support@dooboolab.com',
+          subject: '두부랩 문의',
+          text: `이름: ${name}\n이메일: ${email}\n이름: ${name}\n메시지: ${story}\n생성일: ${createdAt}`,
+          secret: emailSecret,
+        }),
+      });
+
+      if (res.status !== 200) {
+        Platform.select({
+          // eslint-disable-next-line no-alert
+          web: alert(
+            fbt(
+              // eslint-disable-next-line max-len
+              'Error occurred while contacting. Please try again.\nIf it happens repeatedly, please contact us via email, support@dooboolab.com',
+              'error contact',
+            ),
+          ),
+          default: Alert.alert(
+            fbt('Error', 'error'),
+            fbt(
+              // eslint-disable-next-line max-len
+              'Error occurred while contacting. Please try again.\nIf it happens repeatedly, please contact us via email, support@dooboolab.com',
+              'error contact',
+            ),
+          ),
+        });
+
+        return;
+      }
+
       const contactRef = collection(firestore, `contacts`);
-      addDoc(contactRef, {email, name, message: story, createdAt: new Date()});
+      addDoc(contactRef, {email, name, message: story, createdAt});
 
       Platform.select({
         // eslint-disable-next-line no-alert
