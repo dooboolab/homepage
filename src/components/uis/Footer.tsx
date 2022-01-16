@@ -82,7 +82,8 @@ const Footer: FC<Props> = () => {
           }}
         >
           <fbt desc="address value">
-            203, 40, Seolleung-ro 93-gil, Gangnam-gu, Seoul, Republic of Korea
+            7th Floor, Twin City Namsan Mountain, 366, Hangang-daero,
+            Yongsan-gu, Seoul, Korea
           </fbt>
         </Description>
       </AddressColumn>
