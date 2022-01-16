@@ -118,6 +118,7 @@ const TodoList: FC<TodoListProps> = ({
                   {
                     color: theme.text,
                     fontSize: 14,
+                    flex: 1,
                     alignSelf: 'stretch',
                   },
                   todo.done && {...textDoneStyle},
