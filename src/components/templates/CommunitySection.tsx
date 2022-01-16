@@ -1,11 +1,12 @@
-import {Button, useTheme} from 'dooboo-ui';
 import {Description, SubTitle} from '../uis/Typography';
 import {IMG_PRISMA_KOREA, IMG_RN_SEOUL} from '../../utils/Icons';
 import {Linking, Platform} from 'react-native';
 import React, {FC, ReactElement} from 'react';
 import styled, {css} from 'styled-components/native';
 
+import {Button} from '../uis/Button';
 import {fbt} from 'fbt';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;
@@ -77,7 +78,7 @@ const CommunitySection: FC<Props> = () => {
         }}
         styles={{
           container: {
-            backgroundColor: theme.contrastBackground,
+            backgroundColor: theme.background,
             borderColor: colors.success,
             borderWidth: 2,
             paddingHorizontal: 20,

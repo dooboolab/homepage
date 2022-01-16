@@ -1,6 +1,5 @@
 import './GestureHandler';
 
-import {LoadingIndicator, useTheme} from 'dooboo-ui';
 import {Platform, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {
@@ -13,6 +12,7 @@ import {fireAuth, firestore} from '../../App';
 import CodeOfConduct from '../pages/CodeOfConduct';
 import FindPw from '../pages/FindPw';
 import Home from '../pages/Home';
+import {LoadingIndicator} from '../uis/LoadingIndicator';
 import {NavigationContainer} from '@react-navigation/native';
 import ProfileEdit from '../pages/ProfileEdit';
 import SignIn from '../pages/SignIn';
@@ -24,6 +24,7 @@ import VisionAndMission from '../pages/VisionAndMission';
 import WebView from '../pages/WebView';
 import firebase from 'firebase/app';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 export type RootStackParamList = {
   Home: undefined;

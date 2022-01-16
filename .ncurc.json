@@ -3,7 +3,6 @@
     "react",
     "react-dom",
     "react-test-renderer",
-    "metro-react-native-babel-preset",
-    "dooboo-ui"
+    "metro-react-native-babel-preset"
   ]
 }

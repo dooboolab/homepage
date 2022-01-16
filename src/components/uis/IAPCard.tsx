@@ -4,7 +4,7 @@ import React, {FC, ReactElement} from 'react';
 
 import RoundedButton from './RoundedButton';
 import {fbt} from 'fbt';
-import {useTheme} from 'dooboo-ui';
+import {useTheme} from '../../providers/ThemeProvider';
 
 //eslint-disable-next-line
 fbt;

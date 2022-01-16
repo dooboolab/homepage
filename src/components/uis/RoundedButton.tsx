@@ -6,7 +6,7 @@ import type {
   ViewStyle,
 } from 'react-native';
 
-import {Button} from 'dooboo-ui';
+import {Button} from './Button';
 import {fbt} from 'fbt';
 
 //eslint-disable-next-line

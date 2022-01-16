@@ -1,4 +1,3 @@
-import {Button, EditText, LoadingIndicator, useTheme} from 'dooboo-ui';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import {Text, TextStyle, View} from 'react-native';
@@ -14,8 +13,11 @@ import {
 } from 'firebase/firestore';
 import {formatDistance, subDays} from 'date-fns';
 
+import {Button} from '../uis/Button';
 import CheckBox from '../uis/CheckBox';
+import {EditText} from '../uis/EditText';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {LoadingIndicator} from '../uis/LoadingIndicator';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
@@ -24,6 +26,7 @@ import {getPromotedProductIOS} from 'react-native-iap';
 import produce from 'immer';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.SafeAreaView`
@@ -270,10 +273,14 @@ const Todo: FC<Props> = ({navigation}) => {
     return (
       <View
         style={{
-          alignSelf: 'stretch',
           marginTop: 16,
           marginBottom: 12,
           marginHorizontal: 12,
+          width: '100%',
+          paddingHorizontal: 12,
+
+          flexDirection: 'row',
+          alignItems: 'center',
         }}
       >
         <EditText
@@ -282,13 +289,25 @@ const Todo: FC<Props> = ({navigation}) => {
           placeholder={fbt('Add todo...', 'add todo').toString()}
           style={{
             borderWidth: 1,
+            paddingVertical: 2,
+            width: '100%',
             borderColor: theme.accent,
+            flexDirection: 'row',
+            alignItems: 'center',
           }}
           styles={{
+            container: {
+              height: '100%',
+              width: '100%',
+              borderBottomWidth: 0,
+            },
             input: {
               fontSize: 14,
               paddingRight: 80,
               paddingLeft: 12,
+            },
+            hovered: {
+              borderBottomWidth: 0,
             },
           }}
           onSubmitEditing={addTodo}
@@ -296,8 +315,7 @@ const Todo: FC<Props> = ({navigation}) => {
         <Button
           style={{
             position: 'absolute',
-            top: 5,
-            right: 8,
+            right: 20,
           }}
           text={fbt('Add', 'add')}
           onPress={addTodo}

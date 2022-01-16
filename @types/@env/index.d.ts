@@ -9,4 +9,7 @@ declare module '@env' {
   export const itunesConnectSharedSecret: string;
   export const androidAccessToken: string;
   export const androidIAPEndPoint: string;
+  export const PUBLIC_URL: string;
+  export const emailSecret: string;
+  export const emailHost: string;
 }

@@ -32,7 +32,9 @@ const fromCache = async (request) => {
   const cache = await caches.open(CACHE);
   const matching = await cache.match(request);
 
-  if (matching === undefined) throw new Error('no-match');
+  if (matching === undefined) {
+    throw new Error('no-match');
+  }
 
   return matching;
 };

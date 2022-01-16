@@ -1,10 +1,11 @@
-import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import type {FC, ReactElement, RefObject} from 'react';
 import {IC_DOOBOOLAB, IC_DOOBOOLAB_DARK, IC_GUEST} from '../../utils/Icons';
 import {Image, Platform, ScrollView} from 'react-native';
 import React, {useState} from 'react';
+import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
+import {Button} from './Button';
 import Hoverable from '../../utils/Hoverable';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import ToggleSwitch from 'toggle-switch-react-native';
