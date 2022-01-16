@@ -96,7 +96,7 @@ export const dark: Theme = {
   heading: '#FFFFFF',
   titleText: '#8A96DC',
   subText: '#D3D8E8',
-  text: '#D3D8E8',
+  text: colors.white,
   textContrast: '#000000',
   disabled: colors.mediumGray,
   border: '#EDEDED',

@@ -1,15 +1,14 @@
 import {Platform, Text, TextInput, View} from 'react-native';
-import React, {FC, useRef, useState} from 'react';
+import React, {FC, LegacyRef, useRef, useState} from 'react';
 import type {
   StyleProp,
   TextInputProps,
   TextStyle,
   ViewStyle,
 } from 'react-native';
-import {Theme, light} from '../../utils/theme';
 
 import {useHover} from 'react-native-web-hooks';
-import {withTheme} from '../../providers/ThemeProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 type Styles = {
   container?: StyleProp<ViewStyle>;
@@ -18,11 +17,12 @@ type Styles = {
   labelTextHovered?: StyleProp<TextStyle>;
   input?: StyleProp<TextStyle>;
   errorText?: StyleProp<TextStyle>;
+  counter?: StyleProp<TextStyle>;
 };
 
 export type EditTextProps = {
   testID?: TextInputProps['testID'];
-  theme?: Theme;
+  inputRef?: LegacyRef<TextInput>;
   textInputProps?: TextInputProps;
   style?: StyleProp<ViewStyle>;
   styles?: Styles;
@@ -32,52 +32,127 @@ export type EditTextProps = {
   onChange?: TextInputProps['onChange'];
   onChangeText?: TextInputProps['onChangeText'];
   placeholder?: TextInputProps['placeholder'];
-  placeholderTextColor?: TextInputProps['placeholderTextColor'];
+  placeholderColor?: TextInputProps['placeholderTextColor'];
   onFocus?: TextInputProps['onFocus'] | undefined;
   onBlur?: TextInputProps['onBlur'] | undefined;
   editable?: TextInputProps['editable'];
   autoCapitalize?: TextInputProps['autoCapitalize'];
   secureTextEntry?: TextInputProps['secureTextEntry'];
   onSubmitEditing?: TextInputProps['onSubmitEditing'];
+
   focusColor?: string;
+  hoverColor?: string;
   errorColor?: string;
   disableColor?: string;
-  type?: 'row' | 'column';
+  labelColor?: string;
+  type?: 'row' | 'column' | 'boxed';
 };
 
-const Component: FC<EditTextProps & {theme: Theme}> = ({
-  theme,
-  testID,
-  textInputProps,
-  style,
-  styles,
-  labelText = '',
-  errorText = '',
-  value = '',
-  placeholder,
-  placeholderTextColor,
-  onChange,
-  onChangeText,
-  onFocus,
-  onBlur,
-  autoCapitalize = 'none',
-  secureTextEntry = false,
-  editable = true,
-  focusColor = theme.primary,
-  errorColor = theme.negative,
-  disableColor = theme.disabled,
-  type = 'row',
-}) => {
+export const EditText: FC<EditTextProps> = (props) => {
+  const {
+    testID,
+    inputRef,
+    textInputProps,
+    style,
+    styles,
+    labelText = '',
+    errorText = '',
+    value = '',
+    placeholder,
+    onChange,
+    onChangeText,
+    onFocus,
+    onBlur,
+    onSubmitEditing,
+    autoCapitalize = 'none',
+    secureTextEntry = false,
+    editable = true,
+    type = 'column',
+  } = props;
+
+  const {theme} = useTheme();
+
   const [focused, setFocused] = useState(false);
   const ref = useRef<View>(null);
+  const hovered = useHover(ref);
 
-  const borderColor = disableColor;
-  const labelColor = disableColor;
-  const hoveredColor = theme.primary;
+  const borderColor = theme.text;
   const textColor = theme.text;
 
+  const {
+    placeholderColor = theme.placeholder,
+    focusColor = theme.primary,
+    hoverColor = theme.primary,
+    errorColor = theme.danger,
+    disableColor = theme.disabled,
+    labelColor = theme.placeholder,
+  } = props;
+
   const compositeStyles: Styles =
-    type === 'row'
+    type === 'column'
+      ? {
+          container: [
+            {
+              alignSelf: 'stretch',
+              justifyContent: 'space-between',
+              borderBottomWidth: (focused && editable) || errorText ? 2 : 1,
+              borderBottomColor: borderColor,
+
+              flexDirection: 'column',
+            },
+            styles?.container,
+          ],
+          hovered: [
+            {
+              borderBottomWidth: 2,
+              borderBottomColor: hoverColor,
+            },
+            styles?.hovered,
+          ],
+          labelText: [
+            {
+              paddingHorizontal: 4,
+              fontSize: 14,
+              color: labelColor,
+            },
+            styles?.labelText,
+          ],
+          labelTextHovered: [
+            {
+              paddingHorizontal: 4,
+              color: hoverColor,
+            },
+            styles?.labelTextHovered,
+          ],
+          input: [
+            {
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+              fontSize: 14,
+              color: !editable ? disableColor : textColor,
+            },
+            styles?.input,
+          ],
+          errorText: [
+            {
+              marginTop: 8,
+              paddingHorizontal: 10,
+              fontSize: 12,
+              color: errorColor,
+            },
+            styles?.errorText,
+          ],
+          counter: [
+            {
+              marginTop: 8,
+              paddingHorizontal: 10,
+              fontSize: 12,
+              color: !editable ? disableColor : textColor,
+            },
+            styles?.counter,
+          ],
+        }
+      : type === 'row'
       ? {
           container: [
             {
@@ -85,15 +160,15 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottomWidth: 0.3,
+              borderBottomWidth: focused || errorText ? 2 : 1,
               borderBottomColor: borderColor,
             },
             styles?.container,
           ],
           hovered: [
             {
-              borderBottomWidth: 0.5,
-              borderBottomColor: hoveredColor,
+              borderBottomColor: hoverColor,
+              borderBottomWidth: 2,
             },
             styles?.hovered,
           ],
@@ -101,24 +176,23 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
             {
               fontSize: 14,
               color: labelColor,
-              width: 100,
+              marginRight: 2,
             },
             styles?.labelText,
           ],
           labelTextHovered: [
             {
-              color: hoveredColor,
+              color: hoverColor,
             },
             styles?.labelTextHovered,
           ],
           input: [
             {
-              paddingVertical: 12,
+              paddingVertical: 10,
               paddingHorizontal: 8,
               fontSize: 14,
-              fontWeight: 'bold',
               flex: 1,
-              color: textColor,
+              color: !editable ? disableColor : textColor,
             },
             styles?.input,
           ],
@@ -130,14 +204,22 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
             },
             styles?.errorText,
           ],
+          counter: [
+            {
+              marginTop: 4,
+              fontSize: 12,
+              color: !editable ? disableColor : textColor,
+            },
+            styles?.counter,
+          ],
         }
       : {
           container: [
             {
               alignSelf: 'stretch',
               justifyContent: 'space-between',
-              borderBottomWidth: 0.3,
-              borderBottomColor: borderColor,
+              borderWidth: focused || errorText ? 2 : 1,
+              borderColor,
 
               flexDirection: 'column',
             },
@@ -145,13 +227,15 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
           ],
           hovered: [
             {
-              borderBottomWidth: 0.3,
-              borderBottomColor: hoveredColor,
+              borderWidth: 1,
+              borderColor: hoverColor,
             },
             styles?.hovered,
           ],
           labelText: [
             {
+              paddingHorizontal: 8,
+              marginTop: 6,
               fontSize: 14,
               color: labelColor,
             },
@@ -159,30 +243,41 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
           ],
           labelTextHovered: [
             {
-              color: hoveredColor,
+              paddingHorizontal: 4,
+              color: hoverColor,
             },
             styles?.labelTextHovered,
           ],
           input: [
             {
-              paddingVertical: 12,
+              textAlignVertical: 'top',
+              paddingHorizontal: 10,
+              paddingVertical: 10,
               fontSize: 14,
-              fontWeight: 'bold',
-              color: textColor,
+              color: !editable ? disableColor : textColor,
+              height: 120,
             },
             styles?.input,
           ],
           errorText: [
             {
               marginTop: 8,
+              paddingHorizontal: 10,
               fontSize: 12,
               color: errorColor,
             },
             styles?.errorText,
           ],
+          counter: [
+            {
+              marginTop: 8,
+              paddingHorizontal: 10,
+              fontSize: 12,
+              color: !editable ? disableColor : textColor,
+            },
+            styles?.counter,
+          ],
         };
-
-  const hovered = useHover(ref);
 
   return (
     <View
@@ -191,26 +286,33 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
         web: ref,
         default: undefined,
       })}
-      style={[
-        editable && hovered && [compositeStyles.hovered, styles?.hovered],
-        {alignSelf: 'stretch', flexDirection: 'column'},
-        style,
-      ]}
+      style={[{alignSelf: 'stretch', flexDirection: 'column'}, style]}
     >
       <View
         style={[
           compositeStyles.container,
+          editable && hovered && compositeStyles.hovered,
           {
-            borderColor: errorText
+            borderColor: !editable
+              ? disableColor
+              : errorText
               ? errorColor
+              : hovered && !focused
+              ? hoverColor
               : focused
               ? focusColor
-              : disableColor,
-            borderBottomColor: errorText
+              : borderColor,
+          },
+          type !== 'boxed' && {
+            borderBottomColor: !editable
+              ? disableColor
+              : errorText
               ? errorColor
+              : hovered && !focused
+              ? hoverColor
               : focused
               ? focusColor
-              : disableColor,
+              : borderColor,
           },
         ]}
       >
@@ -218,29 +320,28 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
           <Text
             style={[
               compositeStyles.labelText,
-              styles?.labelText,
-              editable && hovered
-                ? [compositeStyles.labelTextHovered, styles?.labelTextHovered]
-                : {
-                    color: errorText
-                      ? errorColor
-                      : focused
-                      ? focusColor
-                      : disableColor,
-                  },
+              hovered && editable && compositeStyles.labelTextHovered,
+              !editable
+                ? {color: disableColor}
+                : errorText
+                ? {color: errorColor}
+                : hovered && !focused
+                ? {color: hoverColor}
+                : focused
+                ? {color: focusColor}
+                : {},
             ]}
           >
             {labelText}
           </Text>
         ) : null}
         <TextInput
-          {...textInputProps}
           testID={testID}
+          ref={inputRef}
           autoCapitalize={autoCapitalize}
           secureTextEntry={secureTextEntry}
           style={[
             compositeStyles.input,
-            styles?.input,
             // @ts-ignore
             Platform.OS === 'web' && {outlineWidth: 0},
           ]}
@@ -253,28 +354,40 @@ const Component: FC<EditTextProps & {theme: Theme}> = ({
             setFocused(false);
             onBlur?.(e);
           }}
+          multiline={type === 'boxed'}
           value={value}
           placeholder={placeholder}
-          placeholderTextColor={placeholderTextColor}
+          placeholderTextColor={placeholderColor}
           onChange={onChange}
           onChangeText={onChangeText}
+          onSubmitEditing={onSubmitEditing}
+          {...textInputProps}
         />
       </View>
-      {errorText ? (
-        <Text
-          style={[
-            compositeStyles.errorText,
-            styles?.errorText,
-            {color: errorColor},
-          ]}
+      {editable ? (
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
         >
-          {errorText}
-        </Text>
+          <Text
+            style={[compositeStyles.errorText, {flex: 1, color: errorColor}]}
+          >
+            {errorText}
+          </Text>
+          {textInputProps?.maxLength && (
+            <Text
+              style={
+                value.length < textInputProps.maxLength
+                  ? compositeStyles.counter
+                  : [compositeStyles.errorText, {color: errorColor}]
+              }
+            >{`${value.length}/${textInputProps.maxLength}`}</Text>
+          )}
+        </View>
       ) : null}
     </View>
   );
 };
-
-Component.defaultProps = {theme: light};
-
-export const EditText = withTheme(Component);
