@@ -25,9 +25,9 @@ jobs:
           storageBucket: ${{ secrets.STORAGEBUCKET }}
           messagingSenderId: ${{ secrets.MESSAGINGSENDERID }}
           appId: ${{ secrets.APPID }}
-          PUBLIC_URL: ${{ secret.PUBLIC_URL }}
-          emailHost: ${{ secret.emailHost }}
-          emailSecret: ${{ secret.emailSecret }}
+          PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
+          emailHost: ${{ secrets.emailHost }}
+          emailSecret: ${{ secrets.emailSecret }}
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
