@@ -34,7 +34,7 @@ import firebase from 'firebase/app';
 import {firestore} from '../../App';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
-import {useTheme} from 'dooboo-ui';
+import {useTheme} from '../../providers/ThemeProvider';
 import {withScreen} from '../../utils/wrapper';
 
 const consumableSkus = [

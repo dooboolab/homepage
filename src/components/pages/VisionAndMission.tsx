@@ -8,7 +8,7 @@ import {IMG_SYMBOL} from '../../utils/Icons';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
-import {useTheme} from 'dooboo-ui';
+import {useTheme} from '../../providers/ThemeProvider';
 import {withScreen} from '../../utils/wrapper';
 
 // eslint-disable-next-line

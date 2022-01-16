@@ -1,4 +1,3 @@
-import {Button, ThemeType, useTheme} from 'dooboo-ui';
 import {Description, SubDescription, Title} from '../uis/Typography';
 import {
   IC_DOOBOO_UI,
@@ -9,8 +8,10 @@ import {
 } from '../../utils/Icons';
 import {Linking, Platform, View} from 'react-native';
 import React, {FC, ReactElement} from 'react';
+import {ThemeType, useTheme} from '../../providers/ThemeProvider';
 import styled, {css} from 'styled-components/native';
 
+import {Button} from '../uis/Button';
 import {fbt} from 'fbt';
 
 // eslint-disable-next-line

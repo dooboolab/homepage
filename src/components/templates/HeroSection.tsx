@@ -1,11 +1,12 @@
-import {Button, useTheme} from 'dooboo-ui';
 import React, {FC} from 'react';
 import styled, {css} from 'styled-components/native';
 
+import {Button} from '../uis/Button';
 import {IMG_SYMBOL} from '../../utils/Icons';
 import {View} from 'react-native';
 import {fbt} from 'fbt';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 
 // eslint-disable-next-line
 fbt;

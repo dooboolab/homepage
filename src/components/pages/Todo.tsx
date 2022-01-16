@@ -1,4 +1,3 @@
-import {Button, EditText, LoadingIndicator, useTheme} from 'dooboo-ui';
 import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import {Text, TextStyle, View} from 'react-native';
@@ -14,8 +13,11 @@ import {
 } from 'firebase/firestore';
 import {formatDistance, subDays} from 'date-fns';
 
+import {Button} from '../uis/Button';
 import CheckBox from '../uis/CheckBox';
+import {EditText} from '../uis/EditText';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {LoadingIndicator} from '../uis/LoadingIndicator';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
@@ -24,6 +26,7 @@ import {getPromotedProductIOS} from 'react-native-iap';
 import produce from 'immer';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.SafeAreaView`

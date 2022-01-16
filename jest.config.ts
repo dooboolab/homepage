@@ -30,7 +30,7 @@ export default async (): Promise<Config.InitialOptions> => {
     setupFilesAfterEnv: ['./test/setupTest.ts'],
     transformIgnorePatterns: [
       // eslint-disable-next-line
-      'node_modules/(?!(jest-)?(@react-native|react-native)|react-clone-referenced-element|@react-native-community|@unimodules|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules-*|native-base|dooboo-ui|@dooboo-ui|@sentry/.*|sentry-expo|toggle-switch-react-native)',
+      'node_modules/(?!(jest-)?(@react-native|react-native)|react-clone-referenced-element|@react-native-community|@unimodules|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules-*|native-base|@sentry/.*|sentry-expo|toggle-switch-react-native)',
     ],
     haste: {
       defaultPlatform: 'ios',

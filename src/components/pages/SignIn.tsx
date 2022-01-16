@@ -1,4 +1,3 @@
-import {Button, EditText, useTheme} from 'dooboo-ui';
 import {
   Linking,
   Platform,
@@ -9,6 +8,8 @@ import {
 import React, {useState} from 'react';
 import {signInWithEmail, signOut} from '../../services/firebase';
 
+import {Button} from '../uis/Button';
+import {EditText} from '../uis/EditText';
 import type {FC} from 'react';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
@@ -18,6 +19,7 @@ import {fireAuth} from '../../App';
 import firebase from 'firebase/app';
 import styled from 'styled-components/native';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 

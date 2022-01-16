@@ -1,13 +1,15 @@
 import {Alert, Platform, ScrollView} from 'react-native';
-import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
 
+import {Button} from '../uis/Button';
+import {EditText} from '../uis/EditText';
 import type {FC} from 'react';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {fbt} from 'fbt';
 import {sendPasswordResetEmail} from '../../services/firebase';
 import styled from 'styled-components/native';
+import {useTheme} from '../../providers/ThemeProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 

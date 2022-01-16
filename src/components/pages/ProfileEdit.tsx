@@ -1,4 +1,3 @@
-import {Button, EditText, LoadingIndicator, useTheme} from 'dooboo-ui';
 import {IC_CAMERA, IC_GUEST} from '../../utils/Icons';
 import {
   Image,
@@ -14,6 +13,9 @@ import {fireAuth, firestorage} from '../../App';
 import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage';
 import {signOut, updateCurrentUserProfile} from '../../services/firebase';
 
+import {Button} from '../uis/Button';
+import {EditText} from '../uis/EditText';
+import {LoadingIndicator} from '../uis/LoadingIndicator';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
 import {ScrollView} from 'react-native-gesture-handler';
 import {colors} from '../../utils/theme';
@@ -23,6 +25,7 @@ import {launchImageLibrary} from '../../utils/ImagePicker';
 import styled from 'styled-components/native';
 import {updateProfile as updateProfileFire} from 'firebase/auth';
 import {useAuthContext} from '../../providers/AuthProvider';
+import {useTheme} from '../../providers/ThemeProvider';
 import {withScreen} from '../../utils/wrapper';
 
 const Container = styled.View`

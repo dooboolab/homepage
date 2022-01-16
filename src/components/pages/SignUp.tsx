@@ -5,7 +5,6 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {Button, EditText, useTheme} from 'dooboo-ui';
 import React, {useState} from 'react';
 import {
   createUserWithEmailAndPassword,
@@ -13,6 +12,8 @@ import {
 } from '../../services/firebase';
 import {sendEmailVerification, updateProfile} from 'firebase/auth';
 
+import {Button} from '../uis/Button';
+import {EditText} from '../uis/EditText';
 import type {FC} from 'react';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
@@ -20,6 +21,7 @@ import {fbt} from 'fbt';
 import {fireAuth} from '../../App';
 import firebase from 'firebase/app';
 import styled from 'styled-components/native';
+import {useTheme} from '../../providers/ThemeProvider';
 import {validateEmail} from '../../utils/common';
 import {withScreen} from '../../utils/wrapper';
 

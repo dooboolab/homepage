@@ -1,13 +1,14 @@
 import {Alert, Platform} from 'react-native';
-import {Button, useTheme} from 'dooboo-ui';
 import React, {FC, useState} from 'react';
 import {addDoc, collection} from 'firebase/firestore';
 import styled, {css} from 'styled-components/native';
 
+import {Button} from '../uis/Button';
 import {IMG_LABTOP} from '../../utils/Icons';
 import {fbt} from 'fbt';
 import firebase from 'firebase/app';
 import {firestore} from '../../App';
+import {useTheme} from '../../providers/ThemeProvider';
 import {validateEmail} from '../../utils/common';
 
 // eslint-disable-next-line

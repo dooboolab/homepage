@@ -4,7 +4,7 @@ import React, {ReactElement} from 'react';
 
 import RootProvider from '../src/providers';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {ThemeType} from 'dooboo-ui';
+import {ThemeType} from '../src/utils/theme';
 
 export const createTestElement = (
   child: ReactElement,
