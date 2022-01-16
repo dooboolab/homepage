@@ -2,6 +2,7 @@ import {
   ActivityIndicator,
   LayoutRectangle,
   Platform,
+  Text,
   TouchableOpacity,
 } from 'react-native';
 import React, {useRef, useState} from 'react';
@@ -34,11 +35,6 @@ const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`;
-
-const Text = styled.Text`
-  font-size: 14px;
-  color: white;
 `;
 
 export interface ButtonProps {
@@ -141,6 +137,7 @@ const Component: FC<ButtonProps & {theme: Theme}> = ({
           {leftElement}
           <Text
             style={[
+              {fontSize: 14, color: 'white'},
               compositeStyles.text,
               disabled && compositeStyles.disabledText,
             ]}
