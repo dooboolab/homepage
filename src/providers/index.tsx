@@ -16,7 +16,7 @@ const RootProvider = ({children}: Props): React.ReactElement => {
   const colorScheme = useColorScheme();
 
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={{flex: 1}}>
       <ThemeProvider
         initialThemeType={
           colorScheme === 'dark' ? ThemeType.DARK : ThemeType.LIGHT

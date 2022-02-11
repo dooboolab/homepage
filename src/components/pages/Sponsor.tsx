@@ -1,9 +1,11 @@
 import {Alert, Linking, Platform, ScrollView, View} from 'react-native';
 import IAPCard, {IAPCardProps} from '../uis/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
-import type {Product, Purchase, Subscription} from 'react-native-iap';
 import {
+  Product,
+  Purchase,
   PurchaseStateAndroid,
+  Subscription,
   finishTransaction,
   flushFailedPurchasesCachedAsPendingAndroid,
   getAvailablePurchases,
@@ -11,6 +13,7 @@ import {
   requestSubscription,
   useIAP,
   validateReceiptIos,
+  withIAPContext,
 } from 'react-native-iap';
 import React, {
   FC,
@@ -563,4 +566,4 @@ const Sponsor: FC<Props> = ({navigation}) => {
   );
 };
 
-export default withScreen(Sponsor);
+export default withIAPContext(withScreen(Sponsor));

@@ -60,7 +60,7 @@
     "react-native-dark-mode-switch": "^0.0.0-alpha.1",
     "react-native-dotenv": "^3.3.1",
     "react-native-gesture-handler": "^2.1.1",
-    "react-native-iap": "^8.0.0-rc.4",
+    "react-native-iap": "^8.0.4",
     "react-native-image-picker": "^4.7.0",
     "react-native-reanimated": "^2.3.1",
     "react-native-safe-area-context": "^3.3.2",
