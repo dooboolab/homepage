@@ -4,7 +4,7 @@ import {
   IC_DOOBOO_UI_DARK,
   IC_HACKATALK,
   IC_HACKATALK_DARK,
-  IC_WECOUNT,
+  IC_PUZZ,
 } from '../../utils/Icons';
 import {Linking, Platform, View} from 'react-native';
 import React, {FC, ReactElement} from 'react';
@@ -152,12 +152,15 @@ const WorkSection: FC<Props> = () => {
                 width: 40,
                 height: 40,
               }}
-              source={IC_WECOUNT}
+              source={IC_PUZZ}
               resizeMode="cover"
             />
           }
-          description="Comming Soon!"
-          // onViewMore={() => Alert.alert('Comming Soon!')}
+          description={fbt(
+            'Curated video playlist platform that enables user to collect and creat their favorite playlists.',
+            'puzz desc',
+          )}
+          onViewMore={() => Linking.openURL('https://puzz.dev')}
         />
         <Project
           image={
