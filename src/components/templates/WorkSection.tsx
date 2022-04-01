@@ -160,7 +160,7 @@ const WorkSection: FC<Props> = () => {
             'Curated video playlist platform that enables user to collect and creat their favorite playlists.',
             'puzz desc',
           )}
-          onViewMore={() => Linking.openURL('https://puzz.dev')}
+          onViewMore={() => Linking.openURL('https://puzz.fun')}
         />
         <Project
           image={
