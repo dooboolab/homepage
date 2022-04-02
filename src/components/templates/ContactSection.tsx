@@ -208,8 +208,7 @@ const ContactSection: FC<Props> = () => {
         resizeMode="cover"
         imageStyle={{
           opacity: 0.65,
-        }}
-      >
+        }}>
         <Content>
           <Title>
             <fbt desc="who is next">Who's next? Feel free to talk.</fbt>

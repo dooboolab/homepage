@@ -55,8 +55,7 @@ const Section: FC = () => {
         backgroundColor: theme.paper,
         paddingVertical: 40,
         paddingHorizontal: 80,
-      }}
-    >
+      }}>
       <Text
         style={{
           color: theme.text,
@@ -65,8 +64,7 @@ const Section: FC = () => {
           fontFamily: 'avenir',
           lineHeight: 24,
           textAlign: 'center',
-        }}
-      >
+        }}>
         <fbt desc="vision and mission desc">
           dooboolab wishes to help out those who are in trouble of making better
           society. We are a group of experts who contribute to various platforms
@@ -94,14 +92,12 @@ const Mission: FC<MissionProps> = ({title, text}) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      }}
-    >
+      }}>
       <SubTitle
         style={{
           color: theme.primary,
           fontSize: 26,
-        }}
-      >
+        }}>
         {title}
       </SubTitle>
       <View
@@ -119,15 +115,13 @@ const Mission: FC<MissionProps> = ({title, text}) => {
             alignItems: 'center',
           },
           media.isDesktop && {width: 800},
-        ]}
-      >
+        ]}>
         <Description
           style={{
             textAlign: 'center',
             fontSize: 16,
             maxWidth: '100%',
-          }}
-        >
+          }}>
           {text}
         </Description>
       </View>
@@ -150,14 +144,12 @@ const VisionAndMission: FC<Props> = () => {
             resizeMode="cover"
             imageStyle={{
               opacity: 0.7,
-            }}
-          >
+            }}>
             <SubTitle
               style={{
                 marginTop: 200,
                 fontSize: 32,
-              }}
-            >
+              }}>
               <fbt desc="vision and mission">Vision & Mission</fbt>
             </SubTitle>
           </BackgroundImage>

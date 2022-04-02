@@ -358,8 +358,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
           textAlign: 'center',
           lineHeight: 18,
           paddingHorizontal: 32,
-        }}
-      >
+        }}>
         {fbt(
           // eslint-disable-next-line max-len
           'Your sponsoring will be noted in our homepage and app when transaction is completed 🎉. Your interests will make our community much valuable 🙏.',
@@ -382,8 +381,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
               marginBottom: 8,
               textAlign: 'center',
               paddingHorizontal: 20,
-            }}
-          >
+            }}>
             {fbt(
               `
               Payment will be charged to your iTunes account upon confirmation of purchase.
@@ -408,8 +406,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                 }
 
                 goToWebView('https://legacy.dooboolab.com/termsofservice');
-              }}
-            >
+              }}>
               <fbt desc="agreement2">Terms of Agreement</fbt>
             </StyledAgreementLinedText>
             <StyledAgreementText>
@@ -426,8 +423,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                 }
 
                 goToWebView('https://legacy.dooboolab.com/privacyandpolicy');
-              }}
-            >
+              }}>
               <fbt desc="agreement4">Privary Policy</fbt>.
             </StyledAgreementLinedText>
           </StyledText>
@@ -445,8 +441,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
           marginBottom: 8,
           textAlign: 'center',
           paddingHorizontal: 20,
-        }}
-      >
+        }}>
         {fbt(
           'Note that once purchased, it will not be refunded. Please watch out before you continue transactions.',
           'transaction warning note',
@@ -466,8 +461,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
             paddingBottom: 40,
             backgroundColor: theme.background,
             marginHorizontal: 16,
-          }}
-        >
+          }}>
           {itemTypes.map((type) => {
             return (
               <ListContainer key={type}>
@@ -479,8 +473,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     marginLeft: 12,
                     marginBottom: 8,
                     textAlign: 'center',
-                  }}
-                >
+                  }}>
                   {type === 'onetime'
                     ? fbt('One-time sponsoring', 'one time sponsoring')
                     : type === 'subscription'
@@ -497,8 +490,7 @@ const Sponsor: FC<Props> = ({navigation}) => {
                     paddingVertical: 28,
                     backgroundColor: theme.paper,
                     paddingHorizontal: 40,
-                  }}
-                >
+                  }}>
                   {type === 'onetime'
                     ? sortedProducts.map((item, i) => {
                         if (membershipSkus.includes(item.productId)) {

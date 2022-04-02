@@ -13,6 +13,9 @@ module.exports = {
         __DEV__: process.env.NODE_ENV !== 'production' || true,
       }),
     ],
+    alias: {
+      'react-native$': 'react-native-web',
+    },
     configure: {
       module: {
         rules: [

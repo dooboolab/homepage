@@ -91,8 +91,7 @@ function ThemeProvider({
         changeThemeType,
         theme: defaultTheme,
         colors,
-      }}
-    >
+      }}>
       <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
   );

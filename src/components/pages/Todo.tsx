@@ -345,7 +345,7 @@ const Todo: FC<Props> = ({navigation}) => {
 
                   setDoc(todoRef, {done: !item.done}, {merge: true});
 
-                  const nextState = produce(todos, draft => {
+                  const nextState = produce(todos, (draft) => {
                     draft[index] = item;
                     draft[index].done = !item.done;
                     draft[index].text = draft[index].initialText;

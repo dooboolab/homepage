@@ -49,8 +49,7 @@ const StorySection: FC<Props> = () => {
         style={{
           marginTop: 68,
           color: theme.primary,
-        }}
-      >
+        }}>
         <fbt desc="vision and mission">Vision & Mission</fbt>
       </SubTitle>
       <Description style={{marginTop: 40}}>
