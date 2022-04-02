@@ -286,8 +286,7 @@ export const EditText: FC<EditTextProps> = (props) => {
         web: ref,
         default: undefined,
       })}
-      style={[{alignSelf: 'stretch', flexDirection: 'column'}, style]}
-    >
+      style={[{alignSelf: 'stretch', flexDirection: 'column'}, style]}>
       <View
         style={[
           compositeStyles.container,
@@ -314,8 +313,7 @@ export const EditText: FC<EditTextProps> = (props) => {
               ? focusColor
               : borderColor,
           },
-        ]}
-      >
+        ]}>
         {labelText ? (
           <Text
             style={[
@@ -330,8 +328,7 @@ export const EditText: FC<EditTextProps> = (props) => {
                 : focused
                 ? {color: focusColor}
                 : {},
-            ]}
-          >
+            ]}>
             {labelText}
           </Text>
         ) : null}
@@ -370,11 +367,9 @@ export const EditText: FC<EditTextProps> = (props) => {
             flex: 1,
             flexDirection: 'row',
             justifyContent: 'space-between',
-          }}
-        >
+          }}>
           <Text
-            style={[compositeStyles.errorText, {flex: 1, color: errorColor}]}
-          >
+            style={[compositeStyles.errorText, {flex: 1, color: errorColor}]}>
             {errorText}
           </Text>
           {textInputProps?.maxLength && (
@@ -383,8 +378,7 @@ export const EditText: FC<EditTextProps> = (props) => {
                 value.length < textInputProps.maxLength
                   ? compositeStyles.counter
                   : [compositeStyles.errorText, {color: errorColor}]
-              }
-            >{`${value.length}/${textInputProps.maxLength}`}</Text>
+              }>{`${value.length}/${textInputProps.maxLength}`}</Text>
           )}
         </View>
       ) : null}

@@ -86,8 +86,7 @@ const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
         resizeMode="cover"
         imageStyle={{
           opacity: 0.7,
-        }}
-      >
+        }}>
         <Title>
           <fbt desc="hero title">Flexible innovation starts with dooboolab</fbt>
         </Title>
@@ -100,8 +99,7 @@ const HeroSection: FC<Props> = ({onPressContactUs, onPressSponsor}) => {
         <View
           style={{
             flexDirection: 'row',
-          }}
-        >
+          }}>
           <Button
             onPress={onPressContactUs}
             activeOpacity={0.7}

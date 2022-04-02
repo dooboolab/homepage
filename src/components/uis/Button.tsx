@@ -107,8 +107,7 @@ const Component: FC<ButtonProps & {theme: Theme}> = ({
       delayPressIn={50}
       disabled={disabled}
       style={style}
-      {...touchableOpacityProps}
-    >
+      {...touchableOpacityProps}>
       {loading ? (
         <Container
           testID="loading-view"
@@ -120,8 +119,7 @@ const Component: FC<ButtonProps & {theme: Theme}> = ({
             },
             hovered && !disabled && compositeStyles.hovered,
             disabled && compositeStyles.disabledButton,
-          ]}
-        >
+          ]}>
           <ActivityIndicator size="small" color={indicatorColor} />
         </Container>
       ) : (
@@ -132,8 +130,7 @@ const Component: FC<ButtonProps & {theme: Theme}> = ({
             hovered && !disabled && compositeStyles.hovered,
             disabled && compositeStyles.disabledButton,
           ]}
-          onLayout={(e) => setLayout(e.nativeEvent.layout)}
-        >
+          onLayout={(e) => setLayout(e.nativeEvent.layout)}>
           {leftElement}
           <Text
             style={[
@@ -141,8 +138,7 @@ const Component: FC<ButtonProps & {theme: Theme}> = ({
               compositeStyles.text,
               disabled && compositeStyles.disabledText,
             ]}
-            {...textProps}
-          >
+            {...textProps}>
             {text}
           </Text>
           {rightElement}

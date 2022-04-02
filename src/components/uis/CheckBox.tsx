@@ -57,14 +57,12 @@ const CheckBox: FC<Props> = ({
         onPress={onPress}
         style={{
           marginTop: 2,
-        }}
-      >
+        }}>
         <Circle
           style={{
             borderColor: checked ? theme.primary : theme.text,
             marginRight: 8,
-          }}
-        >
+          }}>
           <CircleDot
             style={Platform.select({
               default: {
@@ -83,8 +81,7 @@ const CheckBox: FC<Props> = ({
         <Text
           style={{
             color: checked ? theme.primary : theme.text,
-          }}
-        >
+          }}>
           {text}
         </Text>
       ) : (

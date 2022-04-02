@@ -1010,6 +1010,76 @@
           "variations": {}
         }
       ]
+    },
+    "9e3bbed674bab2cb0c84b60d01d520fc": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "공정한 사회에 기여하고자 합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "1819ad39a03823825330c0a4a72707b8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "많은 사람들과 소통하고 경험을 공유하며 선한 영향력을 전파합니다",
+          "variations": {}
+        }
+      ]
+    },
+    "5ef2a36424efdc473dd268fa40396392": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리의 비전과 일치하는 다양한 분야에서 일하는 훌륭한 사람들과 함께 성장합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "433d7be8bb98e8c9fcc27f1e40f67181": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리는 목표를 달성하기 위해 가능한 한 많은 오픈 소스를 발견하거나 참여합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "c44879f1a4e15dbae95028767da1cbb9": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "우리는 개인, 기업 및 사회 단체를 위한 강력한 오픈 소스 커뮤니티를 운영합니다.",
+          "variations": {}
+        }
+      ]
+    },
+    "925fa244b8d2a34021961b8398af5d24": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "연락하는 동안 오류가 발생했습니다. 다시 시도해 주세요. 반복적으로 발생하면 support@dooboolab.com으로 이메일을 보내주십시오.",
+          "variations": {}
+        }
+      ]
+    },
+    "066df1f224ce53a597933587341ec819": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "서울특별시 용산구 한강대로 366 트윈시티 남산 7층",
+          "variations": {}
+        }
+      ]
     }
   }
 }
