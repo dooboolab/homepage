@@ -64,7 +64,9 @@ buck-out/
 coverage/
 package-lock.json
 
-ios/Pods/
+# Ruby / CocoaPods
+/ios/Pods/
+/vendor/bundle/
 
 # fbt
 src/utils/i18n/fbt/.enum_manifest.json
