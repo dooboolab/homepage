@@ -32,7 +32,7 @@ import {withScreen} from '../../utils/wrapper';
 const Container = styled.SafeAreaView`
   flex: 1;
   align-self: stretch;
-  background-color: ${({theme}): string => theme.background};
+  background-color: ${({theme}) => theme.background};
 
   flex-direction: column;
   align-items: center;
@@ -81,15 +81,13 @@ const TodoList: FC<TodoListProps> = ({
     <View
       style={{
         flexDirection: 'column',
-      }}
-    >
+      }}>
       <View
         style={{
           alignSelf: 'stretch',
 
           flexDirection: 'row',
-        }}
-      >
+        }}>
         <CheckBox
           checked={todo.done}
           onPress={onDoneChecked}
@@ -131,8 +129,7 @@ const TodoList: FC<TodoListProps> = ({
           <View
             style={{
               padding: 8,
-            }}
-          >
+            }}>
             {hasTextChanged && (
               <Icon
                 name="check"
@@ -149,8 +146,7 @@ const TodoList: FC<TodoListProps> = ({
           <View
             style={{
               padding: 8,
-            }}
-          >
+            }}>
             <Icon
               name="delete"
               size={30}
@@ -166,16 +162,14 @@ const TodoList: FC<TodoListProps> = ({
         style={{
           marginLeft: 32,
           marginBottom: 8,
-        }}
-      >
+        }}>
         <Text
           style={[
             {
               color: theme.text,
             },
             todo.done && {...textDoneStyle},
-          ]}
-        >
+          ]}>
           {formatDistance(todo.createdAt, new Date(), {
             addSuffix: true,
           })}
@@ -282,8 +276,7 @@ const Todo: FC<Props> = ({navigation}) => {
 
           flexDirection: 'row',
           alignItems: 'center',
-        }}
-      >
+        }}>
         <EditText
           value={text}
           onChangeText={(e) => setText(e)}
@@ -352,7 +345,7 @@ const Todo: FC<Props> = ({navigation}) => {
 
                   setDoc(todoRef, {done: !item.done}, {merge: true});
 
-                  const nextState = produce(todos, (draft) => {
+                  const nextState = produce(todos, draft => {
                     draft[index] = item;
                     draft[index].done = !item.done;
                     draft[index].text = draft[index].initialText;

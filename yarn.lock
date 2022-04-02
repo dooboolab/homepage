@@ -1214,7 +1214,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dooboo/eslint-config@^1.2.5":
+"@dooboo/eslint-config@^1.3.4":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@dooboo/eslint-config/-/eslint-config-1.3.4.tgz#77f1a69c1278e4c9fbdf85bf659fdb9f5453ec61"
   integrity sha512-rzxxuRBgs7EAIp9CDxET1gHOE0ltEXybZpQzgxES9liEyvdBRbVDhtypg4cpyKrlZFLmNX3aEDZwl6/DLUQeVQ==
@@ -12537,7 +12537,7 @@ react-native-gradle-plugin@^0.0.5:
   dependencies:
     react-native-codegen "*"
 
-react-native-iap@^8.0.4:
+react-native-iap@^8.0.7:
   version "8.0.7"
   resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-8.0.7.tgz#78397ad7df2decd31240d89846ab026c8f9ec4d1"
   integrity sha512-YVZp9g01oSIZ5sT0wxjrYw0kjLUuABH0+PTTxgSUgGQewnGlO9fUIu1fixXkC8nKFS1QhGJLlbaOzVfv+9uRqA==
