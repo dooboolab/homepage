@@ -23,7 +23,7 @@ export const joinWeCount = functions.https.onRequest(
 export const joinRNSeoul = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(
-      'https://join.slack.com/t/reactnativeseoul/shared_invite/enQtMjY4ODI2OTgzNzE0LWU4MWUzNjBkMDE4YTBjNjBmNmVhNjIwOWQzZmQxMTRjZGVhMzA2YWZhNWQ1ZWQ5MGJkODhlNGRlYmQzNzkzOWQ',
+      'https://join.slack.com/t/reactnativeseoul/shared_invite/zt-19lye6tth-j1YxIpv~4t7C4te4CvrkuQ',
     );
   },
 );
