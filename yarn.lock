@@ -13093,10 +13093,10 @@ react-native-gradle-plugin@^0.0.6:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz#b61a9234ad2f61430937911003cddd7e15c72b45"
   integrity sha512-eIlgtsmDp1jLC24dRn43hB3kEcZVqx6DUQbR0N1ABXGnMEafm9I3V3dUUeD1vh+Dy5WqijSoEwLNUPLgu5zDMg==
 
-react-native-iap@^8.1.2:
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-8.1.2.tgz#f35259c6bf118c48dc1d66c09ebc9bbec42e8dd7"
-  integrity sha512-lNW3y6jbd82sn4ibI/oqOM9zIodJQj2mZT0/toHOvTIvbb/M8b7nfs0O4TZBzoWrKLc/1GS4flqFD2VsEm2LiQ==
+react-native-iap@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-8.2.1.tgz#a2732db8ab1d8bf3d1043971223e2cdd95a48c9b"
+  integrity sha512-dRNGJj3SvL3XkJyEy67a+7R8f4pEvaeraxahfpR0tbU1sK3CrkJ8PRL4A4vPy2OokKJhAjbBdfZTELGmTRb8aQ==
   dependencies:
     dooboolab-welcome "1.3.2"
 
