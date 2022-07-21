@@ -24,6 +24,9 @@ const babel = {
     '@babel/plugin-syntax-class-properties',
     'babel-plugin-styled-components',
     'react-native-reanimated/plugin',
+    ['@babel/plugin-proposal-class-properties', {loose: true}],
+    ['@babel/plugin-proposal-private-methods', {loose: true}],
+    ['@babel/plugin-proposal-private-property-in-object', {loose: true}],
   ],
 };
 
