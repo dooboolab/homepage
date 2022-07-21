@@ -12,6 +12,9 @@ jobs:
       - name: Install packages
         run: yarn
 
+      - name: Downgrade reanimated
+        run: yarn add react-native-reanimated
+
       - name: Build craco
         run: SKIP_PREFLIGHT_CHECK=true yarn build
         env:

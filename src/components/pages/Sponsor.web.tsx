@@ -1,12 +1,13 @@
 import IAPCard, {IAPCardProps} from '../uis/IAPCard';
 import {IC_COFFEE, IC_DOOBOO_IAP, IC_LOGO} from '../../utils/Icons';
+import {Linking, Text, View} from 'react-native';
 import RNIap, {Product, Subscription, useIAP} from 'react-native-iap';
 import React, {FC, useCallback, useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
 
 import {Button} from '../uis/Button';
 import Header from '../uis/Header';
 import {RootStackNavigationProps} from '../navigations/RootStackNavigator';
+import {colors} from '../../utils/theme';
 import {fbt} from 'fbt';
 import styled from 'styled-components/native';
 import {useNavigation} from '@react-navigation/core';
@@ -55,11 +56,49 @@ const Sponsor: FC<Props> = ({navigation}) => {
         </Text>
         <Button
           onPress={() => {
+            Linking.openURL('https://opencollective.com/dooboolab-community');
+          }}
+          text={fbt('Sponsor community', 'sponsor community')}
+          style={{
+            marginTop: 48,
+            alignSelf: 'center',
+            minWidth: 300,
+            maxWidth: 500,
+          }}
+          styles={{
+            container: {
+              backgroundColor: theme.primary,
+              borderRadius: 30,
+              alignSelf: 'stretch',
+              borderWidth: 0.3,
+            },
+            text: {
+              paddingHorizontal: 20,
+              paddingVertical: 8,
+              color: theme.text,
+            },
+            hovered: {
+              backgroundColor: colors.darkGray,
+              borderColor: 'white',
+            },
+          }}
+        />
+        <Text
+          style={{
+            color: theme.placeholder,
+            lineHeight: 30,
+            fontSize: 16,
+            textAlign: 'center',
+            marginVertical: 8,
+          }}>
+          {fbt('OR', 'or')}
+        </Text>
+        <Button
+          onPress={() => {
             navigation.goBack();
           }}
           text={fbt('Go back', 'go back')}
           style={{
-            marginTop: 48,
             marginBottom: 80,
             alignSelf: 'center',
             minWidth: 300,
@@ -70,13 +109,16 @@ const Sponsor: FC<Props> = ({navigation}) => {
               borderRadius: 30,
               alignSelf: 'stretch',
               backgroundColor: theme.background,
-              borderWidth: 1,
+              borderWidth: 0.3,
               borderColor: theme.text,
             },
             text: {
               paddingHorizontal: 20,
               paddingVertical: 8,
               color: theme.text,
+            },
+            hovered: {
+              backgroundColor: colors.darkGray,
             },
           }}
         />

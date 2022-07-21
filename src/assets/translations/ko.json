@@ -1080,6 +1080,26 @@
           "variations": {}
         }
       ]
+    },
+    "12f9c55fc5c54eef23ce7a1bd3ef34bd": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "또는",
+          "variations": {}
+        }
+      ]
+    },
+    "48db9ae207ffdc8353866a7cee3cd182": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "커뮤니티 후원",
+          "variations": {}
+        }
+      ]
     }
   }
 }
