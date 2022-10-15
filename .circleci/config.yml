@@ -1,24 +1,24 @@
-
-      
- workflows: 
+workflows: 
   version: 2 
   node-android-ios: 
       jobs:
       - test 
+
       - android: 
         requires: 
         - test 
         filters: 
-        branches: 
-        ignore: 
-        — master 
-        — staging 
+         branches: 
+          ignore: 
+           — master 
+           — staging 
+
 - build_deploy_android dev: 
    filters:
-   branches:
-   only: master 
+    branches:
+     only: master 
+
 - build deploy_android_staging:
    filters:
-   branches:
-   only: staging 
-
+    branches:
+     only: staging 
