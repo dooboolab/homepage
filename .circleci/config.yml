@@ -1,4 +1,4 @@
-workflows: 
+workflows:
   version: 2 
   node-android-ios: 
       jobs:
@@ -11,14 +11,14 @@ workflows:
          branches: 
           ignore: 
            — master 
-           — staging 
+            
 
-- build_deploy_android dev: 
+ - build_deploy_android dev: 
    filters:
     branches:
      only: master 
 
-- build deploy_android_staging:
+ - build deploy_android_staging:
    filters:
     branches:
      only: staging 
