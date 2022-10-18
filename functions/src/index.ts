@@ -7,7 +7,7 @@ export const iapApp = functions.https.onRequest(runIapApp());
 export const joinSlack = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(
-      'https://join.slack.com/t/dooboolab/shared_invite/enQtNTAwODgxNDExNTg2LTkzNTA3ZmJmZDM4YzQ3ZWEyNTI3MjdkZjJmYjNhNjlmY2UzYjMzZTJjMjVkMmIzM2M1Y2QyZjlkN2NkZjhmZWE',
+      'https://join.slack.com/t/dooboolab/shared_invite/zt-1i8r6ygip-BJqtEC4M2X60VPrb1ajZXA',
     );
   },
 );
