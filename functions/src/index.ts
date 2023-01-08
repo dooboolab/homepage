@@ -20,7 +20,7 @@ export const joinWeCount = functions.https.onRequest(
   },
 );
 
-export const joinRNSeoul = functions.https.onRequest(
+export const joinCPKorea = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(
       'https://join.slack.com/t/reactnativeseoul/shared_invite/zt-1fey1h981-Tu9CRZQIoLkjhBl9XoyiPA',
