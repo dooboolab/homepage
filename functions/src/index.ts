@@ -23,7 +23,7 @@ export const joinWeCount = functions.https.onRequest(
 export const joinCPKorea = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(
-      'https://join.slack.com/t/reactnativeseoul/shared_invite/zt-1fey1h981-Tu9CRZQIoLkjhBl9XoyiPA',
+      'https://join.slack.com/t/crossplatformkorea/shared_invite/zt-1nl57lko6-YRwdZWUJAgeCxmTyKZJFfg',
     );
   },
 );
