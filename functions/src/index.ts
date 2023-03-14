@@ -1,9 +1,5 @@
 import * as functions from 'firebase-functions';
 
-import {runIapApp} from './iapApp';
-
-export const iapApp = functions.https.onRequest(runIapApp());
-
 export const joinSlack = functions.https.onRequest(
   (_: any, response: {redirect: (arg0: string) => void}) => {
     response.redirect(

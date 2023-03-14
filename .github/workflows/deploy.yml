@@ -10,27 +10,20 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install packages
         run: yarn
 
-      - name: Downgrade reanimated
-        run: yarn add react-native-reanimated
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 18.x
 
-      - name: Build craco
-        run: SKIP_PREFLIGHT_CHECK=true yarn build
-        env:
-          apiKey: ${{ secrets.APIKEY }}
-          authDomain: ${{ secrets.AUTHDOMAIN }}
-          databaseURL: ${{ secrets.DATABASEURL }}
-          projectId: ${{ secrets.PROJECTID }}
-          storageBucket: ${{ secrets.STORAGEBUCKET }}
-          messagingSenderId: ${{ secrets.MESSAGINGSENDERID }}
-          appId: ${{ secrets.APPID }}
-          PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
-          emailHost: ${{ secrets.emailHost }}
-          emailSecret: ${{ secrets.emailSecret }}
+      - name: Install packages and build
+        run: |
+          yarn install --ignore-engines
+          yarn build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

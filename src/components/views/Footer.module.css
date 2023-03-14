@@ -1,0 +1,38 @@
+.footerContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 3.5rem;
+}
+
+.footerLightColor {
+  background-color: #f5f6f7;
+  color: black;
+}
+
+.footerDarkColor {
+  background-color: #1c1e21;
+  color: white;
+}
+
+.footerContainer p {
+  margin: 0;
+  font-size: 15.5px;
+}
+
+.footerLogo {
+  width: 150px;
+  height: 32px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .footerContainer {
+    padding: 2rem 1.5rem;
+    white-space: nowrap;
+  }
+
+  .footerContainer p {
+    font-size: 13px;
+  }
+}

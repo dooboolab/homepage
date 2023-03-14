@@ -1,0 +1,40 @@
+---
+sidebar_label: Contact Us
+title: Contact Us
+---
+
+import Link from '@docusaurus/Link';
+import Logo from '@site/src/components/uis/Logo';
+import { IcGithub, IcYoutube, IcTwitter, IcCopy, ImgLocation } from '@site/src/components/icons.ts';
+import { DOOBOOLAB_EMAIL } from '@site/src/utils/constants';
+import { copyEmailAsync } from '@site/src/utils/functions';
+
+<img src={ImgLocation} />
+
+<hr className="mdx-hr" />
+
+<div className="mdx-div">
+  <span>Address</span>
+  <p>501, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</p>
+</div>
+
+<div className="mdx-div">
+  <span>Contact</span>
+  <a href="mailto: support@dooboolab.com">
+    <p>{DOOBOOLAB_EMAIL}</p>
+  </a>
+  <span onClick={copyEmailAsync}>
+    <img src={IcCopy} className="mdx-icon" />
+  </span>
+</div>
+
+<div className="mdx-div">
+  <span>More</span>
+  <div>
+    <Logo address="https://github.com/dooboolab" source={IcGithub} isBlack />
+    <Logo address="https://www.youtube.com/@dooboolab6039" source={IcYoutube} />
+    <Logo address="https://twitter.com/dooboolab" source={IcTwitter} />
+  </div>
+</div>
+
+<hr className="mdx-hr" />

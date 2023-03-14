@@ -1,0 +1,40 @@
+---
+sidebar_label: 연락하기
+title: 연락하기
+---
+
+import Link from '@docusaurus/Link';
+import Logo from '@site/src/components/uis/Logo';
+import { IcGithub, IcYoutube, IcTwitter, IcCopy, ImgLocation } from '@site/src/components/icons.ts';
+import { DOOBOOLAB_EMAIL } from '@site/src/utils/constants';
+import { copyEmailAsync } from '@site/src/utils/functions';
+
+<img src={ImgLocation} />
+
+<hr className="mdx-hr" />
+
+<div className="mdx-div">
+  <span>주소</span>
+  <p>서울 강남구 테헤란로 501, 브이플렉스</p>
+</div>
+
+<div className="mdx-div">
+  <span>연락처</span>
+  <a href="mailto: support@dooboolab.com">
+    <p>{DOOBOOLAB_EMAIL}</p>
+  </a>
+  <span onClick={copyEmailAsync}>
+    <img src={IcCopy} className="mdx-icon" />
+  </span>
+</div>
+
+<div className="mdx-div">
+  <span>더보기</span>
+  <div>
+    <Logo address="https://github.com/dooboolab" source={IcGithub} isBlack />
+    <Logo address="https://www.youtube.com/@dooboolab6039" source={IcYoutube} />
+    <Logo address="https://twitter.com/dooboolab" source={IcTwitter} />
+  </div>
+</div>
+
+<hr className="mdx-hr" />
