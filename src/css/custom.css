@@ -1,0 +1,219 @@
+:root {
+  --ifm-color-primary: #000080;
+  --ifm-color-primary-dark: #000073;
+  --ifm-color-primary-darker: #00006d;
+  --ifm-color-primary-darkest: #00005a;
+  --ifm-color-primary-light: #00008d;
+  --ifm-color-primary-lighter: #000093;
+  --ifm-color-primary-lightest: #0000a6;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #b2c5fd;
+  --ifm-color-primary-dark: #a8bdff;
+  --ifm-color-primary-darker: #7194ff;
+  --ifm-color-primary-darkest: #2959e9;
+  --ifm-color-primary-light: #dbe4ff;
+  --ifm-color-primary-lighter: #eaeffd;
+  --ifm-color-primary-lightest: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.mdx-item {
+  margin: 2rem 0;
+}
+
+.mdx-align-right {
+  text-align: right;
+}
+
+.mdx-works-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mdx-works-title {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .mdx-works-title {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .mdx-works-title {
+    font-size: 22px;
+  }
+}
+
+/* -------- */
+
+.mdx-logo,
+.mdx-black-logo {
+  width: 33px;
+  margin-right: 1.5rem;
+  filter: opacity(1);
+}
+
+[data-theme='dark'] .mdx-black-logo {
+  filter: invert(75%);
+}
+
+[data-theme='dark'] .mdx-black-logo:hover {
+  filter: invert(100%);
+}
+
+.mdx-icon {
+  width: 22px;
+  margin-left: 1rem;
+  filter: opacity(0.8);
+}
+
+.mdx-logo:hover,
+.mdx-black-logo:hover,
+.mdx-icon:hover {
+  filter: opacity(0.5);
+}
+
+[data-theme='dark'] .mdx-icon {
+  filter: invert(80%);
+}
+
+[data-theme='dark'] .mdx-icon:hover {
+  filter: invert(40%);
+}
+
+@media screen and (max-width: 450px) {
+  .mdx-logo,
+  .mdx-black-logo {
+    width: 30px;
+    margin-right: 1rem;
+  }
+}
+
+/* -------- */
+
+.mdx-hr {
+  height: 2px;
+  margin: 20px 0;
+  background-color: lightgrey;
+}
+
+.mdx-div {
+  display: flex;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.mdx-div span {
+  width: 20%;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.mdx-div a {
+  margin: 0;
+}
+
+@media screen and (max-width: 450px) {
+  .mdx-div p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mdx-div p {
+    font-size: 12px;
+  }
+}
+
+/* -------- */
+
+.btn-main {
+  border: none;
+  background-color: #00006a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+[data-theme='dark'] .btn-main {
+  background-color: white;
+  color: #00006a;
+}
+
+@media screen and (max-width: 630px) {
+  .btn-main {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+.contactBtn {
+  width: 100px;
+  height: fit-content;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: navy;
+  color: white;
+}
+
+.contactBtn:hover {
+  background-color: rgb(227, 227, 227);
+  color: navy;
+}
+
+.contactBtnDark {
+  width: 100px;
+  height: fit-content;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  color: navy;
+}
+
+.contactBtnDark:hover {
+  background-color: royalblue;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .contactBtn,
+  .contactBtnDark {
+    font-size: 12px;
+    padding: 0.5rem 0.8rem;
+    width: fit-content;
+  }
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

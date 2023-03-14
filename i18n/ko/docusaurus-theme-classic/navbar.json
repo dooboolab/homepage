@@ -1,0 +1,18 @@
+{
+  "item.label.About Us": {
+    "message": "회사 소개",
+    "description": "회사 소개 레이블이 있는 Navbar 항목"
+  },
+  "item.label.Works": {
+    "message": "우리의 일",
+    "description": "우리의 일 레이블이 있는 Navbar 항목"
+  },
+  "item.label.Careers": {
+    "message": "커리어",
+    "description": "커리어 레이블이 있는 Navbar 항목"
+  },
+  "item.label.Blog": {
+    "message": "블로그",
+    "description": "블로그 레이블이 있는 Navbar 항목"
+  }
+}

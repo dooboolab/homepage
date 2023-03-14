@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+sidebar_label: 크로스플랫폼 코리아
+title: 크로스플랫폼 코리아
+---
+
+import Logo from '@site/src/components/uis/Logo';
+import crossPlatformKoreaImg from '@site/static/img/cross_platform_korea_boarding.png';
+import crossPlatformKoreaLogoCircle from '@site/static/icon/cross_platform_korea_logo_circle.png';
+
+<img src={crossPlatformKoreaImg} width="100%" alt="크로스플랫폼 코리아 대표 이미지" />
+
+<br />
+<br />
+
+<div className="mdx-works-container">
+  <div>
+    <span className="mdx-works-title">크로스플랫폼 코리아</span>
+  </div>
+  <div>
+    <Logo address="https://crossplatformkorea.com/" source={crossPlatformKoreaLogoCircle} />
+  </div>
+</div>
+
+<br />
+
+크로스플랫폼 코리아는 리액트네이티브, 플러터, 마우이 등 서로 밀접한 관계를 맺고 있는 크로스플랫폼 기술을 다루는 밋업입니다.
+

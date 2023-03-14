@@ -1,0 +1,50 @@
+.sections {
+  margin: 2rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1000px;
+}
+.features p {
+  font-size: 16.5px;
+}
+
+.featureSvg {
+  height: 280px;
+  width: 280px;
+}
+
+.featureDesc {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.featureDescIdxOdd {
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 630px) {
+  .sections {
+    margin: auto;
+  }
+
+  .featureSvg {
+    width: 100%;
+  }
+
+  .featureDesc h2,
+  .featureDescIdxOdd h2 {
+    font-size: 21px;
+  }
+
+  .features p {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}

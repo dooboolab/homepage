@@ -1,36 +1,39 @@
-name: CI
-
+name: Check Website
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
-    - name: Install modules
-      run: yarn
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 18.x
 
-    - name: Check linting
-      run: yarn lint
+      - name: Install packages
+        run: yarn install --ignore-engines
 
-    - name: Build typescript
-      run: yarn tsc
+      - name: Type check
+        run: yarn tsc
 
-    - name: Test
-      run: yarn test --coverage --silent
+      - name: Build
+        run: yarn build
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        directory: ./coverage/
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: false
-        path_to_write_report: ./coverage/codecov_report.gz
+      - name: Check swizzle
+        run: |
+          yarn swizzle
+
+      - name: Check translations
+        run: |
+          yarn write-translations
+
+      - name: Write heading ids
+        run: |
+          yarn write-heading-ids

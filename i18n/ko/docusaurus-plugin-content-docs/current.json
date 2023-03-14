@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "다음",
+    "description": "현재 버전 레이블"
+  },
+  "sidebar.aboutUsSidebar.category.About Us": {
+    "message": "회사 소개",
+    "description": "사이드바 문서의 회사 소개 카테고리 레이블"
+  },
+  "sidebar.worksSidebar.category.Projects": {
+    "message": "프로젝트",
+    "description": "사이드바 문서의 프로젝트 카테고리 레이블"
+  },
+  "sidebar.worksSidebar.category.Communities": {
+    "message": "커뮤니티",
+    "description": "사이드바 문서의 커뮤니티 카테고리 레이블"
+  },
+  "sidebar.careersSidebar.category.Careers": {
+    "message": "우리의 일",
+    "description": "사이드바 문서의 우리의 일 카테고리 레이블"
+  }
+}

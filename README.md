@@ -1,10 +1,41 @@
-## dooboolab.com
+# Website
 
-![CI](https://github.com/dooboolab/dooboolab.com/workflows/CI/badge.svg)
-[![Deploy on merge](https://github.com/dooboolab/dooboolab.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/dooboolab/dooboolab.com/actions/workflows/deploy.yml)
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-<a href="https://dooboolab.com"><img width="610" alt="Screen Shot 2021-01-18 at 1 48 07 AM" src="https://user-images.githubusercontent.com/27461460/104849835-428ffe00-592f-11eb-91f1-bbc285274bb0.png"></a>
+### Installation
 
-> The project build in `react-native`. Support `iOS`, `android`, and `web`.
+```
+$ yarn
+```
 
-Follow the [Medium Post](https://medium.com/dooboolab/re-implement-website-with-react-native-web-d856a37779b4) on the experience on building this website that also works great in `iOS` and `android`.
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
