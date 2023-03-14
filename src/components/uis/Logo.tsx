@@ -1,4 +1,4 @@
-import { IcGithub, IcTwitter, IcYoutube } from '../../utils/icons';
+import { IcGithub, IcTwitter } from '../icons';
 
 import Link from '@docusaurus/Link';
 import React from 'react';

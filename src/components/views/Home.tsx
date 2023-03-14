@@ -1,9 +1,8 @@
-import { IcCareers, IcOurStory, IcWorks } from "../../utils/icons";
+import { IcCareers, IcLogoIntroCut, IcOurStory, IcWorks } from "../icons";
 import React, { ReactNode } from "react";
 
 import Button from "../uis/Button";
-import Footer from "../views/Footer";
-import { IcLogoIntroCut } from "../../utils/icons";
+import Footer from "./Footer";
 import Translate from "@docusaurus/Translate";
 import styles from "./Home.module.css";
 
