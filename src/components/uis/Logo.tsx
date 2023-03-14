@@ -1,6 +1,7 @@
-import React from 'react';
-import Link from '@docusaurus/Link';
 import { IcGithub, IcTwitter, IcYoutube } from '../../utils/icons';
+
+import Link from '@docusaurus/Link';
+import React from 'react';
 
 type LogoProps = {
   address: string;
