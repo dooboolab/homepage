@@ -13,7 +13,3 @@ Whether you're building a new app from scratch or looking to enhance an existing
 As an open-source project, dooboo-ui is free to use and contribute to, and we welcome developers of all skill levels to join our community and help us improve and grow.
 
 Check out our GitHub repository at http://github.com/dooboolab/dooboo-ui to get started today.
-
-<br />
-<br />
-<br />
