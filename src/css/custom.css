@@ -22,6 +22,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.btn-main {
+  cursor: pointer;
+}
+
 .mdx-item {
   margin: 2rem 0;
 }
@@ -57,7 +61,7 @@
 
 .mdx-logo,
 .mdx-black-logo {
-  width: 33px;
+  width: 32px;
   margin-right: 1.5rem;
   filter: opacity(1);
 }
@@ -90,10 +94,10 @@
   filter: invert(40%);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .mdx-logo,
   .mdx-black-logo {
-    width: 30px;
+    width: 28px;
     margin-right: 1rem;
   }
 }
@@ -132,88 +136,4 @@
   .mdx-div p {
     font-size: 12px;
   }
-}
-
-/* -------- */
-
-.btn-main {
-  border: none;
-  background-color: #00006a;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 2px 5px;
-}
-
-[data-theme='dark'] .btn-main {
-  background-color: white;
-  color: #00006a;
-}
-
-@media screen and (max-width: 630px) {
-  .btn-main {
-    font-size: 11px;
-    white-space: nowrap;
-  }
-}
-
-.contactBtn {
-  width: 100px;
-  height: fit-content;
-  padding: 0.5rem;
-  border-radius: 15px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: navy;
-  color: white;
-}
-
-.contactBtn:hover {
-  background-color: rgb(227, 227, 227);
-  color: navy;
-}
-
-.contactBtnDark {
-  width: 100px;
-  height: fit-content;
-  padding: 0.5rem;
-  border-radius: 15px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: white;
-  color: navy;
-}
-
-.contactBtnDark:hover {
-  background-color: royalblue;
-  color: white;
-}
-
-@media screen and (max-width: 500px) {
-  .contactBtn,
-  .contactBtnDark {
-    font-size: 12px;
-    padding: 0.5rem 0.8rem;
-    width: fit-content;
-  }
-}
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  height: auto;
-}
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }

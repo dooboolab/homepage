@@ -2,7 +2,7 @@
   "name": "functions",
   "scripts": {
     "lint": "eslint \"src/**/*\"",
-    "build": "tsc && cp ./src/service-account.json ./lib",
+    "build": "tsc",
     "serve": "yarn build && firebase emulators:start --inspect-functions --only functions",
     "shell": "yarn build && firebase functions:shell",
     "start": "yarn shell",

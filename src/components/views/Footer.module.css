@@ -1,8 +1,12 @@
 .footerContainer {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
   padding: 3.5rem;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-gap: 4px;
 }
 
 .footerLightColor {
@@ -17,7 +21,7 @@
 
 .footerContainer p {
   margin: 0;
-  font-size: 15.5px;
+  font-size: 16px;
 }
 
 .footerLogo {
@@ -26,13 +30,32 @@
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
   .footerContainer {
     padding: 2rem 1.5rem;
     white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
   }
 
-  .footerContainer p {
-    font-size: 13px;
+  .footerLogo {
+    height: 32px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .footerContent {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footerContent p {
+    font-size: 12px;
+    word-break: break-word;
+    white-space: normal;
   }
 }

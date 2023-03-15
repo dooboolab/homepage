@@ -39,7 +39,7 @@ const sections: SectionType[] = [
     endpoint: "/docs/about-us/introduction",
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
-        Read more
+        See more
       </Translate>
     ),
   },
@@ -64,7 +64,7 @@ const sections: SectionType[] = [
     endpoint: "/docs/works/projects/dooboo",
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
-        Read more
+        See more
       </Translate>
     ),
   },
@@ -89,7 +89,7 @@ const sections: SectionType[] = [
     endpoint: "/docs/careers/job-description",
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
-        Read more
+        See more
       </Translate>
     ),
   },
@@ -103,30 +103,26 @@ function Section({
   buttonName,
   idx,
 }: SectionType) {
-  const indexIsOddNumber = (idx + 2) % 2;
+  const isIndexEvenNumber = (idx + 2) % 2;
 
-  if (indexIsOddNumber) {
+  if (isIndexEvenNumber) {
     return (
-      <div className={styles.features}>
-        <div className={styles.featureDescIdxOdd}>
+      <div className={styles.featuresEven}>
+        <div className={styles.featureDescEven}>
           <h2>{title}</h2>
           <p>{description}</p>
           <Button className="btn-main" endpoint={endpoint}>
             {buttonName}
           </Button>
         </div>
-        <div>
-          <Svg className={styles.featureSvg} role="img" />
-        </div>
+        <Svg className={styles.featureSvgEven} role="img" />
       </div>
     );
   }
 
   return (
     <div className={styles.features}>
-      <div>
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
+      <Svg className={styles.featureSvg} role="img" />
       <div className={styles.featureDesc}>
         <h2>{title}</h2>
         <p>{description}</p>
@@ -140,14 +136,14 @@ function Section({
 
 export default function Home(): JSX.Element {
   return (
-    <>
-      <IcLogoIntroCut />
+    <div className={styles.container}>
+      <IcLogoIntroCut className={styles.brandIcon}/>
       <section className={styles.sections}>
         {sections.map((props, idx) => (
           <Section key={idx} idx={idx} {...props} />
         ))}
       </section>
       <Footer />
-    </>
+    </div>
   );
 }

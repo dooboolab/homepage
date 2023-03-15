@@ -19,13 +19,11 @@ function Footer() {
       ? "icon/dooboolab_logo.png"
       : "icon/dooboolab_logo_dark.png";
 
-  const contactBtnClassName =
-    colorMode === "light" ? "contactBtn" : "contactBtnDark";
 
   return (
     <div className={className}>
-      <div>
-        <img alt="logo" className={styles.footerLogo} src={iconSrc} />
+      <div className={styles.footerContent}>
+        <img alt="logo" className={styles.footerLogo} src={iconSrc}/>
         <p>
           <Translate
             id="homepage.address"
@@ -37,7 +35,7 @@ function Footer() {
         <p>©2021-{new Date().getFullYear()} dooboolab.</p>
       </div>
       <Button
-        className={contactBtnClassName}
+        className=''
         endpoint={"/docs/about-us/contact-us"}
       >
         <Translate

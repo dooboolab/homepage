@@ -10,8 +10,13 @@ type ButtonProps = {
 
 function Button({ endpoint, className, children }: ButtonProps): JSX.Element {
   return (
-    <Link to={endpoint}>
-      <button className={className}>{children}</button>
+    <Link to={endpoint} style={{
+      position: 'relative',
+      height: 'min-content',
+    }}>
+      <button className={className} style={{
+        cursor: 'pointer'
+      }}>{children}</button>
     </Link>
   );
 }

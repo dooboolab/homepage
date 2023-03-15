@@ -1,23 +1,43 @@
-.sections {
-  margin: 2rem;
+.container {
+  align-self: stretch;
+  flex: 1;
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.features {
+.sections {
+  flex: 1;
+  max-width: 1000px;
+
   display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.features,
+.featuresEven {
+  align-self: stretch;
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
-  padding: 2rem 0;
-  width: 100%;
-  max-width: 1000px;
 }
+
+.featuresEven,
 .features p {
   font-size: 16.5px;
 }
 
-.featureSvg {
-  height: 280px;
-  width: 280px;
+.featureSvg,
+.featureSvgEven {
+  height: 240px;
+  width: auto;
 }
 
 .featureDesc {
@@ -25,26 +45,58 @@
   padding-right: 2rem;
 }
 
-.featureDescIdxOdd {
+.featureDescEven {
   padding-left: 2rem;
 }
 
 @media screen and (max-width: 630px) {
   .sections {
     margin: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features,
+  .featuresEven {
+    padding: 2rem 0;
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .features {
+    flex-direction: column-reverse;
   }
 
   .featureSvg {
-    width: 100%;
+    height: 140px;
+  }
+
+  .featureSvgEven {
+    margin-top: 1rem;
+    height: 140px;
+  }
+
+  .featureDesc,
+  .featureDescEven {
+    text-align: center;
+    padding: 0 0.5rem;
   }
 
   .featureDesc h2,
-  .featureDescIdxOdd h2 {
-    font-size: 21px;
+  .featureDescEven h2 {
+    font-size: 18px;
   }
 
+  .featuresEven,
   .features p {
-    font-size: 14px;
-    white-space: nowrap;
+    font-size: 12px;
+    text-align: center;
+    padding: 0;
   }
 }
