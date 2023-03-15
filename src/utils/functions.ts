@@ -1,4 +1,4 @@
-import { DOOBOOLAB_EMAIL } from './constants';
+import {DOOBOOLAB_EMAIL} from './constants';
 
 export const copyEmailAsync = async (): Promise<void> => {
   await navigator.clipboard.writeText(DOOBOOLAB_EMAIL);
