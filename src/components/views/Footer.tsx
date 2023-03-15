@@ -9,18 +9,13 @@ import {useColorMode} from '@docusaurus/theme-common';
 function Footer(): ReactElement {
   const {colorMode} = useColorMode();
 
-  const className =
-    colorMode === 'light'
-      ? clsx(styles.footerContainer, styles.footerLightColor)
-      : clsx(styles.footerContainer, styles.footerDarkColor);
-
   const iconSrc =
     colorMode === 'light'
       ? 'icon/dooboolab_logo.png'
       : 'icon/dooboolab_logo_dark.png';
 
   return (
-    <div className={className}>
+    <div className={clsx(styles.footerContainer)}>
       <div className={styles.footerContent}>
         <img alt="logo" className={styles.footerLogo} src={iconSrc} />
         <p>

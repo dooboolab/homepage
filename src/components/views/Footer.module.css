@@ -7,16 +7,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   flex-gap: 4px;
-}
 
-.footerLightColor {
-  background-color: #f5f6f7;
-  color: black;
-}
-
-.footerDarkColor {
-  background-color: #1c1e21;
-  color: white;
+  color: var(--text);
+  background-color: var(--paper);
 }
 
 .footerContainer p {
