@@ -27,7 +27,7 @@
     "@types/cors": "^2.8.10",
     "@types/node-fetch": "^2.5.8",
     "eslint": "^8.16.0",
-    "firebase-functions-test": "^0.3.0",
+    "firebase-functions-test": "^3.0.0",
     "typescript": "^3.8.0"
   },
   "private": true
