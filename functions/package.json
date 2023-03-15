@@ -28,7 +28,7 @@
     "@dooboo/eslint-config-react": "^1.0.4",
     "@types/cors": "^2.8.13",
     "@types/node-fetch": "^2.6.2",
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.11.0",
     "eslint": "^8.36.0",
     "firebase-functions-test": "^3.0.0",
     "prettier": "^2.8.4",
