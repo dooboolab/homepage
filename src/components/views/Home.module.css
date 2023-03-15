@@ -10,11 +10,13 @@
 }
 
 .sections {
-  flex: 1;
-  max-width: 1000px;
+  align-self: stretch;
+  padding: 0 32px;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 

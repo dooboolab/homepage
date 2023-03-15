@@ -114,15 +114,10 @@
   background-color: lightgrey;
 
   display: flex;
-  flex-wrap: wrap;
 }
 
 .mdx-div {
-  padding: 1rem;
-  white-space: nowrap;
-
   display: flex;
-  flex-wrap: wrap;
 }
 
 .mdx-div span {
