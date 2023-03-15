@@ -1,4 +1,4 @@
-import { IcGithub, IcTwitter } from '../icons';
+import {IcGithub, IcTwitter} from '../icons';
 
 import Link from '@docusaurus/Link';
 import React from 'react';
@@ -10,7 +10,7 @@ type LogoProps = {
   domain?: string;
 };
 
-function Logo({ address, source, domain, isBlack }: LogoProps): JSX.Element {
+function Logo({address, source, domain, isBlack}: LogoProps): JSX.Element {
   let iconSource = domain;
 
   switch (domain) {
@@ -26,7 +26,11 @@ function Logo({ address, source, domain, isBlack }: LogoProps): JSX.Element {
 
   return (
     <Link to={address}>
-      <img src={iconSource} className={isBlack ? 'mdx-black-logo' : 'mdx-logo'} alt="logo" />
+      <img
+        src={iconSource}
+        className={isBlack ? 'mdx-black-logo' : 'mdx-logo'}
+        alt="logo"
+      />
     </Link>
   );
 }

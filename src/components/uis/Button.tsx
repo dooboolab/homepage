@@ -1,6 +1,7 @@
-import React, { ReactNode } from "react";
+import type {ReactNode} from 'react';
+import React from 'react';
 
-import Link from "@docusaurus/Link";
+import Link from '@docusaurus/Link';
 
 type ButtonProps = {
   endpoint: string;
@@ -8,15 +9,23 @@ type ButtonProps = {
   children: ReactNode;
 };
 
-function Button({ endpoint, className, children }: ButtonProps): JSX.Element {
+function Button({endpoint, className, children}: ButtonProps): JSX.Element {
   return (
-    <Link to={endpoint} style={{
-      position: 'relative',
-      height: 'min-content',
-    }}>
-      <button className={className} style={{
-        cursor: 'pointer'
-      }}>{children}</button>
+    <Link
+      to={endpoint}
+      style={{
+        position: 'relative',
+        height: 'min-content',
+      }}
+    >
+      <button
+        className={className}
+        style={{
+          cursor: 'pointer',
+        }}
+      >
+        {children}
+      </button>
     </Link>
   );
 }

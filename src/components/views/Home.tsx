@@ -1,14 +1,15 @@
-import { IcCareers, IcLogoIntroCut, IcOurStory, IcWorks } from "../icons";
-import React, { ReactNode } from "react";
+import {IcCareers, IcLogoIntroCut, IcOurStory, IcWorks} from '../icons';
+import type {ReactElement, ReactNode} from 'react';
 
-import Button from "../uis/Button";
-import Footer from "./Footer";
-import Translate from "@docusaurus/Translate";
-import styles from "./Home.module.css";
+import Button from '../uis/Button';
+import Footer from './Footer';
+import React from 'react';
+import Translate from '@docusaurus/Translate';
+import styles from './Home.module.css';
 
 type SectionType = {
   title: ReactNode;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
   endpoint: string;
   buttonName: ReactNode;
@@ -36,7 +37,7 @@ const sections: SectionType[] = [
         of achieving results.
       </Translate>
     ),
-    endpoint: "/docs/about-us/introduction",
+    endpoint: '/docs/about-us/introduction',
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
         See more
@@ -61,7 +62,7 @@ const sections: SectionType[] = [
         The path that dooboolab has taken on. and the way forward.
       </Translate>
     ),
-    endpoint: "/docs/works/projects/dooboo",
+    endpoint: '/docs/works/projects/dooboo',
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
         See more
@@ -86,7 +87,7 @@ const sections: SectionType[] = [
         A company is a community, and 'people' lead the community.
       </Translate>
     ),
-    endpoint: "/docs/careers/job-description",
+    endpoint: '/docs/careers/job-description',
     buttonName: (
       <Translate id="homepage.more" description="homepage.more description">
         See more
@@ -102,7 +103,7 @@ function Section({
   endpoint,
   buttonName,
   idx,
-}: SectionType) {
+}: SectionType): ReactElement {
   const isIndexEvenNumber = (idx + 2) % 2;
 
   if (isIndexEvenNumber) {
@@ -137,7 +138,7 @@ function Section({
 export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
-      <IcLogoIntroCut className={styles.brandIcon}/>
+      <IcLogoIntroCut className={styles.brandIcon} />
       <section className={styles.sections}>
         {sections.map((props, idx) => (
           <Section key={idx} idx={idx} {...props} />
