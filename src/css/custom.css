@@ -11,7 +11,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #b2c5fd;
   --ifm-color-primary-dark: #a8bdff;
   --ifm-color-primary-darker: #7194ff;
@@ -66,11 +66,11 @@
   filter: opacity(1);
 }
 
-[data-theme='dark'] .mdx-black-logo {
+[data-theme="dark"] .mdx-black-logo {
   filter: invert(75%);
 }
 
-[data-theme='dark'] .mdx-black-logo:hover {
+[data-theme="dark"] .mdx-black-logo:hover {
   filter: invert(100%);
 }
 
@@ -86,11 +86,11 @@
   filter: opacity(0.5);
 }
 
-[data-theme='dark'] .mdx-icon {
+[data-theme="dark"] .mdx-icon {
   filter: invert(80%);
 }
 
-[data-theme='dark'] .mdx-icon:hover {
+[data-theme="dark"] .mdx-icon:hover {
   filter: invert(40%);
 }
 
@@ -108,12 +108,17 @@
   height: 2px;
   margin: 20px 0;
   background-color: lightgrey;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .mdx-div {
-  display: flex;
   padding: 1rem;
   white-space: nowrap;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .mdx-div span {
@@ -126,14 +131,10 @@
   margin: 0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .mdx-div p {
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .mdx-div p {
-    font-size: 12px;
+    font-size: 16px;
+    word-break: break-word;
+    white-space: normal;
   }
 }
