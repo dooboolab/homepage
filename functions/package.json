@@ -20,7 +20,7 @@
     "firebase": "^9.17.2",
     "firebase-admin": "^11.5.0",
     "firebase-functions": "^4.2.1",
-    "googleapis": "^113.0.0",
+    "googleapis": "^114.0.0",
     "node-fetch": "^3.3.1"
   },
   "devDependencies": {
