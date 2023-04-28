@@ -10,7 +10,7 @@ export default function Index(): JSX.Element {
         {/* <meta property="og:image" content="image.png" /> */}
         <meta
           name="facebook-domain-verification"
-          content="w48rzhmmlek7a90w437qte9vl17oli"
+          content="yasfzkg2fkisvxtw7lx4vf4io5w155"
         />
       </Head>
       <Home />
