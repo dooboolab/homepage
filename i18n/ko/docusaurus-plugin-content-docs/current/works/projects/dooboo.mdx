@@ -6,8 +6,9 @@ title: 두부
 
 import Logo from '@site/src/components/uis/Logo';
 import doobooLogoImg from '@site/static/img/dooboo_logo.png';
-import storeApple from '@site/static/img/store_apple.png';
-import storeGoogle from '@site/static/img/store_google.png';
+import badgeAppDoobooIo from '@site/static/img/badge_app_dooboo_io.png';
+import badgeAppStore from '@site/static/img/badge_app_store.png';
+import badgeGooglePlay from '@site/static/img/badge_google_play.png';
 import doobooIntro from '@site/static/img/dooboo_intro_kr.png';
 
 <img src={doobooIntro} alt="dooboo Intro Image" />
@@ -17,13 +18,15 @@ import doobooIntro from '@site/static/img/dooboo_intro_kr.png';
 <br />
 <br />
 <div>
-    <img src={doobooLogoImg} width="40px" alt="dooboo Logo Image" />
-    &nbsp;&nbsp;&nbsp;
-    <a href="#">
-        <img src={storeApple} width="120px"alt="Appple App Store" />
+    <a href="https://app.dooboo.io">
+        <img src={badgeAppDoobooIo} width="158px"alt="app.dooboo.io" />
     </a>
     &nbsp;&nbsp;&nbsp;
-    <a href="#">
-        <img src={storeGoogle} width="135px" alt="Google Play Store" />
+    <a href="https://apps.apple.com/kr/app/dooboo/id1639880015">
+        <img src={badgeAppStore} width="120px"alt="Appple App Store" />
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="https://play.google.com/store/apps/details?id=io.dooboo">
+        <img src={badgeGooglePlay} width="135px" alt="Google Play Store" />
     </a>
 </div>
