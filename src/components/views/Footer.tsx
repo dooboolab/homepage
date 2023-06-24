@@ -19,11 +19,30 @@ function Footer(): ReactElement {
       <div className={styles.footerContent}>
         <img alt="logo" className={styles.footerLogo} src={iconSrc} />
         <p>
+          <Translate id="homepage.city" description="homepage.city description">
+            Seoul | Korea
+          </Translate>
+        </p>
+        <p>
+          <Translate
+            id="homepage.business"
+            description="homepage.business description"
+          >
+            Business Registration: 576-87-01981
+          </Translate>
+        </p>
+        <p>
+          <Translate id="homepage.ceo" description="homepage.ceo description">
+            CEO: Hyo Chan Jang, Jong Hyun Lee
+          </Translate>
+        </p>
+        <p>
           <Translate
             id="homepage.address"
             description="homepage.address description"
           >
-            501, Teheran-ro, Gangnam-gu, Seoul, Republic of Korea
+            221, Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic
+            of Korea
           </Translate>
         </p>
         <p>©2021-{new Date().getFullYear()} dooboolab.</p>

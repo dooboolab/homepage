@@ -23,8 +23,17 @@
   "homepage.contact": {
     "message": "연락하기"
   },
+  "homepage.city": {
+    "message": "서울 | 한국"
+  },
+  "homepage.business": {
+    "message": "사업자 등록번호: 576-87-01981"
+  },
+  "homepage.ceo": {
+    "message": "대표자: 장효찬, 이종현"
+  },
   "homepage.address": {
-    "message": "서울특별시 강남구 테헤란로 501, 브이플렉스"
+    "message": "경기도 성남시 분당구 판교역로 221 (삼평동)"
   },
   "theme.ErrorPageContent.title": {
     "message": "페이지에 오류가 발생하였습니다.",
