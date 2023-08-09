@@ -72,7 +72,13 @@ const config = {
             label: 'Careers',
             position: 'right',
           },
-          { to: '/blog', label: 'Blog', position: 'right' },
+          {to: '/blog', label: 'Blog', position: 'right'},
+          {
+            href: 'https://github.com/dooboolab-community',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+            position: 'right',
+          },
           {
             type: 'localeDropdown',
             position: 'right',
