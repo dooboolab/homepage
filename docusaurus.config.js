@@ -72,7 +72,11 @@ const config = {
             label: 'Careers',
             position: 'right',
           },
-          {href: 'https://blog.dooboo.io', label: 'Blog', position: 'right'},
+          {
+            href: 'https://medium.com/dooboolab',
+            label: 'Blog',
+            position: 'right',
+          },
           {
             href: 'https://github.com/dooboolab-community',
             className: 'header-github-link',
